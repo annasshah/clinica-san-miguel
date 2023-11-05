@@ -1,0 +1,25 @@
+[
+  { "id": 1, "heading": "Home", "route": "" },
+  { "id": 2, "heading": "About Us", "route": "" },
+  {
+    "id": 3,
+    "heading": "Services",
+    "route": "",
+    "dropDownOptions": [
+      { "heading": "Service 1", "route": "" },
+      { "heading": "Service 2", "route": "" }
+    ]
+  },
+  { "id": 4, "heading": "Blogs", "route": "" },
+  { "id": 5, "heading": "Testimonial", "route": "" },
+  { "id": 6, "heading": "Contact", "route": "" },
+  {
+    "id": 7,
+    "heading": "More",
+    "route": "",
+    "dropDownOptions": [
+      { "heading": "Option 1", "route": "" },
+      { "heading": "Option 2", "route": "" }
+    ]
+  }
+]
