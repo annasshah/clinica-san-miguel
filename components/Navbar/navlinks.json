@@ -6,8 +6,8 @@
     "heading": "Services",
     "route": "",
     "dropDownOptions": [
-      { "heading": "Service 1", "route": "" },
-      { "heading": "Service 2", "route": "" }
+      { "id": 1, "heading": "Service 1", "route": "" },
+      { "id": 2, "heading": "Service 2", "route": "" }
     ]
   },
   { "id": 4, "heading": "Blogs", "route": "" },
@@ -18,8 +18,8 @@
     "heading": "More",
     "route": "",
     "dropDownOptions": [
-      { "heading": "Option 1", "route": "" },
-      { "heading": "Option 2", "route": "" }
+      { "id": 1, "heading": "Option 1", "route": "" },
+      { "id": 2, "heading": "Option 2", "route": "" }
     ]
   }
 ]

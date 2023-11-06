@@ -11,6 +11,8 @@ import Pasadena from "./locations/pasadena.png";
 import SanAntonio from "./locations/san-antonio.png";
 
 // icons
+// Flags
+import USA_flag from "./icons/flags/USA.png";
 
 export {
   Logo,
@@ -21,4 +23,5 @@ export {
   Houston,
   Pasadena,
   SanAntonio,
+  USA_flag,
 };
