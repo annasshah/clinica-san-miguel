@@ -21,11 +21,17 @@ export const Dropdown = ({ options }: { options: Option[] }) => {
   };
 
   return (
-    <div className="absolute rounded-[10px] p-2 flex flex-col justify-center items-center bg-[#ffffff] shadow-md">
-      {options.map((option) => (
+    <div className="absolute rounded-[10px] flex flex-col justify-center items-center bg-[#ffffff] shadow-md">
+      {options.map((option, index) => (
         <div
           key={option.id}
-          className="flex justify-evenly items-center w-full py-2"
+          className={`${
+            index === options.length - 1
+              ? "rounded-b-[10px]"
+              : index === 0
+              ? "rounded-t-[10px]"
+              : ""
+          } flex justify-evenly items-center w-full p-2 hover:cursor-pointer hover:bg-[#969696]`}
           onClick={() => handleDropdownItem(option.route)}
         >
           {option.icon && (
