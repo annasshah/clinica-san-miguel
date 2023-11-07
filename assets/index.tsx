@@ -14,6 +14,8 @@ import SanAntonio from "./locations/san-antonio.png";
 // Flags
 import USA_flag from "./icons/flags/USA.png";
 
+// portriats
+import doctor_portriat from "./portriats/doctor_portriat.png";
 export {
   Logo,
   Arlington,
@@ -24,4 +26,5 @@ export {
   Pasadena,
   SanAntonio,
   USA_flag,
+  doctor_portriat,
 };

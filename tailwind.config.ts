@@ -19,7 +19,11 @@ const config: Config = {
       },
     },
     screens: {
+      xl: "1450px",
+      lg: "1024px",
       tablet: "916px",
+      md: "760px",
+      sm: "640px",
     },
   },
   plugins: [],
