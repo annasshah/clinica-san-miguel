@@ -4,6 +4,7 @@ import Image from "next/image";
 import gray from "../../assets/portriats/grey.png";
 import maskGroup from "../../assets/portriats/Mask group.png";
 import maskGroup2 from "../../assets/portriats/Mask group (2).png";
+import vector from "../../assets/portriats/Vector1.png";
 
 // export const HeroBox = () => {
 //   return (
@@ -72,13 +73,14 @@ export const HeroBox = () => {
           >
             <div
               style={{
-                backgroundImage: "url(/assets/portriats/Vector1.png)",
+                backgroundImage: "url(../assets/portriats/Vector1.png)",
                 backgroundSize: "100% 100%",
                 height: "242px",
                 position: "relative",
                 width: "275px",
               }}
             >
+              <Image src={vector} className="h-[242px] w-[275px]" alt={""} />
               <div
                 style={{
                   fontFamily: "Antipasto Pro-DemiBold, Helvetica",
