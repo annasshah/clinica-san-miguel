@@ -1,4 +1,9 @@
-import { HeroBox, SearchBox } from "@/components";
+import {
+  HeroBox,
+  ScheduleTreatment,
+  SearchBox,
+  // Testimonial,
+} from "@/components";
 import { Button, IconButton } from "@/utils";
 import { FaPhoneFlip } from "react-icons/fa6";
 
@@ -33,6 +38,12 @@ export const Hero = () => {
         </div>
         <HeroBox />
       </article>
+
+      <article className="w-full flex justify-center items-center">
+        <ScheduleTreatment />
+      </article>
+
+      {/* <Testimonial comment={""} author={""} /> */}
     </section>
   );
 };

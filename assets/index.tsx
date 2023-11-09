@@ -11,6 +11,8 @@ import Pasadena from "./locations/pasadena.png";
 import SanAntonio from "./locations/san-antonio.png";
 
 // icons
+import Commas from "./icons/invertedCommas.png";
+
 // Flags
 import USA_flag from "./icons/flags/USA.png";
 
@@ -27,4 +29,5 @@ export {
   SanAntonio,
   USA_flag,
   doctor_portriat,
+  Commas,
 };
