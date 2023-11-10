@@ -4,6 +4,6 @@ import { SearchBox } from "./Search";
 import { ScheduleTreatment } from "./ScheduleTreatment/ScheduleTreatment";
 
 // cards
-import { Testimonial } from "./Cards";
+import { Testimonial, About } from "./Cards";
 
-export { Navbar, HeroBox, SearchBox, ScheduleTreatment, Testimonial };
+export { Navbar, HeroBox, SearchBox, ScheduleTreatment, Testimonial, About };

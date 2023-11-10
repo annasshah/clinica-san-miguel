@@ -18,6 +18,9 @@ import USA_flag from "./icons/flags/USA.png";
 
 // portriats
 import doctor_portriat from "./portriats/doctor_portriat.png";
+
+import about from "./about/about.png";
+
 export {
   Logo,
   Arlington,
@@ -30,4 +33,5 @@ export {
   USA_flag,
   doctor_portriat,
   Commas,
+  about,
 };

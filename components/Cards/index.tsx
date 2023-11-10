@@ -1,3 +1,4 @@
 import { Testimonial } from "./Testimonial";
+import { About } from "./About";
 
-export { Testimonial };
+export { Testimonial, About };

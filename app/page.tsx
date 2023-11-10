@@ -1,4 +1,12 @@
-import { Hero, Locations, Testimonials } from "@/sections";
+import {
+  AboutSection,
+  CommunityMission,
+  Hero,
+  JoinTeam,
+  Locations,
+  Testimonials,
+  Treatments,
+} from "@/sections";
 import Image from "next/image";
 
 export default function Home() {
@@ -6,6 +14,10 @@ export default function Home() {
     <main className="flex flex-col justify-center items-center gap-10">
       <Hero />
       <Testimonials />
+      <CommunityMission />
+      <AboutSection />
+      <Treatments />
+      <JoinTeam />
       <Locations />
     </main>
   );

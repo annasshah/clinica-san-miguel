@@ -39,7 +39,7 @@ export const ScheduleTreatment: React.FC = () => {
   };
 
   return (
-    <article className="w-[80%] flex items-center justify-evenly rounded-[10px] h-[107px] bg-[#19192C]">
+    <article className="w-[60%] flex items-center justify-evenly rounded-[10px] h-[107px] bg-[#19192C]">
       <InputField
         label="Patient Name:"
         placeholder="Enter your name"
