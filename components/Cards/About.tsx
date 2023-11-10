@@ -37,23 +37,23 @@ export const About = ({
         ref={firstDivRef}
         style={{
           height: `${firstDivHeight}px`,
-          boxShadow: "5px 0 15px rgba(0, 0, 0, 0.8)", // Adjust the values as needed
+          boxShadow: "5px 0 5px rgba(0, 0, 0, 0.8)", // Adjust the values as needed
         }}
-        className="w-[40%] flex justify-center items-center rounded-[10px] z-20"
+        className="w-[40%] bg-[#3D3D3C] flex justify-center border-0 items-center rounded-[10px] z-20"
       >
         <Image
           src={image}
           alt="about image"
-          className="object-cover aspect-auto w-full h-full"
+          className="object-cover rounded-[10px] bg-contain aspect-auto w-full h-full"
         />
       </div>
       <div
         ref={secondDivRef}
         style={{ height: `${secondDivHeight}px` }}
-        className="w-[60%] rounded-[10px] flex flex-col justify-center bg-[#3D3D3C] p-5 ml-[-70px] pl-[70px] z-10"
+        className="w-[60%] rounded-[10px] flex flex-col justify-center bg-[#3D3D3C] p-5 ml-[-70px] pl-[80px] z-10"
       >
         <h1 className="text-[#ffffff] text-[3vw] text-left">{heading}</h1>
-        <p className="text-[#ACACAC] text-[20px] text-left">{content}</p>
+        <p className="text-[#ACACAC] text-[16px] text-left">{content}</p>
       </div>
     </article>
   );
