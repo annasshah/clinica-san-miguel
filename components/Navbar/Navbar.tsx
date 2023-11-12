@@ -8,9 +8,35 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Hamburger from "hamburger-react";
 import { Dropdown } from "@/utils";
 import { Logo, USA_flag } from "@/assets";
-import navLinks from "./navLinks.json";
+// import navLinks from "./navLinks.json";
 
 export const Navbar = () => {
+  const navLinks = [
+    { id: 1, heading: "Home", route: "" },
+    { id: 2, heading: "About Us", route: "" },
+    {
+      id: 3,
+      heading: "Services",
+      route: "",
+      dropDownOptions: [
+        { id: 1, heading: "Service 1", route: "" },
+        { id: 2, heading: "Service 2", route: "" },
+      ],
+    },
+    { id: 4, heading: "Blogs", route: "" },
+    { id: 5, heading: "Testimonial", route: "" },
+    { id: 6, heading: "Contact", route: "" },
+    {
+      id: 7,
+      heading: "More",
+      route: "",
+      dropDownOptions: [
+        { id: 1, heading: "Option 1", route: "" },
+        { id: 2, heading: "Option 2", route: "" },
+      ],
+    },
+  ];
+
   const [dropdownStates, setDropdownStates] = useState(
     Array(navLinks.length).fill(false)
   );
