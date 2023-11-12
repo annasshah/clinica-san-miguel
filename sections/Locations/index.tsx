@@ -28,13 +28,14 @@ export const Locations = () => {
     },
   ];
   return (
-    <section>
-      <h1 className="text-[#C1001F] text-center text-[70px] font-bold">
+    <section className="flex flex-col justify-center items-center my-14">
+      <h1 className="text-[#C1001F] font-antipasto text-center text-[70px] font-bold">
         OUR LOCATIONS
       </h1>
-      <h3 className="text-center text-[#000000] text-[16px]">
+      <h3 className="text-center font-antipasto text-[#000000] text-[20px]">
         Choose your preferred location
       </h3>
+
       <article className="flex flex-wrap gap-10 px-[15%] justify-center">
         {locations.map((location) => (
           <div
@@ -48,7 +49,9 @@ export const Locations = () => {
                 className="aspect-auto object-contain w-full h-full"
               />
             </div>
-            <p className="text-[#19192C] text-[16px]">{location.name}</p>
+            <p className="text-[#19192C] font-inter text-[16px]">
+              {location.name}
+            </p>
           </div>
         ))}
       </article>

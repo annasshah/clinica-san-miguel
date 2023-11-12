@@ -52,8 +52,12 @@ export const About = ({
         style={{ height: `${secondDivHeight}px` }}
         className="w-[60%] rounded-[10px] flex flex-col justify-center bg-[#3D3D3C] p-5 ml-[-70px] pl-[80px] z-10"
       >
-        <h1 className="text-[#ffffff] text-[3vw] text-left">{heading}</h1>
-        <p className="text-[#ACACAC] text-[16px] text-left">{content}</p>
+        <h1 className="text-[#ffffff] font-antipasto text-[3vw] text-left">
+          {heading}
+        </h1>
+        <p className="text-[#ACACAC] font-inter text-[16px] text-left">
+          {content}
+        </p>
       </div>
     </article>
   );

@@ -82,8 +82,9 @@ export const HeroBox = () => {
             >
               <Image src={vector} className="h-[242px] w-[275px]" alt={""} />
               <div
+                className="font-antipasto"
                 style={{
-                  fontFamily: "Antipasto Pro-DemiBold, Helvetica",
+                  // fontFamily: "Antipasto Pro-DemiBold, Helvetica",
                   fontSize: "40px",
                   color: "#ffffff",
                   fontWeight: "700",
@@ -133,9 +134,10 @@ export const HeroBox = () => {
             src={maskGroup2}
           />
           <div
+            className="font-antipasto"
             style={{
               color: "#ffffff",
-              fontFamily: "Antipasto Pro-DemiBold, Helvetica",
+              // fontFamily: "Antipasto Pro-DemiBold, Helvetica",
               fontSize: "48px",
               fontWeight: "700",
               height: "123px",

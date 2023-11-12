@@ -18,6 +18,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        // 👇 Add CSS variables
+        inter: ["var(--font-inter)"],
+        antipasto: ["var(--font-antipasto)"],
+      },
     },
     screens: {
       xl: "1450px",

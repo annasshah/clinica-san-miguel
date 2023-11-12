@@ -3,7 +3,7 @@ import { About } from "@/components";
 
 export const AboutSection = () => {
   return (
-    <section className="w-full flex justify-center items-center py-[10%]">
+    <section className="w-full flex justify-center items-center my-14">
       <About
         image={about}
         heading={"About Us"}

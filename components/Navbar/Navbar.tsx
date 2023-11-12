@@ -70,7 +70,7 @@ export const Navbar = () => {
         alt="Logo"
         className="w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] aspect-auto object-contain"
       />
-      <nav className="hidden tablet:flex tablet:justify-center tablet:items-center tablet:gap-5">
+      <nav className="hidden tablet:flex tablet:justify-center font-antipasto tablet:items-center tablet:gap-5">
         {renderNavLinks()}
       </nav>
       <div className="flex gap-4 sm:gap-7 items-center">

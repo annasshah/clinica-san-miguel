@@ -14,12 +14,12 @@ export const Hero = () => {
       <article className="flex w-[95vw] h-[70vh] justify-center items-center gap-10">
         <div className="flex flex-col items-start gap-3">
           <div className="flex flex-col gap-3 justify-start items-start">
-            <h2 className="text-[#C1001F] text-[25px] font-normal">
+            <h2 className="text-[#C1001F] font-antipasto text-[25px] font-normal">
               Nearest location
             </h2>
             <SearchBox />
           </div>
-          <div className="text-[3vw] font-bold text-[#000000]">
+          <div className="text-[80px] leading-[85px] font-antipasto font-bold text-[#000000]">
             Proper care
             <br /> of your body
             <br /> for life
@@ -30,6 +30,7 @@ export const Hero = () => {
               size={{ width: "270px", height: "73px" }}
               route={""}
               bgColor={"#3D3D3C"}
+              textColor={"#ffffff"}
             />
             <IconButton
               size={{ width: "75px", height: "75px" }}

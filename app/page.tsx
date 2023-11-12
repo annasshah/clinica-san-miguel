@@ -17,6 +17,9 @@ export default function Home() {
       <CommunityMission />
       <AboutSection />
       <Treatments />
+      <article className="h-[100px] w-full font-antipasto bg-[#19192C] flex justify-center items-center text-[20px] text-[#F8F5F0]">
+        No insurance needed, walk-ins welcome!{" "}
+      </article>
       <JoinTeam />
       <Locations />
     </main>

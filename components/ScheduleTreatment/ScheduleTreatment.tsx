@@ -68,6 +68,7 @@ export const ScheduleTreatment: React.FC = () => {
           }}
           route={""}
           bgColor={"#C1001F"}
+          textColor={"#ffffff"}
         />
       </div>
     </article>

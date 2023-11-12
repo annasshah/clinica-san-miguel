@@ -13,7 +13,7 @@ export const OutlinedButton = ({
 }) => {
   return (
     <button
-      className={`rounded-[10px] flex justify-center items-center text-[20px] bg-transparent text-opacity-8`}
+      className={`rounded-[10px] font-antipasto flex justify-center items-center text-[20px] bg-transparent text-opacity-8`}
       style={{
         width: `${size.width}`,
         height: `${size.height}`,

@@ -24,10 +24,12 @@ export const Testimonial = ({
           className="w-[22px] aspect-auto object-contain"
         />
       </div>
-      <p className="text-[16px] h-[120px]">&quot;{comment}&quot;</p>
+      <p className="text-[18px] font-[700] h-[120px] font-antipasto">
+        &quot;{comment}&quot;
+      </p>
 
       <div className="flex flex-col">
-        <p className="text-[11.7px]">{author}</p>
+        <p className="text-[11.7px] font-inter">{author}</p>
 
         <StarRatings
           rating={ratings}
