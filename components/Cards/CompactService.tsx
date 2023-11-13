@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -27,7 +29,13 @@ export const CompactService = ({
   const [theme, setTheme] = useState(mode === "dark" ? dark : light);
 
   return (
-    <article className="w-[350px] h-[350px] rounded-[10px] flex flex-col justify-center p-4">
+    <article
+      className="w-[330px] h-[330px] m-5 rounded-[10px] flex flex-col justify-evenly p-5 py-14 shadow-lg"
+      style={{
+        backgroundColor: `${theme.backgroundColor}`,
+        boxShadow: "20 16px 20px rgba(0, 0, 0, 1)",
+      }}
+    >
       <div className="flex items-center gap-3">
         <div className="w-10">
           <div className="rounded-full flex w-10 h-10 justify-center items-center bg-[#C1001F]">
@@ -45,7 +53,7 @@ export const CompactService = ({
           {heading}
         </h1>
       </div>
-      <div className="overflow-y-auto h-[100px]">
+      <div className="overflow-y-auto">
         <p
           className="text-[16px] font-inter text-left"
           style={{ color: `${theme.textColor}` }}

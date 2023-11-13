@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Slick Slider */
+.slick-slide > div {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none;
+  top: 50% !important;
+  left: 10px !important;
+  transform: translateY(-400%) !important;
+}
+
+/* Dots */
+
+/* Custom Slick Dots */
+
+.ft-slick__dots--custom {
+  height: 20px;
+  width: 20px;
+  /* background-color: #ffb636; */
+  border-radius: 100%;
+  border: 1px solid #c1001f;
+  /* padding-top: 0%; */
+  position: relative;
+  top: 30px;
+  transition: all 0.5s ease-in-out;
+  /* padding: 2px; */
+}
+
+.slick-dots li {
+  width: 20px;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.slick-active {
+  width: 20px;
+  /* top: -15px; */
+
+  /* transition: width 0.3s ease-in-out; */
+  transition: all 0.5s ease-out;
+}
+
+.slick-active .ft-slick__dots--custom {
+  width: 20px;
+  background-color: #c1001f;
+  border-radius: 100%;
+  overflow: hidden;
+}

@@ -5,7 +5,14 @@ import { SearchBox } from "./Search";
 import { ScheduleTreatment } from "./ScheduleTreatment/ScheduleTreatment";
 
 // cards
-import { Testimonial, About, Mission, Treatment, Team } from "./Cards";
+import {
+  Testimonial,
+  About,
+  Mission,
+  Treatment,
+  Team,
+  CompactService,
+} from "./Cards";
 
 export {
   Navbar,
@@ -17,5 +24,6 @@ export {
   Mission,
   Treatment,
   Team,
+  CompactService,
   Footer,
 };
