@@ -1,10 +1,10 @@
-import { doctor_portriat } from "@/assets";
+// import { doctor_portriat } from "@/assets/images";
 import Image from "next/image";
 // import "./style.css";
-import gray from "../../assets/portriats/grey.png";
-import maskGroup from "../../assets/portriats/Mask group.png";
-import maskGroup2 from "../../assets/portriats/Mask group (2).png";
-import vector from "../../assets/portriats/Vector1.png";
+import gray from "../../assets/images/portriats/grey.png";
+import maskGroup from "../../assets/images/portriats/Mask group.png";
+import maskGroup2 from "../../assets/images/portriats/Mask group (2).png";
+import vector from "../../assets/images/portriats/Vector1.png";
 
 // export const HeroBox = () => {
 //   return (

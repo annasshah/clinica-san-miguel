@@ -20,8 +20,8 @@ const config: Config = {
       },
       fontFamily: {
         // 👇 Add CSS variables
-        inter: ["var(--font-inter)"],
-        antipasto: ["var(--font-antipasto)"],
+        inter: ["var(--font-inter)", "sans-serif"],
+        antipasto: ["var(--font-antipasto)", "sans-serif"],
       },
     },
     screens: {

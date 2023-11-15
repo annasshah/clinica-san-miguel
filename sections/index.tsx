@@ -5,6 +5,7 @@ import { JoinTeam } from "./JoinTeam";
 import { CommunityMission } from "./CommunityMission";
 import { AboutSection } from "./About";
 import { Treatments } from "./Treatments";
+import { Services } from "./Services";
 
 export {
   Testimonials,
@@ -14,4 +15,5 @@ export {
   CommunityMission,
   AboutSection,
   Treatments,
+  Services,
 };

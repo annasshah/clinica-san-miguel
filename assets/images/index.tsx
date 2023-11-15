@@ -50,6 +50,29 @@ import {
 // social
 import { facebook, instagram, youtube } from "./icons/social";
 
+// additional services
+import {
+  antibiotic_injection,
+  complete_diabetes_screening,
+  drainage_of_abscesses,
+  electrocardiogram,
+  general_blood_exam,
+  general_consultation,
+  immigration_exams,
+  ingrown_nail_removal,
+  IUD_device_removal,
+  odontology,
+  pap_smear,
+  physical_exam_DOT,
+  physical_exam_for_school,
+  prostate_blood_exam,
+  sexually_transmitted_diseases_screening,
+  SUBDERMAL_device_removal,
+  sutures,
+  ultrasounds,
+  vitamin_B12,
+} from "./additionalServices";
+
 export {
   Logo,
   Arlington,
@@ -83,4 +106,23 @@ export {
   facebook,
   instagram,
   youtube,
+  antibiotic_injection,
+  complete_diabetes_screening,
+  drainage_of_abscesses,
+  electrocardiogram,
+  general_blood_exam,
+  general_consultation,
+  immigration_exams,
+  ingrown_nail_removal,
+  IUD_device_removal,
+  odontology,
+  pap_smear,
+  physical_exam_DOT,
+  physical_exam_for_school,
+  prostate_blood_exam,
+  sexually_transmitted_diseases_screening,
+  SUBDERMAL_device_removal,
+  sutures,
+  ultrasounds,
+  vitamin_B12,
 };

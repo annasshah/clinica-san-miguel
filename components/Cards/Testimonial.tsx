@@ -1,6 +1,6 @@
 "use client";
 
-import { Commas } from "@/assets";
+import { Commas } from "@/assets/images";
 
 import Image from "next/image";
 

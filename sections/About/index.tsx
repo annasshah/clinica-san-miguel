@@ -1,4 +1,4 @@
-import { about } from "@/assets";
+import { about } from "@/assets/images";
 import { About } from "@/components";
 
 export const AboutSection = () => {

@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center items-center gap-10">
       <Hero />
-      <Testimonials />
+      <Testimonials headingFlag={false} />
       <CommunityMission />
       <AboutSection />
       <Treatments />

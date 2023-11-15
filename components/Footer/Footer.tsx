@@ -1,6 +1,6 @@
 "use client";
 
-import { facebook, instagram, youtube } from "@/assets";
+import { facebook, instagram, youtube } from "@/assets/images";
 import { Button } from "@/utils";
 
 import Image from "next/image";

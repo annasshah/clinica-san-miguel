@@ -12,6 +12,7 @@ import {
   Treatment,
   Team,
   CompactService,
+  AdditionalService,
 } from "./Cards";
 
 export {
@@ -25,5 +26,6 @@ export {
   Treatment,
   Team,
   CompactService,
+  AdditionalService,
   Footer,
 };

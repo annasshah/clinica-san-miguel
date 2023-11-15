@@ -4,5 +4,14 @@ import { Mission } from "./Mission";
 import { Treatment } from "./Treatment";
 import { Team } from "./Team";
 import { CompactService } from "./CompactService";
+import { AdditionalService } from "./AdditionalService";
 
-export { Testimonial, About, Mission, Treatment, Team, CompactService };
+export {
+  Testimonial,
+  About,
+  Mission,
+  Treatment,
+  Team,
+  CompactService,
+  AdditionalService,
+};

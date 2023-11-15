@@ -1,6 +1,6 @@
 import { CompactService } from "@/components";
 import { Testimonials } from "@/sections";
-import { services } from "./services";
+import { services } from "../../constants";
 
 const Services = () => {
   return (
@@ -27,13 +27,7 @@ const Services = () => {
         </article>
       </section>
 
-      <section className="flex flex-col justify-center items-center">
-        <h1 className="text-[70px] text-[#C1001F] font-antipasto">
-          testinomials
-        </h1>
-
-        <Testimonials />
-      </section>
+      <Testimonials headingFlag={true} />
     </main>
   );
 };

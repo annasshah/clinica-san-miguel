@@ -8,7 +8,7 @@ export const Mission = ({
   content: string;
 }) => {
   return (
-    <article className="w-[350px] h-[230px] rounded-[10px] bg-white shadow-md flex flex-col justify-center items-start p-4">
+    <article className="w-[350px] h-[230px] rounded-[10px] bg-[#F8F5F0] shadow-md flex flex-col justify-center items-start p-4">
       <div className="text-left text-[#C1001F] text-[40px] w-[40px] h-[40px]">
         {icon}
       </div>

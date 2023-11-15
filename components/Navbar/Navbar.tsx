@@ -7,7 +7,7 @@ import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Hamburger from "hamburger-react";
 import { Dropdown } from "@/utils";
-import { Logo, USA_flag } from "@/assets";
+import { Logo, USA_flag } from "@/assets/images";
 // import navLinks from "./navLinks.json";
 
 export const Navbar = () => {

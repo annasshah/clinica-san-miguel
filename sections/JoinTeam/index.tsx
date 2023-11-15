@@ -3,7 +3,7 @@ import {
   breast_cancer_awareness,
   children,
   farm_lady,
-} from "@/assets";
+} from "@/assets/images";
 import { Team } from "@/components";
 import { OutlinedButton } from "@/utils";
 

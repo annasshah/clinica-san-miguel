@@ -30,10 +30,10 @@ export const CompactService = ({
 
   return (
     <article
-      className="w-[330px] h-[330px] m-5 rounded-[10px] flex flex-col justify-evenly p-5 py-14 shadow-lg"
+      className="w-[330px] h-[330px] m-5 rounded-[10px] flex flex-col justify-evenly p-5 py-14"
       style={{
         backgroundColor: `${theme.backgroundColor}`,
-        boxShadow: "20 16px 20px rgba(0, 0, 0, 1)",
+        boxShadow: "2px 3px 6px 6px rgba(0, 0, 0, 0.2)",
       }}
     >
       <div className="flex items-center gap-3">

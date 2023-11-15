@@ -6,7 +6,7 @@ import {
   Pasadena,
   FortWorth,
   SanAntonio,
-} from "@/assets";
+} from "@/assets/images";
 import Image from "next/image";
 
 export const Locations = () => {

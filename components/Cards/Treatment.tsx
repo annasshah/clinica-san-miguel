@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import { heart_monitor } from "@/assets";
+import { heart_monitor } from "@/assets/images";
 
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -39,7 +39,7 @@ export const Treatment = ({
       className={`flex flex-col justify-evenly p-4 w-[310px] h-[450px] rounded-[10px] shadow-lg`}
       style={{
         backgroundColor: `${theme.backgroundColor}`,
-        boxShadow: "10 6px 15px rgba(0, 0, 0, 0.9)",
+        boxShadow: "2px 3px 6px 6px rgba(0, 0, 0, 0.2)",
       }}
     >
       <div className="flex justify-between items-center h-[50px]">
@@ -53,6 +53,14 @@ export const Treatment = ({
                 src={icon}
                 alt={"service icon"}
                 className="object-contain w-5 h-5 aspect-auto"
+                // style={{
+                //   filter: `${
+                //     mode === "dark" ? "brightness(1)" : "grayscale(100%)"
+                //   }`,
+                // }}
+                // filter={`${
+                //   mode === "dark" ? "brightness(1)" : "grayscale(100%)"
+                // }`}
               />
             </div>
           </div>

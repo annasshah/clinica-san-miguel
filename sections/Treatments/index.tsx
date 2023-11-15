@@ -11,7 +11,7 @@ import {
   ultrasound_icon,
   weight_loss,
   weight_loss_icon,
-} from "@/assets";
+} from "@/assets/images";
 import { Treatment } from "@/components";
 
 export const Treatments = () => {
