@@ -73,6 +73,20 @@ import {
   vitamin_B12,
 } from "./additionalServices";
 
+// Special Posters
+import {
+  Blue_and_Red_Health_Icons_Medical_Conference_Poster,
+  consulta_poster,
+  Grey_Modern_Best_Medical_Service_Poster,
+  immigration_medical_exam_poster,
+} from "./specials";
+
+// covers
+import { career_cover } from "./cover";
+
+// testimonials
+import { eduardo, jesus, walter } from "./testimonials";
+
 export {
   Logo,
   Arlington,
@@ -125,4 +139,12 @@ export {
   sutures,
   ultrasounds,
   vitamin_B12,
+  Blue_and_Red_Health_Icons_Medical_Conference_Poster,
+  consulta_poster,
+  Grey_Modern_Best_Medical_Service_Poster,
+  immigration_medical_exam_poster,
+  career_cover,
+  eduardo,
+  jesus,
+  walter,
 };

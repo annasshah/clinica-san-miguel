@@ -19,9 +19,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        // 👇 Add CSS variables
         inter: ["var(--font-inter)", "sans-serif"],
-        antipasto: ["var(--font-antipasto)", "sans-serif"],
+        antipasto: ["Antipasto Pro Medium", "sans-serif"],
       },
     },
     screens: {

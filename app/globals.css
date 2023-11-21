@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Antipasto Pro Medium";
+  src: url("/fonts/antipasto/AntipastoPro-Medium_trial.ttf") format("truetype");
+  font-weight: 400; /* Normal */
+  font-style: normal;
+}
+
+.font-antipasto {
+  font-family: "Antipasto Pro Medium", sans-serif !important;
+}
+
 /* Slick Slider */
 .slick-slide > div {
   display: grid;

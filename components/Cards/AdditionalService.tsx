@@ -17,7 +17,7 @@ export const AdditionalService = ({
       >
         <Image
           src={image}
-          alt={"additional service image"}
+          alt="additional service image"
           className="w-full h-full object-cover rounded-[10px]"
         />
       </div>

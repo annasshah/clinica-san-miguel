@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
-import antipasto from "./fonts";
+// import antipasto from "./fonts";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${antipasto.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body className="font-inter bg-[#F8F5F0]">
         <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[14px] text-[#F8F5F0]">
           Select language from the dropdown on the right corner{" "}
