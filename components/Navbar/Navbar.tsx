@@ -12,28 +12,25 @@ import { Logo, USA_flag } from "@/assets/images";
 
 export const Navbar = () => {
   const navLinks = [
-    { id: 1, heading: "Home", route: "" },
-    { id: 2, heading: "About Us", route: "" },
+    { id: 1, heading: "Home", route: "/" },
+    { id: 2, heading: "About Us", route: "/about" },
     {
       id: 3,
       heading: "Services",
-      route: "",
+      route: "/services",
       dropDownOptions: [
         { id: 1, heading: "Service 1", route: "" },
         { id: 2, heading: "Service 2", route: "" },
       ],
     },
     { id: 4, heading: "Blogs", route: "" },
-    { id: 5, heading: "Testimonial", route: "" },
-    { id: 6, heading: "Contact", route: "" },
+    { id: 5, heading: "Testimonial", route: "/testimonials" },
+    { id: 6, heading: "Contact", route: "/career" },
     {
       id: 7,
       heading: "More",
       route: "",
-      dropDownOptions: [
-        { id: 1, heading: "Option 1", route: "" },
-        { id: 2, heading: "Option 2", route: "" },
-      ],
+      dropDownOptions: [{ id: 1, heading: "Special", route: "/special" }],
     },
   ];
 
@@ -44,7 +41,7 @@ export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   const styles = {
-    text: "list-none lg:text-[16px] xl:text-[20px] text-primary",
+    text: "list-none lg:text-[16px] xl:text-[20px] text-primary cursor-pointer",
   };
 
   const toggleDropdown = (index: number) => {

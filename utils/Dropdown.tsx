@@ -1,24 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 interface Option {
   id: number;
   heading: string;
   icon?: string; // Make the icon property optional
-  route?: string | undefined;
+  route?: string; // Make route optional
 }
 
 export const Dropdown = ({ options }: { options: Option[] }) => {
-  const router = useRouter();
-
-  const handleDropdownItem = (route: string | undefined) => {
-    if (route) {
-      router.push(route);
-    } else {
-    }
-  };
+  // const router = useRouter();
 
   return (
     <div className="absolute rounded-[10px] flex flex-col justify-center items-center bg-[#ffffff] shadow-md">
@@ -32,12 +26,28 @@ export const Dropdown = ({ options }: { options: Option[] }) => {
               ? "rounded-t-[10px]"
               : ""
           } flex justify-evenly items-center w-full p-2 hover:cursor-pointer hover:bg-[#969696]`}
-          onClick={() => handleDropdownItem(option.route)}
         >
-          {option.icon && (
-            <Image src={option.icon} alt={`Icon for ${option.heading}`} />
+          {option.route !== undefined ? (
+            <Link href={option.route}>
+              <>
+                {option.icon && (
+                  <Image src={option.icon} alt={`Icon for ${option.heading}`} />
+                )}
+                <span className="text-[16px] text-[#000000]">
+                  {option.heading}
+                </span>
+              </>
+            </Link>
+          ) : (
+            <>
+              {option.icon && (
+                <Image src={option.icon} alt={`Icon for ${option.heading}`} />
+              )}
+              <span className="text-[16px] text-[#000000]">
+                {option.heading}
+              </span>
+            </>
           )}
-          <span className="text-[16px] text-[#000000]">{option.heading}</span>
         </div>
       ))}
     </div>

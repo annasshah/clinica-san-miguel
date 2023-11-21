@@ -1,6 +1,6 @@
 "use client";
 
-import { Commas } from "@/assets/images";
+import { OpeningCommas } from "@/assets/images";
 
 import Image from "next/image";
 
@@ -19,7 +19,7 @@ export const Testimonial = ({
     <article className="w-[254px] flex flex-col gap-4 items-start">
       <div>
         <Image
-          src={Commas}
+          src={OpeningCommas}
           alt={"Commas"}
           className="w-[22px] aspect-auto object-contain"
         />

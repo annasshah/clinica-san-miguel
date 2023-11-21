@@ -3,7 +3,7 @@ import { Button } from "./Button";
 import { IconButton } from "./IconButton";
 import { OutlinedButton } from "./OutlinedButton";
 import { SampleNextArrow, SamplePrevArrow } from "./SliderArrow";
-// import { settings } from "./SliderSetting";
+import { Divider } from "./Divider";
 
 export {
   Dropdown,
@@ -12,5 +12,5 @@ export {
   IconButton,
   SampleNextArrow,
   SamplePrevArrow,
-  //   settings,
+  Divider,
 };

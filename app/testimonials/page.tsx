@@ -85,7 +85,7 @@ const Testimonials = () => {
         </article>
       </section>
 
-      <section className="flex flex-col gap-6 justify-center items-center">
+      <section className="flex flex-col gap-10 py-[5%] justify-center items-center">
         {testimonials.map((item) => (
           <ExpandedTestimonial
             comment={item.comment}

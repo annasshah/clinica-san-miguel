@@ -11,8 +11,12 @@ import Pasadena from "./locations/pasadena.png";
 import SanAntonio from "./locations/san-antonio.png";
 
 // icons
-import Commas from "./icons/invertedCommas.png";
+import OpeningCommas from "./icons/OpeningCommas.png";
+import ClosingCommas from "./icons/ClosingCommas.png";
 import heart_monitor from "./icons/heart_monitor.png";
+import earth_care from "./icons/earth_care.png";
+import heart_with_pulse from "./icons/heart_with_pulse.png";
+import journey from "./icons/journey.png";
 
 // Flags
 import USA_flag from "./icons/flags/USA.png";
@@ -82,7 +86,7 @@ import {
 } from "./specials";
 
 // covers
-import { career_cover } from "./cover";
+import { career_cover, about_cover } from "./cover";
 
 // testimonials
 import { eduardo, jesus, walter } from "./testimonials";
@@ -98,7 +102,8 @@ export {
   SanAntonio,
   USA_flag,
   doctor_portriat,
-  Commas,
+  ClosingCommas,
+  OpeningCommas,
   about,
   animated_team,
   breast_cancer_awareness,
@@ -144,7 +149,11 @@ export {
   Grey_Modern_Best_Medical_Service_Poster,
   immigration_medical_exam_poster,
   career_cover,
+  about_cover,
   eduardo,
   jesus,
   walter,
+  earth_care,
+  heart_with_pulse,
+  journey,
 };
