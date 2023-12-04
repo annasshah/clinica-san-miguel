@@ -76,12 +76,10 @@ export const Services = () => {
   return (
     <section className="flex flex-col gap-6 my-10">
       <div className="flex flex-col justify-center items-center">
-        <p className="text-[20px] text-[#19192C] font-antipasto">
-          what we offer
-        </p>
-        <h1 className="text-[70px] text-[#C1001F] font-antipasto">services</h1>
+        <p className="text-[20px] text-[#19192C] font-poppins">what we offer</p>
+        <h1 className="text-[70px] text-[#C1001F] font-poppins">services</h1>
       </div>
-      <article className="w-[70vw]   xl:w-[80vw] mobile:w-[99vw] block justify-center h-auto mx-auto my-10">
+      <article className="w-[70vw] xl:w-[80vw] mobile:w-[99vw] block justify-center h-auto mx-auto my-10">
         <Slider ref={slider} {...settings}>
           {services.map((service) => (
             <CompactService

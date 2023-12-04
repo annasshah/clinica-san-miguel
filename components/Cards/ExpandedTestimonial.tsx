@@ -34,10 +34,10 @@ export const ExpandedTestimonial = ({
           />
         </div>
         <div className="flex flex-col items-center">
-          <h1 className="text-[20px] uppercase text-[#C1001F] font-antipasto">
+          <h1 className="text-[20px] uppercase text-[#C1001F] font-poppins">
             {name}
           </h1>
-          <p className="text-center text-[16px] text-[#3D3D3C] font-antipasto">
+          <p className="text-center text-[16px] text-[#3D3D3C] font-poppins">
             Submitted on
             <br />
             {postDate}
@@ -53,10 +53,10 @@ export const ExpandedTestimonial = ({
               className="w-[22px] aspect-auto object-contain"
             />
           </div>
-          <h3 className="text-[20px] text-center text-[#C1001F] font-antipasto font-bold">
+          <h3 className="text-[20px] text-center text-[#C1001F] font-poppins font-bold">
             &quot;{title}&quot;
           </h3>
-          <p className="text-[18px] font-[700] w-[500px] font-antipasto">
+          <p className="text-[18px] font-[700] w-[500px] font-poppins">
             {comment}
           </p>
           <div className="absolute bottom-0 right-0">

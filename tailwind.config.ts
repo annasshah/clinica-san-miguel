@@ -21,6 +21,7 @@ const config: Config = {
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
         antipasto: ["Antipasto Pro Medium", "sans-serif"],
+        poppins: ["var(--font-poppins)", "sans-serif"],
       },
     },
     screens: {
@@ -29,6 +30,7 @@ const config: Config = {
       tablet: "916px",
       md: "760px",
       sm: "640px",
+      xsm: "550px",
     },
   },
   plugins: [],

@@ -6,6 +6,7 @@ import { CommunityMission } from "./CommunityMission";
 import { AboutSection } from "./About";
 import { Treatments } from "./Treatments";
 import { Services } from "./Services";
+import { Blog } from "./Blog";
 
 export {
   Testimonials,
@@ -16,4 +17,5 @@ export {
   AboutSection,
   Treatments,
   Services,
+  Blog,
 };

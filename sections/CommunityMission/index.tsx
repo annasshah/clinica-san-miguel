@@ -2,6 +2,7 @@ import { MdOutlineCenterFocusWeak } from "react-icons/md";
 import { BiTargetLock } from "react-icons/bi";
 import { FaWalking } from "react-icons/fa";
 import { Mission } from "@/components";
+import { styles } from "@/app/styles";
 
 export const CommunityMission = () => {
   const missionList = [
@@ -47,13 +48,13 @@ export const CommunityMission = () => {
   ];
 
   return (
-    <section className="flex w-full flex-col items-center bg-[#19192C] px-[5%] py-[4%]">
-      <h3 className="text-[25px] text-[#F8F5F0] leading-5">Our community</h3>
-      <h1 className="text-[#C1001F] text-center text-[70px] leading-[70px] font-bold">
-        mission
-      </h1>
-      <div className="w-[80%] h-1 bg-white rounded-full my-[3%]"></div>
-      <div className="flex flex-wrap justify-center items-center gap-7 ">
+    <section className="flex w-full flex-col items-center bg-[#19192C] py-[4%]">
+      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>mission</h1>
+      <h3 className={`${styles.sectionSubText} text-[#F8F5F0]`}>
+        Our community
+      </h3>
+      <div className="w-full md:w-[80%] h-1 bg-white rounded-full my-[3%]"></div>
+      <div className="flex flex-wrap justify-center items-center gap-7 lg:w-[80%]">
         {missionList.map((item) => (
           <Mission
             key={item.id}

@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
+import { FaArrowRight } from "react-icons/fa6";
+
 export const About = ({
   image,
   heading,
@@ -32,14 +34,14 @@ export const About = ({
   }, [firstDivRef, secondDivRef]);
 
   return (
-    <article className="w-[60vw] flex items-center">
+    <article className="w-[100%] flex flex-col lg:flex-row justify-center items-center">
       <div
-        ref={firstDivRef}
+        // ref={firstDivRef}
         style={{
-          height: `${firstDivHeight}px`,
+          // height: `${firstDivHeight}px`,
           boxShadow: "5px 0 5px rgba(0, 0, 0, 0.8)", // Adjust the values as needed
         }}
-        className="w-[40%] bg-[#3D3D3C] flex justify-center border-0 items-center rounded-[10px] z-20"
+        className="w-[320px] sm:w-[350px] md:w-[400px] h-[270px] sm:h-[300px] md:h-[350px] bg-[#3D3D3C] flex justify-center border-0 items-center rounded-[10px] z-20"
       >
         <Image
           src={image}
@@ -48,16 +50,22 @@ export const About = ({
         />
       </div>
       <div
-        ref={secondDivRef}
-        style={{ height: `${secondDivHeight}px` }}
-        className="w-[60%] rounded-[10px] flex flex-col justify-center bg-[#3D3D3C] p-5 ml-[-70px] pl-[80px] z-10"
+        // ref={secondDivRef}
+        // style={{ height: `${secondDivHeight}px` }}
+        className="w-[310px] h-[360px] mt-[-30px] pt-[40px] lg:pt-5 lg:mt-0 sm:w-[345px] md:w-[395px] lg:w-[450px] md:h-[350px] rounded-[10px] flex flex-col justify-center items-center lg:items-start gap-3 bg-[#3D3D3C] p-5 z-10"
       >
-        <h1 className="text-[#ffffff] font-antipasto text-[3vw] text-left">
+        <h1 className="text-[#ffffff] font-poppins hidden lg:flex lg:text-[40px] text-left">
           {heading}
         </h1>
-        <p className="text-[#ACACAC] font-inter text-[16px] text-left">
+        <p className="text-[#ACACAC] h-[185px] lg:h-[150px] overflow-auto font-inter text-[18px] lg:text-[20px] text-center lg:text-left">
           {content}
         </p>
+        <button className="text-[#ACACAC] font-inter text-[16px] flex items-center gap-2 text-left">
+          more info{" "}
+          <div className="text-[#ACACAC] font-inter text-[12px] p-[2px] rounded-full border border-[#ACACAC]">
+            <FaArrowRight />
+          </div>
+        </button>
       </div>
     </article>
   );

@@ -11,7 +11,7 @@ const QuestionAndAnswer = [
     id: 1,
     type: "question",
     content: (
-      <h1 className="text-[60px] font-antipasto font-bold text-[#3D3D3C]">
+      <h1 className="text-[60px] font-poppins font-bold text-[#3D3D3C]">
         What are ultrasounds?
       </h1>
     ),
@@ -20,7 +20,7 @@ const QuestionAndAnswer = [
     id: 2,
     type: "answer",
     content: (
-      <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+      <p className="text-[25px] text-[#3D3D3C] font-poppins">
         Ultrasounds are a type of imaging that uses sound waves to create
         “pictures” of structures within your body. This technology uses a
         handheld transducer to direct high-frequency sound waves into your body.
@@ -35,7 +35,7 @@ const QuestionAndAnswer = [
     id: 3,
     type: "question",
     content: (
-      <h1 className="text-[60px] font-antipasto font-bold text-[#3D3D3C]">
+      <h1 className="text-[60px] font-poppins font-bold text-[#3D3D3C]">
         How are ultrasounds used in medical care?
       </h1>
     ),
@@ -45,7 +45,7 @@ const QuestionAndAnswer = [
     type: "answer",
     content: (
       <div className="flex flex-col gap-3">
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           You may be familiar with ultrasounds performed during pregnancy. The
           imaging created during a pregnancy ultrasound helps practitioners
           check a baby’s development and identify potential problems in the
@@ -53,10 +53,10 @@ const QuestionAndAnswer = [
         </p>
 
         <div>
-          <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+          <p className="text-[25px] text-[#3D3D3C] font-poppins">
             Additional uses for medical ultrasounds include:
           </p>
-          <ul className="text-[25px] list-disc text-[#3D3D3C] font-antipasto">
+          <ul className="text-[25px] list-disc text-[#3D3D3C] font-poppins">
             <li>Examining a breast lump</li>
             <li>Checking your thyroid gland</li>
             <li>Evaluating blood flow</li>
@@ -65,7 +65,7 @@ const QuestionAndAnswer = [
           </ul>
         </div>
 
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           These are just some of the potential medical uses for ultrasound
           technology. If your physician feels that this type of imaging is a
           good fit for your needs, they explain the role ultrasounds can play in
@@ -78,7 +78,7 @@ const QuestionAndAnswer = [
     id: 5,
     type: "question",
     content: (
-      <h1 className="text-[60px] font-antipasto font-bold text-[#3D3D3C]">
+      <h1 className="text-[60px] font-poppins font-bold text-[#3D3D3C]">
         What is the process for getting an ultrasound?
       </h1>
     ),
@@ -88,29 +88,29 @@ const QuestionAndAnswer = [
     type: "answer",
     content: (
       <div className="flex flex-col gap-3">
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           One of the reasons ultrasounds are used so frequently is that they’re
           safe, effective, and painless. On the day of your ultrasound, there’s
           no need for any form of anesthesia.
         </p>
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           Depending on the area being examined, you may be asked to refrain from
           eating or drinking for a period of time prior to your visit. You might
           also be asked to drink a lot of water to enhance bladder imaging.
         </p>
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           Most ultrasounds are performed using a handheld transducer that is
           moved across the surface of your skin. Some types use a probe inserted
           into your vagina or anus to create the required imaging.
         </p>
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           For external ultrasounds, the practitioner applies a clear gel to your
           skin to help the transducer glide over the surface of your skin and to
           enhance sound wave transmission. Depending on the area your doctor is
           attempting to view, you might need to alter your position during the
           ultrasound. The entire process usually takes less than 30 minutes.
         </p>
-        <p className="text-[25px] text-[#3D3D3C] font-antipasto">
+        <p className="text-[25px] text-[#3D3D3C] font-poppins">
           The imaging created during an ultrasound is transmitted onto an
           external screen. Your practitioner can see those images as the
           ultrasound is being performed, and can determine if additional
@@ -128,7 +128,7 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
   return (
     <main>
       <section className="flex flex-col justify-center items-center gap-20 mb-14">
-        <h1 className="text-[70px] text-[#C1001F] font-antipasto">
+        <h1 className="text-[70px] text-[#C1001F] font-poppins">
           {params.slug}
         </h1>
 
@@ -141,7 +141,7 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
 
       <section className="flex flex-col items-center gap-5 justify-center w-full">
         <article className="w-[80%] md:h-[80px] lg:h-[134px] flex items-center justify-center bg-[#3D3D3C] rounded-[10px]">
-          <h1 className="md:text-[30px] lg:text-[60px] text-[#F8F5F0] font-antipasto">
+          <h1 className="md:text-[30px] lg:text-[60px] text-[#F8F5F0] font-poppins">
             General Consultation
           </h1>
         </article>
@@ -160,7 +160,7 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
               }}
             >
               <h1
-                className="text-[200px] font-antipasto"
+                className="text-[200px] font-poppins"
                 style={{
                   color: `${item.type === "question" ? "#3D3D3C" : "#C1001F"}`,
                 }}

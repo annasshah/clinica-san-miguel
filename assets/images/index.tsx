@@ -91,6 +91,8 @@ import { career_cover, about_cover } from "./cover";
 // testimonials
 import { eduardo, jesus, walter } from "./testimonials";
 
+import { direction } from "./icons";
+
 export {
   Logo,
   Arlington,
@@ -156,4 +158,5 @@ export {
   earth_care,
   heart_with_pulse,
   journey,
+  direction,
 };

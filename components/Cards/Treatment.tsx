@@ -36,7 +36,7 @@ export const Treatment = ({
 
   return (
     <article
-      className={`flex flex-col justify-evenly p-4 w-[310px] h-[450px] rounded-[10px] shadow-lg`}
+      className={`flex flex-col justify-evenly p-4 m-3 w-[310px] h-[450px] rounded-[10px] shadow-lg`}
       style={{
         backgroundColor: `${theme.backgroundColor}`,
         boxShadow: "2px 3px 6px 6px rgba(0, 0, 0, 0.2)",
@@ -53,19 +53,17 @@ export const Treatment = ({
                 src={icon}
                 alt={"service icon"}
                 className="object-contain w-5 h-5 aspect-auto"
-                // style={{
-                //   filter: `${
-                //     mode === "dark" ? "brightness(1)" : "grayscale(100%)"
-                //   }`,
-                // }}
-                // filter={`${
-                //   mode === "dark" ? "brightness(1)" : "grayscale(100%)"
-                // }`}
+                style={{
+                  // filter: `hue-rotate(${
+                  //   mode === "dark" ? "0deg" : "180deg" // Rotate 180 degrees for dark mode
+                  // })`,
+                  color: mode === "dark" ? "#F8F5F0" : "#3D3D3C",
+                }}
               />
             </div>
           </div>
           <h1
-            className="font-semibold font-antipasto text-[25px] capitalize"
+            className="font-semibold font-poppins text-[25px] capitalize"
             style={{ color: `${theme.textColor}` }}
           >
             {heading}
@@ -99,7 +97,7 @@ export const Treatment = ({
         </p>
       </div>
       <div className="flex gap-2 items-center">
-        <p className="text-[20px] font-antipasto text-[#C1001F] lowercase">
+        <p className="text-[20px] font-poppins text-[#C1001F] lowercase">
           more info
         </p>
         <div className="border-[2px] border-[#C1001F] rounded-full w-[25px] h-[25px] text-[12px] text-[#C1001F] flex justify-center items-center">

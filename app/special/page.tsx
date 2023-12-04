@@ -36,10 +36,10 @@ const Special = () => {
     <main>
       <section className="flex flex-col justify-center items-center gap-10">
         <div className="flex flex-col gap-1 justify-center items-center">
-          <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-antipasto">
+          <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-poppins">
             Specials
           </h1>
-          <h1 className="text-[70px] text-[#3D3D3C] leading-[70px] font-antipasto">
+          <h1 className="text-[70px] text-[#3D3D3C] leading-[70px] font-poppins">
             Summer Specials
           </h1>
         </div>
@@ -50,7 +50,7 @@ const Special = () => {
               className="flex flex-col gap-3 items-center justify-center"
               key={poster.id}
             >
-              <h2 className="text-[48px] text-[#ffffff] font-antipasto">
+              <h2 className="text-[48px] text-[#ffffff] font-poppins">
                 {poster.heading}
               </h2>
               <div>

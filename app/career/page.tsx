@@ -30,7 +30,7 @@ const Career = () => {
     <main>
       <section className="flex flex-col relative w-full gap-10">
         <div className="flex flex-col gap-1 justify-center items-center">
-          <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-antipasto">
+          <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-poppins">
             Career
           </h1>
         </div>
@@ -49,23 +49,23 @@ const Career = () => {
 
         <article className="flex flex-col gap-4 w-full items-center">
           <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className="text-[70px] text-[#3D3D3C] leading-[70px] font-antipasto">
+            <h1 className="text-[70px] text-[#3D3D3C] leading-[70px] font-poppins">
               Join Our Team!
             </h1>
-            <p className="text-[25px] text-[#000000] leading-[25px] font-antipasto">
+            <p className="text-[25px] text-[#000000] leading-[25px] font-poppins">
               Thanks for your interest in job opportunities at Clinica San
               Miguel
             </p>
           </div>
 
           <div className="flex flex-col items-start gap-2">
-            <p className="text-[25px] text-[#000000] font-antipasto">
+            <p className="text-[25px] text-[#000000] font-poppins">
               Current Opportunities:
             </p>
             <ul className="flex flex-col items-start">
               {opportunities.map((item, index) => (
                 <li
-                  className="list-disc text-[20px] text-[#000000] font-antipasto"
+                  className="list-disc text-[20px] text-[#000000] font-poppins"
                   key={index}
                 >
                   {item}

@@ -47,7 +47,7 @@ const Testimonials = () => {
   return (
     <main className="flex flex-col gap-6 justify-center items-center">
       <section className="flex flex-col justify-center items-center gap-7">
-        <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-antipasto">
+        <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-poppins">
           Testimonials & Reviews
         </h1>
         <article className="flex flex-col gap-20 md:flex-row w-full justify-center items-center">

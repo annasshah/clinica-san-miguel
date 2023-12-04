@@ -9,12 +9,12 @@ const AdditionalServices = () => {
     <main>
       <section className="flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-[70px] text-[#C1001F] font-antipasto">
+          <h1 className="text-[70px] text-[#C1001F] font-poppins">
             additional services
           </h1>
         </div>
 
-        <article className="h-[140px] w-full font-antipasto bg-[#19192C] flex justify-center items-center text-[20px] text-[#F8F5F0]">
+        <article className="h-[140px] w-full font-poppins bg-[#19192C] flex justify-center items-center text-[20px] text-[#F8F5F0]">
           Our highly qualified staff will assist you quickly and without an
           appointment. Come directly to our facilities. We speak English and
           Spanish.

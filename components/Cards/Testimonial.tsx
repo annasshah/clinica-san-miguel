@@ -16,7 +16,7 @@ export const Testimonial = ({
   ratings: number;
 }) => {
   return (
-    <article className="w-[254px] flex flex-col gap-4 items-start">
+    <article className="w-[254px] h-[218px] bg-[#19192C]  p-3 rounded-[10px] flex flex-col gap-4 items-start">
       <div>
         <Image
           src={OpeningCommas}
@@ -24,12 +24,12 @@ export const Testimonial = ({
           className="w-[22px] aspect-auto object-contain"
         />
       </div>
-      <p className="text-[18px] font-[700] h-[120px] font-antipasto">
+      <p className="text-[16px] text-[#F8F5F0] overflow-auto h-[100px] font-[700] font-poppins">
         &quot;{comment}&quot;
       </p>
 
       <div className="flex flex-col">
-        <p className="text-[11.7px] font-inter">{author}</p>
+        <p className="text-[11.7px] font-inter text-[#F8F5F0]">{author}</p>
 
         <StarRatings
           rating={ratings}

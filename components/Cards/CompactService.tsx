@@ -30,7 +30,7 @@ export const CompactService = ({
 
   return (
     <article
-      className="w-[330px] h-[330px] m-5 rounded-[10px] flex flex-col justify-evenly p-5 py-14"
+      className="w-[300px] h-[300px] m-5 rounded-[10px] flex flex-col gap-3 justify-evenly p-5 py-14"
       style={{
         backgroundColor: `${theme.backgroundColor}`,
         boxShadow: "2px 3px 6px 6px rgba(0, 0, 0, 0.2)",
@@ -47,13 +47,13 @@ export const CompactService = ({
           </div>
         </div>
         <h1
-          className="font-semibold font-antipasto text-[25px] capitalize"
+          className="font-semibold font-poppins text-[18px] capitalize"
           style={{ color: `${theme.textColor}` }}
         >
           {heading}
         </h1>
       </div>
-      <div className="overflow-y-auto">
+      <div className="overflow-y-auto h-[240px]">
         <p
           className="text-[16px] font-inter text-left"
           style={{ color: `${theme.textColor}` }}

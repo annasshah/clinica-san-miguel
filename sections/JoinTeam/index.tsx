@@ -1,3 +1,4 @@
+import { styles } from "@/app/styles";
 import {
   animated_team,
   breast_cancer_awareness,
@@ -34,31 +35,35 @@ export const JoinTeam = () => {
     },
   ];
   return (
-    <section className="flex w-full flex-col items-center gap-20 my-14">
-      <article className="flex flex-col justify-center items-center gap-5">
-        <h1 className="text-[#C1001F] font-antipasto text-center text-[70px] leading-[70px] font-bold">
-          Join our growing team!
-        </h1>
-        <p className="text-center font-antipasto text-[#000000] text-[25px] px-[10%]">
-          We love what we do and we do it with passion. We value the
-          experimentation of the message and smart incentives.
-        </p>
-        <OutlinedButton
-          text={"See Current Openings"}
-          textColor={"#C1001F"}
-          size={{
-            width: "346px",
-            height: "71px",
-          }}
-          route={""}
-          borderColor={"#C1001F"}
-        />
-      </article>
-      <article>
-        <Image src={animated_team} alt={""} className="w-[50vw] aspect-auto" />
+    <section className="flex w-full flex-col items-center gap-20 my-14  md:px-[10%]">
+      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+        Join our growing team!
+      </h1>
+      <article className="flex flex-col md:flex-row w-full justify-center items-center gap-5">
+        <article className="w-full md:w-1/2 px-[5%] md:px-0">
+          <Image src={animated_team} alt={""} className="w-full aspect-auto" />
+        </article>
+        <div className="flex flex-col justify-center items-center md:items-start md:justify-start gap-5 w-full px-[5%] md:px-0 md:w-1/2">
+          <p
+            className={`${styles.sectionSubText} md:text-start text-[#000000]`}
+          >
+            We love what we do and we do it with passion. We value the
+            experimentation of the message and smart incentives.
+          </p>
+          <OutlinedButton
+            text={"See Current Openings"}
+            textColor={"#C1001F"}
+            size={{
+              width: "250px",
+              height: "71px",
+            }}
+            route={""}
+            borderColor={"#C1001F"}
+          />
+        </div>
       </article>
 
-      <article className="flex flex-wrap gap-7 items-center justify-center">
+      {/* <article className="flex flex-wrap gap-7 items-center justify-center">
         {teams.map((team) => (
           <Team
             image={team.image}
@@ -67,7 +72,7 @@ export const JoinTeam = () => {
             key={team.id}
           />
         ))}
-      </article>
+      </article> */}
     </section>
   );
 };

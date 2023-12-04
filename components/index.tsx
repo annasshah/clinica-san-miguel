@@ -14,6 +14,7 @@ import {
   CompactService,
   AdditionalService,
   ExpandedTestimonial,
+  Location,
 } from "./Cards";
 
 export {
@@ -30,4 +31,5 @@ export {
   AdditionalService,
   Footer,
   ExpandedTestimonial,
+  Location,
 };

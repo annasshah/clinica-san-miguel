@@ -3,6 +3,7 @@
 import { useRef } from "react";
 
 import { Testimonial } from "@/components";
+import { styles } from "@/app/styles";
 import testimonials from "./testimonials.json";
 import { SampleNextArrow, SamplePrevArrow } from "@/utils";
 
@@ -41,16 +42,7 @@ export const Testimonials = ({ headingFlag }: { headingFlag: boolean }) => {
     // ),
     responsive: [
       {
-        breakpoint: 1550,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          // rows: 2,
-          // slidesPerRow: 1,
-        },
-      },
-      {
-        breakpoint: 1350,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -59,7 +51,7 @@ export const Testimonials = ({ headingFlag }: { headingFlag: boolean }) => {
         },
       },
       {
-        breakpoint: 840,
+        breakpoint: 1050,
         settings: {
           // arrows: false,
           slidesToShow: 2,
@@ -69,7 +61,7 @@ export const Testimonials = ({ headingFlag }: { headingFlag: boolean }) => {
         },
       },
       {
-        breakpoint: 425,
+        breakpoint: 704,
         settings: {
           // arrows: false,
           slidesToShow: 1,
@@ -85,12 +77,14 @@ export const Testimonials = ({ headingFlag }: { headingFlag: boolean }) => {
     <>
       <section className="flex flex-col justify-center items-center">
         {headingFlag && (
-          <h1 className="text-[70px] text-[#C1001F] font-antipasto">
-            testinomials
+          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+            Testinomials
           </h1>
         )}
-
-        <div className="w-[70vw] xl:w-[85vw] mobile:w-[99vw] block justify-center h-auto mx-auto my-10">
+        <p className={`${styles.sectionSubText} text-[#19192C] text-center`}>
+          Real Stories, Real Impact: The Voice of Satisfied Clients
+        </p>
+        <div className="w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] xl:w-[70vw] block justify-center h-auto mx-auto my-10">
           <Slider ref={slider} {...settings}>
             {testimonials.map((testimonial) => {
               return (

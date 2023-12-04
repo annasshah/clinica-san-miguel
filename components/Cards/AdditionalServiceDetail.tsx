@@ -22,11 +22,11 @@ export const AdditionalService = ({
         />
       </div>
       <div className="w-[345px] h-[190px] rounded-[10px] bg-[#3D3D3C] mt-[-50px] pt-[55px] p-3 flex flex-col gap-1">
-        <h1 className="text-[25px] font-antipasto text-[#F8F5F0] text-left">
+        <h1 className="text-[25px] font-poppins text-[#F8F5F0] text-left">
           {heading}
         </h1>
         <article>
-          <p className="text-[16px] text-[#F8F5F0] font-antipasto  overflow-y-auto">
+          <p className="text-[16px] text-[#F8F5F0] font-poppins  overflow-y-auto">
             {description}
           </p>
         </article>

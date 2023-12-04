@@ -64,7 +64,7 @@ const About = () => {
       <section className="flex flex-col items-center justify-center gap-32">
         <article className="flex flex-col md:flex-row justify-center items-start w-full gap-20">
           <div className="flex items-start flex-col">
-            <h1 className="text-[50px] text-[#000000] font-antipasto">About</h1>
+            <h1 className="text-[50px] text-[#000000] font-poppins">About</h1>
             <span className="text-[35px] leading-[35px] text-[#C1001F]">
               Clinica San Miguel
             </span>
@@ -85,7 +85,7 @@ const About = () => {
         <article className="flex flex-col md:flex-row justify-center gap-6 items-start w-full">
           <div className="flex items-start flex-col gap-2">
             <Image src={earth_care} className="w-[60px] aspect-auto" alt={""} />
-            <h1 className="text-[50px] leading-[50px] text-[#000000] font-antipasto">
+            <h1 className="text-[50px] leading-[50px] text-[#000000] font-poppins">
               Bilingual Care for
             </h1>
             <span className="text-[35px] leading-[35px] text-[#C1001F]">

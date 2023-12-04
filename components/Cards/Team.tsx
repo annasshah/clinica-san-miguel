@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export const Team = ({
   image,
-  heading,
+  date,
   description,
 }: {
   image: any;
-  heading: string;
+  date: string;
   description: string;
 }) => {
   return (
@@ -14,13 +14,13 @@ export const Team = ({
       <Image
         src={image}
         alt={""}
-        className="w-full h-[179px] aspect-auto object-contain"
+        className="w-full h-[179px] aspect-auto rounded-[10px] object-contain"
       />
       <div
-        className="relative w-full p-3 bg-[#3D3D3C] h-[180px] flex flex-col items-center justify-center"
+        className="relative w-full p-3 bg-transparent flex flex-col items-start justify-center"
         style={{ zIndex: 20 }}
       >
-        <div
+        {/* <div
           className="absolute top-0 left-5 mt-[-25px]"
           style={{
             borderStyle: "solid",
@@ -32,11 +32,11 @@ export const Team = ({
             borderRadius: "10px",
             zIndex: 10,
           }}
-        ></div>
-        <h3 className="text-[#F8F5F0] font-antipasto font-semibold text-[20px] text-left">
-          {heading}
+        ></div> */}
+        <h3 className="text-[#AAAAAA] font-poppins text-[14px] text-left">
+          {date}
         </h3>
-        <p className="text-[#F8F5F0] font-inter text-[14px] text-left">
+        <p className="text-[#121212] font-poppins font-semibold text-[18px] text-left">
           {description}
         </p>
       </div>

@@ -1,16 +1,17 @@
 import { CompactService } from "@/components";
 import { Testimonials } from "@/sections";
 import { services } from "../../constants";
+import { styles } from "../styles";
 
 const Services = () => {
   return (
     <main className="flex flex-col gap-5">
-      <section className="flex flex-col justify-center items-center">
+      <section className="flex flex-col justify-center items-center my-10">
         <div className="flex flex-col justify-center items-center">
-          <p className="text-[16px] text-[#19192C] font-antipasto">
+          <p className={`${styles.sectionSubText} text-[#19192C]`}>
             what we offer
           </p>
-          <h1 className="text-[70px] text-[#C1001F] font-antipasto">
+          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
             services
           </h1>
         </div>
