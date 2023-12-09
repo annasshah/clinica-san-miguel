@@ -13,7 +13,7 @@ export const Hero = () => {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
   return (
     <section className=" flex flex-col gap-20 justify-center md:justify-start items-center md:items-start">
-      <article className="flex flex-col mt-[20%] sm:mt-[5%] md:mt-0 md:flex-row w-[95%] lg:w-[100%] h-[70vh] justify-center items-center gap-10">
+      <article className="flex flex-col mt-[10%] sm:mt-[5%] md:mt-10 md:flex-row w-[95%] lg:w-[100%] justify-center items-center gap-10">
         <div className="flex flex-col items-end justify-end gap-5 w-auto order-2 md:order-1 md:w-1/2">
           {/* <div className="flex flex-col gap-3 justify-start items-start">
             <h2 className="text-[#C1001F] font-poppins text-[25px] font-normal">

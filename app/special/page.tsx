@@ -8,6 +8,7 @@ import {
 } from "@/assets/images";
 import { Locations, Services, Testimonials } from "@/sections";
 import Image from "next/image";
+import { styles } from "../styles";
 
 const Special = () => {
   const special_posters = [
@@ -36,28 +37,28 @@ const Special = () => {
     <main>
       <section className="flex flex-col justify-center items-center gap-10">
         <div className="flex flex-col gap-1 justify-center items-center">
-          <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-poppins">
+          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
             Specials
           </h1>
-          <h1 className="text-[70px] text-[#3D3D3C] leading-[70px] font-poppins">
+          <h1 className={`${styles.sectionHeadText} text-[#3D3D3C]`}>
             Summer Specials
           </h1>
         </div>
 
-        <article className="bg-[#19192C] rounded-[20px] w-[70vw] h-full p-14 flex flex-col justify-center items-center gap-4">
+        <article className="bg-[#19192C] rounded-[20px] w-[95%] sm:w-[90%] md:w-[85%] lg:w-[70%] h-full p-14 flex flex-col justify-center items-center gap-4">
           {special_posters.map((poster) => (
             <article
               className="flex flex-col gap-3 items-center justify-center"
               key={poster.id}
             >
-              <h2 className="text-[48px] text-[#ffffff] font-poppins">
+              <h2 className="text-[25px] sm:text-[30px] md:text-[40px] lg:text-[48px] text-[#ffffff] text-center font-poppins">
                 {poster.heading}
               </h2>
               <div>
                 <Image
                   src={poster.image}
                   alt={""}
-                  className="rounded-[20px] aspect-auto w-[700px]"
+                  className="rounded-[20px] aspect-auto w-[340px] md:w-[500px] lg:w-[700px]"
                 />
               </div>
             </article>
@@ -65,9 +66,11 @@ const Special = () => {
         </article>
       </section>
 
-      <Services />
+      <div className="w-full flex justify-center">
+        <Services />
+      </div>
       <Locations />
-      <Testimonials headingFlag={true} />
+      <Testimonials headingFlag={true} mode={"light"} />
     </main>
   );
 };

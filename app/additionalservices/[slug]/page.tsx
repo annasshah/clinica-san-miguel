@@ -3,13 +3,14 @@
 import { AdditionalService } from "@/components";
 import { Services, Testimonials } from "@/sections";
 import { additionalServices } from "@/constants";
+import { styles } from "@/app/styles";
 
 const AdditionalServicesDetails = () => {
   return (
     <main>
       <section className="flex flex-col justify-center items-center">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-[70px] text-[#C1001F] font-poppins">
+          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
             additional services
           </h1>
         </div>
@@ -32,8 +33,10 @@ const AdditionalServicesDetails = () => {
         </article>
       </section>
 
-      <Services />
-      <Testimonials headingFlag={true} />
+      <div className="w-full flex justify-center">
+        <Services />
+      </div>
+      <Testimonials headingFlag={true} mode={"light"} />
     </main>
   );
 };

@@ -12,6 +12,7 @@ import {
   high_blood_pressure_icon,
   ultrasound,
   ultrasound_icon,
+  viewAllArrow,
   weight_loss,
   weight_loss_icon,
 } from "@/assets/images";
@@ -21,6 +22,8 @@ import { Treatment } from "@/components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Link from "next/link";
+import Image from "next/image";
 
 export const Treatments = () => {
   const settings = {
@@ -30,7 +33,7 @@ export const Treatments = () => {
     speed: 400,
     autoplay: true,
     autoplaySpeed: 2000,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
     rows: 2,
@@ -52,17 +55,18 @@ export const Treatments = () => {
     //   />
     // ),
     responsive: [
-      // {
-      //   breakpoint: 1400,
-      //   settings: {
-      //     slidesToShow: 3,
-      //     slidesToScroll: 1,
-      //     rows: 2,
-      //     slidesPerRow: 3,
-      //   },
-      // },
       {
-        breakpoint: 800,
+        breakpoint: 1040,
+        settings: {
+          // arrows: false,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          rows: 2,
+          // slidesPerRow: 2,
+        },
+      },
+      {
+        breakpoint: 720,
         settings: {
           // arrows: false,
           slidesToShow: 2,
@@ -142,7 +146,7 @@ export const Treatments = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center gap-10 my-[5%] mx-14">
+    <section className="flex flex-col  justify-center gap-10 my-[5%] mx-14 w-[100vw] md:w-[96vw] lg:w-[95vw] xl:w-[75vw]">
       <article className="flex w-full flex-col gap-5 items-center">
         <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
           top treatments
@@ -152,8 +156,17 @@ export const Treatments = () => {
           Treatments&quot;
         </p>
       </article>
-
-      <div className="w-[95vw] sm:w-[95vw] md:w-[90vw] lg:w-[80vw] xl:w-[75vw] block justify-center h-auto mx-auto my-10">
+      <Link href={"/services"}>
+        <div className="flex justify-end items-end flex-col mr-10">
+          <p className="text-[14px] text-[#626262] font-poppins">View more</p>
+          <Image
+            src={viewAllArrow}
+            alt={"view all arrow icon"}
+            className="w-[75px] aspect-auto"
+          />
+        </div>
+      </Link>
+      <div className="w-[100vw] md:w-[96vw] lg:w-[95vw] xl:w-[75vw] block justify-center h-auto mx-auto my-10">
         <Slider {...settings}>
           {treatments.map((treatment) => (
             <Treatment

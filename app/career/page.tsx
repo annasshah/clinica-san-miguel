@@ -4,21 +4,22 @@ import { career_cover } from "@/assets/images";
 import { Locations, Services, Testimonials } from "@/sections";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+// import { useEffect, useRef, useState } from "react";
+import { styles } from "../styles";
 
 const Career = () => {
-  const [firstDivHeight, setFirstDivHeight] = useState<number>(0);
+  // const [firstDivHeight, setFirstDivHeight] = useState<number>(0);
 
-  const firstDivRef = useRef<HTMLDivElement>(null);
+  // const firstDivRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const currentRef = firstDivRef.current;
-    if (currentRef) {
-      const firstDivWidth = currentRef.offsetWidth;
-      const calculatedFirstDivHeight = (firstDivWidth * 30) / 100;
-      setFirstDivHeight(calculatedFirstDivHeight);
-    }
-  }, [firstDivRef]);
+  // useEffect(() => {
+  //   const currentRef = firstDivRef.current;
+  //   if (currentRef) {
+  //     const firstDivWidth = currentRef.offsetWidth;
+  //     const calculatedFirstDivHeight = (firstDivWidth * 30) / 100;
+  //     setFirstDivHeight(calculatedFirstDivHeight);
+  //   }
+  // }, [firstDivRef]);
 
   const opportunities = [
     "Dental Assistant",
@@ -30,29 +31,27 @@ const Career = () => {
     <main>
       <section className="flex flex-col relative w-full gap-10">
         <div className="flex flex-col gap-1 justify-center items-center">
-          <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-poppins">
-            Career
-          </h1>
+          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>Career</h1>
         </div>
 
         <article
-          ref={firstDivRef}
-          style={{ height: `${firstDivHeight}px` }}
-          className="left-0 top-[20%] w-[80vw] rounded-r-full bg-[#ccc]"
+          style={{ aspectRatio: "2.5 / 1" }}
+          className="left-0 w-[96%] md:w-[90%] lg:w-[85%] xl:w-[80%] rounded-r-full bg-[#ccc]"
         >
           <Image
             src={career_cover}
             alt=""
-            className="w-full h-full object-cover object-center rounded-r-full"
+            style={{ aspectRatio: "2.5 / 1" }}
+            className="bg-cover object-cover w-full object-center rounded-r-full"
           />
         </article>
 
-        <article className="flex flex-col gap-4 w-full items-center">
+        <article className="flex flex-col gap-4 w-full items-center px-7">
           <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className="text-[70px] text-[#3D3D3C] leading-[70px] font-poppins">
+            <h1 className={`${styles.sectionHeadText} text-[#3D3D3C]`}>
               Join Our Team!
             </h1>
-            <p className="text-[25px] text-[#000000] leading-[25px] font-poppins">
+            <p className={`${styles.sectionSubText} text-[#000000]`}>
               Thanks for your interest in job opportunities at Clinica San
               Miguel
             </p>
@@ -65,7 +64,7 @@ const Career = () => {
             <ul className="flex flex-col items-start">
               {opportunities.map((item, index) => (
                 <li
-                  className="list-disc text-[20px] text-[#000000] font-poppins"
+                  className="list-disc text-[16px] xl:text-[20px] text-[#000000] font-poppins"
                   key={index}
                 >
                   {item}
@@ -75,10 +74,11 @@ const Career = () => {
           </div>
         </article>
       </section>
-
-      <Services />
+      <div className="w-full flex justify-center">
+        <Services />
+      </div>
       <Locations />
-      <Testimonials headingFlag={true} />
+      <Testimonials headingFlag={true} mode={"light"} />
     </main>
   );
 };

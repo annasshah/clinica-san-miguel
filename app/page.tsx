@@ -8,13 +8,15 @@ import {
   Testimonials,
   Treatments,
 } from "@/sections";
-import Image from "next/image";
+// import Image from "next/image";
+
+// import { supabase } from "@/supabaseClient";
 
 export default function Home() {
   return (
     <main className="flex flex-col justify-center items-center overflow-x-hidden gap-10">
       <Hero />
-      <Testimonials headingFlag={true} />
+      <Testimonials headingFlag={true} mode={"dark"} />
       <CommunityMission />
       <AboutSection />
       <Treatments />

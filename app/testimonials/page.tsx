@@ -5,6 +5,7 @@ import { ExpandedTestimonial } from "@/components";
 import { Button } from "@/utils";
 
 import StarRatings from "react-star-ratings";
+import { styles } from "../styles";
 
 const Testimonials = () => {
   const review_description =
@@ -45,17 +46,17 @@ const Testimonials = () => {
   ];
 
   return (
-    <main className="flex flex-col gap-6 justify-center items-center">
+    <main className="flex flex-col gap-6 justify-center items-center py-5">
       <section className="flex flex-col justify-center items-center gap-7">
-        <h1 className="text-[70px] text-[#C1001F] leading-[70px] font-poppins">
+        <h1 className={`${styles.sectionHeadText} text-[#C1001F] py-3`}>
           Testimonials & Reviews
         </h1>
         <article className="flex flex-col gap-20 md:flex-row w-full justify-center items-center">
-          <div className="flex flex-col items-start gap-3">
-            <div className="text-[60px] md:text-[80px] text-[#3D3D3C]">
+          <div className="flex flex-col items-start md:items-end lg:items-start gap-3">
+            <div className="text-[40px] md:text-[60px] lg:text-[80px] text-[#3D3D3C]">
               {total_ratings}/5
             </div>
-            <div>
+            <div className="hidden lg:block">
               <StarRatings
                 rating={total_ratings}
                 starDimension="45px"
@@ -64,9 +65,18 @@ const Testimonials = () => {
                 starRatedColor="#C1001F"
               />
             </div>
-            <div className="text-[40px] md:text-[60px] text-[#3D3D3C]">
+            <div className="lg:hidden block">
+              <StarRatings
+                rating={total_ratings}
+                starDimension="25px"
+                starSpacing="1px"
+                numberOfStars={5}
+                starRatedColor="#C1001F"
+              />
+            </div>
+            <div className="text-[35px] md:text-[40px] lg:text-[60px] text-[#3D3D3C]">
               {total_reviews}
-              <br /> Total Reviews
+              <br className="hidden lg:block" /> Total Reviews
             </div>
             <Button
               text={"Share Feedback"}
@@ -79,7 +89,7 @@ const Testimonials = () => {
               textColor={"#ffffff"}
             />
           </div>
-          <div className="w-[500px] h-[450px] border-[3px] rounded-[10px] p-7 text-left text-[#3D3D3C] text-[25px] flex items-center">
+          <div className="w-[340px] h-[290px] lg:w-[500px] lg:h-[450px] overflow-y-auto p-4 border-[3px] rounded-[10px] text-left text-[#3D3D3C] text-[16px] md:text-[20px] lg:text-[25px] flex">
             {review_description}
           </div>
         </article>

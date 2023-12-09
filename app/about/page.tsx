@@ -18,11 +18,15 @@ const Expertise = ({
 }) => {
   return (
     <article className="flex flex-col items-center justify-center gap-3">
-      <Image src={image} alt={""} className="w-[100px] aspect-auto" />
-      <h1 className="text-[35px] leading-[35px] text-center text-[#000000] font-bold">
+      <Image
+        src={image}
+        alt={""}
+        className="w-[70px] lg:w-[100px] aspect-auto"
+      />
+      <h1 className="text-[23px] md:text-[30px] lg:text-[35px] leading-[23px] md:leading-[31px] lg:leading-[35px] text-center text-[#000000] font-bold">
         {heading}
       </h1>
-      <p className="text-[24px] leading-[30px] w-[80%] md:w-[70%] text-center text-[#000000]">
+      <p className="text-[18px] lg:text-[24px] leading-[24px] lg:leading-[30px] w-[80%] md:w-[70%] text-center text-[#000000]">
         {description}
       </p>
     </article>
@@ -60,21 +64,23 @@ const About = () => {
   ];
 
   return (
-    <main className="py-[5%] flex flex-col gap-20 px-[20px] items-center justify-center">
-      <section className="flex flex-col items-center justify-center gap-32">
-        <article className="flex flex-col md:flex-row justify-center items-start w-full gap-20">
+    <main className="py-[5%] flex flex-col gap-20 px-2 lg:px-[20px] items-center justify-center">
+      <section className="flex flex-col items-center justify-center gap-10 lg:gap-32">
+        <article className="flex flex-col md:flex-row justify-center items-start w-full gap-5 lg:gap-20">
           <div className="flex items-start flex-col">
-            <h1 className="text-[50px] text-[#000000] font-poppins">About</h1>
-            <span className="text-[35px] leading-[35px] text-[#C1001F]">
+            <h1 className="text-[40px] lg:text-[50px] text-[#000000] font-poppins">
+              About
+            </h1>
+            <span className="text-[25px] lg:text-[35px] leading-[35px] text-[#C1001F]">
               Clinica San Miguel
             </span>
           </div>
-          <p className="w-full md:w-[60%] text-[24px] text-[#000000]">
+          <p className="w-full md:w-[60%] text-[18px] lg:text-[24px] text-[#000000]">
             {aboutus_description}
           </p>
         </article>
 
-        <article className="w-[50%] flex justify-center items-center">
+        <article className="w-[95%] md:w-[75%] lg:w-[50%] flex justify-center items-center">
           <Image
             src={about_cover}
             alt={""}
@@ -85,14 +91,16 @@ const About = () => {
         <article className="flex flex-col md:flex-row justify-center gap-6 items-start w-full">
           <div className="flex items-start flex-col gap-2">
             <Image src={earth_care} className="w-[60px] aspect-auto" alt={""} />
-            <h1 className="text-[50px] leading-[50px] text-[#000000] font-poppins">
+            <h1 className="text-[40px] lg:text-[50px] leading-[40px] lg:leading-[50px] text-[#000000] font-poppins">
               Bilingual Care for
             </h1>
-            <span className="text-[35px] leading-[35px] text-[#C1001F]">
+            <span className="text-[25px] lg:text-[35px] leading-[35px] text-[#C1001F]">
               All Communities
             </span>
           </div>
-          <p className="w-full md:w-[60%] text-[24px]">{whatwedo}</p>
+          <p className="w-full md:w-[60%] text-[18px] lg:text-[24px]">
+            {whatwedo}
+          </p>
         </article>
       </section>
 

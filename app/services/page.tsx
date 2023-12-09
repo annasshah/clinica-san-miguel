@@ -28,7 +28,7 @@ const Services = () => {
         </article>
       </section>
 
-      <Testimonials headingFlag={true} />
+      <Testimonials headingFlag={true} mode={"light"} />
     </main>
   );
 };

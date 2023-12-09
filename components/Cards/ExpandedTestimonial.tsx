@@ -24,9 +24,9 @@ export const ExpandedTestimonial = ({
   postDate: string;
 }) => {
   return (
-    <article className="min-w-[254px] max-[700px] flex gap-7 items-center">
-      <div className="flex flex-col items-center w-[300px] gap-2">
-        <div className="w-[300px] h-[300px] rounded-[115px]">
+    <article className="min-w-[254px] max-[700px] flex flex-col lg:flex-row gap-7 items-center">
+      <div className="flex flex-row lg:flex-col items-center justify-center w-full lg:w-[300px] gap-2">
+        <div className="w-[150px] h-[150px] lg:w-[300px] lg:h-[300px] rounded-[115px]">
           <Image
             src={displayImage}
             alt={""}
@@ -34,17 +34,17 @@ export const ExpandedTestimonial = ({
           />
         </div>
         <div className="flex flex-col items-center">
-          <h1 className="text-[20px] uppercase text-[#C1001F] font-poppins">
+          <h1 className="text-[16px] md:text-[20px] uppercase text-[#C1001F] font-poppins">
             {name}
           </h1>
-          <p className="text-center text-[16px] text-[#3D3D3C] font-poppins">
+          <p className="text-center text-[12px] sm:text-[14px] md:text-[16px] text-[#3D3D3C] font-poppins">
             Submitted on
             <br />
             {postDate}
           </p>
         </div>
       </div>
-      <article className="min-w-[254px] max-[500px] p-5 relative flex flex-col gap-4 items-center">
+      <article className="w-[90%] md:w-[360px] lg:w-[500px] p-1 lg:p-5 relative flex flex-col gap-4 items-center">
         <div className="mb-[5%] relative">
           <div className="absolute top-0 left-0">
             <Image
@@ -53,10 +53,10 @@ export const ExpandedTestimonial = ({
               className="w-[22px] aspect-auto object-contain"
             />
           </div>
-          <h3 className="text-[20px] text-center text-[#C1001F] font-poppins font-bold">
+          <h3 className="text-[17px] lg:text-[20px] pt-5 text-center text-[#C1001F] font-poppins font-bold">
             &quot;{title}&quot;
           </h3>
-          <p className="text-[18px] font-[700] w-[500px] font-poppins">
+          <p className="text-[16px] lg:text-[18px] pb-5 font-[700] w-[100%] md:w-[350px] lg:w-[500px] font-poppins">
             {comment}
           </p>
           <div className="absolute bottom-0 right-0">

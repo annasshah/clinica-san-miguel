@@ -7,6 +7,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useRef } from "react";
+import { styles } from "@/app/styles";
+import Image from "next/image";
+import { viewAllArrow } from "@/assets/images";
+import Link from "next/link";
 
 export const Services = () => {
   const slider = useRef(null);
@@ -74,23 +78,35 @@ export const Services = () => {
     ],
   };
   return (
-    <section className="flex flex-col gap-6 my-10">
+    <section className="flex flex-col relative gap-6 my-10 p-3 w-[100vw] md:w-[90vw] lg:w-[85vw] xl:w-[75vw]">
       <div className="flex flex-col justify-center items-center">
-        <p className="text-[20px] text-[#19192C] font-poppins">what we offer</p>
-        <h1 className="text-[70px] text-[#C1001F] font-poppins">services</h1>
+        <p className={`${styles.sectionSubText} text-[#19192C]`}>
+          what we offer
+        </p>
+        <h1 className={`${styles.sectionHeadText} text-[#C1001F] `}>
+          services
+        </h1>
       </div>
-      <article className="w-[70vw] xl:w-[80vw] mobile:w-[99vw] block justify-center h-auto mx-auto my-10">
-        <Slider ref={slider} {...settings}>
-          {services.map((service) => (
-            <CompactService
-              heading={service.heading}
-              icon={service.icon}
-              description={service.description}
-              mode={service.id % 2 === 0 ? "light" : "dark"}
-              key={service.id}
-            />
-          ))}
-        </Slider>
+      <Link href={"/services"}>
+        <div className="flex justify-end items-end flex-col">
+          <p className="text-[14px] text-[#626262] font-poppins">View more</p>
+          <Image
+            src={viewAllArrow}
+            alt={"view all arrow icon"}
+            className="w-[75px] aspect-auto"
+          />
+        </div>
+      </Link>
+      <article className="flex flex-wrap justify-center h-auto mx-auto ">
+        {services.slice(0, 6).map((service) => (
+          <CompactService
+            heading={service.heading}
+            icon={service.icon}
+            description={service.description}
+            mode={service.id % 2 === 0 ? "light" : "dark"}
+            key={service.id}
+          />
+        ))}
       </article>
     </section>
   );

@@ -12,7 +12,7 @@ export const AdditionalService = ({
   return (
     <article className="relative flex flex-col justify-center items-center">
       <div
-        className="w-[360px]  h-[192px] rounded-[10px] flex z-20 justify-center items-center"
+        className="w-[350px]  h-[182px] rounded-[10px] flex z-20 justify-center items-center"
         style={{ boxShadow: "2px 3px 6px 6px rgba(0, 0, 0, 0.2)" }}
       >
         <Image
@@ -21,13 +21,15 @@ export const AdditionalService = ({
           className="w-full h-full object-cover rounded-[10px]"
         />
       </div>
-      <div className="w-[345px] h-[190px] rounded-[10px] bg-[#3D3D3C] mt-[-50px] pt-[55px] p-3 flex flex-col gap-1">
-        <h1 className="text-[25px] font-poppins text-[#F8F5F0] text-left">
-          {heading}
-        </h1>
-        <p className="text-[16px] text-[#F8F5F0] font-poppins  overflow-y-auto">
-          {description}
-        </p>
+      <div className="w-[335px] h-[180px] rounded-[10px] bg-[#3D3D3C]  mt-[-40px] pt-[45px] p-3">
+        <div className=" flex flex-col gap-2 pb-6 overflow-auto">
+          <h1 className="text-[20px] font-poppins text-[#F8F5F0] text-left">
+            {heading}
+          </h1>
+          <p className="text-[16px] text-[#F8F5F0] font-poppins">
+            {description}
+          </p>
+        </div>
       </div>
     </article>
   );
