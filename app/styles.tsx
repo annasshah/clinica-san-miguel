@@ -1,8 +1,8 @@
 const styles = {
   sectionHeadText:
-    "text-[35px] md:text-[50px] lg:text-[70px] leading-[36px] md:leading-[52px] lg:leading-[72px] font-poppins text-center font-bold",
+    "text-[25px] md:text-[30px] lg:text-[50px] leading-[26px] md:leading-[32px] lg:leading-[52px] font-poppins text-center font-bold",
   sectionSubText:
-    "text-[18px] md:text-[24px] leading-[23px] md:leading-[26px] font-poppins text-center",
+    "text-[17px] md:text-[22px] leading-[20px] md:leading-[23px] font-poppins text-center",
 };
 
 export { styles };

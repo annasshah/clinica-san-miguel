@@ -4,6 +4,9 @@ import { HeroBox } from "./HeroBox/HeroBox";
 import { SearchBox } from "./Search";
 import { ScheduleTreatment } from "./ScheduleTreatment/ScheduleTreatment";
 
+// Forms
+import { Patient, EmergencyContact, Pharmacy, ReferralSource } from "./Forms";
+
 // cards
 import {
   Testimonial,
@@ -32,4 +35,8 @@ export {
   Footer,
   ExpandedTestimonial,
   Location,
+  Patient,
+  EmergencyContact,
+  Pharmacy,
+  ReferralSource,
 };

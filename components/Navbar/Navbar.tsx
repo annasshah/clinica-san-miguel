@@ -41,7 +41,7 @@ export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   const styles = {
-    text: "list-none lg:text-[16px] xl:text-[20px] text-primary cursor-pointer",
+    text: "list-none text-[16px] text-primary cursor-pointer",
   };
 
   const toggleDropdown = (index: number) => {

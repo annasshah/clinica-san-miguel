@@ -91,7 +91,7 @@ import { career_cover, about_cover } from "./cover";
 // testimonials
 import { eduardo, jesus, walter } from "./testimonials";
 
-import { direction, viewAllArrow } from "./icons";
+import { direction, viewAllArrow, form } from "./icons";
 
 export {
   Logo,
@@ -160,4 +160,5 @@ export {
   journey,
   direction,
   viewAllArrow,
+  form,
 };
