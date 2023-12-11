@@ -1,8 +1,12 @@
+import "regenerator-runtime/runtime";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
+import BotProvider from "../context/Context";
+import AiBot from "@/components/AiChatBot/AiBot";
+
 // import antipasto from "./fonts";
 
 const inter = Inter({
@@ -30,14 +34,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-inter bg-[#F8F5F0]">
-        <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
-          Select language from the dropdown on the right corner{" "}
-        </article>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <BotProvider>
+        <body className="font-inter bg-[#F8F5F0] relative">
+          <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
+            Select language from the dropdown on the right corner{" "}
+          </article>
+          <Navbar />
+          {children}
+
+          <Footer />
+          <div
+            className="sticky z-[999999] bottom-10 right-10"
+            style={{ zIndex: 999999 }}
+          >
+            <AiBot />
+          </div>
+        </body>
+      </BotProvider>
     </html>
   );
 }
