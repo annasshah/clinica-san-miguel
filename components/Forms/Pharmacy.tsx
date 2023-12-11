@@ -7,6 +7,7 @@ type PharmacyInfo = {
   name: string;
   phoneNumber: string;
   address: string;
+  [key: string]: string;
 };
 
 const FormField = ({
