@@ -48,7 +48,7 @@ export const Testimonials = ({
     // ),
     responsive: [
       {
-        breakpoint: 1400,
+        breakpoint: 1564,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -57,7 +57,7 @@ export const Testimonials = ({
         },
       },
       {
-        breakpoint: 1050,
+        breakpoint: 1118,
         settings: {
           // arrows: false,
           slidesToShow: 2,

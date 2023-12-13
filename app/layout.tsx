@@ -4,10 +4,10 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
-import BotProvider from "../context/Context";
 import AiBot from "@/components/AiChatBot/AiBot";
 
-// import antipasto from "./fonts";
+// Provider
+import { Providers } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,8 +34,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <BotProvider>
-        <body className="font-inter bg-[#F8F5F0] relative">
+      <body className="font-inter bg-[#F8F5F0] relative">
+        <Providers>
           <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
             Select language from the dropdown on the right corner{" "}
           </article>
@@ -49,8 +49,8 @@ export default function RootLayout({
           >
             <AiBot />
           </div>
-        </body>
-      </BotProvider>
+        </Providers>
+      </body>
     </html>
   );
 }

@@ -1,5 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { supabase } from "@/supabaseClient";
+
 import {
   Blue_and_Red_Health_Icons_Medical_Conference_Poster,
   Grey_Modern_Best_Medical_Service_Poster,
@@ -11,6 +14,21 @@ import Image from "next/image";
 import { styles } from "../styles";
 
 const Special = () => {
+  // const [specials, setSpecials] = useState();
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     let { data, error } = await supabase.from("About").select("*");
+
+  //     console.log(data, "About Data");
+  //     if (data) {
+  //       setSpecials(data);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   const special_posters = [
     {
       id: 1,

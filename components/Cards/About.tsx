@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 
 import { FaArrowRight } from "react-icons/fa6";
@@ -12,34 +12,13 @@ export const About = ({
 }: {
   image: any;
   heading: string;
-  content: string;
+  content: string | undefined | null;
 }) => {
-  const [firstDivHeight, setFirstDivHeight] = useState<number>(0);
-  const [secondDivHeight, setSecondDivHeight] = useState<number>(0);
-
-  const firstDivRef = useRef<HTMLDivElement>(null);
-  const secondDivRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (firstDivRef.current) {
-      const firstDivWidth = firstDivRef.current.offsetWidth;
-      const calculatedFirstDivHeight = (firstDivWidth * 80) / 100;
-      setFirstDivHeight(calculatedFirstDivHeight);
-
-      if (secondDivRef.current) {
-        const calculatedSecondDivHeight = (calculatedFirstDivHeight * 90) / 100;
-        setSecondDivHeight(calculatedSecondDivHeight);
-      }
-    }
-  }, [firstDivRef, secondDivRef]);
-
   return (
     <article className="w-[100%] flex flex-col lg:flex-row justify-center items-center">
       <div
-        // ref={firstDivRef}
         style={{
-          // height: `${firstDivHeight}px`,
-          boxShadow: "5px 0 5px rgba(0, 0, 0, 0.8)", // Adjust the values as needed
+          boxShadow: "5px 0 5px rgba(0, 0, 0, 0.8)",
         }}
         className="w-[320px] sm:w-[350px] md:w-[400px] h-[270px] sm:h-[300px] md:h-[350px] bg-[#3D3D3C] flex justify-center border-0 items-center rounded-[10px] z-20"
       >
@@ -49,11 +28,7 @@ export const About = ({
           className="object-cover rounded-[10px] bg-contain aspect-auto w-full h-full"
         />
       </div>
-      <div
-        // ref={secondDivRef}
-        // style={{ height: `${secondDivHeight}px` }}
-        className="w-[310px] h-[360px] mt-[-30px] pt-[40px] lg:pt-5 lg:mt-0 sm:w-[345px] md:w-[395px] lg:w-[450px] md:h-[350px] rounded-[10px] flex flex-col justify-center items-center lg:items-start gap-3 bg-[#3D3D3C] p-5 z-10"
-      >
+      <div className="w-[310px] h-[360px] mt-[-30px] pt-[40px] lg:pt-5 lg:mt-0 sm:w-[345px] md:w-[395px] lg:w-[450px] md:h-[350px] rounded-[10px] flex flex-col justify-center items-center lg:items-start gap-3 bg-[#3D3D3C] p-5 z-10">
         <h1 className="text-[#ffffff] font-poppins hidden lg:flex lg:text-[40px] text-left">
           {heading}
         </h1>

@@ -3,19 +3,23 @@ import Image from "next/image";
 export const Team = ({
   image,
   date,
+  title,
   description,
 }: {
   image: any;
   date: string;
-  description: string;
+  title: string | null;
+  description: string | null;
 }) => {
   return (
     <article className="flex flex-col w-[340px] gap-7 justify-center items-center">
-      <Image
-        src={image}
-        alt={""}
-        className="w-full h-[179px] aspect-auto rounded-[10px] object-contain"
-      />
+      {image && (
+        <Image
+          src={image}
+          alt={""}
+          className="w-full h-[179px] aspect-auto rounded-[10px] object-contain"
+        />
+      )}
       <div
         className="relative w-full p-3 bg-transparent flex flex-col items-start justify-center"
         style={{ zIndex: 20 }}
@@ -37,7 +41,7 @@ export const Team = ({
           {date}
         </h3>
         <p className="text-[#121212] font-poppins font-semibold text-[18px] text-left">
-          {description}
+          {title}
         </p>
       </div>
     </article>

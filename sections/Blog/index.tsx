@@ -10,7 +10,20 @@ import { Team } from "@/components";
 
 // import Image from "next/image";
 
-export const Blog = () => {
+export const Blog = ({
+  data,
+}: {
+  data:
+    | Array<{
+        id: number;
+        created_at: string;
+        title: string | null;
+        image: string | null;
+        content: string | null;
+      }>
+    | undefined
+    | null;
+}) => {
   const teams = [
     {
       id: 1,
@@ -43,14 +56,24 @@ export const Blog = () => {
       </article>
 
       <article className="flex flex-wrap gap-7 items-center justify-center">
-        {teams.map((team) => (
+        {/* {teams.map((team) => (
           <Team
             image={team.image}
             date={team.date}
             description={team.description}
             key={team.id}
           />
-        ))}
+        ))} */}
+        {data &&
+          data.map((team) => (
+            <Team
+              image={team.image}
+              date={team.created_at}
+              title={team.title}
+              description={team.content}
+              key={team.id}
+            />
+          ))}
       </article>
     </section>
   );

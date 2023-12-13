@@ -91,7 +91,7 @@ export const Locations = () => {
     ),
     responsive: [
       {
-        breakpoint: 1240,
+        breakpoint: 1440,
         settings: {
           // arrows: false,
           slidesToShow: 1,
