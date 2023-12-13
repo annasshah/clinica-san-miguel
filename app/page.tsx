@@ -6,6 +6,7 @@ import {
   AboutSection,
   Blog,
   CommunityMission,
+  FAQs,
   Hero,
   JoinTeam,
   Locations,
@@ -32,6 +33,7 @@ export default function Home() {
       <JoinTeam />
       <Blog data={blogs} />
       <Locations />
+      <FAQs />
     </main>
   );
 }

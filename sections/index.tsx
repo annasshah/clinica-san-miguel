@@ -7,6 +7,7 @@ import { AboutSection } from "./About";
 import { Treatments } from "./Treatments";
 import { Services } from "./Services";
 import { Blog } from "./Blog";
+import { FAQs } from "./FAQs";
 
 export {
   Testimonials,
@@ -18,4 +19,5 @@ export {
   Treatments,
   Services,
   Blog,
+  FAQs,
 };
