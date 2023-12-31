@@ -1,9 +1,15 @@
+"use client";
+
 import { CompactService } from "@/components";
 import { Testimonials } from "@/sections";
 import { services } from "../../constants";
 import { styles } from "../styles";
 
+import { useSupabase } from "@/context/supabaseContext";
+
 const Services = () => {
+  const { services } = useSupabase();
+
   return (
     <main className="flex flex-col gap-5">
       <section className="flex flex-col justify-center items-center my-10">
@@ -18,8 +24,9 @@ const Services = () => {
         <article className="flex flex-wrap justify-center items-center gap-5">
           {services.map((service) => (
             <CompactService
-              heading={service.heading}
-              icon={service.icon}
+              id={service.id}
+              heading={service.title}
+              icon={service.image}
               description={service.description}
               mode={service.id % 2 === 0 ? "light" : "dark"}
               key={service.id}

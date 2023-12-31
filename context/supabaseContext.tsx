@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { SupabaseClient } from "@supabase/supabase-js";
 import { Database } from "@/@types/database.types";
 import { supabase } from "@/supabaseClient";
@@ -7,6 +13,16 @@ interface SupabaseContextType {
   supabase: SupabaseClient;
   about: Database["public"]["Tables"]["About"]["Row"][];
   blogs: Database["public"]["Tables"]["Blog"]["Row"][];
+  additionalServices: Database["public"]["Tables"]["Additional_Services"]["Row"][];
+  faqs: Database["public"]["Tables"]["FAQs"]["Row"][];
+  heroSection: Database["public"]["Tables"]["Hero_Section"]["Row"][];
+  location: Database["public"]["Tables"]["Location"]["Row"][];
+  services: Database["public"]["Tables"]["Services"]["Row"][];
+  serviceDetails: Database["public"]["Tables"]["Services"]["Row"][];
+  specials: Database["public"]["Tables"]["Specials"]["Row"][];
+  testimonial: Database["public"]["Tables"]["Testinomial"]["Row"][];
+  career: Database["public"]["Tables"]["career"]["Row"][];
+  fetchServiceData: (table: string, id: number) => Promise<void>;
 }
 
 const SupabaseContext = createContext<SupabaseContextType | undefined>(
@@ -22,6 +38,33 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   const [blogs, setBlogs] = useState<
     Database["public"]["Tables"]["Blog"]["Row"][]
   >([]);
+  const [additionalServices, setAdditionalServices] = useState<
+    Database["public"]["Tables"]["Additional_Services"]["Row"][]
+  >([]);
+  const [faqs, setFaqs] = useState<
+    Database["public"]["Tables"]["FAQs"]["Row"][]
+  >([]);
+  const [heroSection, setHeroSection] = useState<
+    Database["public"]["Tables"]["Hero_Section"]["Row"][]
+  >([]);
+  const [location, setLocation] = useState<
+    Database["public"]["Tables"]["Location"]["Row"][]
+  >([]);
+  const [services, setServices] = useState<
+    Database["public"]["Tables"]["Services"]["Row"][]
+  >([]);
+  const [serviceDetails, setServiceDetails] = useState<
+    Database["public"]["Tables"]["Services"]["Row"][]
+  >([]);
+  const [specials, setSpecials] = useState<
+    Database["public"]["Tables"]["Specials"]["Row"][]
+  >([]);
+  const [testimonial, setTestimonial] = useState<
+    Database["public"]["Tables"]["Testinomial"]["Row"][]
+  >([]);
+  const [career, setCareer] = useState<
+    Database["public"]["Tables"]["career"]["Row"][]
+  >([]);
 
   const fetchData = async (table: string, setter: Function) => {
     try {
@@ -35,13 +78,55 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const fetchServiceData = async (table: string, id: number) => {
+    try {
+      const { data, error } = await supabase
+        .from(table)
+        .select("*")
+        .eq("id", id);
+      console.log(data, `${table} Data`);
+      if (data) {
+        setServiceDetails(data);
+      }
+    } catch (error) {
+      console.error(`Error fetching ${table} data:`, error);
+    }
+  };
+
+  const fetchDataCallback = useCallback(fetchData, []);
+  const fetchServiceDataCallback = useCallback(fetchServiceData, []);
+
   useEffect(() => {
-    fetchData("About", setAbout);
-    fetchData("Blog", setBlogs);
-  }, []); // Empty dependency array
+    fetchDataCallback("About", setAbout);
+    fetchDataCallback("Blog", setBlogs);
+    fetchDataCallback("Additional_Services", setAdditionalServices);
+    fetchDataCallback("FAQs", setFaqs);
+    fetchDataCallback("Hero_Section", setHeroSection);
+    fetchDataCallback("Location", setLocation);
+    fetchDataCallback("Services", setServices);
+    fetchDataCallback("Specials", setSpecials);
+    fetchDataCallback("Testinomial", setTestimonial);
+    fetchDataCallback("career", setCareer);
+  }, [fetchDataCallback]);
 
   return (
-    <SupabaseContext.Provider value={{ supabase, about, blogs }}>
+    <SupabaseContext.Provider
+      value={{
+        supabase,
+        about,
+        blogs,
+        additionalServices,
+        faqs,
+        heroSection,
+        location,
+        services,
+        specials,
+        testimonial,
+        career,
+        serviceDetails,
+        fetchServiceData: fetchServiceDataCallback,
+      }}
+    >
       {children}
     </SupabaseContext.Provider>
   );

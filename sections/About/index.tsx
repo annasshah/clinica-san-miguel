@@ -6,11 +6,11 @@ export const AboutSection = ({
   data,
 }: {
   data:
-    | Array<{ id: number; created_at: string; content: string | null }>
+    | Array<{ id: number; created_at: string; t1: string | null }>
     | undefined
     | null;
 }) => {
-  const content = data?.[0]?.content;
+  const content = data?.[0]?.t1;
 
   return (
     <section className="w-full flex flex-col justify-center gap-10 items-center my-14">

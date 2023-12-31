@@ -14,10 +14,10 @@ export interface Database {
           // the data expected from .select()
           id: number;
           created_at: string;
-          content: string | null;
+          t1: string | null;
         };
       };
-      AdditionalServices: {
+      Additional_Services: {
         Row: {
           // the data expected from .select()
           id: number;
@@ -34,6 +34,24 @@ export interface Database {
           created_at: string;
           title: string | null;
           image: string | null;
+          content: string | null;
+        };
+      };
+      FAQs: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          question: string | null;
+          answer: string | null;
+        };
+      };
+      Hero_Section: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          title: string | null;
           content: string | null;
         };
       };
@@ -56,7 +74,13 @@ export interface Database {
           created_at: string;
           title: string | null;
           image: string | null;
-          content: string | null;
+          question_1: string | null;
+          answer_1: string | null;
+          question_2: string | null;
+          answer_2: string | null;
+          question_3: string | null;
+          answer_3: string | null;
+          description: string | null;
         };
       };
       Specials: {

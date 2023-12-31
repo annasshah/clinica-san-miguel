@@ -1,17 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const CompactService = ({
+  id,
   heading,
   icon,
   description,
   mode,
 }: {
-  heading: string;
+  id: number;
+  heading: string | null | undefined;
   icon: any;
-  description: string;
+  description: string | null | undefined;
   mode: string;
 }) => {
   const dark = {
@@ -27,25 +30,33 @@ export const CompactService = ({
   };
 
   const [theme, setTheme] = useState(mode === "dark" ? dark : light);
+  const router = useRouter();
+
+  const handleService = () => {
+    router.push(`/services/${id}`);
+  };
 
   return (
     <article
-      className="w-[300px] h-[300px] m-5 rounded-[10px] flex flex-col gap-3 justify-evenly p-5 py-14"
+      className="w-[300px] h-[300px] m-5 rounded-[10px] cursor-pointer flex flex-col gap-3 justify-evenly p-5 py-14"
       style={{
         backgroundColor: `${theme.backgroundColor}`,
         boxShadow: "2px 3px 6px 6px rgba(0, 0, 0, 0.2)",
       }}
+      onClick={handleService}
     >
       <div className="flex items-center gap-3">
-        <div className="w-10">
-          <div className="rounded-full flex w-10 h-10 justify-center items-center bg-[#C1001F]">
-            <Image
-              src={icon}
-              alt={"service icon"}
-              className="object-contain w-5 h-5 aspect-auto"
-            />
+        {icon && (
+          <div className="w-10">
+            <div className="rounded-full flex w-10 h-10 justify-center items-center bg-[#C1001F]">
+              <Image
+                src={icon}
+                alt={"service icon"}
+                className="object-contain w-5 h-5 aspect-auto"
+              />
+            </div>
           </div>
-        </div>
+        )}
         <h1
           className="font-semibold font-poppins text-[18px] capitalize"
           style={{ color: `${theme.textColor}` }}
@@ -53,14 +64,18 @@ export const CompactService = ({
           {heading}
         </h1>
       </div>
-      <div className="overflow-y-auto h-[240px]">
-        <p
-          className="text-[16px] font-inter text-left"
-          style={{ color: `${theme.textColor}` }}
-        >
-          {description}
-        </p>
-      </div>
+      {description && (
+        <div className="overflow-y-auto h-[240px]">
+          <p
+            className="text-[16px] font-inter text-left"
+            style={{ color: `${theme.textColor}` }}
+          >
+            {description.length > 150
+              ? `${description.slice(0, 150)}...`
+              : description}
+          </p>
+        </div>
+      )}
     </article>
   );
 };
