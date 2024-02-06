@@ -20,7 +20,7 @@ export const Testimonial = ({
   return (
     <article
       className={`w-[254px] h-[218px] ${
-        mode === "dark" ? "bg-[#19192C]" : "bg-transparent"
+        mode === "dark" ? "bg-primary" : "bg-transparent"
       }  p-3 rounded-[10px] flex flex-col gap-4 items-start`}
     >
       <div>

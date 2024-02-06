@@ -20,6 +20,9 @@ import {
   Location,
 } from "./Cards";
 
+// carousel
+import { ImageCarousel } from "./Carousel/ImageCarousel";
+
 export {
   Navbar,
   HeroBox,
@@ -39,4 +42,5 @@ export {
   EmergencyContact,
   Pharmacy,
   ReferralSource,
+  ImageCarousel,
 };

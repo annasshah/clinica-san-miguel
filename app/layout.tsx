@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-inter bg-[#F8F5F0] relative">
+      <body className="font-inter bg-[#F8F5F0] relative overflow-x-hidden w-[100vw]">
         <Providers>
           <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
             Select language from the dropdown on the right corner{" "}

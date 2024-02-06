@@ -11,7 +11,7 @@ const RadioButtons = ({
   label: string;
 }) => (
   <div className="flex flex-col md:flex-row items-start justify-start gap-4">
-    <label className="text-[16px] text-[#3D3D3C] font-poppins">{label}:</label>
+    <label className="text-[16px] text-customGray font-poppins">{label}:</label>
     <div className="flex flex-wrap gap-4">
       {options.map((value, index) => (
         <RadioButton key={index} value={value} name={name} label={value} />
@@ -34,10 +34,10 @@ const Input = ({
       breakpoint ? "md:w-1/2" : ""
     } justify-center`}
   >
-    <label className="text-[16px] text-[#3D3D3C] font-poppins">{label}:</label>
+    <label className="text-[16px] text-customGray font-poppins">{label}:</label>
     <input
       placeholder={`${placeholder}`}
-      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-[#3D3D3C] placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
+      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
     />
   </div>
 );
@@ -50,7 +50,7 @@ const RadioButton = ({ value, name, label }: any) => (
       name={name}
       className="w-[25px] h-[25px] bg-transparent border-[2px] border-[#000000] hover:bg-[#ccc]"
     />{" "}
-    <label className="text-[16px] text-[#3D3D3C] font-poppins">{label}</label>
+    <label className="text-[16px] text-customGray font-poppins">{label}</label>
   </div>
 );
 
@@ -70,7 +70,7 @@ export const Patient = () => {
     <section className="flex flex-col items-center justify-center w-[95%] md:w-[90%] lg:w-[80%] gap-3">
       <div className="flex justify-start w-full">
         <div
-          className={`border-[2px] border-dotted border-[#3D3D3C] rounded-[6.82px]  p-2 pr-4 ${styles.sectionSubText}`}
+          className={`border-[2px] border-dotted border-customGray rounded-[6.82px]  p-2 pr-4 ${styles.sectionSubText}`}
         >
           Patient Information
         </div>

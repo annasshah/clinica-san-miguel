@@ -37,7 +37,7 @@ export const ExpandedTestimonial = ({
           <h1 className="text-[16px] md:text-[20px] uppercase text-[#C1001F] font-poppins">
             {name}
           </h1>
-          <p className="text-center text-[12px] sm:text-[14px] md:text-[16px] text-[#3D3D3C] font-poppins">
+          <p className="text-center text-[12px] sm:text-[14px] md:text-[16px] text-customGray font-poppins">
             Submitted on
             <br />
             {postDate}

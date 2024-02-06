@@ -17,7 +17,9 @@ export const Location = ({
   return (
     <article className="w-[320px] sm:w-[350px] h-[200px] my-4 ">
       <div className="relative w-full h-[120px] rounded-t-[5px]">
-        <Map location={location} />
+        <div className="h-[100px] w-[320px] sm:w-[350px]">
+          <Map height={120} location={location} />
+        </div>
         <div className="absolute bottom-3 right-3 z-20">
           <Image
             src={direction}

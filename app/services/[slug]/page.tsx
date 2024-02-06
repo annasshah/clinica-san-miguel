@@ -10,9 +10,9 @@ import { useCallback, useEffect } from "react";
 // import { SampleNextArrow, SamplePrevArrow } from "@/utils";
 
 const questionStyle =
-  "text-[25px] md:text-[30px] lg:text-[40px] xl:text-[60px] font-poppins font-bold text-[#3D3D3C]";
+  "text-[25px] md:text-[30px] lg:text-[40px] xl:text-[60px] font-poppins font-bold text-customGray";
 const answerStyle =
-  "text-[16px] md:text-[20px] lg:text-[25px] text-[#3D3D3C] font-poppins";
+  "text-[16px] md:text-[20px] lg:text-[25px] text-customGray font-poppins";
 
 // const QuestionAndAnswer = [
 //   {
@@ -183,22 +183,74 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
     },
   ];
 
+  const serviceDescription = [
+    {
+      id: 1,
+      question: "Do you have warts that bother you or embarrass you? ",
+      answer: {
+        description:
+          "At Clínica San Miguel, located at 5712 Fondren Rd, Houston, TX 77036, we offer a safe and effective procedure to remove them with cautery.",
+      },
+    },
+    {
+      id: 2,
+      question: "How is the procedure performed?",
+      answer: {
+        description: [
+          "Local anesthesia is applied to the affected area to numb it.",
+          "The cauterizer is used to burn the wart.",
+          "The area is cleaned and a bandage is applied",
+        ],
+      },
+    },
+  ];
+
+  const keywords = [
+    "Wart removal",
+    "Wart cauterization",
+    "San Clinic Miguel",
+    "5712 Fondren Rd",
+    "Houston",
+    "TX 77036",
+    "Warts",
+    "Moles",
+    "Skin Cancer",
+  ];
+
+  const siteLinks = [
+    {
+      id: 1,
+      link: "https://www.mayoclinic.org/es /diseases-conditions/common-warts/diagnosis-treatment/drc-20371131",
+    },
+    {
+      id: 2,
+      link: "https://es.familydoctor.org/condicion/verrugas-es/",
+    },
+    {
+      id: 3,
+      link: "https://www .mayoclinic.org/es/diseases-conditions/genital-warts/doctors-departments/ddc-20355241",
+    },
+  ];
+
+  const desc =
+    "We hope this information has been useful to you. If you have any further questions or would like to schedule an appointment, please feel free to contact us.";
+
   return (
-    <main>
+    <main className="flex flex-col gap-10 px-10 w-[100vw] h-full overflow-x-hidden">
       <section className="flex flex-col justify-center items-center gap-20 mb-14">
         <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>{title}</h1>
 
         <About image={undefined} heading={"About"} content={description} />
       </section>
 
-      <section className="flex flex-col items-center gap-5 justify-center w-full">
-        <article className="w-[80%] py-5 md:py-10 flex items-center justify-center bg-[#3D3D3C] rounded-[10px]">
+      <section className="flex flex-col items-start gap-10 justify-start w-full  lg:px-[10%]">
+        {/* <article className="w-[80%] py-5 md:py-10 flex items-center justify-center bg-customGray rounded-[10px]">
           <h1 className={`${styles.sectionHeadText} text-[#F8F5F0]`}>
             General Consultation
           </h1>
-        </article>
+        </article> */}
 
-        <article className="flex flex-col items-center justify-center w-[80%] gap-5">
+        {/* <article className="flex flex-col items-center justify-center w-[80%] gap-5">
           {QuestionAndAnswer.map((item) => (
             <div
               key={item.id}
@@ -222,6 +274,58 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
               <div className="flex items-center">{item.content}</div>
             </div>
           ))}
+        </article> */}
+
+        {serviceDescription.map((item, index) => (
+          <article
+            key={item.id}
+            className="flex flex-col gap-5 items-start justify-start"
+          >
+            <div className="text-[16px] md:text-[18px] font-semibold text-[#C1001F]">
+              {item.question}
+            </div>
+
+            <div className="text-[16px] md:text-[18px] text-black text-[400]">
+              {Array.isArray(item.answer.description) ? (
+                <ul className="flex flex-col gap-2 items-start justify-start pl-5">
+                  {item.answer.description.map((listItem, idx) => (
+                    <li key={idx} className="list-disc">
+                      {listItem}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                item.answer.description
+              )}
+            </div>
+          </article>
+        ))}
+
+        <article className="flex justify-start items-start gap-3">
+          <h3 className="text-[16px] md:text-[18px] text-black font-bold">
+            Keywords:
+          </h3>
+          <div className="text-[16px] md:text-[18px] text-black">
+            {keywords.join(", ")}
+          </div>
+        </article>
+
+        <article className="flex justify-start">
+          <div className="text-[16px] md:text-[18px] text-black">{desc}</div>
+        </article>
+
+        <article className="flex flex-col justify-start gap-7">
+          <h3 className="text-[20px] text-black">SiteLinks:</h3>
+          <div className="flex flex-col items-start justify-start gap-1">
+            {siteLinks.map((item, index) => (
+              <p
+                key={item.id}
+                className="text-[16px] text-black underline break-words"
+              >
+                {item.link}
+              </p>
+            ))}
+          </div>
         </article>
       </section>
       <div className="w-full flex justify-center">

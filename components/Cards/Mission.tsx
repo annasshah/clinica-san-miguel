@@ -13,10 +13,10 @@ export const Mission = ({
         {icon}
       </div>
       <div className="flex flex-col justify-center lg:justify-start items-center lg:items-start">
-        <h3 className="text-[22px] text-white lg:text-[#3D3D3C] font-poppins">
+        <h3 className="text-[22px] text-white lg:text-customGray font-poppins">
           {heading}:
         </h3>
-        <p className="text-[16px] text-white lg:text-[#3D3D3C] text-center lg:text-left font-poppins">
+        <p className="text-[16px] text-white lg:text-customGray text-center lg:text-left font-poppins">
           {content}
         </p>
       </div>

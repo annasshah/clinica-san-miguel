@@ -17,6 +17,7 @@ export const SearchBox = () => {
         route={""}
         bgColor={"#3D3D3C"}
         textColor={"#ffffff"}
+        onClick={() => {}}
       />
     </div>
   );

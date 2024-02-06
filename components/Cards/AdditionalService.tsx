@@ -21,7 +21,7 @@ export const AdditionalService = ({
           className="w-full h-full object-cover rounded-[10px]"
         />
       </div>
-      <div className="w-[335px] h-[180px] rounded-[10px] bg-[#3D3D3C]  mt-[-40px] pt-[45px] p-3">
+      <div className="w-[335px] h-[180px] rounded-[10px] bg-customGray  mt-[-40px] pt-[45px] p-3">
         <div className=" flex flex-col gap-2 pb-6 overflow-auto">
           <h1 className="text-[20px] font-poppins text-[#F8F5F0] text-left">
             {heading}

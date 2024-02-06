@@ -10,7 +10,9 @@ const CheckBoxButton = ({ value, name, label }: any) => (
         name={name}
         className="w-[25px] h-[25px] bg-transparent border-[2px] border-[#000000] hover:bg-[#ccc]"
       />{" "}
-      <label className="text-[16px] text-[#3D3D3C] font-poppins">{label}</label>
+      <label className="text-[16px] text-customGray font-poppins">
+        {label}
+      </label>
     </div>
   </>
 );
@@ -20,7 +22,7 @@ export const ReferralSource = () => {
     <section className="flex flex-col items-center justify-center w-full gap-3">
       <div className="flex justify-start w-full">
         <div
-          className={`border-[2px] border-dotted border-[#3D3D3C] rounded-[6.82px]  p-2 pr-4 ${styles.sectionSubText}`}
+          className={`border-[2px] border-dotted border-customGray rounded-[6.82px]  p-2 pr-4 ${styles.sectionSubText}`}
         >
           HOW DID YOU FIND OUT ABOUT THE CLINIC?
         </div>

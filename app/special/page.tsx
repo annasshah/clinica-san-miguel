@@ -58,7 +58,7 @@ const Special = () => {
           <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
             Specials
           </h1>
-          <h1 className={`${styles.sectionHeadText} text-[#3D3D3C]`}>
+          <h1 className={`${styles.sectionHeadText} text-customGray`}>
             Summer Specials
           </h1>
         </div>

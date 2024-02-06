@@ -36,6 +36,7 @@ export const Hero = () => {
                 route={""}
                 bgColor={"#3D3D3C"}
                 textColor={"#ffffff"}
+                onClick={() => {}}
               />
               <IconButton
                 size={{ width: "75px", height: "75px" }}

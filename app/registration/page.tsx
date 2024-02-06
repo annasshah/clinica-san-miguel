@@ -20,7 +20,7 @@ const Registration = () => {
       </section>
 
       <section className="flex flex-col items-center gap-5 justify-center w-full">
-        <article className="w-[95%] md:w-[90%] lg:w-[80%] p-5 md:p-10 flex items-center justify-start gap-3 bg-[#3D3D3C] rounded-[10px]">
+        <article className="w-[95%] md:w-[90%] lg:w-[80%] p-5 md:p-10 flex items-center justify-start gap-3 bg-customGray rounded-[10px]">
           <div className="w-[15%] md:w-[10%] flex justify-start items-start">
             <Image
               src={form}

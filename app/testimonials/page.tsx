@@ -53,7 +53,7 @@ const Testimonials = () => {
         </h1>
         <article className="flex flex-col gap-20 md:flex-row w-full justify-center items-center">
           <div className="flex flex-col items-start md:items-end lg:items-start gap-3">
-            <div className="text-[40px] md:text-[60px] lg:text-[80px] text-[#3D3D3C]">
+            <div className="text-[40px] md:text-[60px] lg:text-[80px] text-customGray">
               {total_ratings}/5
             </div>
             <div className="hidden lg:block">
@@ -74,7 +74,7 @@ const Testimonials = () => {
                 starRatedColor="#C1001F"
               />
             </div>
-            <div className="text-[35px] md:text-[40px] lg:text-[60px] text-[#3D3D3C]">
+            <div className="text-[35px] md:text-[40px] lg:text-[60px] text-customGray">
               {total_reviews}
               <br className="hidden lg:block" /> Total Reviews
             </div>
@@ -87,9 +87,10 @@ const Testimonials = () => {
               route={""}
               bgColor={"#C1001F"}
               textColor={"#ffffff"}
+              onClick={() => {}}
             />
           </div>
-          <div className="w-[340px] h-[290px] lg:w-[500px] lg:h-[450px] overflow-y-auto p-4 border-[3px] rounded-[10px] text-left text-[#3D3D3C] text-[16px] md:text-[20px] lg:text-[25px] flex">
+          <div className="w-[340px] h-[290px] lg:w-[500px] lg:h-[450px] overflow-y-auto p-4 border-[3px] rounded-[10px] text-left text-customGray text-[16px] md:text-[20px] lg:text-[25px] flex">
             {review_description}
           </div>
         </article>

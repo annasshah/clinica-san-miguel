@@ -48,7 +48,7 @@ const Career = () => {
 
         <article className="flex flex-col gap-4 w-full items-center px-7">
           <div className="flex flex-col items-center justify-center gap-4">
-            <h1 className={`${styles.sectionHeadText} text-[#3D3D3C]`}>
+            <h1 className={`${styles.sectionHeadText} text-customGray`}>
               Join Our Team!
             </h1>
             <p className={`${styles.sectionSubText} text-[#000000]`}>

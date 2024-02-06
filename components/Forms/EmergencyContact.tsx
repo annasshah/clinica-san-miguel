@@ -45,7 +45,7 @@ export const EmergencyContact = () => {
     <section className="flex flex-col items-center justify-center w-[95%] md:w-[90%] lg:w-[80%] gap-3">
       <div className="flex justify-start w-full">
         <div
-          className={`border-[2px] border-dotted border-[#3D3D3C] rounded-[6.82px]  p-2 pr-4 ${styles.sectionSubText}`}
+          className={`border-[2px] border-dotted border-customGray rounded-[6.82px]  p-2 pr-4 ${styles.sectionSubText}`}
         >
           EMERGENCY CONTACTS
         </div>
@@ -69,12 +69,12 @@ export const EmergencyContact = () => {
 
 const Input = ({ label, placeholder, value, onChange }: any) => (
   <div className={`flex flex-col items-start w-full justify-center`}>
-    <label className="text-[16px] text-[#3D3D3C] font-poppins">{label}:</label>
+    <label className="text-[16px] text-customGray font-poppins">{label}:</label>
     <input
       value={value}
       onChange={(e) => onChange(e.target.value)}
       placeholder={`${placeholder}`}
-      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-[#3D3D3C] placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
+      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
     />
   </div>
 );

@@ -20,7 +20,7 @@ export const About = ({
         style={{
           boxShadow: "5px 0 5px rgba(0, 0, 0, 0.8)",
         }}
-        className="w-[320px] sm:w-[350px] md:w-[400px] h-[270px] sm:h-[300px] md:h-[350px] bg-[#3D3D3C] flex justify-center border-0 items-center rounded-[10px] z-20"
+        className="w-[320px] sm:w-[350px] md:w-[400px] h-[270px] sm:h-[300px] md:h-[350px] bg-customGray flex justify-center border-0 items-center rounded-[10px] z-20"
       >
         <Image
           src={image}
@@ -28,7 +28,7 @@ export const About = ({
           className="object-cover rounded-[10px] bg-contain aspect-auto w-full h-full"
         />
       </div>
-      <div className="w-[310px] h-[360px] mt-[-30px] pt-[40px] lg:pt-5 lg:mt-0 sm:w-[345px] md:w-[395px] lg:w-[450px] md:h-[350px] rounded-[10px] flex flex-col justify-center items-center lg:items-start gap-3 bg-[#3D3D3C] p-5 z-10">
+      <div className="w-[310px] h-[360px] mt-[-30px] pt-[40px] lg:pt-5 lg:mt-0 sm:w-[345px] md:w-[395px] lg:w-[450px] md:h-[350px] rounded-[10px] flex flex-col justify-center items-center lg:items-start gap-3 bg-customGray p-5 z-10">
         <h1 className="text-[#ffffff] font-poppins hidden lg:flex lg:text-[40px] text-left">
           {heading}
         </h1>

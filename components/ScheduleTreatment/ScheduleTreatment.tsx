@@ -83,7 +83,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         onClick={toggleDropDownFlag}
       >
         <div className="flex justify-between h-[37px] items-center">
-          <div className="text-[16px] text-[#3D3D3C]">{value}</div>
+          <div className="text-[16px] text-customGray">{value}</div>
           <div className="ml-2">
             {isOpen ? (
               <span className="text-[18px] text-[#C1001F]">
@@ -201,6 +201,7 @@ export const ScheduleTreatment: React.FC = () => {
           route={""}
           bgColor={"#C1001F"}
           textColor={"#ffffff"}
+          onClick={() => {}}
         />
       </div>
     </article>

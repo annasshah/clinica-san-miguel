@@ -9,12 +9,14 @@ export const Button = ({
   route,
   bgColor,
   textColor,
+  onClick,
 }: {
   text: string;
   size: { width: string; height: string };
   route: string;
   bgColor: string;
   textColor: string;
+  onClick: any;
 }) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
@@ -55,6 +57,7 @@ export const Button = ({
         backgroundColor: `${bgColor}`,
         color: `${textColor}`,
       }}
+      onClick={onClick}
     >
       {text}
     </button>

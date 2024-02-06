@@ -12,6 +12,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#19192C",
+        headingColor: "#C1001F",
+        textColor: "#413D45",
+        customGray: "#3D3D3C",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -33,6 +36,6 @@ const config: Config = {
       xsm: "550px",
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
 export default config;
