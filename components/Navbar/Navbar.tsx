@@ -57,7 +57,7 @@ export const Navbar = () => {
   const renderNavLinks = () =>
     navLinks.map((link, index) => (
       <div key={link.id}>
-        {link.dropDownOptions ? (
+        {/* {link?.dropDownOptions ? (
           <div className="relative">
             <div
               onClick={() => toggleDropdown(index)}
@@ -78,11 +78,11 @@ export const Navbar = () => {
               <Dropdown options={link?.dropDownOptions} />
             )}
           </div>
-        ) : (
-          <Link href={link.route}>
-            <li className={styles.text}>{link.heading}</li>
-          </Link>
-        )}
+        ) : ( */}
+        <Link href={link.route}>
+          <li className={styles.text}>{link.heading}</li>
+        </Link>
+        {/* )} */}
       </div>
     ));
 
