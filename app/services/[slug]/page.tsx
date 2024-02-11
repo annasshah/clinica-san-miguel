@@ -132,7 +132,7 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
   const { serviceDetails, fetchServiceData } = useSupabase();
 
   const fetchDataCallback = useCallback(() => {
-    fetchServiceData("Services", parseInt(params.slug));
+    fetchServiceData("services", parseInt(params.slug));
   }, [fetchServiceData, params.slug]);
 
   useEffect(() => {
@@ -142,46 +142,47 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
   const {
     title,
     description,
-    question_1,
-    answer_1,
-    question_2,
-    answer_2,
-    question_3,
-    answer_3,
+    image,
+    // question_1,
+    // answer_1,
+    // question_2,
+    // answer_2,
+    // question_3,
+    // answer_3,
   } = serviceDetails[0] || {};
 
-  let QuestionAndAnswer = [
-    {
-      id: 1,
-      type: "question",
-      content: <h1 className={questionStyle}>{question_1}</h1>,
-    },
-    {
-      id: 2,
-      type: "answer",
-      content: <p className={`${answerStyle} px-3`}>{answer_1}</p>,
-    },
-    {
-      id: 3,
-      type: "question",
-      content: <h1 className={questionStyle}>{question_2}</h1>,
-    },
-    {
-      id: 4,
-      type: "answer",
-      content: <p className={`${answerStyle} px-3`}>{answer_2}</p>,
-    },
-    {
-      id: 5,
-      type: "question",
-      content: <h1 className={questionStyle}>{question_3}</h1>,
-    },
-    {
-      id: 6,
-      type: "answer",
-      content: <p className={`${answerStyle} px-3`}>{answer_3}</p>,
-    },
-  ];
+  // let QuestionAndAnswer = [
+  //   {
+  //     id: 1,
+  //     type: "question",
+  //     content: <h1 className={questionStyle}>{question_1}</h1>,
+  //   },
+  //   {
+  //     id: 2,
+  //     type: "answer",
+  //     content: <p className={`${answerStyle} px-3`}>{answer_1}</p>,
+  //   },
+  //   {
+  //     id: 3,
+  //     type: "question",
+  //     content: <h1 className={questionStyle}>{question_2}</h1>,
+  //   },
+  //   {
+  //     id: 4,
+  //     type: "answer",
+  //     content: <p className={`${answerStyle} px-3`}>{answer_2}</p>,
+  //   },
+  //   {
+  //     id: 5,
+  //     type: "question",
+  //     content: <h1 className={questionStyle}>{question_3}</h1>,
+  //   },
+  //   {
+  //     id: 6,
+  //     type: "answer",
+  //     content: <p className={`${answerStyle} px-3`}>{answer_3}</p>,
+  //   },
+  // ];
 
   const serviceDescription = [
     {
@@ -240,7 +241,7 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
       <section className="flex flex-col justify-center items-center gap-20 mb-14">
         <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>{title}</h1>
 
-        <About image={undefined} heading={"About"} content={description} />
+        <About image={image} heading={"About"} content={description} />
       </section>
 
       <section className="flex flex-col items-start gap-10 justify-start w-full  lg:px-[10%]">

@@ -26,6 +26,8 @@ export const About = ({
           src={image}
           alt="about image"
           className="object-cover rounded-[10px] bg-contain aspect-auto w-full h-full"
+          width={100}
+          height={100}
         />
       </div>
       <div className="w-[310px] h-[360px] mt-[-30px] pt-[40px] lg:pt-5 lg:mt-0 sm:w-[345px] md:w-[395px] lg:w-[450px] md:h-[350px] rounded-[10px] flex flex-col justify-center items-center lg:items-start gap-3 bg-customGray p-5 z-10">

@@ -13,7 +13,7 @@ export const CompactService = ({
 }: {
   id: number;
   heading: string | null | undefined;
-  icon: any;
+  icon: string | null | undefined;
   description: string | null | undefined;
   mode: string;
 }) => {
@@ -53,6 +53,8 @@ export const CompactService = ({
                 src={icon}
                 alt={"service icon"}
                 className="object-contain w-5 h-5 aspect-auto"
+                width={20}
+                height={20}
               />
             </div>
           </div>

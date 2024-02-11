@@ -11,14 +11,14 @@ import { supabase } from "@/supabaseClient";
 
 interface SupabaseContextType {
   supabase: SupabaseClient;
-  about: Database["public"]["Tables"]["About"]["Row"][];
+  about: Database["public"]["Tables"]["about"]["Row"][];
   blogs: Database["public"]["Tables"]["Blog"]["Row"][];
   additionalServices: Database["public"]["Tables"]["Additional_Services"]["Row"][];
   faqs: Database["public"]["Tables"]["FAQs"]["Row"][];
   heroSection: Database["public"]["Tables"]["Hero_Section"]["Row"][];
   location: Database["public"]["Tables"]["Location"]["Row"][];
-  services: Database["public"]["Tables"]["Services"]["Row"][];
-  serviceDetails: Database["public"]["Tables"]["Services"]["Row"][];
+  services: Database["public"]["Tables"]["services"]["Row"][];
+  serviceDetails: Database["public"]["Tables"]["services"]["Row"][];
   specials: Database["public"]["Tables"]["Specials"]["Row"][];
   testimonial: Database["public"]["Tables"]["Testinomial"]["Row"][];
   career: Database["public"]["Tables"]["career"]["Row"][];
@@ -33,7 +33,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [about, setAbout] = useState<
-    Database["public"]["Tables"]["About"]["Row"][]
+    Database["public"]["Tables"]["about"]["Row"][]
   >([]);
   const [blogs, setBlogs] = useState<
     Database["public"]["Tables"]["Blog"]["Row"][]
@@ -51,10 +51,10 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     Database["public"]["Tables"]["Location"]["Row"][]
   >([]);
   const [services, setServices] = useState<
-    Database["public"]["Tables"]["Services"]["Row"][]
+    Database["public"]["Tables"]["services"]["Row"][]
   >([]);
   const [serviceDetails, setServiceDetails] = useState<
-    Database["public"]["Tables"]["Services"]["Row"][]
+    Database["public"]["Tables"]["services"]["Row"][]
   >([]);
   const [specials, setSpecials] = useState<
     Database["public"]["Tables"]["Specials"]["Row"][]
@@ -97,13 +97,13 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   const fetchServiceDataCallback = useCallback(fetchServiceData, []);
 
   useEffect(() => {
-    fetchDataCallback("About", setAbout);
+    fetchDataCallback("about", setAbout);
     fetchDataCallback("Blog", setBlogs);
     fetchDataCallback("Additional_Services", setAdditionalServices);
     fetchDataCallback("FAQs", setFaqs);
     fetchDataCallback("Hero_Section", setHeroSection);
     fetchDataCallback("Location", setLocation);
-    fetchDataCallback("Services", setServices);
+    fetchDataCallback("services", setServices);
     fetchDataCallback("Specials", setSpecials);
     fetchDataCallback("Testinomial", setTestimonial);
     fetchDataCallback("career", setCareer);

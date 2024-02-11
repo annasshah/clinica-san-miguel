@@ -106,7 +106,7 @@ export const Services = () => {
           <CompactService
             id={service.id}
             heading={service.title}
-            icon={service.image}
+            icon={service.icon}
             description={service.description}
             mode={service.id % 2 === 0 ? "light" : "dark"}
             key={service.id}

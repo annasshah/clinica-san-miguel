@@ -9,7 +9,7 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      About: {
+      about: {
         Row: {
           // the data expected from .select()
           id: number;
@@ -67,20 +67,21 @@ export interface Database {
           address: string | null;
         };
       };
-      Services: {
+      services: {
         Row: {
           // the data expected from .select()
           id: number;
           created_at: string;
           title: string | null;
           image: string | null;
-          question_1: string | null;
-          answer_1: string | null;
-          question_2: string | null;
-          answer_2: string | null;
-          question_3: string | null;
-          answer_3: string | null;
+          // question_1: string | null;
+          // answer_1: string | null;
+          // question_2: string | null;
+          // answer_2: string | null;
+          // question_3: string | null;
+          // answer_3: string | null;
           description: string | null;
+          icon: string | null;
         };
       };
       Specials: {

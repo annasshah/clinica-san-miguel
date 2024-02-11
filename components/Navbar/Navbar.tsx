@@ -18,20 +18,20 @@ export const Navbar = () => {
       id: 3,
       heading: "Services",
       route: "/services",
-      dropDownOptions: [
-        { id: 1, heading: "Service 1", route: "" },
-        { id: 2, heading: "Service 2", route: "" },
-      ],
+      // dropDownOptions: [
+      //   { id: 1, heading: "Service 1", route: "" },
+      //   { id: 2, heading: "Service 2", route: "" },
+      // ],
     },
-    { id: 4, heading: "Blogs", route: "" },
-    { id: 5, heading: "Testimonial", route: "/testimonials" },
+    // { id: 4, heading: "Blogs", route: "" },
+    // { id: 5, heading: "Testimonial", route: "/testimonials" },
     { id: 6, heading: "Contact", route: "/career" },
-    {
-      id: 7,
-      heading: "More",
-      route: "",
-      dropDownOptions: [{ id: 1, heading: "Special", route: "/special" }],
-    },
+    // {
+    //   id: 7,
+    //   heading: "More",
+    //   route: "",
+    //   dropDownOptions: [{ id: 1, heading: "Special", route: "/special" }],
+    // },
   ];
 
   const [dropdownStates, setDropdownStates] = useState(
@@ -75,7 +75,7 @@ export const Navbar = () => {
               )}
             </div>
             {dropdownStates[index] && (
-              <Dropdown options={link.dropDownOptions} />
+              <Dropdown options={link?.dropDownOptions} />
             )}
           </div>
         ) : (
