@@ -1,7 +1,8 @@
 "use client";
 
 import { styles } from "@/app/styles";
-import { useState } from "react";
+import { useSupabase } from "@/context/supabaseContext";
+import { Key, useState } from "react";
 
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -12,8 +13,8 @@ const AccordionItem = ({
   isOpen,
   toggleAccordion,
 }: {
-  question: string;
-  answer: string;
+  question: string | null | undefined;
+  answer: string | null | undefined;
   isOpen: boolean;
   toggleAccordion: () => void;
 }) => {
@@ -51,27 +52,27 @@ const AccordionItem = ({
   );
 };
 
-export const FAQs = () => {
+export const FAQs = ({ data }: any) => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion((prev) => (prev === index ? null : index));
   };
 
-  const faqs = [
-    { id: 1, question: "What are ultrasounds?", answer: "Answer 1" },
-    {
-      id: 2,
-      question: "How are ultrasounds used in medical care?",
-      answer: "Answer 2",
-    },
-    {
-      id: 3,
-      question: "What is the process for getting an ultrasound?",
-      answer:
-        "One of the reasons ultrasounds are used so frequently is that they’re safe, effective, and painless. On the day of your ultrasound, there’s no need for any form of anesthesia.",
-    },
-  ];
+  // const faqs = [
+  //   { id: 1, question: "What are ultrasounds?", answer: "Answer 1" },
+  //   {
+  //     id: 2,
+  //     question: "How are ultrasounds used in medical care?",
+  //     answer: "Answer 2",
+  //   },
+  //   {
+  //     id: 3,
+  //     question: "What is the process for getting an ultrasound?",
+  //     answer:
+  //       "One of the reasons ultrasounds are used so frequently is that they’re safe, effective, and painless. On the day of your ultrasound, there’s no need for any form of anesthesia.",
+  //   },
+  // ];
 
   return (
     <section className="flex w-full flex-col items-center py-[4%]">
@@ -80,15 +81,25 @@ export const FAQs = () => {
         Questions that are asked most frequently
       </h3>
       <div className="flex flex-col w-[80%] items-center gap-6 my-5">
-        {faqs.map((faq, index) => (
-          <AccordionItem
-            key={faq.id}
-            question={faq.question}
-            answer={faq.answer}
-            isOpen={index === openAccordion}
-            toggleAccordion={() => toggleAccordion(index)}
-          />
-        ))}
+        {data &&
+          data.map(
+            (
+              faq: {
+                id: number;
+                question: string | null | undefined;
+                answer: string | null | undefined;
+              },
+              index: number
+            ) => (
+              <AccordionItem
+                key={faq.id}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={index === openAccordion}
+                toggleAccordion={() => toggleAccordion(index)}
+              />
+            )
+          )}
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ import {
 import { useSupabase } from "@/context/supabaseContext";
 
 export default function Home() {
-  const { about, blogs } = useSupabase();
+  const { about, blogs, faqs } = useSupabase();
 
   return (
     <main className="flex flex-col justify-center items-center overflow-x-hidden gap-10">
@@ -33,7 +33,7 @@ export default function Home() {
       <JoinTeam />
       <Blog data={blogs} />
       <Locations />
-      <FAQs />
+      <FAQs data={faqs} />
     </main>
   );
 }
