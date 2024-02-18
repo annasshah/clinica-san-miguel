@@ -4,7 +4,7 @@ import { styles } from "@/app/styles";
 import { supabase } from "@/supabaseClient";
 import { Button } from "@/utils";
 import { Modal } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -90,7 +90,7 @@ const Dropdown = ({
   onChange,
 }: {
   label: string;
-  options: string[];
+  options: string[] | null | undefined;
   breakpoint: boolean;
   value: string;
   onChange: (value: string) => void;
@@ -108,7 +108,7 @@ const Dropdown = ({
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
-      {options.map((option, index) => (
+      {options?.map((option, index) => (
         <option key={index} value={option}>
           {option}
         </option>
@@ -133,6 +133,7 @@ export const RequestAppointment = ({
   const [email, setEmail] = useState("");
   const [dob, setDob] = useState("");
   const [sex, setSex] = useState("");
+  const [services, setServices] = useState<string[] | null | undefined>([]);
   const [service, setService] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
@@ -142,7 +143,21 @@ export const RequestAppointment = ({
   const visitType = ["In-Office Visit", "Virtual Visit"];
   const patientType = ["new", "returning"];
   const genderOptions = ["Male", "Female", "Other"];
-  const services = ["abc", "xyz"];
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      let { data, error } = await supabase.from("services").select("title");
+
+      if (data) {
+        const serviceData = data.map((item) => item.title);
+        setServices(serviceData);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  // const services = ["abc", "xyz"];
 
   const submitAppointmentDetails = async () => {
     let appointmentDetails = {

@@ -98,7 +98,7 @@ export const Testimonials = ({
         <div className="w-[100vw] sm:w-[95vw] md:w-[80vw] lg:w-[75vw] xl:w-[70vw] block justify-center h-auto px-8  my-10">
           {testinomial && (
             <Slider ref={slider} {...settings}>
-              {testinomial?.map((item) => {
+              {testinomial?.slice(0, 10).map((item) => {
                 return (
                   <Testimonial
                     comment={item?.review}

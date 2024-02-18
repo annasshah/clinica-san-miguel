@@ -45,22 +45,24 @@ export const Treatment = ({
       <div className="flex justify-between items-center h-[50px]">
         <div className="flex items-center gap-3">
           <div className="w-10">
-            <div
+            {/* <div
               className="rounded-full flex w-10 h-10 justify-center items-center"
               style={{ border: `2px solid ${theme.iconColor}` }} // Replace 'red' with any color
-            >
-              <Image
-                src={icon}
-                alt={"service icon"}
-                className="object-contain w-5 h-5 aspect-auto"
-                style={{
-                  // filter: `hue-rotate(${
-                  //   mode === "dark" ? "0deg" : "180deg" // Rotate 180 degrees for dark mode
-                  // })`,
-                  color: mode === "dark" ? "#F8F5F0" : "#3D3D3C",
-                }}
-              />
-            </div>
+            > */}
+            <img
+              src={icon}
+              alt={"service icon"}
+              className="object-contain w-10 h-10 aspect-auto"
+              style={{
+                // filter: `hue-rotate(${
+                //   mode === "dark" ? "0deg" : "180deg" // Rotate 180 degrees for dark mode
+                // })`,
+                color: mode === "dark" ? "#F8F5F0" : "#3D3D3C",
+              }}
+              // width={40}
+              // height={40}
+            />
+            {/* </div> */}
           </div>
           <h1
             className="font-semibold font-poppins text-[25px] capitalize"
@@ -74,6 +76,8 @@ export const Treatment = ({
           src={heart_monitor}
           className="w-[29px] aspect-auto object-contain"
           alt={"heart_monitor icon"}
+          width={29}
+          height={29}
         />
       </div>
       <div
@@ -86,6 +90,8 @@ export const Treatment = ({
           src={image}
           alt={""}
           className="object-cover h-[170px] w-[280px] rounded-[10px] aspect-auto"
+          width={280}
+          height={170}
         />
       </div>
       <div className="overflow-y-auto h-[100px]">

@@ -4,7 +4,7 @@ import { eduardo, jesus, walter } from "@/assets/images";
 import { ExpandedTestimonial } from "@/components";
 import { Button } from "@/utils";
 
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 import { styles } from "../styles";
 
 const Testimonials = () => {
@@ -57,22 +57,22 @@ const Testimonials = () => {
               {total_ratings}/5
             </div>
             <div className="hidden lg:block">
-              <StarRatings
+              {/* <StarRatings
                 rating={total_ratings}
                 starDimension="45px"
                 starSpacing="1px"
                 numberOfStars={5}
                 starRatedColor="#C1001F"
-              />
+              /> */}
             </div>
             <div className="lg:hidden block">
-              <StarRatings
+              {/* <StarRatings
                 rating={total_ratings}
                 starDimension="25px"
                 starSpacing="1px"
                 numberOfStars={5}
                 starRatedColor="#C1001F"
-              />
+              /> */}
             </div>
             <div className="text-[35px] md:text-[40px] lg:text-[60px] text-customGray">
               {total_reviews}

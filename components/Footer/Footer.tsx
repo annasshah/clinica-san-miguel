@@ -6,7 +6,7 @@ import { Button } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 
 export const Footer = () => {
   const footerLink = [
@@ -97,13 +97,13 @@ export const Footer = () => {
               <h3 className="text-[25px] font-inter text-[#ffffff]">
                 {ratings}/5
               </h3>
-              <StarRatings
+              {/* <StarRatings
                 rating={ratings}
                 starDimension="15px"
                 starSpacing="1px"
                 numberOfStars={5}
                 starRatedColor="#C1001F"
-              />
+              /> */}
             </div>
           </div>
         </div>

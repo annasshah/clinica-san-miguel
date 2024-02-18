@@ -4,7 +4,7 @@ import { OpeningCommas } from "@/assets/images";
 
 import Image from "next/image";
 
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 
 export const Testimonial = ({
   comment,
@@ -47,13 +47,13 @@ export const Testimonial = ({
           {author}
         </p>
 
-        <StarRatings
+        {/* <StarRatings
           rating={ratings}
           starDimension="15px"
           starSpacing="1px"
           numberOfStars={5}
           starRatedColor="#C1001F"
-        />
+        /> */}
       </div>
     </article>
   );
