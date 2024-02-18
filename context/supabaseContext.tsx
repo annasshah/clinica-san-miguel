@@ -22,7 +22,7 @@ interface SupabaseContextType {
   detailData: Record<string, any[]>;
   filteredData: any[];
   specials: Database["public"]["Tables"]["Specials"]["Row"][];
-  testimonial: Database["public"]["Tables"]["Testinomial"]["Row"][];
+  testinomial: Database["public"]["Tables"]["Testinomial"]["Row"][];
   career: Database["public"]["Tables"]["career"]["Row"][];
   fetchDetailedData: (table: string, id: number) => Promise<void>;
   fetchFilteredData: (
@@ -71,7 +71,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   const [specials, setSpecials] = useState<
     Database["public"]["Tables"]["Specials"]["Row"][]
   >([]);
-  const [testimonial, setTestimonial] = useState<
+  const [testinomial, setTestinomial] = useState<
     Database["public"]["Tables"]["Testinomial"]["Row"][]
   >([]);
   const [career, setCareer] = useState<
@@ -141,7 +141,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     fetchDataCallback("Images", setLocationImages);
     fetchDataCallback("services", setServices);
     fetchDataCallback("Specials", setSpecials);
-    fetchDataCallback("Testinomial", setTestimonial);
+    fetchDataCallback("Testinomial", setTestinomial);
     fetchDataCallback("career", setCareer);
   }, [fetchDataCallback]);
 
@@ -158,7 +158,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
         locationImages,
         services,
         specials,
-        testimonial,
+        testinomial,
         career,
         detailData,
         filteredData,

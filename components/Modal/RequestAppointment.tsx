@@ -205,14 +205,14 @@ export const RequestAppointment = ({
             <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
               <Input
                 label="First Name"
-                placeholder="ex. umair"
+                placeholder="Enter your first name"
                 breakpoint={true}
                 onChange={setFirstName}
                 value={firstName}
               />
               <Input
                 label="Last Name"
-                placeholder="ex. munawar"
+                placeholder="Enter your last name"
                 breakpoint={true}
                 onChange={setLastName}
                 value={lastName}
@@ -220,7 +220,7 @@ export const RequestAppointment = ({
             </article>
             <Input
               label="Email Address"
-              placeholder="ex. umair.munawar@gmail.com"
+              placeholder="Your current email address"
               breakpoint={false}
               onChange={setEmail}
               value={email}
@@ -235,7 +235,7 @@ export const RequestAppointment = ({
               />
               <Input
                 label="Date of Birth"
-                placeholder="ex. 23-oct-2000"
+                placeholder="your date of birth"
                 breakpoint={true}
                 onChange={setDob}
                 value={dob}
@@ -250,7 +250,7 @@ export const RequestAppointment = ({
             />
             <Input
               label="Address"
-              placeholder="ex. Model Colony, Malir, Karachi."
+              placeholder="enter your address with zip code."
               breakpoint={false}
               onChange={setAddress}
               value={address}

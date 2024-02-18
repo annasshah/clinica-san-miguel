@@ -110,6 +110,7 @@ export interface Database {
       };
       Testinomial: {
         Row: {
+          rating: number;
           // the data expected from .select()
           id: number;
           created_at: string;

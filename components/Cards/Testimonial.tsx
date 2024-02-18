@@ -12,8 +12,8 @@ export const Testimonial = ({
   ratings,
   mode,
 }: {
-  comment: string;
-  author: string;
+  comment: string | null;
+  author: string | null;
   ratings: number;
   mode: string;
 }) => {

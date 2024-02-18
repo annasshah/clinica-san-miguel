@@ -14,10 +14,10 @@ export const Treatment = ({
   description,
   mode,
 }: {
-  heading: string;
+  heading: string | null;
   image: any;
   icon: any;
-  description: string;
+  description: string | null;
   mode: string;
 }) => {
   const dark = {

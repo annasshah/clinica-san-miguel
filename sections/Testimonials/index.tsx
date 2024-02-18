@@ -4,12 +4,13 @@ import { useRef } from "react";
 
 import { Testimonial } from "@/components";
 import { styles } from "@/app/styles";
-import testimonials from "./testimonials.json";
-import { SampleNextArrow, SamplePrevArrow } from "@/utils";
+// import testimonials from "./testimonials.json";
+// import { SampleNextArrow, SamplePrevArrow } from "@/utils";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useSupabase } from "@/context/supabaseContext";
 
 export const Testimonials = ({
   headingFlag,
@@ -79,6 +80,8 @@ export const Testimonials = ({
     ],
   };
 
+  const { testinomial } = useSupabase();
+
   return (
     <>
       <section className="flex flex-col justify-center w-full items-center my-5 px-4">
@@ -93,19 +96,21 @@ export const Testimonials = ({
           Real Stories, Real Impact: The Voice of Satisfied Clients
         </p>
         <div className="w-[100vw] sm:w-[95vw] md:w-[80vw] lg:w-[75vw] xl:w-[70vw] block justify-center h-auto px-8  my-10">
-          <Slider ref={slider} {...settings}>
-            {testimonials.map((testimonial) => {
-              return (
-                <Testimonial
-                  comment={testimonial.comment}
-                  author={testimonial.author}
-                  key={testimonial.id}
-                  ratings={testimonial.ratings}
-                  mode={mode}
-                />
-              );
-            })}
-          </Slider>
+          {testinomial && (
+            <Slider ref={slider} {...settings}>
+              {testinomial?.map((item) => {
+                return (
+                  <Testimonial
+                    comment={item?.review}
+                    author={item?.name}
+                    key={item.id}
+                    ratings={item?.rating}
+                    mode={mode}
+                  />
+                );
+              })}
+            </Slider>
+          )}
         </div>
       </section>
     </>

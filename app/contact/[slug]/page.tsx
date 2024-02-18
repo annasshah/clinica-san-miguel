@@ -39,6 +39,7 @@ const ServiceTab = ({ name }: { name: string }) => {
 const LocationDetails = ({ params }: { params: { slug: string } }) => {
   const [openAppointmentModal, setOpenAppointmentModal] = useState(false);
   const [locationGallery, setLocationGallery] = useState<(string | null)[]>();
+  const [totalRatings, setTotalRatings] = useState(0);
 
   const {
     detailData,
@@ -59,6 +60,19 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
   useEffect(() => {
     fetchTestimonialsData();
   }, [fetchTestimonialsData]);
+
+  useEffect(() => {
+    if (filteredData) {
+      const ratings = filteredData.map((item) => parseFloat(item.rating));
+      const totalResults = ratings.length;
+      const sumOfRatings = ratings.reduce((acc, rating) => acc + rating, 0);
+      const averageRating = totalResults > 0 ? sumOfRatings / totalResults : 0;
+      const averageRatingFormatted = averageRating.toFixed(2);
+      console.log("Average Rating:", averageRatingFormatted);
+
+      setTotalRatings(averageRating);
+    }
+  }, [filteredData]);
 
   useEffect(() => {
     fetchDataCallback();
@@ -93,38 +107,38 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
     setLocationGallery(data);
   }, [id, locationImages]);
 
-  const total_ratings = 4.8;
+  // const total_ratings = 4.8;
 
-  const testimonials = [
-    {
-      id: 1,
-      comment:
-        "Very great service, I went for an ear ache and left feeling very well. I was sent medication and the ladies treated me really good. 'Highly recommend'",
-      author: "Peter, Belgium",
-      ratings: 5,
-    },
-    {
-      id: 2,
-      comment:
-        "Really nice staff! I was treated very nice and loved the way they explained everything to me! highly recommended",
-      author: "EDUARDO C.",
-      ratings: 5,
-    },
-    {
-      id: 3,
-      comment:
-        "Really nice staff! I was treated very nice and loved the way they explained everything to me! highly recommended",
-      author: "ANGELES R.",
-      ratings: 5,
-    },
-    {
-      id: 4,
-      comment:
-        "Great clinic great prices they treat you so well I have the flu and as soon as I left the clinic I felt so much better ! Will for sure come back!",
-      author: "JESUS ​​B.",
-      ratings: 5,
-    },
-  ];
+  // const testimonials = [
+  //   {
+  //     id: 1,
+  //     comment:
+  //       "Very great service, I went for an ear ache and left feeling very well. I was sent medication and the ladies treated me really good. 'Highly recommend'",
+  //     author: "Peter, Belgium",
+  //     ratings: 5,
+  //   },
+  //   {
+  //     id: 2,
+  //     comment:
+  //       "Really nice staff! I was treated very nice and loved the way they explained everything to me! highly recommended",
+  //     author: "EDUARDO C.",
+  //     ratings: 5,
+  //   },
+  //   {
+  //     id: 3,
+  //     comment:
+  //       "Really nice staff! I was treated very nice and loved the way they explained everything to me! highly recommended",
+  //     author: "ANGELES R.",
+  //     ratings: 5,
+  //   },
+  //   {
+  //     id: 4,
+  //     comment:
+  //       "Great clinic great prices they treat you so well I have the flu and as soon as I left the clinic I felt so much better ! Will for sure come back!",
+  //     author: "JESUS ​​B.",
+  //     ratings: 5,
+  //   },
+  // ];
 
   const services = [
     { id: 1, name: "wart removal" },
@@ -250,11 +264,11 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
           <article className="flex flex-col gap-3 justify-start">
             <div className="flex flex-col justify-start gap-3">
               <div className="text-[40px] md:text-[60px] lg:text-[80px] text-customGray">
-                {total_ratings}/5
+                {totalRatings}/5
               </div>
               <div className="hidden lg:block">
                 <StarRatings
-                  rating={total_ratings}
+                  rating={totalRatings}
                   starDimension="45px"
                   starSpacing="1px"
                   numberOfStars={5}
