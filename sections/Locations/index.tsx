@@ -189,6 +189,7 @@ export const Locations = () => {
               number={location.number}
               route={""}
               location={location.location}
+              id={null}
             />
           ))}
         </Slider>

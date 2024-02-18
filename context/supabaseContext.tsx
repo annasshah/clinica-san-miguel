@@ -16,13 +16,20 @@ interface SupabaseContextType {
   additionalServices: Database["public"]["Tables"]["Additional_Services"]["Row"][];
   faqs: Database["public"]["Tables"]["FAQs"]["Row"][];
   heroSection: Database["public"]["Tables"]["Hero_Section"]["Row"][];
-  location: Database["public"]["Tables"]["Location"]["Row"][];
+  locations: Database["public"]["Tables"]["Locations"]["Row"][];
+  locationImages: Database["public"]["Tables"]["Images"]["Row"][];
   services: Database["public"]["Tables"]["services"]["Row"][];
-  serviceDetails: Database["public"]["Tables"]["services"]["Row"][];
+  detailData: Record<string, any[]>;
+  filteredData: any[];
   specials: Database["public"]["Tables"]["Specials"]["Row"][];
   testimonial: Database["public"]["Tables"]["Testinomial"]["Row"][];
   career: Database["public"]["Tables"]["career"]["Row"][];
-  fetchServiceData: (table: string, id: number) => Promise<void>;
+  fetchDetailedData: (table: string, id: number) => Promise<void>;
+  fetchFilteredData: (
+    table: string,
+    column_name: string,
+    id: number
+  ) => Promise<void>;
 }
 
 const SupabaseContext = createContext<SupabaseContextType | undefined>(
@@ -47,15 +54,20 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   const [heroSection, setHeroSection] = useState<
     Database["public"]["Tables"]["Hero_Section"]["Row"][]
   >([]);
-  const [location, setLocation] = useState<
-    Database["public"]["Tables"]["Location"]["Row"][]
+  const [locations, setLocations] = useState<
+    Database["public"]["Tables"]["Locations"]["Row"][]
+  >([]);
+  const [locationImages, setLocationImages] = useState<
+    Database["public"]["Tables"]["Images"]["Row"][]
   >([]);
   const [services, setServices] = useState<
     Database["public"]["Tables"]["services"]["Row"][]
   >([]);
-  const [serviceDetails, setServiceDetails] = useState<
-    Database["public"]["Tables"]["services"]["Row"][]
-  >([]);
+  // const [detailData, setDetailData] = useState<
+  //   Database["public"]["Tables"]["services"]["Row"][]
+  // >([]);
+  const [detailData, setDetailData] = useState<Record<string, any[]>>({});
+  const [filteredData, setFilteredData] = useState<any[]>([]);
   const [specials, setSpecials] = useState<
     Database["public"]["Tables"]["Specials"]["Row"][]
   >([]);
@@ -66,6 +78,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     Database["public"]["Tables"]["career"]["Row"][]
   >([]);
 
+  // for all records
   const fetchData = async (table: string, setter: Function) => {
     try {
       const { data, error } = await supabase.from(table).select("*");
@@ -78,7 +91,8 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
-  const fetchServiceData = async (table: string, id: number) => {
+  // for any unique record
+  const fetchDetailedData = async (table: string, id: number) => {
     try {
       const { data, error } = await supabase
         .from(table)
@@ -86,7 +100,27 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
         .eq("id", id);
       console.log(data, `${table} Data`);
       if (data) {
-        setServiceDetails(data);
+        setDetailData({ [table]: data });
+      }
+    } catch (error) {
+      console.error(`Error fetching ${table} data:`, error);
+    }
+  };
+
+  // fetch filtered data based on column id
+  const fetchFilteredData = async (
+    table: string,
+    column_name: string,
+    id: number
+  ) => {
+    try {
+      const { data, error } = await supabase
+        .from(table)
+        .select("*")
+        .eq(column_name, id);
+      console.log(data, `${table} Data`);
+      if (data) {
+        setFilteredData(data);
       }
     } catch (error) {
       console.error(`Error fetching ${table} data:`, error);
@@ -94,7 +128,8 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const fetchDataCallback = useCallback(fetchData, []);
-  const fetchServiceDataCallback = useCallback(fetchServiceData, []);
+  const fetchDetailedDataCallback = useCallback(fetchDetailedData, []);
+  const fetchFilteredDataCallback = useCallback(fetchFilteredData, []);
 
   useEffect(() => {
     fetchDataCallback("about", setAbout);
@@ -102,7 +137,8 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     fetchDataCallback("Additional_Services", setAdditionalServices);
     fetchDataCallback("FAQs", setFaqs);
     fetchDataCallback("Hero_Section", setHeroSection);
-    fetchDataCallback("Location", setLocation);
+    fetchDataCallback("Locations", setLocations);
+    fetchDataCallback("Images", setLocationImages);
     fetchDataCallback("services", setServices);
     fetchDataCallback("Specials", setSpecials);
     fetchDataCallback("Testinomial", setTestimonial);
@@ -118,13 +154,16 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
         additionalServices,
         faqs,
         heroSection,
-        location,
+        locations,
+        locationImages,
         services,
         specials,
         testimonial,
         career,
-        serviceDetails,
-        fetchServiceData: fetchServiceDataCallback,
+        detailData,
+        filteredData,
+        fetchDetailedData: fetchDetailedDataCallback,
+        fetchFilteredData: fetchFilteredDataCallback,
       }}
     >
       {children}

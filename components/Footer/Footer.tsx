@@ -17,18 +17,30 @@ export const Footer = () => {
   ];
 
   const pages = [
-    { id: 1, name: "Home", route: "" },
-    { id: 2, name: "About Us", route: "" },
-    { id: 3, name: "services", route: "" },
-    { id: 4, name: "blogs", route: "" },
-    { id: 5, name: "testimonial", route: "" },
-    { id: 6, name: "contact", route: "" },
+    { id: 1, name: "Home", route: "/" },
+    { id: 2, name: "About Us", route: "/about" },
+    { id: 3, name: "services", route: "/services" },
+    // { id: 4, name: "blogs", route: "" },
+    // { id: 5, name: "testimonial", route: "" },
+    { id: 6, name: "contact", route: "/contact" },
   ];
 
   const socialLinks = [
-    { id: 1, image: facebook, route: "" },
-    { id: 2, image: instagram, route: "" },
-    { id: 3, image: youtube, route: "" },
+    {
+      id: 1,
+      image: facebook,
+      route: "https://www.facebook.com/clinicasanmigueltx/",
+    },
+    {
+      id: 2,
+      image: instagram,
+      route: "https://www.instagram.com/san_miguel_clinic_",
+    },
+    {
+      id: 3,
+      image: youtube,
+      route: "https://www.youtube.com/channel/UC-89xwmnpU6ZEPSawRZKNIw",
+    },
   ];
 
   const ratings = 4.8;

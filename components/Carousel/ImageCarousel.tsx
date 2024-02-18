@@ -1,26 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { sample1, sample2, sample3, sample4 } from "@/assets/images/slider";
+// import { sample1, sample2, sample3, sample4 } from "@/assets/images/slider";
 
-export const ImageCarousel = () => {
-  const allImages = [
-    { id: 1, image: sample1 },
-    { id: 2, image: sample2 },
-    { id: 3, image: sample3 },
-    { id: 4, image: sample4 },
-  ];
+export const ImageCarousel = ({
+  imagesData,
+}: {
+  imagesData: (string | null)[] | undefined;
+}) => {
+  // const allImages = [
+  //   { id: 1, image: sample1 },
+  //   { id: 2, image: sample2 },
+  //   { id: 3, image: sample3 },
+  //   { id: 4, image: sample4 },
+  // ];
 
-  const [selectedImage, setSelectedImage] = useState(allImages[0].image);
+  const [selectedImage, setSelectedImage] = useState<string | undefined | null>(
+    undefined
+  );
 
-  const handleClick = (image: any) => {
+  useEffect(() => {
+    if (imagesData && imagesData.length > 0) {
+      setSelectedImage(imagesData[0]);
+    }
+  }, [imagesData]);
+
+  const handleClick = (image: string | null) => {
     setSelectedImage(image);
   };
 
-  const filteredImages = allImages.filter(
-    (item) => item.image !== selectedImage
-  );
+  const filteredImages = imagesData?.filter((item) => item !== selectedImage);
 
   return (
     <section
@@ -40,18 +50,20 @@ export const ImageCarousel = () => {
         )}
       </div>
       <div className="flex gap-2 items-center">
-        {filteredImages.map((item, index) => (
+        {filteredImages?.map((item, index) => (
           <div
             key={index}
-            onClick={() => handleClick(item.image)}
+            onClick={() => handleClick(item)}
             className="cursor-pointer"
           >
-            <Image
-              src={item.image}
-              alt={`Image ${item.id}`}
-              width={100}
-              height={100}
-            />
+            {item && (
+              <Image
+                src={item}
+                alt={`Image ${item}`}
+                width={100}
+                height={100}
+              />
+            )}
           </div>
         ))}
       </div>

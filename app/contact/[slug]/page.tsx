@@ -10,7 +10,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { Map } from "@/components/Map";
 import { Button } from "@/utils";
 import { RequestAppointment } from "@/components/Modal/RequestAppointment";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useSupabase } from "@/context/supabaseContext";
 
 const ServiceTab = ({ name }: { name: string }) => {
   return (
@@ -35,11 +36,62 @@ const ServiceTab = ({ name }: { name: string }) => {
   );
 };
 
-const LocationDetails = () => {
+const LocationDetails = ({ params }: { params: { slug: string } }) => {
   const [openAppointmentModal, setOpenAppointmentModal] = useState(false);
+  const [locationGallery, setLocationGallery] = useState<(string | null)[]>();
+
+  const {
+    detailData,
+    filteredData,
+    locationImages,
+    fetchDetailedData,
+    fetchFilteredData,
+  } = useSupabase();
+
+  const fetchDataCallback = useCallback(() => {
+    fetchDetailedData("Locations", parseInt(params.slug));
+  }, [fetchDetailedData, params.slug]);
+
+  const fetchTestimonialsData = useCallback(() => {
+    fetchFilteredData("Testinomial", "location_id", parseInt(params.slug));
+  }, [fetchFilteredData, params.slug]);
+
+  useEffect(() => {
+    fetchTestimonialsData();
+  }, [fetchTestimonialsData]);
+
+  useEffect(() => {
+    fetchDataCallback();
+  }, [fetchDataCallback]);
+
   const handleCloseModal = () => {
     setOpenAppointmentModal(false);
   };
+
+  const detailedData = detailData["Locations"] || [];
+
+  const {
+    id,
+    title,
+    phone,
+    address,
+    mon_timing,
+    tuesday_timing,
+    wednesday_timing,
+    thursday_timing,
+    friday_timing,
+    saturday_timing,
+    sunday_timing,
+    direction,
+  } = detailedData[0] || {};
+
+  useEffect(() => {
+    let data = locationImages
+      .filter((item) => item.location_id === id)
+      .map((item) => item.image);
+
+    setLocationGallery(data);
+  }, [id, locationImages]);
 
   const total_ratings = 4.8;
 
@@ -85,21 +137,21 @@ const LocationDetails = () => {
     { id: 8, name: "wart removal" },
   ];
 
-  const location =
-    "!1m18!1m12!1m3!1d3355.764805032311!2d-96.82054992371607!3d32.7454353855983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e99973c005cb9%3A0xc8ae707a71769ed1!2s428%20E%20Jefferson%20Blvd%2C%20Dallas%2C%20TX%2075203%2C%20USA!5e0!3m2!1sen!2s!4v1701718238221!5m2!1sen!2s";
+  // const location =
+  //   "!1m18!1m12!1m3!1d3355.764805032311!2d-96.82054992371607!3d32.7454353855983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e99973c005cb9%3A0xc8ae707a71769ed1!2s428%20E%20Jefferson%20Blvd%2C%20Dallas%2C%20TX%2075203%2C%20USA!5e0!3m2!1sen!2s!4v1701718238221!5m2!1sen!2s";
 
   const clinicDetails = {
-    phone: "832-720-7801",
+    phone: phone,
     timings: [
-      { id: 1, day: "mon", timing: "9:00 am - 8:00 pm" },
-      { id: 2, day: "tue", timing: "9:00 am - 8:00 pm" },
-      { id: 3, day: "wed", timing: "9:00 am - 8:00 pm" },
-      { id: 4, day: "thurs", timing: "9:00 am - 8:00 pm" },
-      { id: 5, day: "fri", timing: "9:00 am - 8:00 pm" },
-      { id: 6, day: "sat", timing: "10:00 am - 5:00 pm" },
-      { id: 7, day: "sun", timing: "10:00 am - 5:00 pm" },
+      { id: 1, day: "mon", timing: mon_timing },
+      { id: 2, day: "tue", timing: tuesday_timing },
+      { id: 3, day: "wed", timing: wednesday_timing },
+      { id: 4, day: "thurs", timing: thursday_timing },
+      { id: 5, day: "fri", timing: friday_timing },
+      { id: 6, day: "sat", timing: saturday_timing },
+      { id: 7, day: "sun", timing: sunday_timing },
     ],
-    address: "5712 Fondren Rd, Houston, TX 77036",
+    address: address,
   };
 
   type GroupedTimings = {
@@ -120,7 +172,7 @@ const LocationDetails = () => {
   );
 
   const displayTimings = Object.entries(groupedTimings).map(
-    ([timing, days]) => {
+    ([timing, days]: [string, string[]]) => {
       const daysString = days.join(", ");
       return (
         <p
@@ -140,12 +192,13 @@ const LocationDetails = () => {
       <main className="flex flex-col gap-10 justify-center items-center py-5 px-2 md:px-[5%] lg:px-[10%]">
         <section className="flex flex-col justify-start gap-10 w-full">
           <h2 className={`${styles.sectionHeadText} text-headingColor`}>
-            Clinica San Miguel Houston, TX Office
+            {/* Clinica San Miguel Houston, TX Office */}
+            {title}
           </h2>
 
           <article className="flex flex-col lg:flex-row justify-center w-full items-start gap-5">
             <div className="w-full lg:w-1/2">
-              <ImageCarousel />
+              <ImageCarousel imagesData={locationGallery} />
             </div>
             <div className="flex flex-col w-full lg:w-1/2 gap-4">
               <Button
@@ -162,9 +215,7 @@ const LocationDetails = () => {
                   <h3 className="text-[18px] font-bold text-black capitalize">
                     Phone:
                   </h3>
-                  <p className="text-[16px] text-black font-normal">
-                    {clinicDetails.phone}
-                  </p>
+                  <p className="text-[16px] text-black font-normal">{phone}</p>
                 </div>
 
                 <div className="flex flex-col">
@@ -181,7 +232,7 @@ const LocationDetails = () => {
                     Address:
                   </h3>
                   <p className="text-[16px] text-black font-normal">
-                    {clinicDetails.address}
+                    {address}
                   </p>
                 </div>
               </div>
@@ -214,12 +265,12 @@ const LocationDetails = () => {
           </article>
 
           <article className="flex flex-wrap justify-start gap-5 items-center">
-            {testimonials.map((item, index) => (
+            {filteredData?.map((item, index) => (
               <Testimonial
                 key={item.id}
-                author={item.author}
-                comment={item.comment}
-                ratings={item.ratings}
+                author={item.name}
+                comment={item.review}
+                ratings={parseFloat(item.rating)}
                 mode="dark"
               />
             ))}
@@ -249,11 +300,12 @@ const LocationDetails = () => {
           </h2>
 
           <div className="min-w-[300px] w-[80vw] max-w-[1200px] rounded-[60px]">
-            <Map height={600} location={location} />
+            <Map height={600} location={direction} />
           </div>
         </section>
       </main>
       <RequestAppointment
+        locationID={parseInt(params.slug)}
         handleClose={handleCloseModal}
         openModal={openAppointmentModal}
       />

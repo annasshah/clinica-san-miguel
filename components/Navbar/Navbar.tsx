@@ -25,7 +25,7 @@ export const Navbar = () => {
     },
     // { id: 4, heading: "Blogs", route: "" },
     // { id: 5, heading: "Testimonial", route: "/testimonials" },
-    { id: 6, heading: "Contact", route: "/career" },
+    { id: 6, heading: "Contact", route: "/contact" },
     // {
     //   id: 7,
     //   heading: "More",
@@ -87,17 +87,17 @@ export const Navbar = () => {
     ));
 
   return (
-    <header className="h-[90px] w-full flex justify-between px-8 md:px-10 lg:px-14 items-center">
+    <header className="h-[90px] w-full flex justify-center relative px-8 md:px-10 lg:px-14 items-center">
       <Image
         src={Logo}
         alt="Logo"
-        className="w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] aspect-auto object-contain"
+        className="w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] absolute left-6 top-5 aspect-auto object-contain"
       />
       <nav className="hidden tablet:flex tablet:justify-center font-poppins tablet:items-center tablet:gap-5">
         {renderNavLinks()}
       </nav>
       <div className="flex gap-4 sm:gap-7 items-center">
-        <div className="relative">
+        {/* <div className="relative">
           <div
             onClick={toggleUsaFlagDropdown}
             className="flex justify-between gap-3 items-center"
@@ -125,8 +125,8 @@ export const Navbar = () => {
               ]}
             />
           )}
-        </div>
-        <div className="block tablet:hidden">
+        </div> */}
+        <div className="block absolute top-5 right-6 tablet:hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         </div>
       </div>

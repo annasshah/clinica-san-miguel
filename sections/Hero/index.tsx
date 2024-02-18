@@ -53,9 +53,9 @@ export const Hero = () => {
         </div>
       </article>
 
-      <article className="w-full flex justify-center items-center">
+      {/* <article className="w-full flex justify-center items-center">
         <ScheduleTreatment />
-      </article>
+      </article> */}
 
       {/* <Testimonial comment={""} author={""} /> */}
     </section>

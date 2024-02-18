@@ -9,10 +9,10 @@ import { useCallback, useEffect } from "react";
 // import { useRef } from "react";
 // import { SampleNextArrow, SamplePrevArrow } from "@/utils";
 
-const questionStyle =
-  "text-[25px] md:text-[30px] lg:text-[40px] xl:text-[60px] font-poppins font-bold text-customGray";
-const answerStyle =
-  "text-[16px] md:text-[20px] lg:text-[25px] text-customGray font-poppins";
+// const questionStyle =
+//   "text-[25px] md:text-[30px] lg:text-[40px] xl:text-[60px] font-poppins font-bold text-customGray";
+// const answerStyle =
+//   "text-[16px] md:text-[20px] lg:text-[25px] text-customGray font-poppins";
 
 // const QuestionAndAnswer = [
 //   {
@@ -129,15 +129,17 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
   // const serviceDescription =
   //   "Ultrasounds are a great way to “see” internal body structures and understand more about how your body is functioning. Clinica San Miguel offers ultrasounds at all 12 locations throughout Texas, including three in Dallas, five in Houston, and one in Fresno, Arlington, Farmers Branch, San Antonio, and Pasadena. If you’d like more information about the role an ultrasound might play in your health planning, book a visit online or by phone today.";
 
-  const { serviceDetails, fetchServiceData } = useSupabase();
+  const { detailData, fetchDetailedData } = useSupabase();
 
   const fetchDataCallback = useCallback(() => {
-    fetchServiceData("services", parseInt(params.slug));
-  }, [fetchServiceData, params.slug]);
+    fetchDetailedData("services", parseInt(params.slug));
+  }, [fetchDetailedData, params.slug]);
 
   useEffect(() => {
     fetchDataCallback();
   }, [fetchDataCallback]);
+
+  const detailedServiceData = detailData["services"] || [];
 
   const {
     title,
@@ -149,7 +151,7 @@ const ServiceDetails = ({ params }: { params: { slug: string } }) => {
     // answer_2,
     // question_3,
     // answer_3,
-  } = serviceDetails[0] || {};
+  } = detailedServiceData[0] || {};
 
   // let QuestionAndAnswer = [
   //   {

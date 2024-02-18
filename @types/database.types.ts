@@ -55,16 +55,32 @@ export interface Database {
           content: string | null;
         };
       };
-      Location: {
+      Locations: {
         Row: {
           // the data expected from .select()
           id: number;
+          title: string | null;
           email: string | null;
           created_at: string;
           phone: string | null;
-          timings: string | null;
-          location: string | null;
+          mon_timing: string | null;
+          tuesday_timing: string | null;
+          wednesday_timing: string | null;
+          thursday_timing: string | null;
+          friday_timing: string | null;
+          saturday_timing: string | null;
+          sunday_timing: string | null;
+          direction: string | null;
           address: string | null;
+        };
+      };
+      Images: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          location_id: number | null;
+          image: string | null;
         };
       };
       services: {
@@ -108,6 +124,23 @@ export interface Database {
           id: number;
           created_at: string;
           texts: string | null;
+        };
+      };
+      Appoinments: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          texts: string | null;
+          location_id: number | null;
+          first_name: string | null;
+          last_name: string | null;
+          email_Address: string | null;
+          in_office_patient: boolean | null;
+          new_patient: boolean | null;
+          dob: string | null;
+          sex: string | null;
+          service: string | null;
         };
       };
     };
