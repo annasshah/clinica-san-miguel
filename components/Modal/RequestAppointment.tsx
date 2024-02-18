@@ -150,6 +150,7 @@ export const RequestAppointment = ({
       first_name: firstName,
       last_name: lastName,
       email_Address: email,
+      address: address,
       in_office_patient: inOfficePatient === "In-Office Visit" || false,
       new_patient: newPatient === "new" || false,
       dob: dob,
