@@ -3,7 +3,7 @@
 import { styles } from "@/app/styles";
 import { ImageCarousel, Testimonial } from "@/components";
 // import Image from "next/image";
-// import StarRatings from "react-star-ratings";
+import StarRatings from "react-star-ratings";
 
 // icons
 import { IoIosArrowForward } from "react-icons/io";
@@ -267,13 +267,13 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
                 {totalRatings}/5
               </div>
               <div className="hidden lg:block">
-                {/* <StarRatings
+                <StarRatings
                   rating={totalRatings}
                   starDimension="45px"
                   starSpacing="1px"
                   numberOfStars={5}
                   starRatedColor="#C1001F"
-                /> */}
+                />
               </div>
             </div>
           </article>

@@ -2,11 +2,12 @@
 
 import { facebook, instagram, youtube } from "@/assets/images";
 import { Button } from "@/utils";
+import { IoIosArrowForward } from "react-icons/io";
 
 import Image from "next/image";
 import Link from "next/link";
 
-// import StarRatings from "react-star-ratings";
+import StarRatings from "react-star-ratings";
 
 export const Footer = () => {
   const footerLink = [
@@ -97,13 +98,13 @@ export const Footer = () => {
               <h3 className="text-[25px] font-inter text-[#ffffff]">
                 {ratings}/5
               </h3>
-              {/* <StarRatings
+              <StarRatings
                 rating={ratings}
                 starDimension="15px"
                 starSpacing="1px"
                 numberOfStars={5}
                 starRatedColor="#C1001F"
-              /> */}
+              />
             </div>
           </div>
         </div>
@@ -114,11 +115,15 @@ export const Footer = () => {
           </h5>
 
           <div className="flex gap-2">
-            <div className="bg-[#F8F5F0] h-[55px] w-[296px] rounded-[10px] md:rounded-[5px] flex justify-center items-center p-2">
+            <div className="bg-[#F8F5F0] h-[55px] w-[296px] rounded-[10px] md:rounded-[5px] flex justify-between items-center p-2">
               <input
                 placeholder="Enter Your Email"
-                className="placeholder:text-[14px] placeholder:text-[#A2A9B0] text-[16px] outline-none text-[#000000] bg-transparent w-full"
+                className="placeholder:text-[14px] placeholder:text-[#A2A9B0] text-[16px] outline-none text-[#000000] bg-transparent w-full pr-2"
               />
+
+              <div className="rounded-full aspect-square bg-[#19192C] text-[24px] text-white w-[40px] h-[40px] flex justify-center items-center">
+                <IoIosArrowForward />
+              </div>
             </div>
 
             {/* <Button

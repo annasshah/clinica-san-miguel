@@ -47,12 +47,12 @@ export const CompactService = ({
     >
       <div className="flex items-center gap-3">
         {icon && (
-          <img
+          <Image
             src={icon}
             alt={"service icon"}
             className="object-contain w-10 h-10 rounded-[50%] aspect-auto"
-            // width={40}
-            // height={40}
+            width={40}
+            height={40}
           />
         )}
         <h1

@@ -6,6 +6,9 @@ import { Button } from "@/utils";
 import { Modal } from "flowbite-react";
 import { useEffect, useState } from "react";
 
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
     <input
@@ -82,6 +85,43 @@ const Input = ({
   </div>
 );
 
+const DatePicker = ({
+  label,
+  placeholder,
+  breakpoint,
+  value,
+  onChange,
+}: {
+  label: string;
+  placeholder: string;
+  breakpoint: boolean;
+  value: Date | null;
+  onChange: (value: Date | null) => void;
+}) => (
+  <div
+    className={`flex flex-col items-start w-full ${
+      breakpoint ? "md:w-1/2" : ""
+    } justify-center`}
+  >
+    <label className="text-[16px] text-customGray font-poppins font-bold">
+      {label}:
+    </label>
+    {/* <input
+      placeholder={`${placeholder}`}
+      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    /> */}
+    <ReactDatePicker
+      selected={value}
+      onChange={(date) => onChange(date)}
+      placeholderText={placeholder}
+      dateFormat="yyyy-MM-dd"
+      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
+    />
+  </div>
+);
+
 const Dropdown = ({
   label,
   options,
@@ -131,7 +171,7 @@ export const RequestAppointment = ({
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [dob, setDob] = useState("");
+  const [dob, setDob] = useState<Date | null>(null);
   const [sex, setSex] = useState("");
   const [services, setServices] = useState<string[] | null | undefined>([]);
   const [service, setService] = useState("");
@@ -188,114 +228,122 @@ export const RequestAppointment = ({
         show={openModal}
         onClose={handleClose}
         position={"center"}
-        size={"lg"}
+        // size={"lg"}
         color="#F8F5F0"
+        className="bg-[#000000] bg-opacity-50 flex justify-center items-center h-screen w-full"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          // alignItems: "center",
+          paddingTop: "30px",
+          paddingBottom: "30px",
+        }}
       >
-        {/* <div className="min-w-[320px] w-full max-w-[800px] rounded-[20px] bg-[#F8F5F0]"> */}
-        <Modal.Header>
-          <div className="flex w-full justify-start">
-            <h1
-              className={`${styles.sectionHeadText} border-b-[1px] border-black px-4 pb-3`}
-              style={{ textAlign: "left", color: "#C1001F" }}
-            >
-              Appointment Request
-            </h1>
-          </div>
-        </Modal.Header>
-        <Modal.Body>
-          <section className="flex flex-col px-5 justify-start items-start gap-4 p-4">
-            <RadioButtons
-              name="visit type"
-              options={visitType}
-              label="Visit Type"
-              onChange={setInOfficePatient}
-              selectedValue={inOfficePatient}
-            />
-            <RadioButtons
-              name="patient type"
-              options={patientType}
-              label="Are you a new or returning patient?"
-              onChange={setNewPatient}
-              selectedValue={newPatient}
-            />
-            <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
+        <div className="w-full max-w-[1000px] rounded-[20px] bg-[#F8F5F0]">
+          <Modal.Header>
+            <div className="flex w-full justify-start">
+              <h1
+                className={`${styles.sectionHeadText} border-b-[1px] border-black px-4 pb-3`}
+                style={{ textAlign: "left", color: "#C1001F" }}
+              >
+                Appointment Request
+              </h1>
+            </div>
+          </Modal.Header>
+          <Modal.Body>
+            <section className="flex flex-col px-5 justify-start items-start gap-4 p-4">
+              <RadioButtons
+                name="visit type"
+                options={visitType}
+                label="Visit Type"
+                onChange={setInOfficePatient}
+                selectedValue={inOfficePatient}
+              />
+              <RadioButtons
+                name="patient type"
+                options={patientType}
+                label="Are you a new or returning patient?"
+                onChange={setNewPatient}
+                selectedValue={newPatient}
+              />
+              <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
+                <Input
+                  label="First Name"
+                  placeholder="Enter your first name"
+                  breakpoint={true}
+                  onChange={setFirstName}
+                  value={firstName}
+                />
+                <Input
+                  label="Last Name"
+                  placeholder="Enter your last name"
+                  breakpoint={true}
+                  onChange={setLastName}
+                  value={lastName}
+                />
+              </article>
               <Input
-                label="First Name"
-                placeholder="Enter your first name"
-                breakpoint={true}
-                onChange={setFirstName}
-                value={firstName}
+                label="Email Address"
+                placeholder="Your current email address"
+                breakpoint={false}
+                onChange={setEmail}
+                value={email}
+              />
+              <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
+                <Input
+                  label="Mobile Number"
+                  placeholder="ex. (+92) 331 2566730"
+                  breakpoint={true}
+                  onChange={setPhone}
+                  value={phone}
+                />
+                <DatePicker
+                  label="Date of Birth"
+                  placeholder="your date of birth"
+                  breakpoint={true}
+                  onChange={setDob}
+                  value={dob}
+                />
+              </article>
+              <RadioButtons
+                name="gender"
+                options={genderOptions}
+                label="Sex"
+                onChange={setSex}
+                selectedValue={sex}
               />
               <Input
-                label="Last Name"
-                placeholder="Enter your last name"
-                breakpoint={true}
-                onChange={setLastName}
-                value={lastName}
+                label="Address"
+                placeholder="enter your address with zip code."
+                breakpoint={false}
+                onChange={setAddress}
+                value={address}
               />
-            </article>
-            <Input
-              label="Email Address"
-              placeholder="Your current email address"
-              breakpoint={false}
-              onChange={setEmail}
-              value={email}
-            />
-            <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
-              <Input
-                label="Mobile Number"
-                placeholder="ex. (+92) 331 2566730"
+              <Dropdown
+                label="Service"
+                options={services}
                 breakpoint={true}
-                onChange={setPhone}
-                value={phone}
+                onChange={setService}
+                value={service}
               />
-              <Input
-                label="Date of Birth"
-                placeholder="your date of birth"
-                breakpoint={true}
-                onChange={setDob}
-                value={dob}
+            </section>
+          </Modal.Body>
+          <Modal.Footer>
+            <div className="w-full flex justify-end items-center m-3">
+              <Button
+                text={"Book now"}
+                size={{ width: "250px", height: "50px" }}
+                route={""}
+                bgColor={"#C1001F"}
+                textColor={"#ffffff"}
+                onClick={() => {
+                  submitAppointmentDetails();
+                  handleClose();
+                }}
               />
-            </article>
-            <RadioButtons
-              name="gender"
-              options={genderOptions}
-              label="Sex"
-              onChange={setSex}
-              selectedValue={sex}
-            />
-            <Input
-              label="Address"
-              placeholder="enter your address with zip code."
-              breakpoint={false}
-              onChange={setAddress}
-              value={address}
-            />
-            <Dropdown
-              label="Service"
-              options={services}
-              breakpoint={true}
-              onChange={setService}
-              value={service}
-            />
-          </section>
-        </Modal.Body>
-        <Modal.Footer>
-          <div className="w-full flex justify-end items-center m-3">
-            <Button
-              text={"Book now"}
-              size={{ width: "250px", height: "50px" }}
-              route={""}
-              bgColor={"#C1001F"}
-              textColor={"#ffffff"}
-              onClick={() => {
-                submitAppointmentDetails();
-                handleClose();
-              }}
-            />
-          </div>
-        </Modal.Footer>
-        {/* </div> */}
+            </div>
+          </Modal.Footer>
+        </div>
       </Modal>
     </>
   );
