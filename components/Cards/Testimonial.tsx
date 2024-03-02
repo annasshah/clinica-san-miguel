@@ -48,7 +48,7 @@ export const Testimonial = ({
         </p>
 
         <StarRatings
-          rating={ratings}
+          rating={+ratings}
           starDimension="15px"
           starSpacing="1px"
           numberOfStars={5}
