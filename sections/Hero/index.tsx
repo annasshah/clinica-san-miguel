@@ -8,14 +8,19 @@ import {
 } from "@/components";
 import { useSupabase } from "@/context/supabaseContext";
 import { Button, IconButton } from "@/utils";
+import { useRouter } from "next/navigation";
 import { FaPhoneFlip } from "react-icons/fa6";
 
 export const Hero = () => {
+  const router = useRouter();
   // const heading = "Proper care of your body for life";
   // const description =
   //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
   const { heroSection } = useSupabase();
+  const go_to_contact_handle = () => {
+    router.push(`/contact`);
+  }
 
   return (
     <section className=" flex flex-col gap-20 justify-center md:justify-start items-center md:items-start">
@@ -42,7 +47,7 @@ export const Hero = () => {
                 route={""}
                 bgColor={"#3D3D3C"}
                 textColor={"#ffffff"}
-                onClick={() => {}}
+                onClick={go_to_contact_handle}
               />
               <IconButton
                 size={{ width: "75px", height: "75px" }}
@@ -50,6 +55,7 @@ export const Hero = () => {
                 bgColor="#C1001F"
                 fontSize={"30px"}
                 route={""}
+                onClick={go_to_contact_handle}
               />
             </div>
           </div>

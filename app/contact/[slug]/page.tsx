@@ -12,24 +12,35 @@ import { Button } from "@/utils";
 import { RequestAppointment } from "@/components/Modal/RequestAppointment";
 import { useCallback, useEffect, useState } from "react";
 import { useSupabase } from "@/context/supabaseContext";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-const ServiceTab = ({ name }: { name: string }) => {
+const ServiceTab = ({ name, icon, id }: { id: number, name: string | null | undefined, icon: string | null | undefined }) => {
+
+  const router = useRouter();
+
+  const handleService = () => {
+    router.push(`/services/slug/${id}`);
+  };
   return (
-    <article className="w-[340px] h-[80px] rounded-[5px] bg-[#D9D9D9] flex justify-between items-center p-3">
+    <article className=" w-full bg-[#D9D9D9] flex justify-between items-center p-3">
       <div className="flex items-center gap-3">
-        <div className="rounded-full flex w-10 h-10 justify-center items-center bg-[#C1001F]">
-          {/* <Image
-            src={"icon"}
+        <div className="rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-[#C1001F]">
+          {icon && <Image
+            src={icon}
             alt={"service icon"}
-            className="object-contain w-5 h-5 aspect-auto"
-          /> */}
+            className="object-contain aspect-square w-10 h-10 rounded-[50%]"
+            width={40}
+            height={40}
+          />}
         </div>
 
-        <h3 className="text-[20px] text-black font-semibold font-poppins">
+        <h3 className="text-[18px] text-black font-semibold font-poppins">
           {name}
         </h3>
       </div>
-      <div className="rounded-full flex w-10 h-10 justify-center items-center bg-black">
+      <div onClick={handleService} className="cursor-pointer rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-black">
         <IoIosArrowForward className="text-[16px] text-white" />
       </div>
     </article>
@@ -40,6 +51,8 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
   const [openAppointmentModal, setOpenAppointmentModal] = useState(false);
   const [locationGallery, setLocationGallery] = useState<(string | null)[]>();
   const [totalRatings, setTotalRatings] = useState(0);
+  const { services } = useSupabase();
+
 
   const {
     detailData,
@@ -140,16 +153,16 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
   //   },
   // ];
 
-  const services = [
-    { id: 1, name: "wart removal" },
-    { id: 2, name: "wart removal" },
-    { id: 3, name: "wart removal" },
-    { id: 4, name: "wart removal" },
-    { id: 5, name: "wart removal" },
-    { id: 6, name: "wart removal" },
-    { id: 7, name: "wart removal" },
-    { id: 8, name: "wart removal" },
-  ];
+  // const services = [
+  //   { id: 1, name: "wart removal" },
+  //   { id: 2, name: "wart removal" },
+  //   { id: 3, name: "wart removal" },
+  //   { id: 4, name: "wart removal" },
+  //   { id: 5, name: "wart removal" },
+  //   { id: 6, name: "wart removal" },
+  //   { id: 7, name: "wart removal" },
+  //   { id: 8, name: "wart removal" },
+  // ];
 
   // const location =
   //   "!1m18!1m12!1m3!1d3355.764805032311!2d-96.82054992371607!3d32.7454353855983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e99973c005cb9%3A0xc8ae707a71769ed1!2s428%20E%20Jefferson%20Blvd%2C%20Dallas%2C%20TX%2075203%2C%20USA!5e0!3m2!1sen!2s!4v1701718238221!5m2!1sen!2s";
@@ -264,7 +277,7 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
           <article className="flex flex-col gap-3 justify-start">
             <div className="flex flex-col justify-start gap-3">
               <div className="text-[40px] md:text-[60px] lg:text-[80px] text-customGray">
-                {totalRatings}/5
+                {totalRatings.toFixed(1)}/5
               </div>
               <div className="hidden lg:block">
                 <StarRatings
@@ -298,9 +311,16 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
           >
             Our Services:
           </h2>
-          <article className="flex flex-wrap justify-start gap-6">
+          <article className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
             {services.map((item, index) => (
-              <ServiceTab key={item.id} name={item.name} />
+
+              // id={service.id}
+              // heading={service.title}
+              // icon={service.icon}
+              // description={service.description}
+              // mode={service.id % 2 === 0 ? "light" : "dark"}
+              // key={service.id}
+              <ServiceTab key={item.id} id={item.id} name={item.title} icon={item.icon} />
             ))}
           </article>
         </section>

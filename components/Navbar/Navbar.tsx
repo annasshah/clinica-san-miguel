@@ -8,9 +8,11 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Hamburger from "hamburger-react";
 import { Dropdown } from "@/utils";
 import { Logo, USA_flag } from "@/assets/images";
+import { useRouter } from "next/navigation";
 // import navLinks from "./navLinks.json";
 
 export const Navbar = () => {
+  const router = useRouter()
   const navLinks = [
     { id: 1, heading: "Home", route: "/" },
     { id: 2, heading: "About Us", route: "/about" },
@@ -86,12 +88,15 @@ export const Navbar = () => {
       </div>
     ));
 
+    
+
   return (
     <header className="h-[90px] w-full flex justify-center relative px-8 md:px-10 lg:px-14 items-center">
       <Image
+      onClick={()=>router.push(`/`)}
         src={Logo}
         alt="Logo"
-        className="w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] absolute left-6 top-5 aspect-auto object-contain"
+        className="cursor-pointer w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] absolute left-6 top-5 aspect-auto object-contain"
       />
       <nav className="hidden tablet:flex tablet:justify-center font-poppins tablet:items-center tablet:gap-5">
         {renderNavLinks()}

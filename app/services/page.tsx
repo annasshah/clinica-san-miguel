@@ -28,7 +28,8 @@ const Services = () => {
               heading={service.title}
               icon={service.icon}
               description={service.description}
-              mode={service.id % 2 === 0 ? "light" : "dark"}
+              // mode={service.id % 2 === 0 ? "light" : "dark"}
+              mode={"light"}
               key={service.id}
             />
           ))}
