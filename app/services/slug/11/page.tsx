@@ -87,7 +87,7 @@ const Home = () => (
         prostate cancer.
       </li>
       <li>
-        <b>Don't smoke: </b>Smoking increases the risk of prostate cancer.
+        <b>Don&apos;t smoke: </b>Smoking increases the risk of prostate cancer.
       </li>
       <li>
         <b>Limit alcohol consumption: </b>Excessive alcohol consumption

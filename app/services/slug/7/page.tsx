@@ -63,7 +63,7 @@ const Home = () => (
       <p>
         DOT exams are required for drivers operating commercial vehicles in
         Texas. If you fail to take a DOT test, you could face fines or even
-        suspension of your commercial driver's license.
+        suspension of your commercial driver&apos;s license.
       </p>
     </section>
 
@@ -117,17 +117,17 @@ const Home = () => (
         What should I bring to my DOT exam?
       </h2>
       <ul>
-        You must bring your commercial driver's license and social security card
+        You must bring your commercial driver&apos;s license and social security card
         to your DOT exam.
       </ul>
     </section>
 
     <section className="w-full space-y-3 text-xl">
       <h2 className="w-full text-2xl font-bold text-red-600">
-        What happens if I don't pass the DOT test?
+        What happens if I don&apos;t pass the DOT test?
       </h2>
       <ul>
-        If you don't pass the DOT test , you will be given a list of reasons why
+        If you don&apos;t pass the DOT test , you will be given a list of reasons why
         you did not pass. You will need to address these concerns before you can
         retake the exam.
       </ul>

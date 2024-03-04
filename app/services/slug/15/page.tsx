@@ -77,7 +77,7 @@ const Home = () => (
         What should I do to prepare for an EKG?
       </h1>
       <p>
-        You don't need to do anything special to prepare for an EKG. However, it
+        You don&apos;t need to do anything special to prepare for an EKG. However, it
         is important to tell your doctor about any medications you are taking.
       </p>
     </section>
@@ -94,7 +94,7 @@ const Home = () => (
       <ul>
         <li>
           <b>Abnormal heart rhythm</b>Arrhythmias are rhythms abnormal heart
-          problems that occur due to alterations in the heart's electrical
+          problems that occur due to alterations in the heart&apos;s electrical
           signals.
         </li>
         <li>

@@ -15,7 +15,7 @@ const Home = () => (
       <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
         <h1 className="text-4xl font-semibold lg:text-6xl">About</h1>
         <p className="text-2xl font-light lg:text-3xl">
-          Ensure your child's readiness for the school year with thorough school
+          Ensure your child&apos;s readiness for the school year with thorough school
           physicals, covering essential health assessments and immunizations.
         </p>
       </div>
@@ -90,7 +90,7 @@ const Home = () => (
       </h2>
       <p>
         The physical exam authorization form signed by a parent or guardian Your
-        child's medical history if any.
+        child&apos;s medical history if any.
       </p>
     </section>
 

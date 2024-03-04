@@ -33,7 +33,7 @@ export const CompactService = ({
   const router = useRouter();
 
   const handleService = () => {
-    router.push(`/services/${id}`);
+    router.push(`/services/slug/${id}`);
   };
 
   return (

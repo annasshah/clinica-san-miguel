@@ -15,7 +15,7 @@ const Home = () => (
       <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
         <h1 className="text-4xl font-semibold lg:text-6xl">About</h1>
         <p className="text-2xl font-light lg:text-3xl">
-        Regular Pap smears for early detection of cervical abnormalities, promoting women's reproductive health and preventing cervical cancer.
+        Regular Pap smears for early detection of cervical abnormalities, promoting women&apos;s reproductive health and preventing cervical cancer.
         </p>
       </div>
     </div>

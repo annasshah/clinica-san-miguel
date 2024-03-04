@@ -149,10 +149,10 @@ const Home = () => (
         risk of statin side effects.
       </li>
       <li>
-        <b>Niacin.</b> Niacin limits the liver's ability to produce LDL and VLDL
+        <b>Niacin.</b> Niacin limits the liver&apos;s ability to produce LDL and VLDL
         cholesterol. But niacin offers no more benefits than statins. Niacin has
         also been linked to liver damage and stroke, so most doctors now only
-        recommend it for people who can't take statins.
+        recommend it for people who can&apos;t take statins.
       </li>
       <li>
         <b>Supplements with omega 3 fatty acids.</b> Supplements with omega 3

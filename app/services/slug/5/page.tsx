@@ -29,7 +29,7 @@ const Home = () => (
         What should I do if Does my child have a fever?
       </h2>
       <ol className="w-full">
-        If your child's fever is above 102°F (39°C), you should give your child
+        If your child&apos;s fever is above 102°F (39°C), you should give your child
         acetaminophen or ibuprofen. You can also give him a warm bath or apply
         cold compresses to his forehead.. If the fever persists or if your child
         has other symptoms, such as difficulty breathing, seizures, or lethargy,
@@ -67,7 +67,7 @@ const Home = () => (
     <section>
       <p>
         <span className="font-bold"> Keywords: </span>
-        Houston Pediatric Clinic, children's medical care, diagnosis and
+        Houston Pediatric Clinic, children&apos;s medical care, diagnosis and
         treatment of diseases, laboratory tests, specialized care, flu , strep,
         flu, allergies in children, frequently asked questions
       </p>

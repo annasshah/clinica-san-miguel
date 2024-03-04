@@ -34,7 +34,7 @@ const Home = () => (
         the doctor or nurse will:
       </p>
       <ul className="list-disc pl-5">
-        <li>Monitor you and your baby's health.</li>
+        <li>Monitor you and your baby&apos;s health.</li>
         <li>Give you information about the pregnancy.</li>
         <li>
           Recommend important blood tests to diagnose any preventive health
@@ -141,7 +141,7 @@ const Home = () => (
       <p>
         <span className="font-bold"> Keywords: </span>
         Prenatal care, San Miguel Clinic, Pregnancy, Examinations prenatal
-        laboratory, Prenatal ultrasounds, Mother's health, Baby's health,
+        laboratory, Prenatal ultrasounds, Mother&apos;s health, Baby&apos;s health,
         Healthy birth
       </p>
     </section>

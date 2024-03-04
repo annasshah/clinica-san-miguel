@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const Home = () => (
   <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
-    <h1 className="text-center text-6xl text-red-600">Dentist</h1>
+    <h1 className="text-center text-6xl text-red-600">Primary Care</h1>
     <div className="flex w-full flex-col lg:flex-row">
       <Image
-        src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/dentist.jpg"
+        src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/Primary%20Care.png?t=2024-02-11T07%3A03%3A40.449Z"
         width={1000}
         height={1000}
         alt="cover"
@@ -15,7 +15,8 @@ const Home = () => (
       <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
         <h1 className="text-4xl font-semibold lg:text-6xl">About</h1>
         <p className="text-2xl font-light lg:text-3xl">
-        Expert dental care for healthy smiles. From routine cleanings to advanced procedures, our skilled dentists prioritize your oral health and well-being.        </p>
+        Patient-centered primary care services, offering comprehensive healthcare, preventive measures, and ongoing support for your overall well-being.
+        </p>
       </div>
     </div>
     <p className="w-full text-2xl">
@@ -43,7 +44,7 @@ const Home = () => (
       How to prepare for a blood test?
       </h2>
       <ol className="w-full">
-      In general, no special preparation is required for most blood tests. However, it is important that you follow your doctor's instructions regarding fasting or stopping certain medications before the exam.
+      In general, no special preparation is required for most blood tests. However, it is important that you follow your doctor&apos;s instructions regarding fasting or stopping certain medications before the exam.
       </ol>
     <h2 className="w-full text-2xl font-bold text-red-600">
     Recommendations: 
