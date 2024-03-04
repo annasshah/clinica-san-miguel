@@ -34,12 +34,12 @@ export const About = ({
         <h1 className="text-[#ffffff] font-poppins hidden lg:flex lg:text-[40px] text-left">
           {heading}
         </h1>
-        <p className="text-[#ACACAC] h-[185px] lg:h-[150px] overflow-auto font-inter text-[18px] lg:text-[20px] text-center lg:text-left">
+        <p className="text-white h-[185px] lg:h-[150px] overflow-auto font-inter text-[18px] lg:text-[20px] text-center lg:text-left">
           {content}
         </p>
-        <button className="text-[#ACACAC] font-inter text-[16px] flex items-center gap-2 text-left">
+        <button className="text-white font-inter text-[16px] flex items-center gap-2 text-left">
           more info{" "}
-          <div className="text-[#ACACAC] font-inter text-[12px] p-[2px] rounded-full border border-[#ACACAC]">
+          <div className="text-white font-inter text-[12px] p-[2px] rounded-full border border-[#ACACAC]">
             <FaArrowRight />
           </div>
         </button>

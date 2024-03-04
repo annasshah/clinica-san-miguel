@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
 // IconButton Component
 export const IconButton = ({
@@ -9,11 +9,13 @@ export const IconButton = ({
   route,
   bgColor,
   size,
+  onClick
 }: {
   icon: any;
   fontSize: string;
   route: string;
   bgColor: string;
+  onClick : MouseEventHandler
   size: { width: string; height: string };
 }) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -50,6 +52,7 @@ export const IconButton = ({
 
   return (
     <button
+    onClick={onClick}
       className="flex justify-center items-center rounded-full "
       style={{
         backgroundColor: `${bgColor}`,

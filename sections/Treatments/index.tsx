@@ -171,13 +171,15 @@ export const Treatments = () => {
       </Link>
       <div className="w-[100vw] md:w-[96vw] lg:w-[95vw] xl:w-[75vw] block justify-center h-auto mx-auto my-10">
         <Slider {...settings}>
-          {services.slice(0, 6).map((treatment) => (
+          {services.filter((elem)=>elem.id !== 25).slice(0, 6).map((treatment) => (
             <Treatment
+              id={treatment.id}
               heading={treatment.title}
               image={treatment.image}
               icon={treatment.icon}
               description={treatment.description}
-              mode={treatment.id % 2 === 0 ? "dark" : "light"}
+              // mode={treatment.id % 2 === 0 ? "dark" : "light"}
+              mode={"light"}
               key={treatment.id}
             />
           ))}

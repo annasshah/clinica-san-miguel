@@ -6,6 +6,7 @@ import Image from "next/image";
 import { heart_monitor } from "@/assets/images";
 
 import { FaArrowRightLong } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 export const Treatment = ({
   heading,
@@ -13,7 +14,9 @@ export const Treatment = ({
   icon,
   description,
   mode,
+  id
 }: {
+  id :number
   heading: string | null;
   image: any;
   icon: any;
@@ -33,6 +36,7 @@ export const Treatment = ({
   };
 
   const [theme, setTheme] = useState(mode === "dark" ? dark : light);
+  const router = useRouter()
 
   return (
     <article
@@ -102,7 +106,7 @@ export const Treatment = ({
           {description}
         </p>
       </div>
-      <div className="flex gap-2 items-center">
+      <div onClick={()=>router.push(`/services/slug/${id}`)} className="cursor-pointer flex gap-2 items-center">
         <p className="text-[20px] font-poppins text-[#C1001F] lowercase">
           more info
         </p>
