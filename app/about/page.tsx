@@ -35,7 +35,7 @@ const Expertise = ({
 
 const About = () => {
   const aboutus_description =
-    "Welcome to Clinica San Miguel, a leading multi-specialty family medicine practice dedicated to providing exceptional care for families in Texas With 11 convenient locations, including three in Dallas, five in Houston, and one each in Fresno, Farmers Branch, Arlington, and Pasadena, we are committed to serving diverse communities across the state.";
+    "In Texas with 17 Convenient Location, Dallas, Fort Worth, Houston, Pasadena, Texas, Fresno, Texas, Farmers Branch, Arlington, and San Antonio, we are committed to serving diverse community across the state of Texas";
   const whatwedo =
     "At Clinica San Miguel, we understand the importance of effective communication in healthcare. That's why we take pride in our team of bilingual English and Spanish-speaking providers. Our commitment to linguistic diversity ensures that every member of our community receives the highest quality healthcare services.";
 
