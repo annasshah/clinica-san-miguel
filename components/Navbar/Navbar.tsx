@@ -91,7 +91,7 @@ export const Navbar = () => {
 
   const SM_Screen_renderNavLinks = () =>
     navLinks.map((link, index) => (
-      <Link  className="" href={link.route}>
+      <Link key={link.id}  className="" href={link.route}>
         <li onClick={()=>setOpen(false)} className={`${styles.text} my-5`}>{link.heading}</li>
       </Link>
     ));
