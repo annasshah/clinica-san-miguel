@@ -4,10 +4,9 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
-import AiBot from "@/components/AiChatBot/AiBot";
-
 // Provider
 import { Providers } from "./providers";
+import AiBot from "./components/AiBot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,7 +43,7 @@ export default function RootLayout({
 
           <Footer />
           <div
-            className="sticky z-[999999] bottom-10 right-10"
+            className="sticky z-[999999]  bottom-10 right-0"
             style={{ zIndex: 999999 }}
           >
             <AiBot />

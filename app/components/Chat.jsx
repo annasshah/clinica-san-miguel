@@ -177,6 +177,7 @@ const ChatInterface = (props) => {
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     try {
+      console.log('runsss');
       userMessage = prompt;
       createChat();
       assistantActiveHandler();
@@ -255,9 +256,12 @@ const ChatInterface = (props) => {
               </div>
             )}
             <div className="chat-window ">
+
               {chatMessages.map((message) => (
                 <ChatMessage key={message.id} message={message} />
               ))}
+            <div ref={bottomRef} style={{ height: "0px", width: "0px" }} />
+
               {assistantActive ? (
                 <div className="mb-4 p-3 bg-[#3D3D3C] rounded-br-[20px] rounded-tr-[20px] rounded-bl-[20px] w-[20%] shadow-md  text-[12px] ">
                   <div class="typing-loader"></div>
@@ -265,7 +269,6 @@ const ChatInterface = (props) => {
               ) : (
                 <></>
               )}
-              <div ref={bottomRef} style={{ height: "0px", width: "0px" }} />
             </div>
           </div>
           {assistantActive ? (
@@ -281,7 +284,7 @@ const ChatInterface = (props) => {
                 <input
                   type="text"
                   placeholder="Ask me anything ?"
-                  className="flex-1      text-[#475560] outline-none text-xs   text-[14px]  placeholder-opacity-100 placeholder-white::placeholder "
+                  className="flex-1 border-0    text-[#475560] outline-none text-xs   text-[14px]  placeholder-opacity-100 placeholder-white::placeholder "
                   value={prompt}
                   onChange={inputHandler}
                   disabled={assistantActive}
@@ -305,14 +308,15 @@ const ChatInterface = (props) => {
               </div>
 
               <button
-                className="bg-red-500 p-3 ml-2 rounded-full shadow-md "
+                className="bg-red-500 items-center p-2 flex justify-center   ml-2 rounded-full shadow-md "
                 onClick={handlePrompt}
                 disabled={assistantActive}
               >
                 <Image
                   src={assistantActive ? responseWait : sendArrow}
-                  height={25}
-                  width={25}
+                  className=""
+                  height={30}
+                  width={30}
                   alt="submit button"
                   style={assistantActive ? { filter: "invert(100%)" } : ""}
                 />

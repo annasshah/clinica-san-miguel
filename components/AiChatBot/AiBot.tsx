@@ -1,36 +1,65 @@
 "use client";
-import "regenerator-runtime/runtime";
-// import Image from "next/image";
-// import { useState } from "react";
+// import "regenerator-runtime/runtime";
+import Image from "next/image";
+import { useState } from "react";
 import ChatInterface from "./Chat";
 import InitialChat from "./InitalChat";
-// import Head from "next/head";
-import "animate.css";
-import { BotContext } from "../../context/Context";
-import { useContext } from "react";
-export default function AiBot() {
-  const { initalModal, open, setOpen } = useContext(BotContext);
+import AiBotImg from "../../assets/images/AiBot/Aibot.png";
 
-  const handleClick = () => {
-    setOpen(!open);
+import "animate.css";
+export default function AiBot() {
+  const [open, setOpen] = useState(false);
+  const [initialModal, setInitialModal] = useState(true);
+  const [assistantId, setAssistantId] = useState("");
+  const [threadId, setThreadId] = useState("");
+
+  const openClickHandler = () => {
+    setOpen((prevOpen) => !prevOpen);
   };
+
+  const initialChatHandler = () => {
+    setInitialModal((initialModal) => !initialModal);
+  };
+
+  const updateIDsState = (newAssistantId, newThreadId) => {
+    setAssistantId(newAssistantId);
+    setThreadId(newThreadId);
+  };
+
   return (
-    // <div className="sticky z-[999999] bottom-10 right-10 flex items-center w-[351px] justify-center bg-opacity-20 backdrop-blur-sm ">
-    <div className="flex flex-col items-center justify-center absolute bottom-1 right-4 ">
-      {open && [initalModal ? <InitialChat open={open} /> : <ChatInterface />]}
-      <div className="w-[351px] flex items-center  my-2 justify-end">
-        <div
-          className="flex items-center  cursor-pointer justify-center bg-black p-3 rounded-[50px]"
-          onClick={handleClick}
-        >
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuUlEQVR4nOWWQQ6DIBBFMZ7BpAcvB6pH0EXvUhfPmLCoBK0D0/yFf8vwH5nA8EO4rYAeeAIL8AIGB88heS3Juy8VRfaaW+AJunl8K+ZFHfDJiqrhB1ASo8uLR8oywU+gm8ajDRNlvYHHRajdgwZ488GpMPDoltnIDWoxdIdevKHzj7W2AcQ5/D/QCrgf1AD3h8rAKFqN4nKheE4oBgiKkYnik0DxLaIKAiiiD+KwFz2gpngrDfThLloBGzm/KKM0Dq8AAAAASUVORK5CYII="
-            className="cursor-pointer"
-            alt=""
-          />
+    <div className="relative flex items-center justify-center  overflow-hidden   h-[100vh] bg-black bg-opacity-20 backdrop-blur-sm w-[100%] ">
+      <div className="  w-full  flex flex-col items-center justify-center  relative ">
+        {open && [
+          initialModal ? (
+            <InitialChat
+              key="initialChat"
+              initialChatHandler={initialChatHandler}
+              updateIDsState={updateIDsState}
+            />
+          ) : (
+            <ChatInterface
+              key="chatInterface"
+              assistantId={assistantId}
+              threadId={threadId}
+            />
+          ),
+        ]}
+      </div>
+
+      <div className="   flex flex-col items-center justify-center absolute bottom-1 right-4 ">
+        <div className="w-[351px] flex items-center  my-2 justify-end">
+          <div
+            className="flex items-center  cursor-pointer justify-center bg-red-700 p-3 rounded-[50px]"
+            onClick={openClickHandler}
+          >
+            <Image
+              src={AiBotImg}
+              className="cursor-pointer h-[40px] w-[40px]"
+              alt="Ai Chat Bot"
+            />
+          </div>
         </div>
       </div>
     </div>
-    // </div>
   );
 }

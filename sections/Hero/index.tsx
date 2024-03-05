@@ -1,5 +1,5 @@
 "use client";
-
+import React,{useEffect} from 'react'
 import {
   HeroBox,
   // ScheduleTreatment,
@@ -10,7 +10,7 @@ import { useSupabase } from "@/context/supabaseContext";
 import { Button, IconButton } from "@/utils";
 import { useRouter } from "next/navigation";
 import { FaPhoneFlip } from "react-icons/fa6";
-
+import translate from 'google-translate-api-x';
 export const Hero = () => {
   const router = useRouter();
   // const heading = "Proper care of your body for life";
@@ -21,6 +21,19 @@ export const Hero = () => {
   const go_to_contact_handle = () => {
     router.push(`/contact`);
   }
+
+  const translateResponse = async () => {
+    console.log('ehloo')
+    const res = await translate('Ik spreek Engels', { to: 'en', client: 'gtx' }).then(res => 
+      console.log('res',res));
+
+      console.log('asdhaskjdhas',res)
+  }
+
+  useEffect(() => {
+    translateResponse()
+  }, [])
+  
 
   return (
     <section className=" flex flex-col gap-20 justify-center md:justify-start items-center md:items-start">

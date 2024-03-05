@@ -1,7 +1,7 @@
 "use client";
 import "./Chat.css";
 import React, { useEffect } from "react";
-import Aibot from "../../assets/images/AiBot/Aibot.png";
+import Aibot from "../../assets/images/AiBot/model.png";
 import Image from "next/image";
 
 const InitialChat = (props) => {

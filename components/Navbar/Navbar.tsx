@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,9 +9,11 @@ import Hamburger from "hamburger-react";
 import { Dropdown } from "@/utils";
 import { Logo, USA_flag } from "@/assets/images";
 import { useRouter } from "next/navigation";
+import { BotContext } from "@/context/Context";
 // import navLinks from "./navLinks.json";
 
 export const Navbar = () => {
+  const { setLanguage } = useContext(BotContext);
   const router = useRouter()
   const navLinks = [
     { id: 1, heading: "Home", route: "/" },
@@ -88,12 +90,12 @@ export const Navbar = () => {
       </div>
     ));
 
-    
+
 
   return (
     <header className="h-[90px] w-full flex justify-center relative px-8 md:px-10 lg:px-14 items-center">
       <Image
-      onClick={()=>router.push(`/`)}
+        onClick={() => router.push(`/`)}
         src={Logo}
         alt="Logo"
         className="cursor-pointer w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] absolute left-6 top-5 aspect-auto object-contain"
@@ -134,6 +136,19 @@ export const Navbar = () => {
         <div className="block absolute top-5 right-6 tablet:hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         </div>
+        <button onClick={() => setLanguage('en')}>
+          <p className="text-2xl font-bold ml-2">
+            en
+          </p>
+        </button>
+        <p className="text-2xl font-bold ml-2">
+          |
+        </p>
+        <button onClick={() => setLanguage('es')}>
+          <p className="text-2xl font-bold ml-2">
+            es
+          </p>
+        </button>
       </div>
     </header>
   );

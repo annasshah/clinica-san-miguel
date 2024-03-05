@@ -12,9 +12,11 @@ export default function BotProvider({ children }) {
   const [prompt, setPrompt] = useState("");
   const [username, setUsername] = useState("");
   const [_message, setMessage] = useState("");
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("en");
   const [messages, setMessages] = useState([]);
   const [open, setOpen] = useState(false);
+
+  
   const {
     transcript,
     listening,
