@@ -43,7 +43,7 @@ export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   const styles = {
-    text: "list-none text-[16px] text-primary cursor-pointer",
+    text: "list-none text-[20px] text-primary cursor-pointer",
   };
 
   const toggleDropdown = (index: number) => {
@@ -88,12 +88,19 @@ export const Navbar = () => {
       </div>
     ));
 
-    
 
+  const SM_Screen_renderNavLinks = () =>
+    navLinks.map((link, index) => (
+      <Link  className="" href={link.route}>
+        <li onClick={()=>setOpen(false)} className={`${styles.text} my-5`}>{link.heading}</li>
+      </Link>
+    ));
+
+ 
   return (
     <header className="h-[90px] w-full flex justify-center relative px-8 md:px-10 lg:px-14 items-center">
       <Image
-      onClick={()=>router.push(`/`)}
+        onClick={() => router.push(`/`)}
         src={Logo}
         alt="Logo"
         className="cursor-pointer w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] absolute left-6 top-5 aspect-auto object-contain"
@@ -101,6 +108,19 @@ export const Navbar = () => {
       <nav className="hidden tablet:flex tablet:justify-center font-poppins tablet:items-center tablet:gap-5">
         {renderNavLinks()}
       </nav>
+
+      {isOpen && <div className="  bg-white/95 bottom-0 right-0 left-0 top-0 h-[100dvh] z-40 fixed transition-all duration-300 ease-in-out w-full tablet:hidden gap-4 sm:gap-7 items-center">
+
+
+        <div className="grid place-items-center h-full">
+          <div className="spacing-y-5">
+            <SM_Screen_renderNavLinks />
+          </div>
+        </div>
+
+
+      </div>}
+
       <div className="flex gap-4 sm:gap-7 items-center">
         {/* <div className="relative">
           <div
@@ -131,7 +151,7 @@ export const Navbar = () => {
             />
           )}
         </div> */}
-        <div className="block absolute top-5 right-6 tablet:hidden">
+        <div className="block absolute z-50 top-5 right-6 tablet:hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         </div>
       </div>
