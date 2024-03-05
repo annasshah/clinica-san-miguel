@@ -2,6 +2,7 @@ import { styles } from "@/app/styles";
 import { about } from "@/assets/images";
 import { About } from "@/components";
 
+
 export const AboutSection = ({
   data,
 }: {
