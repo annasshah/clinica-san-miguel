@@ -290,7 +290,7 @@ const ChatInterface = (props) => {
                   disabled={assistantActive}
                 />
 
-                <button
+                {/* <button
                   className=" text-white   text-xs rounded-lg ml-3 items-center flex justify-center cursor-pointer "
                   onTouchStart={startListening}
                   onMouseDown={startListening}
@@ -303,7 +303,7 @@ const ChatInterface = (props) => {
                     width={20}
                     alt="microphone"
                   />
-                </button>
+                </button> */}
                 {/* <p>{listening ? "Stop Listening" : "Start Listening"}</p> */}
               </div>
 
