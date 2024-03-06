@@ -22,8 +22,8 @@ export default function Home() {
 
   const translateText = async () => {
     const text = 'Ik spreek Engels';
-    const to = 'en';
-    try {
+    const to =   'en';
+    try { 
       const response = await fetch(`/api/traslation?text=${text}`);
       const data = await response.json();
       console.log('data',data)
