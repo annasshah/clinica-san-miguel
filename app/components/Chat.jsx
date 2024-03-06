@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import responseWait from "../../assets/images/AiBot/response-wait.png";
-import sendArrow from "../../assets/images/AiBot/send.png";
-import Microphone from "../../assets/images/AiBot/microphone2.png";
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import ChatMessage from "./ChatMessage";
@@ -313,7 +311,7 @@ const ChatInterface = (props) => {
                 disabled={assistantActive}
               >
                 <Image
-                  src={assistantActive ? responseWait : sendArrow}
+                  src={assistantActive ? responseWait : responseWait}
                   className=""
                   height={30}
                   width={30}
