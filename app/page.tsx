@@ -1,5 +1,5 @@
 "use client";
-
+import React, {useEffect} from 'react'
 import "regenerator-runtime/runtime";
 
 import {
@@ -20,6 +20,22 @@ import { useSupabase } from "@/context/supabaseContext";
 export default function Home() {
   const { about, blogs, faqs } = useSupabase();
 
+  const translateText = async () => {
+    const text = 'Ik spreek Engels';
+    const to = 'en';
+    try {
+      const response = await fetch(`/api/traslation?text=${text}`);
+      const data = await response.json();
+      console.log('data',data)
+      // setTranslatedText(data.translatedText);
+    } catch (error) {
+      console.error('API request error:', error);
+    }
+  };
+
+  useEffect(() => {
+    translateText()
+  }, [])
   return (
     <main className="flex flex-col justify-center items-center overflow-x-hidden gap-10">
       <Hero />

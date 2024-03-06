@@ -10,7 +10,7 @@ import { useSupabase } from "@/context/supabaseContext";
 import { Button, IconButton } from "@/utils";
 import { useRouter } from "next/navigation";
 import { FaPhoneFlip } from "react-icons/fa6";
-import translate from 'google-translate-api-x';
+
 export const Hero = () => {
   const router = useRouter();
   // const heading = "Proper care of your body for life";
@@ -22,17 +22,7 @@ export const Hero = () => {
     router.push(`/contact`);
   }
 
-  const translateResponse = async () => {
-    console.log('ehloo')
-    const res = await translate('Ik spreek Engels', { to: 'en', client: 'gtx' }).then(res => 
-      console.log('res',res));
 
-      console.log('asdhaskjdhas',res)
-  }
-
-  useEffect(() => {
-    translateResponse()
-  }, [])
   
 
   return (
