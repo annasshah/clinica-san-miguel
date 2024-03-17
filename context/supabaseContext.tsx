@@ -11,7 +11,7 @@ import { supabase } from "@/supabaseClient";
 
 interface SupabaseContextType {
   supabase: SupabaseClient;
-  about: Database["public"]["Tables"]["about"]["Row"][];
+  about: Database["public"]["Tables"]["About_short"]["Row"][];
   blogs: Database["public"]["Tables"]["Blog"]["Row"][];
   additionalServices: Database["public"]["Tables"]["Additional_Services"]["Row"][];
   faqs: Database["public"]["Tables"]["FAQs"]["Row"][];
@@ -40,7 +40,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [about, setAbout] = useState<
-    Database["public"]["Tables"]["about"]["Row"][]
+    Database["public"]["Tables"]["About_short"]["Row"][]
   >([]);
   const [blogs, setBlogs] = useState<
     Database["public"]["Tables"]["Blog"]["Row"][]
@@ -132,7 +132,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   const fetchFilteredDataCallback = useCallback(fetchFilteredData, []);
 
   useEffect(() => {
-    fetchDataCallback("about", setAbout);
+    fetchDataCallback("About_short", setAbout);
     fetchDataCallback("Blog", setBlogs);
     fetchDataCallback("Additional_Services", setAdditionalServices);
     fetchDataCallback("FAQs", setFaqs);

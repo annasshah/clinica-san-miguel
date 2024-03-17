@@ -2,16 +2,15 @@ import { styles } from "@/app/styles";
 import { about } from "@/assets/images";
 import { About } from "@/components";
 
-
 export const AboutSection = ({
   data,
 }: {
   data:
-    | Array<{ id: number; created_at: string; t1: string | null }>
+    | Array<{ id: number; created_at: string; Content: string | null }>
     | undefined
     | null;
 }) => {
-  const content = data?.[0]?.t1;
+  const content = data?.[0]?.Content;
 
   return (
     <section className="w-full flex flex-col justify-center gap-10 items-center my-14">

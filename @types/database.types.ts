@@ -9,12 +9,12 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      about: {
+      About_short: {
         Row: {
           // the data expected from .select()
           id: number;
           created_at: string;
-          t1: string | null;
+          Content: string | null;
         };
       };
       Additional_Services: {
