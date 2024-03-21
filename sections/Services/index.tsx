@@ -7,7 +7,7 @@ import { CompactService } from "@/components";
 // import "slick-carousel/slick/slick-theme.css";
 // import Slider from "react-slick";
 // import { useRef } from "react";
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import Image from "next/image";
 import { viewAllArrow } from "@/assets/images";
 import Link from "next/link";

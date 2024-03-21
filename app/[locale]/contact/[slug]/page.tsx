@@ -1,6 +1,6 @@
 "use client";
 
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import { ImageCarousel, Testimonial } from "@/components";
 // import Image from "next/image";
 import StarRatings from "react-star-ratings";
@@ -16,8 +16,15 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-const ServiceTab = ({ name, icon, id }: { id: number, name: string | null | undefined, icon: string | null | undefined }) => {
-
+const ServiceTab = ({
+  name,
+  icon,
+  id,
+}: {
+  id: number;
+  name: string | null | undefined;
+  icon: string | null | undefined;
+}) => {
   const router = useRouter();
 
   const handleService = () => {
@@ -27,20 +34,25 @@ const ServiceTab = ({ name, icon, id }: { id: number, name: string | null | unde
     <article className=" w-full bg-[#D9D9D9] flex justify-between items-center p-3">
       <div className="flex items-center gap-3">
         <div className="rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-[#C1001F]">
-          {icon && <Image
-            src={icon}
-            alt={"service icon"}
-            className="object-contain aspect-square w-10 h-10 rounded-[50%]"
-            width={40}
-            height={40}
-          />}
+          {icon && (
+            <Image
+              src={icon}
+              alt={"service icon"}
+              className="object-contain aspect-square w-10 h-10 rounded-[50%]"
+              width={40}
+              height={40}
+            />
+          )}
         </div>
 
         <h3 className="text-[18px] text-black font-semibold font-poppins">
           {name}
         </h3>
       </div>
-      <div onClick={handleService} className="cursor-pointer rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-black">
+      <div
+        onClick={handleService}
+        className="cursor-pointer rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-black"
+      >
         <IoIosArrowForward className="text-[16px] text-white" />
       </div>
     </article>
@@ -52,7 +64,6 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
   const [locationGallery, setLocationGallery] = useState<(string | null)[]>();
   const [totalRatings, setTotalRatings] = useState(0);
   const { services } = useSupabase();
-
 
   const {
     detailData,
@@ -313,14 +324,18 @@ const LocationDetails = ({ params }: { params: { slug: string } }) => {
           </h2>
           <article className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
             {services.map((item, index) => (
-
               // id={service.id}
               // heading={service.title}
               // icon={service.icon}
               // description={service.description}
               // mode={service.id % 2 === 0 ? "light" : "dark"}
               // key={service.id}
-              <ServiceTab key={item.id} id={item.id} name={item.title} icon={item.icon} />
+              <ServiceTab
+                key={item.id}
+                id={item.id}
+                name={item.title}
+                icon={item.icon}
+              />
             ))}
           </article>
         </section>

@@ -10,9 +10,10 @@ import { Dropdown } from "@/utils";
 import { Logo, USA_flag } from "@/assets/images";
 import { useRouter } from "next/navigation";
 // import navLinks from "./navLinks.json";
+import LanguageChanger from "../LanguageChanger";
 
 export const Navbar = () => {
-  const router = useRouter()
+  const router = useRouter();
   const navLinks = [
     { id: 1, heading: "Home", route: "/" },
     { id: 2, heading: "About Us", route: "/about" },
@@ -88,15 +89,15 @@ export const Navbar = () => {
       </div>
     ));
 
-
   const SM_Screen_renderNavLinks = () =>
     navLinks.map((link, index) => (
-      <Link key={link.id}  className="" href={link.route}>
-        <li onClick={()=>setOpen(false)} className={`${styles.text} my-5`}>{link.heading}</li>
+      <Link key={link.id} className="" href={link.route}>
+        <li onClick={() => setOpen(false)} className={`${styles.text} my-5`}>
+          {link.heading}
+        </li>
       </Link>
     ));
 
- 
   return (
     <header className="h-[90px] w-full flex justify-center relative px-8 md:px-10 lg:px-14 items-center">
       <Image
@@ -109,17 +110,15 @@ export const Navbar = () => {
         {renderNavLinks()}
       </nav>
 
-      {isOpen && <div className="  bg-white/95 bottom-0 right-0 left-0 top-0 h-[100dvh] z-40 fixed transition-all duration-300 ease-in-out w-full tablet:hidden gap-4 sm:gap-7 items-center">
-
-
-        <div className="grid place-items-center h-full">
-          <div className="spacing-y-5">
-            <SM_Screen_renderNavLinks />
+      {isOpen && (
+        <div className="  bg-white/95 bottom-0 right-0 left-0 top-0 h-[100dvh] z-40 fixed transition-all duration-300 ease-in-out w-full tablet:hidden gap-4 sm:gap-7 items-center">
+          <div className="grid place-items-center h-full">
+            <div className="spacing-y-5">
+              <SM_Screen_renderNavLinks />
+            </div>
           </div>
         </div>
-
-
-      </div>}
+      )}
 
       <div className="flex gap-4 sm:gap-7 items-center">
         {/* <div className="relative">
@@ -151,6 +150,9 @@ export const Navbar = () => {
             />
           )}
         </div> */}
+        <div className="block absolute z-50 top-5 right-6 tablet:right-10">
+          <LanguageChanger />
+        </div>
         <div className="block absolute z-50 top-5 right-6 tablet:hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         </div>

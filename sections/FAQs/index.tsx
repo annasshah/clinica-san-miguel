@@ -1,6 +1,6 @@
 "use client";
 
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import { useSupabase } from "@/context/supabaseContext";
 import { Key, useState } from "react";
 
@@ -52,8 +52,10 @@ const AccordionItem = ({
   );
 };
 
-export const FAQs = ({ data }: any) => {
+export const FAQs = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+
+  const { faqs } = useSupabase();
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion((prev) => (prev === index ? null : index));
@@ -81,8 +83,8 @@ export const FAQs = ({ data }: any) => {
         Questions that are asked most frequently
       </h3>
       <div className="flex flex-col w-[80%] items-center gap-6 my-5">
-        {data &&
-          data.map(
+        {faqs &&
+          faqs.map(
             (
               faq: {
                 id: number;

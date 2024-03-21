@@ -2,7 +2,7 @@
 
 import { CompactService } from "@/components";
 import { Testimonials } from "@/sections";
-import { services } from "../../constants";
+// import { services } from "../../../constants";
 import { styles } from "../styles";
 
 import { useSupabase } from "@/context/supabaseContext";

@@ -3,7 +3,7 @@
 import { useRef } from "react";
 
 import { Testimonial } from "@/components";
-import { styles } from "@/app/styles";
+import { styles } from "../../app/[locale]/styles";
 // import testimonials from "./testimonials.json";
 // import { SampleNextArrow, SamplePrevArrow } from "@/utils";
 

@@ -2,7 +2,7 @@ import { MdOutlineCenterFocusWeak } from "react-icons/md";
 import { BiTargetLock } from "react-icons/bi";
 import { FaWalking } from "react-icons/fa";
 import { Mission } from "@/components";
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 
 export const CommunityMission = () => {
   const missionList = [

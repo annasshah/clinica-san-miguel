@@ -1,20 +1,20 @@
 "use client";
 
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import {
-  blood_work,
-  blood_work_icon,
-  dentistry,
-  dentistry_icon,
-  diabetes,
-  diabetes_icon,
-  high_blood_pressure,
-  high_blood_pressure_icon,
-  ultrasound,
-  ultrasound_icon,
+  // blood_work,
+  // blood_work_icon,
+  // dentistry,
+  // dentistry_icon,
+  // diabetes,
+  // diabetes_icon,
+  // high_blood_pressure,
+  // high_blood_pressure_icon,
+  // ultrasound,
+  // ultrasound_icon,
   viewAllArrow,
-  weight_loss,
-  weight_loss_icon,
+  // weight_loss,
+  // weight_loss_icon,
 } from "@/assets/images";
 import { Treatment } from "@/components";
 
@@ -171,18 +171,21 @@ export const Treatments = () => {
       </Link>
       <div className="w-[100vw] md:w-[96vw] lg:w-[95vw] xl:w-[75vw] block justify-center h-auto mx-auto my-10">
         <Slider {...settings}>
-          {services.filter((elem)=>elem.id !== 25).slice(0, 6).map((treatment) => (
-            <Treatment
-              id={treatment.id}
-              heading={treatment.title}
-              image={treatment.image}
-              icon={treatment.icon}
-              description={treatment.description}
-              // mode={treatment.id % 2 === 0 ? "dark" : "light"}
-              mode={"light"}
-              key={treatment.id}
-            />
-          ))}
+          {services
+            .filter((elem) => elem.id !== 25)
+            .slice(0, 6)
+            .map((treatment) => (
+              <Treatment
+                id={treatment.id}
+                heading={treatment.title}
+                image={treatment.image}
+                icon={treatment.icon}
+                description={treatment.description}
+                // mode={treatment.id % 2 === 0 ? "dark" : "light"}
+                mode={"light"}
+                key={treatment.id}
+              />
+            ))}
         </Slider>
       </div>
     </section>

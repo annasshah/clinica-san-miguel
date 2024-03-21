@@ -1,6 +1,6 @@
 "use client";
 
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import { Location } from "@/components";
 // import {
 //   Houston,
@@ -177,8 +177,8 @@ export const Locations = () => {
 
   return (
     <section className="flex flex-col justify-center items-center my-14">
-      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-        OUR LOCATIONS
+      <h1 className={`${styles.sectionHeadText} text-[#C1001F] uppercase`}>
+        Our locations
       </h1>
       <h3 className={`${styles.sectionSubText} text-[#000000]`}>
         Choose your preferred location
