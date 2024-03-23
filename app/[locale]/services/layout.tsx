@@ -1,4 +1,4 @@
-import { Services, Testimonials } from "@/sections";
+import { Testimonials } from "@/sections";
 // import { useRouter } from 'next/router'
 
 export default function RootLayout({
@@ -17,4 +17,3 @@ export default function RootLayout({
     </main>
   );
 }
-

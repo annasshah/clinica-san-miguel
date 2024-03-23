@@ -1,43 +1,42 @@
-"use client";
-
-import { CompactService } from "@/components";
 import { Testimonials } from "@/sections";
 // import { services } from "../../../constants";
 import { styles } from "../styles";
+import initTranslations from "@/app/i18n";
+import TranslationsProvider from "@/components/TranslationsProvider";
+import { ServicesComponent } from "./ServicesComponent";
 
-import { useSupabase } from "@/context/supabaseContext";
+const i18nNamespaces = ["common"];
 
-const Services = () => {
-  const { services } = useSupabase();
+const Services = async ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
-    <main className="flex flex-col gap-5">
-      <section className="flex flex-col justify-center items-center my-10">
-        <div className="flex flex-col justify-center items-center">
-          <p className={`${styles.sectionSubText} text-[#19192C]`}>
-            what we offer
-          </p>
-          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-            services
-          </h1>
-        </div>
-        <article className="flex flex-wrap justify-center items-center gap-5">
-          {services.map((service) => (
-            <CompactService
-              id={service.id}
-              heading={service.title}
-              icon={service.icon}
-              description={service.description}
-              // mode={service.id % 2 === 0 ? "light" : "dark"}
-              mode={"light"}
-              key={service.id}
-            />
-          ))}
-        </article>
-      </section>
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >
+      <main className="flex flex-col gap-5">
+        <section className="flex flex-col justify-center items-center my-10">
+          <div className="flex flex-col justify-center items-center">
+            <p className={`${styles.sectionSubText} text-[#19192C]`}>
+              {t("what we offer")}
+            </p>
+            <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+              {t("services")}
+            </h1>
+          </div>
 
-      <Testimonials headingFlag={true} mode={"light"} />
-    </main>
+          <ServicesComponent />
+        </section>
+
+        {/* <Testimonials headingFlag={true} mode={"light"} /> */}
+      </main>
+    </TranslationsProvider>
   );
 };
 
