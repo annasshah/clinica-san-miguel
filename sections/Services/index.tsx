@@ -12,6 +12,7 @@ import Image from "next/image";
 import { viewAllArrow } from "@/assets/images";
 import Link from "next/link";
 import { useSupabase } from "@/context/supabaseContext";
+import { useTranslation } from "react-i18next";
 
 export const Services = () => {
   // const slider = useRef(null);
@@ -78,17 +79,21 @@ export const Services = () => {
   //     },
   //   ],
   // };
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
 
-  const { services } = useSupabase();
+  const { services, services_es } = useSupabase();
+
+  const data = currentLocale === "es" ? services_es : services;
 
   return (
     <section className="flex flex-col relative gap-6 my-10 p-3 w-[100vw] md:w-[90vw] lg:w-[85vw] xl:w-[75vw]">
       <div className="flex flex-col justify-center items-center">
         <p className={`${styles.sectionSubText} text-[#19192C]`}>
-          what we offer
+          {t("what we offer")}
         </p>
         <h1 className={`${styles.sectionHeadText} text-[#C1001F] `}>
-          services
+          {t("services")}
         </h1>
       </div>
       <Link href={"/services"}>
@@ -102,7 +107,7 @@ export const Services = () => {
         </div>
       </Link>
       <article className="flex flex-wrap justify-center h-auto mx-auto ">
-        {services.slice(0, 6).map((service) => (
+        {data.slice(0, 6).map((service) => (
           <CompactService
             id={service.id}
             heading={service.title}

@@ -6,14 +6,18 @@ import { About } from "@/components";
 import { useSupabase } from "@/context/supabaseContext";
 import { useTranslation } from "react-i18next";
 
-export const AboutSection = ({ locale }: any) => {
-  const { t } = useTranslation();
+export const AboutSection = () => {
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
   const { aboutShort, aboutShort_es } = useSupabase();
 
   // console.log("LOCale:", locale);
 
   const content =
-    locale === "es" ? aboutShort_es?.[0]?.content : aboutShort?.[0]?.content;
+    currentLocale === "es"
+      ? aboutShort_es?.[0]?.content
+      : aboutShort?.[0]?.content;
 
   return (
     <section className="w-full flex flex-col justify-center gap-10 items-center my-14">

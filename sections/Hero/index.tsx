@@ -22,7 +22,7 @@ export const Hero = () => {
 
   const { heroSection, heroSection_es } = useSupabase();
 
-  const data = currentLocale === "es" ? heroSection_es : heroSection;
+  const data = currentLocale === "es" ? heroSection_es[0] : heroSection[0];
 
   const go_to_contact_handle = () => {
     router.push(`/contact`);
@@ -40,10 +40,10 @@ export const Hero = () => {
           </div> */}
           <div className="w-[100%] md:w-[95%] lg:w-[80%] xl:w-[60%] flex flex-col gap-5">
             <div className="text-[25px] md:text-[30px] text-center md:text-left lg:text-[48px] leading-[25px] md:leading-[30px] lg:leading-[48px] font-poppins font-bold text-[#000000]">
-              {data[0]?.title}
+              {data?.title}
             </div>
             <p className="text-[16px] text-center md:text-left font-poppins text-[#19192C] leading-[25px]">
-              {data[0]?.content}
+              {data?.content}
             </p>
 
             <div className="flex gap-7 justify-center md:justify-start items-center">

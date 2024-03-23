@@ -199,7 +199,7 @@ export interface Database {
           // the data expected from .select()
           id: number;
           created_at: string;
-          texts: string | null;
+          Text: string | null;
         };
       };
       career_es: {
@@ -207,7 +207,7 @@ export interface Database {
           // the data expected from .select()
           id: number;
           created_at: string;
-          texts: string | null;
+          Text: string | null;
         };
       };
       Appoinments: {

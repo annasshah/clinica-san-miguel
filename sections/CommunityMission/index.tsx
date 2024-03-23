@@ -1,8 +1,11 @@
+"use client";
+
 import { MdOutlineCenterFocusWeak } from "react-icons/md";
 import { BiTargetLock } from "react-icons/bi";
 import { FaWalking } from "react-icons/fa";
 import { Mission } from "@/components";
 import { styles } from "@/app/[locale]/styles";
+import { useTranslation } from "react-i18next";
 
 export const CommunityMission = () => {
   const missionList = [
@@ -47,11 +50,16 @@ export const CommunityMission = () => {
     },
   ];
 
+  const { t, i18n } = useTranslation();
+  // const currentLocale = i18n.language;
+
   return (
     <section className="flex w-full flex-col items-center bg-[#19192C] py-[4%]">
-      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>mission</h1>
+      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+        {t("mission")}
+      </h1>
       <h3 className={`${styles.sectionSubText} text-[#F8F5F0]`}>
-        Our community
+        {t("Our community")}
       </h3>
       <div className="w-full md:w-[80%] h-1 bg-white rounded-full my-[3%]"></div>
       <div className="flex flex-wrap justify-center items-center gap-7 lg:w-[80%]">

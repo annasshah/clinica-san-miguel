@@ -3,6 +3,7 @@
 import { styles } from "@/app/[locale]/styles";
 import { useSupabase } from "@/context/supabaseContext";
 import { Key, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -55,7 +56,12 @@ const AccordionItem = ({
 export const FAQs = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
-  const { faqs } = useSupabase();
+  const { t, i18n } = useTranslation();
+  const currentLocale = i18n.language;
+
+  const { faqs, faqs_es } = useSupabase();
+
+  const data = currentLocale === "es" ? faqs_es : faqs;
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion((prev) => (prev === index ? null : index));
@@ -78,13 +84,15 @@ export const FAQs = () => {
 
   return (
     <section className="flex w-full flex-col items-center py-[4%]">
-      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>FAQ’s</h1>
+      <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+        {t("FAQ’s")}
+      </h1>
       <h3 className={`${styles.sectionSubText}  text-[#000000]`}>
-        Questions that are asked most frequently
+        {t("Questions that are asked most frequently")}
       </h3>
       <div className="flex flex-col w-[80%] items-center gap-6 my-5">
-        {faqs &&
-          faqs.map(
+        {data &&
+          data.map(
             (
               faq: {
                 id: number;
