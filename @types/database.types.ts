@@ -69,6 +69,26 @@ export interface Database {
           image_5: string | null;
         };
       };
+      Mission: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          Icon: string | null;
+          Title: string | null;
+          Text: string | null;
+        };
+      };
+      Mission_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          Icon: string | null;
+          Title: string | null;
+          Text: string | null;
+        };
+      };
       Additional_Services: {
         Row: {
           // the data expected from .select()
