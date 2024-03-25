@@ -115,7 +115,7 @@ export const Locations = () => {
     ],
   };
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation(["common"]);
   // const currentLocale = i18n.language;
 
   // console.log("LOCale:", locale);
@@ -125,10 +125,10 @@ export const Locations = () => {
   return (
     <section className="flex flex-col justify-center items-center my-14">
       <h1 className={`${styles.sectionHeadText} text-[#C1001F] uppercase`}>
-        {t("Our locations")}
+        {t("location_title")}
       </h1>
       <h3 className={`${styles.sectionSubText} text-[#000000]`}>
-        {t("Choose your preferred location")}
+        {t("location_sub_title")}
       </h3>
 
       <article className="w-[100vw] xsm:w-[65vw] sm:w-[70vw] md:w-[65vw] lg:w-[50vw] block justify-center h-[250px] mx-auto my-10">

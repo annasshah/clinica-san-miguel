@@ -56,7 +56,7 @@ const AccordionItem = ({
 export const FAQs = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["home"]);
   const currentLocale = i18n.language;
 
   const { faqs, faqs_es } = useSupabase();
@@ -85,10 +85,10 @@ export const FAQs = () => {
   return (
     <section className="flex w-full flex-col items-center py-[4%]">
       <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-        {t("FAQ’s")}
+        {t("faqs_title")}
       </h1>
       <h3 className={`${styles.sectionSubText}  text-[#000000]`}>
-        {t("Questions that are asked most frequently")}
+        {t("faqs_sub_title")}
       </h3>
       <div className="flex flex-col w-[80%] items-center gap-6 my-5">
         {data &&

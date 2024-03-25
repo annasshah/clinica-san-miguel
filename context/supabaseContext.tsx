@@ -17,6 +17,8 @@ interface SupabaseContextType {
   aboutShort_es: Database["public"]["Tables"]["About_Short_es"]["Row"][];
   about: Database["public"]["Tables"]["about"]["Row"][];
   about_es: Database["public"]["Tables"]["about_es"]["Row"][];
+  mission: Database["public"]["Tables"]["Mission"]["Row"][];
+  mission_es: Database["public"]["Tables"]["Mission_es"]["Row"][];
   blogs: Database["public"]["Tables"]["Blog"]["Row"][];
   additionalServices: Database["public"]["Tables"]["Additional_Services"]["Row"][];
   faqs: Database["public"]["Tables"]["FAQs"]["Row"][];
@@ -59,6 +61,12 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   >([]);
   const [about_es, setAbout_es] = useState<
     Database["public"]["Tables"]["about_es"]["Row"][]
+  >([]);
+  const [mission, setMission] = useState<
+    Database["public"]["Tables"]["Mission"]["Row"][]
+  >([]);
+  const [mission_es, setMission_es] = useState<
+    Database["public"]["Tables"]["Mission_es"]["Row"][]
   >([]);
   const [blogs, setBlogs] = useState<
     Database["public"]["Tables"]["Blog"]["Row"][]
@@ -166,6 +174,8 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     fetchDataCallback("About_Short_es", setAboutShort_es);
     fetchDataCallback("about", setAbout);
     fetchDataCallback("about_es", setAbout_es);
+    fetchDataCallback("Mission", setMission);
+    fetchDataCallback("Mission_es", setMission_es);
     fetchDataCallback("Blog", setBlogs);
     fetchDataCallback("Additional_Services", setAdditionalServices);
     fetchDataCallback("FAQs", setFaqs);
@@ -190,6 +200,8 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
         aboutShort_es,
         about,
         about_es,
+        mission,
+        mission_es,
         blogs,
         additionalServices,
         faqs,

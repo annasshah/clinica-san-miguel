@@ -79,7 +79,7 @@ export const Services = () => {
   //     },
   //   ],
   // };
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common"]);
   const currentLocale = i18n.language;
 
   const { services, services_es } = useSupabase();
@@ -90,10 +90,10 @@ export const Services = () => {
     <section className="flex flex-col relative gap-6 my-10 p-3 w-[100vw] md:w-[90vw] lg:w-[85vw] xl:w-[75vw]">
       <div className="flex flex-col justify-center items-center">
         <p className={`${styles.sectionSubText} text-[#19192C]`}>
-          {t("what we offer")}
+          {t("services_sub_title")}
         </p>
         <h1 className={`${styles.sectionHeadText} text-[#C1001F] `}>
-          {t("services")}
+          {t("services_title")}
         </h1>
       </div>
       <Link href={"/services"}>

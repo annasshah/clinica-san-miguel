@@ -24,10 +24,10 @@ const Services = async ({
         <section className="flex flex-col justify-center items-center my-10">
           <div className="flex flex-col justify-center items-center">
             <p className={`${styles.sectionSubText} text-[#19192C]`}>
-              {t("what we offer")}
+              {t("services_sub_title")}
             </p>
             <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-              {t("services")}
+              {t("services_title")}
             </h1>
           </div>
 

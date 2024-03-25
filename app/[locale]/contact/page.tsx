@@ -28,10 +28,10 @@ const Contact = async ({
             <h1
               className={`${styles.sectionHeadText} text-[#C1001F] uppercase`}
             >
-              {t("Our locations")}
+              {t("location_title")}
             </h1>
             <p className={`${styles.sectionSubText} text-[#19192C]`}>
-              {t("Choose your preferred location")}
+              {t("location_sub_title")}
             </p>
           </div>
           <article className="flex flex-wrap justify-center items-center gap-5">

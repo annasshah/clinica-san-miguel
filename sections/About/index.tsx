@@ -7,7 +7,7 @@ import { useSupabase } from "@/context/supabaseContext";
 import { useTranslation } from "react-i18next";
 
 export const AboutSection = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["common"]);
   const currentLocale = i18n.language;
 
   const { aboutShort, aboutShort_es } = useSupabase();
@@ -22,9 +22,9 @@ export const AboutSection = () => {
   return (
     <section className="w-full flex flex-col justify-center gap-10 items-center my-14">
       <h1 className={`${styles.sectionHeadText} flex text-[#C1001F]`}>
-        {t("About Us")}
+        {t("about_us_title")}
       </h1>
-      <About image={about} heading={"About Us"} content={content} />
+      <About image={about} heading={t("about_us_title")} content={content} />
     </section>
   );
 };

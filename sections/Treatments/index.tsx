@@ -90,7 +90,7 @@ export const Treatments = () => {
     ],
   };
 
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["home"]);
   const currentLocale = i18n.language;
 
   const { services, services_es } = useSupabase();
@@ -101,11 +101,11 @@ export const Treatments = () => {
     <section className="flex flex-col  justify-center gap-10 my-[5%] mx-14 w-[100vw] md:w-[96vw] lg:w-[95vw] xl:w-[75vw]">
       <article className="flex w-full flex-col gap-5 items-center">
         <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-          {t("top treatments")}
+          {t("treatments_title")}
         </h1>
         <p className={`${styles.sectionSubText} text-[#19192C]`}>
           &quot;
-          {t("Revitalize Your Well-being with the Best-Recommended Treatments")}
+          {t("treatments_sub_title")}
           &quot;
         </p>
       </article>

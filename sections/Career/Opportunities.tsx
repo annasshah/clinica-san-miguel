@@ -9,7 +9,7 @@ export const Opportunities = () => {
 
   const { career, career_es } = useSupabase();
 
-  const opportunities = currentLocale === "es" ? career : career_es;
+  const opportunities = currentLocale === "es" ? career_es : career;
   return (
     <>
       {opportunities.map((item, index) => (

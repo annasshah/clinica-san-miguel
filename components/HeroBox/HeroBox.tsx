@@ -11,7 +11,7 @@ import vector from "../../assets/images/portriats/Vector1.png";
 import { useTranslation } from "react-i18next";
 
 export const HeroBox = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(["home"]);
 
   const [windowSize, setWindowSize] = useState({
     width: 0,
@@ -111,7 +111,7 @@ export const HeroBox = () => {
                     top: `calc(50px * ${scaleFactor})`,
                   }}
                 >
-                  {t("Proper care, happy life.")}
+                  {t("hero_image_title")}
                 </div>
               </div>
             </div>

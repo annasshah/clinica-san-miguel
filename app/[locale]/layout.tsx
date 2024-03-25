@@ -12,6 +12,7 @@ import AiBotMain from "@/components/AiChatBot/AiBotMain";
 import i18nConfig from "@/i18nConfig";
 import { dir } from "i18next";
 import { LanguageSelectionDesc } from "@/components/Bar";
+import initTranslations from "../i18n";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,14 +35,17 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale: string) => ({ locale }));
 }
+const i18nNamespaces = ["common"];
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <html
       lang={locale}
@@ -50,7 +54,10 @@ export default function RootLayout({
     >
       <body className="font-inter bg-[#F8F5F0] relative overflow-x-hidden w-[100vw]">
         <Providers>
-          <LanguageSelectionDesc />
+          {/* <LanguageSelectionDesc /> */}
+          <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
+            {t("language_selection_description")}
+          </article>
           <Navbar />
           {children}
 
