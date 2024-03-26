@@ -37,7 +37,9 @@ export default function LanguageChanger() {
   };
 
   useEffect(() => {
-    setCurrentLocale(i18n.language);
+    if (i18n.language) {
+      setCurrentLocale(i18n.language);
+    }
   }, [i18n.language]);
 
   return (
