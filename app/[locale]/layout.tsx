@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale: string) => ({ locale }));
 }
-const i18nNamespaces = ["common"];
+const i18nNamespaces = ["common", "home", "career"];
 
 export default async function RootLayout({
   children,
@@ -56,7 +56,7 @@ export default async function RootLayout({
         <Providers>
           {/* <LanguageSelectionDesc /> */}
           <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
-            {t("language_selection_description")}
+            {t("common:language_selection_description")}
           </article>
           <Navbar />
           {children}
