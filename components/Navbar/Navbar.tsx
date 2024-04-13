@@ -26,8 +26,8 @@ export const Navbar = () => {
       //   { id: 2, heading: "Service 2", route: "" },
       // ],
     },
-    // { id: 4, heading: "Blogs", route: "" },
-    // { id: 5, heading: "Testimonial", route: "/testimonials" },
+    { id: 4, heading: "Career", route: "/career" },
+    { id: 5, heading: "Specials", route: "/special" },
     { id: 6, heading: "Contact", route: "/contact" },
     // {
     //   id: 7,

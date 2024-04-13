@@ -7,6 +7,7 @@ import { CompactService } from "./CompactService";
 import { AdditionalService } from "./AdditionalService";
 import { ExpandedTestimonial } from "./ExpandedTestimonial";
 import { Location } from "./Location";
+import { LocationDetailedCard } from "./LocationDetailedCard";
 
 export {
   Testimonial,
@@ -18,4 +19,5 @@ export {
   AdditionalService,
   ExpandedTestimonial,
   Location,
+  LocationDetailedCard,
 };

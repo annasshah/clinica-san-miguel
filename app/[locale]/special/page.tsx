@@ -1,8 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { supabase } from "@/supabaseClient";
-
 import {
   Blue_and_Red_Health_Icons_Medical_Conference_Poster,
   Grey_Modern_Best_Medical_Service_Poster,
@@ -12,23 +7,17 @@ import {
 import { Locations, Services, Testimonials } from "@/sections";
 import Image from "next/image";
 import { styles } from "../styles";
+import initTranslations from "@/app/i18n";
+import TranslationsProvider from "@/components/TranslationsProvider";
 
-const Special = () => {
-  // const [specials, setSpecials] = useState();
+const i18nNamespaces = ["home", "common"];
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     let { data, error } = await supabase.from("About").select("*");
-
-  //     console.log(data, "About Data");
-  //     if (data) {
-  //       setSpecials(data);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
+const Special = async ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  const { resources } = await initTranslations(locale, i18nNamespaces);
   const special_posters = [
     {
       id: 1,
@@ -52,44 +41,50 @@ const Special = () => {
     },
   ];
   return (
-    <main>
-      <section className="flex flex-col justify-center items-center gap-10">
-        <div className="flex flex-col gap-1 justify-center items-center">
-          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-            Specials
-          </h1>
-          <h1 className={`${styles.sectionHeadText} text-customGray`}>
-            Summer Specials
-          </h1>
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >
+      <main>
+        <section className="flex flex-col justify-center items-center gap-10">
+          <div className="flex flex-col gap-1 justify-center items-center">
+            <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+              Specials
+            </h1>
+            <h1 className={`${styles.sectionHeadText} text-customGray`}>
+              Summer Specials
+            </h1>
+          </div>
+
+          <article className="bg-[#19192C] rounded-[20px] w-[95%] sm:w-[90%] md:w-[85%] lg:w-[70%] h-full p-14 flex flex-col justify-center items-center gap-4">
+            {special_posters.map((poster) => (
+              <article
+                className="flex flex-col gap-3 items-center justify-center"
+                key={poster.id}
+              >
+                <h2 className="text-[25px] sm:text-[30px] md:text-[40px] lg:text-[48px] text-[#ffffff] text-center font-poppins">
+                  {poster.heading}
+                </h2>
+                <div>
+                  <Image
+                    src={poster.image}
+                    alt={""}
+                    className="rounded-[20px] aspect-auto w-[340px] md:w-[500px] lg:w-[700px]"
+                  />
+                </div>
+              </article>
+            ))}
+          </article>
+        </section>
+
+        <div className="w-full flex justify-center">
+          <Services />
         </div>
-
-        <article className="bg-[#19192C] rounded-[20px] w-[95%] sm:w-[90%] md:w-[85%] lg:w-[70%] h-full p-14 flex flex-col justify-center items-center gap-4">
-          {special_posters.map((poster) => (
-            <article
-              className="flex flex-col gap-3 items-center justify-center"
-              key={poster.id}
-            >
-              <h2 className="text-[25px] sm:text-[30px] md:text-[40px] lg:text-[48px] text-[#ffffff] text-center font-poppins">
-                {poster.heading}
-              </h2>
-              <div>
-                <Image
-                  src={poster.image}
-                  alt={""}
-                  className="rounded-[20px] aspect-auto w-[340px] md:w-[500px] lg:w-[700px]"
-                />
-              </div>
-            </article>
-          ))}
-        </article>
-      </section>
-
-      <div className="w-full flex justify-center">
-        <Services />
-      </div>
-      <Locations />
-      <Testimonials headingFlag={true} mode={"light"} />
-    </main>
+        <Locations />
+        <Testimonials headingFlag={true} mode={"light"} />
+      </main>
+    </TranslationsProvider>
   );
 };
 

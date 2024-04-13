@@ -2,15 +2,6 @@
 
 import { styles } from "@/app/[locale]/styles";
 import { Location } from "@/components";
-// import {
-//   Houston,
-//   Arlington,
-//   Dallas,
-//   Fresno,
-//   Pasadena,
-//   FortWorth,
-//   SanAntonio,
-// } from "@/assets/images";
 
 // Slick Slider
 import "slick-carousel/slick/slick.css";
@@ -116,9 +107,6 @@ export const Locations = () => {
   };
 
   const { t } = useTranslation(["common"]);
-  // const currentLocale = i18n.language;
-
-  // console.log("LOCale:", locale);
 
   const { locations } = useSupabase();
 
@@ -148,18 +136,3 @@ export const Locations = () => {
     </section>
   );
 };
-// <div
-//   key={location.id}
-//   className="flex flex-col items-center justify-center"
-// >
-//   <div className="w-[350px] h-[350px]">
-//     <Image
-//       src={location.images}
-//       alt={location.name}
-//       className="aspect-auto object-contain w-full h-full"
-//     />
-//   </div>
-//   <p className="text-[#19192C] font-inter text-[16px]">
-//     {location.name}
-//   </p>
-// </div>

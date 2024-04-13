@@ -5,20 +5,19 @@ import initTranslations from "../i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 
 import {
+  AboutProfessionals,
   AboutSection,
-  // Blog,
   CommunityMission,
   FAQs,
+  GroupedLocations,
   Hero,
-  // JoinTeam,
+  HeroTopSection,
   Locations,
   Testimonials,
   Treatments,
 } from "@/sections";
-// import Image from "next/image";
 
 const i18nNamespaces = ["home", "common"];
-// import { useSupabase } from "@/context/supabaseContext";
 
 export default async function Home({
   params: { locale },
@@ -34,16 +33,16 @@ export default async function Home({
       resources={resources}
     >
       <main className="flex flex-col justify-center items-center overflow-x-hidden gap-10">
+        <div className="w-full bg-[#F1F1F1]">
+          <HeroTopSection />
+        </div>
+        <GroupedLocations />
+        <AboutProfessionals />
         <Hero />
         <Testimonials headingFlag={true} mode={"dark"} />
         <CommunityMission />
         <AboutSection />
         <Treatments />
-        {/* <article className="h-[100px] w-full font-poppins bg-[#19192C] flex justify-center items-center text-[16px] md:text-[20px] text-[#F8F5F0]">
-        No insurance needed, walk-ins welcome!{" "}
-      </article>
-      <JoinTeam /> */}
-        {/* <Blog data={blogs} /> */}
         <Locations />
         <FAQs />
       </main>
