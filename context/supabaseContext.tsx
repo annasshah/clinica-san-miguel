@@ -31,6 +31,7 @@ interface SupabaseContextType {
   services_es: Database["public"]["Tables"]["services_es"]["Row"][];
   detailData: Record<string, any[]>;
   filteredData: any[];
+  searchedData: any[];
   specials: Database["public"]["Tables"]["Specials"]["Row"][];
   testinomial: Database["public"]["Tables"]["Testinomial"]["Row"][];
   career: Database["public"]["Tables"]["career"]["Row"][];
@@ -40,6 +41,11 @@ interface SupabaseContextType {
     table: string,
     column_name: string,
     id: number
+  ) => Promise<void>;
+  fetchSearchedData: (
+    table: string,
+    column_name: string,
+    title: string
   ) => Promise<void>;
 }
 
@@ -103,6 +109,7 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
   // >([]);
   const [detailData, setDetailData] = useState<Record<string, any[]>>({});
   const [filteredData, setFilteredData] = useState<any[]>([]);
+  const [searchedData, setSearchedData] = useState<any[]>([]);
   const [specials, setSpecials] = useState<
     Database["public"]["Tables"]["Specials"]["Row"][]
   >([]);
@@ -165,9 +172,29 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   };
 
+  const fetchSearchedData = async (
+    table: string,
+    column_name: string,
+    title: string
+  ) => {
+    try {
+      const { data, error } = await supabase
+        .from(table)
+        .select("*")
+        .eq(column_name, title);
+
+      if (data) {
+        setSearchedData(data);
+      }
+    } catch (error) {
+      console.log(`Error searching ${table}: `, error);
+    }
+  };
+
   const fetchDataCallback = useCallback(fetchData, []);
   const fetchDetailedDataCallback = useCallback(fetchDetailedData, []);
   const fetchFilteredDataCallback = useCallback(fetchFilteredData, []);
+  const fetchSearchedDataCallback = useCallback(fetchSearchedData, []);
 
   useEffect(() => {
     fetchDataCallback("About_Short", setAboutShort);
@@ -218,8 +245,10 @@ export const SupabaseProvider: React.FC<{ children: React.ReactNode }> = ({
         career_es,
         detailData,
         filteredData,
+        searchedData,
         fetchDetailedData: fetchDetailedDataCallback,
         fetchFilteredData: fetchFilteredDataCallback,
+        fetchSearchedData: fetchSearchedDataCallback,
       }}
     >
       {children}

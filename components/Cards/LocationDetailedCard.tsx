@@ -3,16 +3,25 @@
 import { ImPhone } from "react-icons/im";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 export const LocationDetailedCard = ({
+  id,
   name,
   address,
   phone,
 }: {
+  id: number | null;
   name: string | undefined | null;
   address: string | undefined | null;
   phone?: string | null;
 }) => {
+  const router = useRouter();
+
+  const handleLocation = () => {
+    router.push(`/contact/${id}`);
+  };
+
   return (
     <main className="bg-[#FFFEFC] rounded-[13px] min-w-[320px] w-full max-w-[500px] min-h-[179px] py-[16px] px-[10px] flex flex-col justify-between relative">
       <h4 className="text-[16px] font-semibold text-[#FF3030]">
@@ -35,7 +44,10 @@ export const LocationDetailedCard = ({
           </div>
         </article>
 
-        <div className="flex justify-center items-center text-[25px] text-white bg-black rounded-full w-[40px] h-[40px]">
+        <div
+          onClick={handleLocation}
+          className="flex justify-center items-center text-[25px] text-white bg-black rounded-full w-[40px] h-[40px]"
+        >
           <IoIosArrowForward />
         </div>
       </div>
