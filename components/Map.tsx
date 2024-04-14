@@ -32,3 +32,27 @@ export const Map: React.FC<MapProps> = ({ height, location }) => {
     // />
   );
 };
+
+export const GroupedMap = ({
+  height,
+  width,
+  location,
+}: {
+  height: number;
+  width: number;
+  location: string;
+}) => {
+  return (
+    <iframe
+      src={`https://www.google.com/maps/d/embed?mid=${location}`}
+      // src={location}
+      width={width}
+      height={height}
+      className="w-[100%] rounded-t-[5px]"
+      style={{ borderRadius: "5px 0 5px 0" }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  );
+};
