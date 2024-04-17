@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return i18nConfig.locales.map((locale: string) => ({ locale }));
 }
-const i18nNamespaces = ["common", "home", "career"];
+const i18nNamespaces = ["common", "home", "career", "specials"];
 
 export default async function RootLayout({
   children,
