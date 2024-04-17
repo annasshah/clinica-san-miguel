@@ -40,7 +40,7 @@ export const GroupedMap = ({
 }: {
   height: number;
   width: number;
-  location: string;
+  location: string | undefined;
 }) => {
   return (
     <iframe

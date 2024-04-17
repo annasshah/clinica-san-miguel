@@ -18,6 +18,7 @@ export const GroupedLocations = () => {
       id: 1,
       name: "All",
       value: "",
+      location: "14oe73P17wHPAV_L6R1DmmLVw3JDw60k&ehbc=2E312F",
     },
     {
       id: 2,
@@ -96,31 +97,13 @@ export const GroupedLocations = () => {
           </article>
         </article>
 
-        {selectedTab === "" ? (
-          <article className="flex justify-center items-start w-full lg:w-1/2">
-            <Image
-              src={locationCover}
-              alt="location cover"
-              className="object-cover aspect-auto h-[600px] w-[400px] rounded-[46px]"
-            />
-          </article>
-        ) : (
-          <article className="flex justify-center items-start w-full lg:w-1/2">
-            <GroupedMap
-              height={600}
-              width={400}
-              location={
-                selectedTab === "A"
-                  ? "1vaZ0nzB6WqN9P4gHZedwyx0tGmVDSjE&ehbc=2E312F"
-                  : selectedTab === "B"
-                  ? "1vrLm72whzL6KBgr7n_C2RfoeO1fH1u8&ehbc=2E312F"
-                  : selectedTab === "C"
-                  ? "1cwsxmz-1Sm0zYTFaNizGELErRpCQf_I&ehbc=2E312F"
-                  : ""
-              }
-            />
-          </article>
-        )}
+        <article className="flex justify-center items-start w-full lg:w-1/2">
+          <GroupedMap
+            height={600}
+            width={400}
+            location={tabs.find((tab) => tab.value === selectedTab)?.location}
+          />
+        </article>
       </section>
     </main>
   );
