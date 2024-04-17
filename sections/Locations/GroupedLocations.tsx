@@ -5,12 +5,12 @@ import { locationCover } from "@/assets/images/cover";
 import { LocationDetailedCard } from "@/components";
 import { GroupedMap, Map } from "@/components/Map";
 import { useSupabase } from "@/context/supabaseContext";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 
 export const GroupedLocations = () => {
-  const { t } = useTranslation(["home"]);
+  const t = useTranslations("home");
   const [selectedTab, setSelectedTab] = useState("");
 
   const tabs = [

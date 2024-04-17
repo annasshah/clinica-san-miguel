@@ -1,15 +1,14 @@
 "use client";
 
 import { useSupabase } from "@/context/supabaseContext";
-import { useTranslation } from "react-i18next";
+import { useLocale } from "next-intl";
 
 export const Opportunities = () => {
-  const { i18n } = useTranslation();
-  const currentLocale = i18n.language;
+  const locale = useLocale();
 
   const { career, career_es } = useSupabase();
 
-  const opportunities = currentLocale === "es" ? career_es : career;
+  const opportunities = locale === "es" ? career_es : career;
   return (
     <>
       {opportunities.map((item, index) => (

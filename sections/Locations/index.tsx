@@ -12,7 +12,7 @@ import Slider from "react-slick";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { useSupabase } from "@/context/supabaseContext";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 function SampleNextArrow(props: { className: any; style: any; onClick: any }) {
   const { className, style, onClick } = props;
@@ -39,7 +39,6 @@ function SamplePrevArrow(props: { className: any; style: any; onClick: any }) {
       className={className}
       onClick={onClick}
       style={{
-        // ...style,
         fontSize: "52px",
         opacity: "1",
         color: "#626262",
@@ -64,10 +63,7 @@ export const Locations = () => {
     slidesToScroll: 1,
     centerPadding: "60px",
     rows: 1,
-    // slidesPerRow: 2,
     initialSlide: 0,
-    // appendDots: (dots: any) => <ul>{dots}</ul>,
-    // customPaging: (i: any) => <div className="ft-slick__dots--custom"></div>,
     nextArrow: (
       <SampleNextArrow
         className={undefined}
@@ -86,11 +82,8 @@ export const Locations = () => {
       {
         breakpoint: 1440,
         settings: {
-          // arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
-          // rows: 2,
-          // slidesPerRow: 2,
         },
       },
       {
@@ -99,14 +92,12 @@ export const Locations = () => {
           arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
-          // rows: 2,
-          // slidesPerRow: 2,
         },
       },
     ],
   };
 
-  const { t } = useTranslation(["common"]);
+  const t = useTranslations("common");
 
   const { locations } = useSupabase();
 

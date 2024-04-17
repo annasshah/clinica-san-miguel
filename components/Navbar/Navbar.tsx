@@ -8,11 +8,13 @@ import Hamburger from "hamburger-react";
 import { Logo } from "@/assets/images";
 import { useRouter } from "next/navigation";
 import LanguageChanger from "../LanguageChanger";
-import { useTranslation } from "react-i18next";
+import { useLocale, useTranslations } from "next-intl";
 
 export const Navbar = () => {
-  const { t } = useTranslation(["common"]);
+  const t = useTranslations("common");
   const router = useRouter();
+  const locale = useLocale();
+
   const navLinks = [
     { id: 1, heading: t("link_home"), route: "/" },
     { id: 2, heading: t("link_about"), route: "/about" },
@@ -78,7 +80,7 @@ export const Navbar = () => {
 
       <div className="flex gap-4 sm:gap-7 items-center">
         <div className="z-50">
-          <LanguageChanger />
+          <LanguageChanger locale={locale} />
         </div>
         <div className="z-50 tablet:hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} size={20} />

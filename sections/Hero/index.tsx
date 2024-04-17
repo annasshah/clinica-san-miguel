@@ -7,20 +7,16 @@ import { useSupabase } from "@/context/supabaseContext";
 import { Button, IconButton } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useTranslation } from "react-i18next";
+import { useLocale, useTranslations } from "next-intl";
 import { FaPhoneFlip } from "react-icons/fa6";
 
 export const Hero = () => {
-  const { t, i18n } = useTranslation();
-  const currentLocale = i18n.language;
+  const t = useTranslations("home");
   const router = useRouter();
-  // const heading = "Proper care of your body for life";
-  // const description =
-  //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
+  const locale = useLocale();
   const { heroSection, heroSection_es } = useSupabase();
 
-  const data = currentLocale === "es" ? heroSection_es[0] : heroSection[0];
+  const data = locale === "es" ? heroSection_es[0] : heroSection[0];
 
   const go_to_contact_handle = () => {
     router.push(`/contact`);
@@ -67,7 +63,7 @@ export const Hero = () => {
 };
 
 export const HeroTopSection = () => {
-  const { t } = useTranslation(["home"]);
+  const t = useTranslations("home");
   const router = useRouter();
 
   const redirectToContact = () => {

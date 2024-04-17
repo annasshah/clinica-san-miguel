@@ -8,10 +8,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import StarRatings from "react-star-ratings";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
-  const { t } = useTranslation(["common"]);
+  const t = useTranslations("common");
 
   const footerLink = [
     { id: 1, name: t("link_privacy_policy"), route: "" },

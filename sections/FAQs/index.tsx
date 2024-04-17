@@ -2,8 +2,9 @@
 
 import { styles } from "@/app/[locale]/styles";
 import { useSupabase } from "@/context/supabaseContext";
-import { Key, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
@@ -56,31 +57,16 @@ const AccordionItem = ({
 export const FAQs = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
 
-  const { t, i18n } = useTranslation(["home"]);
-  const currentLocale = i18n.language;
+  const t = useTranslations("home");
+  const locale = useLocale();
 
   const { faqs, faqs_es } = useSupabase();
 
-  const data = currentLocale === "es" ? faqs_es : faqs;
+  const data = locale === "es" ? faqs_es : faqs;
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion((prev) => (prev === index ? null : index));
   };
-
-  // const faqs = [
-  //   { id: 1, question: "What are ultrasounds?", answer: "Answer 1" },
-  //   {
-  //     id: 2,
-  //     question: "How are ultrasounds used in medical care?",
-  //     answer: "Answer 2",
-  //   },
-  //   {
-  //     id: 3,
-  //     question: "What is the process for getting an ultrasound?",
-  //     answer:
-  //       "One of the reasons ultrasounds are used so frequently is that they’re safe, effective, and painless. On the day of your ultrasound, there’s no need for any form of anesthesia.",
-  //   },
-  // ];
 
   return (
     <section className="flex w-full flex-col items-center py-[4%]">

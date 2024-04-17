@@ -2,11 +2,11 @@
 
 import { styles } from "@/app/[locale]/styles";
 import { clinicProfessionalCover } from "@/assets/images/cover";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
 
 export const AboutProfessionals = () => {
-  const { t } = useTranslation(["home"]);
+  const t = useTranslations("home");
 
   const title = t("section3_title");
   const title_part = title.split(" ");

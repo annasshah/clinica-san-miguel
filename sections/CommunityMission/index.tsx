@@ -1,64 +1,19 @@
 "use client";
 
-import { MdOutlineCenterFocusWeak } from "react-icons/md";
-import { BiTargetLock } from "react-icons/bi";
-import { FaWalking } from "react-icons/fa";
 import { Mission } from "@/components";
 import { styles } from "@/app/[locale]/styles";
-import { useTranslation } from "react-i18next";
 import { useSupabase } from "@/context/supabaseContext";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export const CommunityMission = () => {
-  const { t, i18n } = useTranslation(["home"]);
-  const currentLocale = i18n.language;
+  const t = useTranslations("home");
+  const router = useRouter();
+  const locale = useLocale();
 
   const { mission, mission_es } = useSupabase();
 
-  const data = currentLocale === "es" ? mission_es : mission;
-
-  // const missionList = [
-  //   {
-  //     id: 1,
-  //     icon: <MdOutlineCenterFocusWeak />,
-  //     heading: "Patient-Centric Focus",
-  //     content: "Our patients are at the core of our existence.",
-  //   },
-  //   {
-  //     id: 2,
-  //     icon: <BiTargetLock />,
-  //     heading: "Targeting the Population",
-  //     content:
-  //       "We aim to serve the Hispanic community lacking health insurance.",
-  //   },
-  //   {
-  //     id: 3,
-  //     icon: <FaWalking />,
-  //     heading: "Community Inclusivity",
-  //     content: "Committed to welcoming our entire community.",
-  //   },
-  //   {
-  //     id: 4,
-  //     icon: <FaWalking />,
-  //     heading: "Healthcare as a Right",
-  //     content:
-  //       "We believe health is a fundamental human need and a right for everyone.",
-  //   },
-  //   {
-  //     id: 5,
-  //     icon: <FaWalking />,
-  //     heading: "No Insurance Required",
-  //     content: "We offer healthcare without the need for insurance.",
-  //   },
-  //   {
-  //     id: 6,
-  //     icon: <FaWalking />,
-  //     heading: "Walk-Ins Welcome",
-  //     content:
-  //       "Convenient accessibility for everyone, ensuring no one is turned away.",
-  //   },
-  // ];
-
-  // const currentLocale = i18n.language;
+  const data = locale === "es" ? mission_es : mission;
 
   return (
     <section className="flex w-full flex-col items-center bg-[#19192C] py-[4%]">

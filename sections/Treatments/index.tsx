@@ -1,21 +1,7 @@
 "use client";
 
 import { styles } from "@/app/[locale]/styles";
-import {
-  // blood_work,
-  // blood_work_icon,
-  // dentistry,
-  // dentistry_icon,
-  // diabetes,
-  // diabetes_icon,
-  // high_blood_pressure,
-  // high_blood_pressure_icon,
-  // ultrasound,
-  // ultrasound_icon,
-  viewAllArrow,
-  // weight_loss,
-  // weight_loss_icon,
-} from "@/assets/images";
+import { viewAllArrow } from "@/assets/images";
 import { Treatment } from "@/components";
 
 // Slick Slider
@@ -25,7 +11,8 @@ import Slider from "react-slick";
 import Link from "next/link";
 import Image from "next/image";
 import { useSupabase } from "@/context/supabaseContext";
-import { useTranslation } from "react-i18next";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export const Treatments = () => {
   const settings = {
@@ -39,63 +26,43 @@ export const Treatments = () => {
     slidesToScroll: 1,
     initialSlide: 0,
     rows: 2,
-    // slidesPerRow: 2,
     appendDots: (dots: any) => <ul>{dots}</ul>,
     customPaging: (i: any) => <div className="ft-slick__dots--custom"></div>,
-    // nextArrow: (
-    //   <SampleNextArrow
-    //     className={undefined}
-    //     style={undefined}
-    //     onClick={() => slider?.current?.slickNext()}
-    //   />
-    // ),
-    // prevArrow: (
-    //   <SamplePrevArrow
-    //     className={undefined}
-    //     style={undefined}
-    //     onClick={() => slider?.current?.slickPrev()}
-    //   />
-    // ),
+
     responsive: [
       {
         breakpoint: 1040,
         settings: {
-          // arrows: false,
           slidesToShow: 2,
           slidesToScroll: 1,
           rows: 2,
-          // slidesPerRow: 2,
         },
       },
       {
         breakpoint: 720,
         settings: {
-          // arrows: false,
           slidesToShow: 2,
           slidesToScroll: 1,
           rows: 1,
-          // slidesPerRow: 2,
         },
       },
       {
         breakpoint: 704,
         settings: {
-          // arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
           rows: 1,
-          // slidesPerRow: 1,
         },
       },
     ],
   };
 
-  const { t, i18n } = useTranslation(["home"]);
-  const currentLocale = i18n.language;
+  const t = useTranslations("home");
+  const locale = useLocale();
 
   const { services, services_es } = useSupabase();
 
-  const data = currentLocale === "es" ? services_es : services;
+  const data = locale === "es" ? services_es : services;
 
   return (
     <section className="flex flex-col  justify-center gap-10 my-[5%] mx-14 w-[100vw] md:w-[96vw] lg:w-[95vw] xl:w-[75vw]">

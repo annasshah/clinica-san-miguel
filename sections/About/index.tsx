@@ -4,20 +4,18 @@ import { styles } from "@/app/[locale]/styles";
 import { about } from "@/assets/images";
 import { About } from "@/components";
 import { useSupabase } from "@/context/supabaseContext";
-import { useTranslation } from "react-i18next";
+import { useLocale, useTranslations } from "next-intl";
 
 export const AboutSection = () => {
-  const { t, i18n } = useTranslation(["common"]);
-  const currentLocale = i18n.language;
+  const t = useTranslations("common");
+  const locale = useLocale();
 
   const { aboutShort, aboutShort_es } = useSupabase();
 
   // console.log("LOCale:", locale);
 
   const content =
-    currentLocale === "es"
-      ? aboutShort_es?.[0]?.content
-      : aboutShort?.[0]?.content;
+    locale === "es" ? aboutShort_es?.[0]?.content : aboutShort?.[0]?.content;
 
   return (
     <section className="w-full flex flex-col justify-center gap-10 items-center my-14">

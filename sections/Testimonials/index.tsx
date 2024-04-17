@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useSupabase } from "@/context/supabaseContext";
 import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const Testimonials = ({
   headingFlag,
@@ -80,7 +81,7 @@ export const Testimonials = ({
       },
     ],
   };
-  const { t, i18n } = useTranslation(["common"]);
+  const t = useTranslations("common");
 
   const { testinomial } = useSupabase();
 

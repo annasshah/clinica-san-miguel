@@ -2,15 +2,14 @@
 
 import { CompactService } from "@/components";
 import { useSupabase } from "@/context/supabaseContext";
-import { useTranslation } from "react-i18next";
+import { useLocale } from "next-intl";
 
 export const ServicesComponent = () => {
-  const { i18n } = useTranslation();
-  const currentLocale = i18n.language;
+  const locale = useLocale();
 
   const { services, services_es } = useSupabase();
 
-  const data = currentLocale === "es" ? services_es : services;
+  const data = locale === "es" ? services_es : services;
 
   return (
     <article className="flex flex-wrap justify-center items-center gap-5">

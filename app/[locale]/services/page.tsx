@@ -1,42 +1,25 @@
-import { Testimonials } from "@/sections";
-// import { services } from "../../../constants";
 import { styles } from "../styles";
-import initTranslations from "@/app/i18n";
-import TranslationsProvider from "@/components/TranslationsProvider";
 import { ServicesComponent } from "./ServicesComponent";
+import { useTranslations } from "next-intl";
 
-const i18nNamespaces = ["common"];
-
-const Services = async ({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) => {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+const Services = ({ params: { locale } }: { params: { locale: string } }) => {
+  const t = useTranslations("common");
 
   return (
-    <TranslationsProvider
-      namespaces={i18nNamespaces}
-      locale={locale}
-      resources={resources}
-    >
-      <main className="flex flex-col gap-5">
-        <section className="flex flex-col justify-center items-center my-10">
-          <div className="flex flex-col justify-center items-center">
-            <p className={`${styles.sectionSubText} text-[#19192C]`}>
-              {t("services_sub_title")}
-            </p>
-            <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-              {t("services_title")}
-            </h1>
-          </div>
+    <main className="flex flex-col gap-5">
+      <section className="flex flex-col justify-center items-center my-10">
+        <div className="flex flex-col justify-center items-center">
+          <p className={`${styles.sectionSubText} text-[#19192C]`}>
+            {t("services_sub_title")}
+          </p>
+          <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
+            {t("services_title")}
+          </h1>
+        </div>
 
-          <ServicesComponent />
-        </section>
-
-        {/* <Testimonials headingFlag={true} mode={"light"} /> */}
-      </main>
-    </TranslationsProvider>
+        <ServicesComponent />
+      </section>
+    </main>
   );
 };
 

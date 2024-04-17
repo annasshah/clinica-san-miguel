@@ -1,21 +1,14 @@
 "use client";
 
-import {
-  about_cover,
-  earth_care,
-  heart_with_pulse,
-  journey,
-} from "@/assets/images";
+import { earth_care, heart_with_pulse, journey } from "@/assets/images";
 import { useSupabase } from "@/context/supabaseContext";
 import { Divider } from "@/utils";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 const customLoader = ({ src, width, quality }: any) => {
-  // Modify the src URL as needed
-  // For example, you might strip out query parameters
   const urlWithoutQuery = src.split("?")[0];
-  // Use the quality parameter if it's provided, otherwise default to a value
   const qualityParam = quality ? `&q=${quality}` : "";
   return `${urlWithoutQuery}?w=${width}${qualityParam}`;
 };
@@ -50,17 +43,14 @@ const Expertise = ({
 };
 
 const AboutScreen = () => {
-  const { t, i18n } = useTranslation();
-  const currentLocale = i18n.language;
+  const t = useTranslations("common");
+  const router = useRouter();
+  const locale = useLocale();
 
   const { about, about_es } = useSupabase();
 
-  // console.log("LOCale:", locale);
+  const data = locale === "es" ? about_es[0] : about[0];
 
-  const data = currentLocale === "es" ? about_es[0] : about[0];
-
-  //   const aboutus_description =
-  //     "In Texas with 17 Convenient Location, Dallas, Fort Worth, Houston, Pasadena, Texas, Fresno, Texas, Farmers Branch, Arlington, and San Antonio, we are committed to serving diverse community across the state of Texas";
   const whatwedo =
     "At Clinica San Miguel, we understand the importance of effective communication in healthcare. That's why we take pride in our team of bilingual English and Spanish-speaking providers. Our commitment to linguistic diversity ensures that every member of our community receives the highest quality healthcare services.";
 

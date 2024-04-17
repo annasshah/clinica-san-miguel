@@ -2,7 +2,7 @@
 
 // withTranslations.js
 import React, { useState, useEffect } from "react";
-import initTranslations from "../app/i18n";
+import initTranslations from "../i18n";
 
 const i18nNamespaces = ["home", "common"];
 
