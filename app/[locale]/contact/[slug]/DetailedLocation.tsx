@@ -30,7 +30,7 @@ const ServiceTab = ({
   const router = useRouter();
 
   const handleService = () => {
-    router.push(`/services/slug/${id}`);
+    router.push(`/services/${id}`);
   };
   return (
     <article className=" w-full bg-[#D9D9D9] flex justify-between items-center p-3">

@@ -108,7 +108,7 @@ export const Treatment = ({
         </p>
       </div>
       <div
-        onClick={() => router.push(`/services/slug/${id}`)}
+        onClick={() => router.push(`/services/${id}`)}
         className="cursor-pointer flex gap-2 items-center"
       >
         <p className="text-[20px] font-poppins text-[#C1001F] lowercase">
