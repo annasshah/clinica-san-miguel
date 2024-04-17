@@ -46,7 +46,7 @@ export const LocationDetailedCard = ({
 
         <div
           onClick={handleLocation}
-          className="flex justify-center items-center text-[25px] text-white bg-black rounded-full w-[40px] h-[40px]"
+          className="flex justify-center items-center text-[25px] text-white bg-black rounded-full w-[40px] h-[40px] cursor-pointer"
         >
           <IoIosArrowForward />
         </div>

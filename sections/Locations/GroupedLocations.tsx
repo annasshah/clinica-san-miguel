@@ -7,8 +7,10 @@ import { GroupedMap, Map } from "@/components/Map";
 import { useSupabase } from "@/context/supabaseContext";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const GroupedLocations = () => {
+  const { t } = useTranslation(["home"]);
   const [selectedTab, setSelectedTab] = useState("");
 
   const tabs = [
@@ -57,7 +59,7 @@ export const GroupedLocations = () => {
   return (
     <main className="flex flex-col relative gap-6 my-10 p-3 w-[100vw] md:w-[90vw] lg:w-[85vw] xl:w-[75vw]">
       <h1 className={`${styles.sectionHeadText} text-[#C1001F] `}>
-        Find Nearest Clinic
+        {t("section2_title")}
       </h1>
 
       <section className="flex w-full justify-center flex-col gap-3 lg:gap-0 lg:flex-row">

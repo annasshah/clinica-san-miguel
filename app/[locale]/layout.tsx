@@ -54,7 +54,6 @@ export default async function RootLayout({
     >
       <body className="font-inter bg-[#F8F5F0] relative overflow-x-hidden w-[100vw]">
         <Providers>
-          {/* <LanguageSelectionDesc /> */}
           <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
             {t("common:language_selection_description")}
           </article>

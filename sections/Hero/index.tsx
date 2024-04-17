@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { FaPhoneFlip } from "react-icons/fa6";
 
 export const Hero = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   // const heading = "Proper care of your body for life";
@@ -40,7 +40,7 @@ export const Hero = () => {
 
             <div className="flex gap-7 justify-center md:justify-start items-center">
               <Button
-                text={"Get Appointment"}
+                text={t("hero_section_button")}
                 size={{ width: "270px", height: "73px" }}
                 route={""}
                 bgColor={"#3D3D3C"}
@@ -67,6 +67,7 @@ export const Hero = () => {
 };
 
 export const HeroTopSection = () => {
+  const { t } = useTranslation(["home"]);
   const router = useRouter();
 
   const redirectToContact = () => {
@@ -88,16 +89,16 @@ export const HeroTopSection = () => {
             <Image alt="" src={Logo} className="w-[300px] aspect-auto" />
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-[25px] sm:text-[35px] lg:text-[50px] text-[#19192C] font-semibold font-poppins">
-                Office visits for only{" "}
-                <span className="text-[#C1001F]">$19!</span>
+                {t("section1_title")}
+                {/* <span className="text-[#C1001F]">$19!</span> */}
               </h2>
               <p className="text-[16px] text-[#6B6B6B]">
-                Experience affordable care at our clinic.
+                {t("section1_subtitle")}
               </p>
             </div>
             <div className="flex gap-7 justify-center md:justify-start items-center">
               <Button
-                text={"Book now!"}
+                text={t("section1_button")}
                 size={{ width: "214px", height: "55px" }}
                 route={""}
                 bgColor={"#C1001F"}

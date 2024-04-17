@@ -8,22 +8,23 @@ import Image from "next/image";
 import Link from "next/link";
 
 import StarRatings from "react-star-ratings";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const { t } = useTranslation(["common"]);
+
   const footerLink = [
-    { id: 1, name: "privacy policy", route: "" },
-    { id: 2, name: "terms and conditions", route: "" },
-    { id: 3, name: "accessiblity notice", route: "" },
-    { id: 4, name: "contact us", route: "" },
+    { id: 1, name: t("link_privacy_policy"), route: "" },
+    { id: 2, name: t("link_terms_and_conditions"), route: "" },
+    { id: 3, name: t("link_accessibility_notice"), route: "" },
+    { id: 4, name: t("link_contact_us"), route: "/contact" },
   ];
 
   const pages = [
-    { id: 1, name: "Home", route: "/" },
-    { id: 2, name: "About Us", route: "/about" },
-    { id: 3, name: "services", route: "/services" },
-    // { id: 4, name: "blogs", route: "" },
-    // { id: 5, name: "testimonial", route: "" },
-    { id: 6, name: "contact", route: "/contact" },
+    { id: 1, name: t("link_home"), route: "/" },
+    { id: 2, name: t("link_about"), route: "/about" },
+    { id: 3, name: t("link_services"), route: "/services" },
+    { id: 6, name: t("link_contact"), route: "/contact" },
   ];
 
   const socialLinks = [
@@ -53,7 +54,7 @@ export const Footer = () => {
         <ul className="flex flex-wrap gap-10 justify-center items-center my-10">
           {pages.map((page) => (
             <Link href={page.route} key={page.id}>
-              <li className="text-[#F8F5F0] font-poppins text-[16px]">
+              <li className="text-[#F8F5F0] font-poppins lowercase text-[16px]">
                 {page.name}
               </li>
             </Link>
@@ -64,7 +65,7 @@ export const Footer = () => {
       <article className="flex flex-wrap gap-5 justify-between w-full border-b-[3px] border-[#ffffff] py-10 px-10">
         <div className="flex order-1 md:order-1 flex-col items-center w-full md:w-auto md:items-start gap-2">
           <h5 className="text-white font-poppins text-[16px] text-center md:text-left font-semibold">
-            connect with us
+            {t("footer_connect_socials")}
           </h5>
           <ul className="flex gap-3 items-center justify-center">
             {socialLinks.map((social) => (
@@ -83,7 +84,7 @@ export const Footer = () => {
 
         <div className="flex order-3 md:order-2 flex-col justify-center items-center w-full md:w-auto md:items-start">
           <h5 className="text-white font-poppins text-[16px] font-semibold">
-            Rating and review
+            {t("footer_rating_review_title")}
           </h5>
 
           <div className="flex items-center justify-center gap-2">
@@ -91,7 +92,9 @@ export const Footer = () => {
               <h3 className="text-[25px] font-inter text-[#ffffff]">
                 {reviews}+
               </h3>
-              <p className="text-[#F8F5F0] font-inter text-[14px]">Reviews</p>
+              <p className="text-[#F8F5F0] font-inter text-[14px]">
+                {t("footer_review_title")}
+              </p>
             </div>
 
             <div className="flex flex-col items-center justify-center">
@@ -111,13 +114,13 @@ export const Footer = () => {
 
         <div className="flex flex-col order-2 md:order-3 gap-3 justify-center w-full md:w-auto items-center md:items-start">
           <h5 className="text-white font-poppins text-[16px] text-center md:text-left font-semibold">
-            Join a Newsletter
+            {t("footer_news_letter_title")}
           </h5>
 
           <div className="flex gap-2">
             <div className="bg-[#F8F5F0] h-[55px] w-[296px] rounded-[10px] md:rounded-[5px] flex justify-between items-center p-2">
               <input
-                placeholder="Enter Your Email"
+                placeholder={t("footer_email_input_placeholder")}
                 className="placeholder:text-[14px] placeholder:text-[#A2A9B0] text-[16px] outline-none text-[#000000] bg-transparent w-full pr-2"
               />
 
@@ -125,17 +128,6 @@ export const Footer = () => {
                 <IoIosArrowForward />
               </div>
             </div>
-
-            {/* <Button
-              text={"Send"}
-              size={{
-                width: "100px",
-                height: "50px",
-              }}
-              route={""}
-              textColor={"#000000"}
-              bgColor={"#F8F5F0"}
-            /> */}
           </div>
         </div>
       </article>
@@ -143,7 +135,7 @@ export const Footer = () => {
       <article className="my-10 w-full">
         <ul className="flex flex-wrap gap-10 justify-evenly items-center ">
           <li className="text-[#F8F5F0] order-2 md:order-1 font-poppins text-[16px]">
-            © Copyright 2023 myclinicmd Inc.
+            {t("footer_copyright_text")}
           </li>
           <div className="flex flex-wrap gap-3 justify-evenly items-center ">
             {footerLink.map((item) => (

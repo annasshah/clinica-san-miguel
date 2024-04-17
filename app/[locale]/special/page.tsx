@@ -10,33 +10,33 @@ import { styles } from "../styles";
 import initTranslations from "@/app/i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 
-const i18nNamespaces = ["home", "common"];
+const i18nNamespaces = ["specials", "home", "common"];
 
 const Special = async ({
   params: { locale },
 }: {
   params: { locale: string };
 }) => {
-  const { resources } = await initTranslations(locale, i18nNamespaces);
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
   const special_posters = [
     {
       id: 1,
-      heading: "physical school special",
+      heading: t("first_special_title"),
       image: Blue_and_Red_Health_Icons_Medical_Conference_Poster,
     },
     {
       id: 2,
-      heading: "consulta",
+      heading: t("second_special_title"),
       image: consulta_poster,
     },
     {
       id: 3,
-      heading: "immigration medical exam",
+      heading: t("third_special_title"),
       image: immigration_medical_exam_poster,
     },
     {
       id: 4,
-      heading: "D.O.T + Urine Test",
+      heading: t("fourth_special_title"),
       image: Grey_Modern_Best_Medical_Service_Poster,
     },
   ];
@@ -50,10 +50,10 @@ const Special = async ({
         <section className="flex flex-col justify-center items-center gap-10">
           <div className="flex flex-col gap-1 justify-center items-center">
             <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-              Specials
+              {t("specials_title")}
             </h1>
             <h1 className={`${styles.sectionHeadText} text-customGray`}>
-              Summer Specials
+              {t("specials_sub_title")}
             </h1>
           </div>
 
