@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import Hamburger from "hamburger-react";
 import { Logo } from "@/assets/images";
 import { useRouter } from "next/navigation";

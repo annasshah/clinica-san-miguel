@@ -5,7 +5,7 @@ import { Button } from "@/utils";
 import { IoIosArrowForward } from "react-icons/io";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 import StarRatings from "react-star-ratings";
 import { useTranslations } from "next-intl";

@@ -5,7 +5,7 @@ import { CompactService } from "@/components";
 import { styles } from "@/app/[locale]/styles";
 import Image from "next/image";
 import { viewAllArrow } from "@/assets/images";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useSupabase } from "@/context/supabaseContext";
 import { useLocale, useTranslations } from "next-intl";
 
