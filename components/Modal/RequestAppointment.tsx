@@ -4,11 +4,12 @@ import { styles } from "@/app/[locale]/styles";
 import { supabase } from "@/supabaseClient";
 import { Button } from "@/utils";
 import { Modal } from "flowbite-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { toast } from "react-toastify";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -168,6 +169,9 @@ export const RequestAppointment = ({
   handleClose: any;
 }) => {
   const t = useTranslations("appoinment_form");
+  const locale = useLocale();
+
+  const tableName = locale === "es" ? "services_es" : "services";
 
   // const [openModal, setOpenModal] = useState(false);
 
@@ -189,7 +193,7 @@ export const RequestAppointment = ({
 
   useEffect(() => {
     const fetchServices = async () => {
-      let { data, error } = await supabase.from("services").select("title");
+      let { data, error } = await supabase.from(tableName).select("title");
 
       if (data) {
         const serviceData = data.map((item) => item.title);
@@ -200,10 +204,8 @@ export const RequestAppointment = ({
     fetchServices();
   }, []);
 
-  // const services = ["abc", "xyz"];
-
   const submitAppointmentDetails = async () => {
-    let appointmentDetails = {
+    let appointmentDetails: any = {
       location_id: locationID,
       first_name: firstName,
       last_name: lastName,
@@ -216,12 +218,38 @@ export const RequestAppointment = ({
       service: service,
     };
 
+    const requiredFields = [
+      "location_id",
+      "first_name",
+      "last_name",
+      "email_Address",
+      "address",
+      "in_office_patient",
+      "new_patient",
+      "dob",
+      "sex",
+      "service",
+    ];
+
+    for (const field of requiredFields) {
+      if (!appointmentDetails[field]) {
+        toast.warning(`Please fill in the ${field}`);
+        return;
+      }
+    }
+
     const { data, error } = await supabase
       .from("Appoinments")
       .insert([appointmentDetails])
       .select();
 
-    console.log(data, "Appointment Submitted");
+    if (error) {
+      toast.error(`Error submitting appointment: ${error.message}`);
+    } else {
+      toast.success("Appointment Submitted");
+      handleClose();
+      console.log(data, "Appointment Submitted");
+    }
   };
 
   return (
@@ -341,7 +369,6 @@ export const RequestAppointment = ({
                 textColor={"#ffffff"}
                 onClick={() => {
                   submitAppointmentDetails();
-                  handleClose();
                 }}
               />
             </div>
