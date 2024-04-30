@@ -55,7 +55,8 @@ const Home = () => {
         <h2 className="w-full text-2xl font-bold text-red-600">Diagnóstico</h2>
         <p>
           Normalmente, en una prueba de sangre para monitorear los niveles de
-          colesterol, llamada "perfil lipídico", se informa lo siguiente:
+          colesterol, llamada &quot;perfil lipídico&quot;, se informa lo
+          siguiente:
         </p>
         <li>Colesterol total</li>
         <li>Colesterol LDL</li>
