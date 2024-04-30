@@ -224,8 +224,6 @@ export const RequestAppointment = ({
       "last_name",
       "email_Address",
       "address",
-      "in_office_patient",
-      "new_patient",
       "dob",
       "sex",
       "service",
@@ -247,6 +245,17 @@ export const RequestAppointment = ({
       toast.error(`Error submitting appointment: ${error.message}`);
     } else {
       toast.success("Appointment Submitted");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setDob(null);
+      setSex("");
+      setServices([]);
+      setService("");
+      setAddress("");
+      setPhone("");
+      setInOfficePatient("");
+      setNewPatient("");
       handleClose();
       console.log(data, "Appointment Submitted");
     }

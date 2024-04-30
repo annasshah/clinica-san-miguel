@@ -14,9 +14,9 @@ import { useCallback, useEffect, useState } from "react";
 import { useSupabase } from "@/context/supabaseContext";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import TranslationsProvider from "@/components/TranslationsProvider";
 import { useTranslation } from "react-i18next";
+import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/navigation";
 
 const ServiceTab = ({
   name,
@@ -51,12 +51,14 @@ const ServiceTab = ({
           {name}
         </h3>
       </div>
-      <div
-        onClick={handleService}
-        className="cursor-pointer rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-black"
-      >
-        <IoIosArrowForward className="text-[16px] text-white" />
-      </div>
+      <Link href={`/services/${id}`}>
+        <div
+          // onClick={handleService}
+          className="cursor-pointer rounded-full aspect-square flex w-10 h-10 justify-center items-center bg-black"
+        >
+          <IoIosArrowForward className="text-[16px] text-white" />
+        </div>
+      </Link>
     </article>
   );
 };
@@ -65,9 +67,12 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
   const [openAppointmentModal, setOpenAppointmentModal] = useState(false);
   const [locationGallery, setLocationGallery] = useState<(string | null)[]>();
   const [totalRatings, setTotalRatings] = useState(0);
-  const { services } = useSupabase();
 
-  const { t } = useTranslation();
+  const t = useTranslations("location");
+  const locale = useLocale();
+  const { services, services_es } = useSupabase();
+
+  const services_data = locale === "es" ? services_es : services;
 
   const {
     detailData,
@@ -195,7 +200,7 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
             </div>
             <div className="flex flex-col w-full lg:w-1/2 gap-4">
               <Button
-                text={"Book an appoinment"}
+                text={t("str7")}
                 size={{ width: "250px", height: "50px" }}
                 route={""}
                 bgColor={"#C1001F"}
@@ -206,14 +211,14 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col">
                   <h3 className="text-[18px] font-bold text-black capitalize">
-                    Phone:
+                    {t("str1")}:
                   </h3>
                   <p className="text-[16px] text-black font-normal">{phone}</p>
                 </div>
 
                 <div className="flex flex-col">
                   <h3 className="text-[18px] font-bold text-black capitalize">
-                    Timings:
+                    {t("str2")}:
                   </h3>
                   <p className="text-[16px] text-black font-normal">
                     {displayTimings}
@@ -222,7 +227,7 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
 
                 <div className="flex flex-col">
                   <h3 className="text-[18px] font-bold text-black capitalize">
-                    Address:
+                    {t("str3")}:
                   </h3>
                   <p className="text-[16px] text-black font-normal">
                     {address}
@@ -238,7 +243,7 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
             className={`${styles.sectionHeadText} text-headingColor`}
             style={{ textAlign: "left" }}
           >
-            Testimonials:
+            {t("str4")}:
           </h2>
           <article className="flex flex-col gap-3 justify-start">
             <div className="flex flex-col justify-start gap-3">
@@ -275,10 +280,10 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
             className={`${styles.sectionHeadText} text-headingColor`}
             style={{ textAlign: "left" }}
           >
-            Our Services:
+            {t("str5")}:
           </h2>
           <article className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
-            {services.map((item, index) => (
+            {services_data.map((item, index) => (
               // id={service.id}
               // heading={service.title}
               // icon={service.icon}
@@ -300,7 +305,7 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
             className={`${styles.sectionHeadText} text-headingColor`}
             style={{ textAlign: "left" }}
           >
-            Find us:
+            {t("str6")}:
           </h2>
 
           <div className="min-w-[300px] w-[80vw] max-w-[1200px] rounded-[60px]">
