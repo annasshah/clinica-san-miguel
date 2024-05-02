@@ -1,4 +1,4 @@
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import {
   //   animated_team,
   breast_cancer_awareness,

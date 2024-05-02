@@ -9,12 +9,84 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      About_Short: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          content: string | null;
+        };
+      };
+      About_Short_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          content: string | null;
+        };
+      };
       about: {
         Row: {
           // the data expected from .select()
           id: number;
           created_at: string;
-          t1: string | null;
+          text_1: string | null;
+          title_1: string | null;
+          image_1: string | null;
+          text_2: string | null;
+          title_2: string | null;
+          image_2: string | null;
+          text_3: string | null;
+          title_3: string | null;
+          image_3: string | null;
+          text_4: string | null;
+          title_4: string | null;
+          image_4: string | null;
+          text_5: string | null;
+          title_5: string | null;
+          image_5: string | null;
+        };
+      };
+      about_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          text_1: string | null;
+          title_1: string | null;
+          image_1: string | null;
+          text_2: string | null;
+          title_2: string | null;
+          image_2: string | null;
+          text_3: string | null;
+          title_3: string | null;
+          image_3: string | null;
+          text_4: string | null;
+          title_4: string | null;
+          image_4: string | null;
+          text_5: string | null;
+          title_5: string | null;
+          image_5: string | null;
+        };
+      };
+      Mission: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          Icon: string | null;
+          Title: string | null;
+          Text: string | null;
+        };
+      };
+      Mission_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          Icon: string | null;
+          Title: string | null;
+          Text: string | null;
         };
       };
       Additional_Services: {
@@ -46,7 +118,25 @@ export interface Database {
           answer: string | null;
         };
       };
+      FAQs_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          question: string | null;
+          answer: string | null;
+        };
+      };
       Hero_Section: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          title: string | null;
+          content: string | null;
+        };
+      };
+      Hero_Section_es: {
         Row: {
           // the data expected from .select()
           id: number;
@@ -90,12 +180,17 @@ export interface Database {
           created_at: string;
           title: string | null;
           image: string | null;
-          // question_1: string | null;
-          // answer_1: string | null;
-          // question_2: string | null;
-          // answer_2: string | null;
-          // question_3: string | null;
-          // answer_3: string | null;
+          description: string | null;
+          icon: string | null;
+        };
+      };
+      services_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          title: string | null;
+          image: string | null;
           description: string | null;
           icon: string | null;
         };
@@ -124,7 +219,15 @@ export interface Database {
           // the data expected from .select()
           id: number;
           created_at: string;
-          texts: string | null;
+          Text: string | null;
+        };
+      };
+      career_es: {
+        Row: {
+          // the data expected from .select()
+          id: number;
+          created_at: string;
+          Text: string | null;
         };
       };
       Appoinments: {

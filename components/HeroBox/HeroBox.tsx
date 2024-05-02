@@ -8,8 +8,11 @@ import gray from "../../assets/images/portriats/grey.png";
 import maskGroup from "../../assets/images/portriats/Mask group.png";
 import maskGroup2 from "../../assets/images/portriats/Mask group (2).png";
 import vector from "../../assets/images/portriats/Vector1.png";
+import { useTranslation } from "react-i18next";
 
 export const HeroBox = () => {
+  const { t } = useTranslation(["home"]);
+
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
@@ -108,7 +111,7 @@ export const HeroBox = () => {
                     top: `calc(50px * ${scaleFactor})`,
                   }}
                 >
-                  Proper care, happy life.
+                  {t("hero_image_title")}
                 </div>
               </div>
             </div>

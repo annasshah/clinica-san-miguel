@@ -1,13 +1,15 @@
 "use client";
 
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import { supabase } from "@/supabaseClient";
 import { Button } from "@/utils";
 import { Modal } from "flowbite-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { toast } from "react-toastify";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -166,6 +168,11 @@ export const RequestAppointment = ({
   openModal: boolean;
   handleClose: any;
 }) => {
+  const t = useTranslations("appoinment_form");
+  const locale = useLocale();
+
+  const tableName = locale === "es" ? "services_es" : "services";
+
   // const [openModal, setOpenModal] = useState(false);
 
   const [firstName, setFirstName] = useState("");
@@ -180,13 +187,13 @@ export const RequestAppointment = ({
   const [inOfficePatient, setInOfficePatient] = useState("");
   const [newPatient, setNewPatient] = useState("");
 
-  const visitType = ["In-Office Visit", "Virtual Visit"];
-  const patientType = ["new", "returning"];
-  const genderOptions = ["Male", "Female", "Other"];
+  const visitType = [t("form_f1a"), t("form_f1b")];
+  const patientType = [t("form_f2a"), t("form_f2b")];
+  const genderOptions = [t("form_f8a"), t("form_f8b"), t("form_f8c")];
 
   useEffect(() => {
     const fetchServices = async () => {
-      let { data, error } = await supabase.from("services").select("title");
+      let { data, error } = await supabase.from(tableName).select("title");
 
       if (data) {
         const serviceData = data.map((item) => item.title);
@@ -197,10 +204,8 @@ export const RequestAppointment = ({
     fetchServices();
   }, []);
 
-  // const services = ["abc", "xyz"];
-
   const submitAppointmentDetails = async () => {
-    let appointmentDetails = {
+    let appointmentDetails: any = {
       location_id: locationID,
       first_name: firstName,
       last_name: lastName,
@@ -213,12 +218,47 @@ export const RequestAppointment = ({
       service: service,
     };
 
+    const requiredFields = [
+      "location_id",
+      "first_name",
+      "last_name",
+      "email_Address",
+      "address",
+      "dob",
+      "sex",
+      "service",
+    ];
+
+    for (const field of requiredFields) {
+      if (!appointmentDetails[field]) {
+        toast.warning(`Please fill in the ${field}`);
+        return;
+      }
+    }
+
     const { data, error } = await supabase
       .from("Appoinments")
       .insert([appointmentDetails])
       .select();
 
-    console.log(data, "Appointment Submitted");
+    if (error) {
+      toast.error(`Error submitting appointment: ${error.message}`);
+    } else {
+      toast.success("Appointment Submitted");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setDob(null);
+      setSex("");
+      setServices([]);
+      setService("");
+      setAddress("");
+      setPhone("");
+      setInOfficePatient("");
+      setNewPatient("");
+      handleClose();
+      console.log(data, "Appointment Submitted");
+    }
   };
 
   return (
@@ -246,7 +286,7 @@ export const RequestAppointment = ({
                 className={`${styles.sectionHeadText} border-b-[1px] border-black px-4 pb-3`}
                 style={{ textAlign: "left", color: "#C1001F" }}
               >
-                Appointment Request
+                {t("form_title")}
               </h1>
             </div>
           </Modal.Header>
@@ -255,27 +295,27 @@ export const RequestAppointment = ({
               <RadioButtons
                 name="visit type"
                 options={visitType}
-                label="Visit Type"
+                label={t("form_f1")}
                 onChange={setInOfficePatient}
                 selectedValue={inOfficePatient}
               />
               <RadioButtons
                 name="patient type"
                 options={patientType}
-                label="Are you a new or returning patient?"
+                label={t("form_f2")}
                 onChange={setNewPatient}
                 selectedValue={newPatient}
               />
               <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
                 <Input
-                  label="First Name"
+                  label={t("form_f3")}
                   placeholder="Enter your first name"
                   breakpoint={true}
                   onChange={setFirstName}
                   value={firstName}
                 />
                 <Input
-                  label="Last Name"
+                  label={t("form_f4")}
                   placeholder="Enter your last name"
                   breakpoint={true}
                   onChange={setLastName}
@@ -283,7 +323,7 @@ export const RequestAppointment = ({
                 />
               </article>
               <Input
-                label="Email Address"
+                label={t("form_f5")}
                 placeholder="Your current email address"
                 breakpoint={false}
                 onChange={setEmail}
@@ -291,14 +331,14 @@ export const RequestAppointment = ({
               />
               <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
                 <Input
-                  label="Mobile Number"
+                  label={t("form_f6")}
                   placeholder="ex. (+92) 331 2566730"
                   breakpoint={true}
                   onChange={setPhone}
                   value={phone}
                 />
                 <DatePicker
-                  label="Date of Birth"
+                  label={t("form_f7")}
                   placeholder="your date of birth"
                   breakpoint={true}
                   onChange={setDob}
@@ -308,19 +348,19 @@ export const RequestAppointment = ({
               <RadioButtons
                 name="gender"
                 options={genderOptions}
-                label="Sex"
+                label={t("form_f8")}
                 onChange={setSex}
                 selectedValue={sex}
               />
               <Input
-                label="Address"
+                label={t("form_f9")}
                 placeholder="enter your address with zip code."
                 breakpoint={false}
                 onChange={setAddress}
                 value={address}
               />
               <Dropdown
-                label="Service"
+                label={t("form_f10")}
                 options={services}
                 breakpoint={true}
                 onChange={setService}
@@ -331,14 +371,13 @@ export const RequestAppointment = ({
           <Modal.Footer>
             <div className="w-full flex justify-end items-center m-3">
               <Button
-                text={"Book now"}
+                text={t("button_label")}
                 size={{ width: "250px", height: "50px" }}
                 route={""}
                 bgColor={"#C1001F"}
                 textColor={"#ffffff"}
                 onClick={() => {
                   submitAppointmentDetails();
-                  handleClose();
                 }}
               />
             </div>

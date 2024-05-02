@@ -1,4 +1,4 @@
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import React from "react";
 
 const CheckBoxButton = ({ value, name, label }: any) => (

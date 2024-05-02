@@ -1,137 +1,88 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { Link } from "@/navigation";
 import Hamburger from "hamburger-react";
-import { Dropdown } from "@/utils";
-import { Logo, USA_flag } from "@/assets/images";
+import { Logo } from "@/assets/images";
 import { useRouter } from "next/navigation";
-// import navLinks from "./navLinks.json";
+import LanguageChanger from "../LanguageChanger";
+import { useLocale, useTranslations } from "next-intl";
 
 export const Navbar = () => {
-  const router = useRouter()
+  const t = useTranslations("common");
+  const router = useRouter();
+  const locale = useLocale();
+
   const navLinks = [
-    { id: 1, heading: "Home", route: "/" },
-    { id: 2, heading: "About Us", route: "/about" },
+    { id: 1, heading: t("link_home"), route: "/" },
+    { id: 2, heading: t("link_about"), route: "/about" },
     {
       id: 3,
-      heading: "Services",
+      heading: t("link_services"),
       route: "/services",
-      // dropDownOptions: [
-      //   { id: 1, heading: "Service 1", route: "" },
-      //   { id: 2, heading: "Service 2", route: "" },
-      // ],
     },
-    // { id: 4, heading: "Blogs", route: "" },
-    // { id: 5, heading: "Testimonial", route: "/testimonials" },
-    { id: 6, heading: "Contact", route: "/contact" },
-    // {
-    //   id: 7,
-    //   heading: "More",
-    //   route: "",
-    //   dropDownOptions: [{ id: 1, heading: "Special", route: "/special" }],
-    // },
+    { id: 4, heading: t("link_career"), route: "/career" },
+    { id: 5, heading: t("link_specials"), route: "/special" },
+    { id: 6, heading: t("link_contact"), route: "/contact" },
   ];
 
-  const [dropdownStates, setDropdownStates] = useState(
-    Array(navLinks.length).fill(false)
-  );
-  const [usaFlagDropdownOpen, setUsaFlagDropdownOpen] = useState(false);
   const [isOpen, setOpen] = useState(false);
 
   const styles = {
-    text: "list-none text-[16px] text-primary cursor-pointer",
-  };
-
-  const toggleDropdown = (index: number) => {
-    const newDropdownStates = [...dropdownStates];
-    newDropdownStates[index] = !newDropdownStates[index];
-    setDropdownStates(newDropdownStates);
-  };
-
-  const toggleUsaFlagDropdown = () => {
-    setUsaFlagDropdownOpen(!usaFlagDropdownOpen);
+    text: "list-none text-[20px] text-primary cursor-pointer",
   };
 
   const renderNavLinks = () =>
-    navLinks.map((link, index) => (
+    navLinks.map((link) => (
       <div key={link.id}>
-        {/* {link?.dropDownOptions ? (
-          <div className="relative">
-            <div
-              onClick={() => toggleDropdown(index)}
-              className="flex justify-between gap-3 items-center"
-            >
-              <li className={styles.text}>{link.heading}</li>
-              {dropdownStates[index] ? (
-                <div className="text-[15px] text-primary">
-                  <IoIosArrowUp />
-                </div>
-              ) : (
-                <div className="text-[15px] text-primary">
-                  <IoIosArrowDown />
-                </div>
-              )}
-            </div>
-            {dropdownStates[index] && (
-              <Dropdown options={link?.dropDownOptions} />
-            )}
-          </div>
-        ) : ( */}
         <Link href={link.route}>
           <li className={styles.text}>{link.heading}</li>
         </Link>
-        {/* )} */}
       </div>
     ));
 
-    
+  const SM_Screen_renderNavLinks = () =>
+    navLinks.map((link) => (
+      <Link key={link.id} className="" href={link.route}>
+        <li onClick={() => setOpen(false)} className={`${styles.text} my-5`}>
+          {link.heading}
+        </li>
+      </Link>
+    ));
+
+  useEffect(() => {
+    console.log(t("link_home"));
+  }, []);
 
   return (
-    <header className="h-[90px] w-full flex justify-center relative px-8 md:px-10 lg:px-14 items-center">
+    <header className="h-[90px] w-full flex justify-between relative px-8 md:px-10 lg:px-14 items-center">
       <Image
-      onClick={()=>router.push(`/`)}
+        onClick={() => router.push(`/`)}
         src={Logo}
         alt="Logo"
-        className="cursor-pointer w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] absolute left-6 top-5 aspect-auto object-contain"
+        className="cursor-pointer w-[150px] md:w-[170px] lg:w-[200px] xl:w-[233px] aspect-auto object-contain"
       />
       <nav className="hidden tablet:flex tablet:justify-center font-poppins tablet:items-center tablet:gap-5">
         {renderNavLinks()}
       </nav>
-      <div className="flex gap-4 sm:gap-7 items-center">
-        {/* <div className="relative">
-          <div
-            onClick={toggleUsaFlagDropdown}
-            className="flex justify-between gap-3 items-center"
-          >
-            <Image
-              src={USA_flag}
-              alt="usa flag"
-              className="w-[30px] aspect-auto"
-            />
-            {usaFlagDropdownOpen ? (
-              <div className="text-[15px] text-primary">
-                <IoIosArrowUp />
-              </div>
-            ) : (
-              <div className="text-[15px] text-primary">
-                <IoIosArrowDown />
-              </div>
-            )}
+
+      {isOpen && (
+        <div className="  bg-white/95 bottom-0 right-0 left-0 top-0 h-[100dvh] z-40 fixed transition-all duration-300 ease-in-out w-full tablet:hidden gap-4 sm:gap-7 items-center">
+          <div className="grid place-items-center h-full">
+            <div className="spacing-y-5">
+              <SM_Screen_renderNavLinks />
+            </div>
           </div>
-          {usaFlagDropdownOpen && (
-            <Dropdown
-              options={[
-                { id: 1, icon: "", heading: "fr" },
-                { id: 2, icon: "", heading: "sp" },
-              ]}
-            />
-          )}
-        </div> */}
-        <div className="block absolute top-5 right-6 tablet:hidden">
+        </div>
+      )}
+
+      <div className="flex gap-4 sm:gap-7 items-center">
+        <div className="z-50">
+          <LanguageChanger locale={locale} />
+        </div>
+        <div className="z-50 tablet:hidden">
           <Hamburger toggled={isOpen} toggle={setOpen} size={20} />
         </div>
       </div>

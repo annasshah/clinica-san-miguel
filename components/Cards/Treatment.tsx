@@ -14,9 +14,9 @@ export const Treatment = ({
   icon,
   description,
   mode,
-  id
+  id,
 }: {
-  id :number
+  id: number;
   heading: string | null;
   image: any;
   icon: any;
@@ -36,7 +36,7 @@ export const Treatment = ({
   };
 
   const [theme, setTheme] = useState(mode === "dark" ? dark : light);
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <article
@@ -69,10 +69,11 @@ export const Treatment = ({
             {/* </div> */}
           </div>
           <h1
-            className="font-semibold font-poppins text-[25px] capitalize"
+            className="font-semibold font-poppins text-[25px] capitalize text-left"
             style={{ color: `${theme.textColor}` }}
           >
-            {heading}
+            {heading?.slice(0, 20)}
+            {heading?.length && heading.length > 20 && "..."}
           </h1>
         </div>
 
@@ -106,7 +107,10 @@ export const Treatment = ({
           {description}
         </p>
       </div>
-      <div onClick={()=>router.push(`/services/slug/${id}`)} className="cursor-pointer flex gap-2 items-center">
+      <div
+        onClick={() => router.push(`/services/${id}`)}
+        className="cursor-pointer flex gap-2 items-center"
+      >
         <p className="text-[20px] font-poppins text-[#C1001F] lowercase">
           more info
         </p>
