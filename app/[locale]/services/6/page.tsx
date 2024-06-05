@@ -17,101 +17,85 @@ const Home = () => {
           className="aspect-square w-full bg-black/10 object-cover lg:w-1/3 lg:rounded-lg"
         />
         <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
-          <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
-          <p className="text-2xl font-light lg:text-3xl">
-            Servicios de limpieza de oídos suaves y expertos para garantizar una
-            audición clara y prevenir molestias o complicaciones relacionadas
-            con la acumulación de cerumen en los oídos.
-          </p>
+        <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
+        <p className="text-2xl font-light lg:text-3xl">
+          Servicios de limpieza de oídos suaves y expertos para asegurar una audición clara y prevenir molestias o complicaciones relacionadas con la acumulación de cerumen.
+        </p>
         </div>
-      </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Limpieza de Oídos en Houston
-      </p>
-      <h1>Síntomas</h1>
-      <p>
-        Ofrecemos un servicio seguro y efectivo para eliminar el cerumen y
-        aliviar síntomas como:
-      </p>
-      <li>Disminución de la audición</li>
-      <li>Zumbido en los oídos</li>
-      <li>Sensación de plenitud</li>
-      <li>Dolor</li>
-      <section className="w-full space-y-3 text-xl">
+        </div>
+        <p className="w-full text-2xl font-bold text-red-600">
+        ¿Sientes molestias en tus oídos?
+        </p>
+        <section className="w-full space-y-3 text-xl">
+        <h1>Síntomas:</h1>
+        <ul className="w-full translate-x-7 list-disc">
+        <li>Disminución de la audición</li>
+        <li>Zumbido en los oídos</li>
+        <li>Sensación de plenitud</li>
+        <li>Dolor</li>
+        </ul>
+        </section>
+        <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Por qué es importante lavarse los oídos?
+          ¿Por qué es importante lavar los oídos?
         </h2>
         <ol className="w-full">
-          El cerumen es una sustancia natural que protege el canal auditivo. Sin
-          embargo, cuando se acumula en exceso, puede causar problemas. El
-          lavado de oídos ayuda a eliminar el cerumen acumulado y prevenir
-          complicaciones como:
+          El cerumen es una sustancia natural que protege el canal auditivo. Sin embargo, cuando se acumula en exceso, puede causar problemas. El lavado de oídos ayuda a eliminar el cerumen acumulado y a prevenir complicaciones como:
         </ol>
         <li>Infecciones</li>
-        <li>Tapones de cera</li>
-        <li>Pérdida permanente de la audición</li>
-      </section>
-
-      <section className="w-full space-y-3 text-xl">
+        <li>Tapones de cerumen</li>
+        <li>Pérdida auditiva permanente</li>
+        </section>
+        <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
           Beneficios del lavado de oídos:
         </h2>
-
         <li>Mejora la audición</li>
-        <li>Alivia el dolor y la molestia</li>
+        <li>Alivia el dolor y las molestias</li>
         <li>Reduce el riesgo de infecciones</li>
-        <li>Previene la formación de tapones de cera</li>
-      </section>
-
-      <section className="w-full space-y-3 text-xl">
+        <li>Previene la formación de tapones de cerumen</li>
+        </section>
+        <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
           Contraindicaciones del lavado de oídos:
         </h2>
-        <li>Perforación del tímpano </li>
+        <li>Perforación del tímpano</li>
         <li>Otitis media aguda</li>
         <li>Tímpanos con tubos de ventilación</li>
         <li>Alergias al agua o a los productos utilizados en el lavado</li>
-      </section>
-
-      <h1 className="text-4xl font-semibold lg:text-6xl">
-        Preguntas Frecuentes:
-      </h1>
-
-      <section className="w-full space-y-3 text-xl">
+        </section>
+        <h1 className="bold w-full text-3xl font-bold font text-red-600">Preguntas Frecuentes</h1>
+        <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué se usa para lavar los oídos?
+          ¿Qué se utiliza para el lavado de oídos?
         </h2>
         <ul>
-          Se utiliza una solución de agua tibia y sal o un producto específico
-          para lavar los oídos.
+          Se utiliza una solución de agua tibia y sal o un producto específico para lavar los oídos.
         </ul>
-      </section>
-
-      <section className="w-full space-y-3 text-xl">
+        </section>
+        <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuánto dura el lavado de oídos?
+          ¿Cuánto tiempo dura el lavado de oídos?
         </h2>
         <ul>El procedimiento suele durar unos minutos.</ul>
-      </section>
-
-      <section className="w-full space-y-3 text-xl">
+        </section>
+        <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
           ¿Es doloroso el lavado de oídos?
         </h2>
         <ul>
-          Por lo general, no es doloroso, pero puede causar una ligera molestia
-          temporal.
+          No suele ser doloroso, pero puede causar una leve molestia temporal.
         </ul>
-      </section>
-
-      <section>
-        <p>
-          <span className="font-bold"> Palabras Clave: </span>
-          Limpieza de oídos, Clínica San Miguel, Houston, Cerumen, Pérdida de
-          audición, Zumbido en los oídos, Dolor, Infecciones, Tapones de cera,
-          Pérdida de audición
-        </p>
-      </section>
+        </section>
+        <section className="w-full space-y-3 text-xl">
+        <h2 className="w-full text-2xl font-bold text-red-600">
+          ¿Es doloroso el lavado de oídos?
+        </h2>
+        <ul>
+          No suele ser doloroso, pero puede causar una leve molestia temporal.
+        </ul>
+        </section>
+        <h2 className="w-full text-2xl font-bold text-red-600">Oídos limpios, sonido claro - Mejore su audición de manera cómoda y segura.</h2>
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -132,18 +116,19 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <p className="w-full text-2xl">
-        San Miguel Clinic: Ear Cleaning in Houston
+      <p className="w-full text-2xl font-bold text-red-600">
+      Do you feel discomfort in your ears?
       </p>
-      <h1>symptoms</h1>
-      <p>
-        we offer a safe and effective service to remove ear wax and relieve
-        symptoms such as:
-      </p>
+      <section className="w-full space-y-3 text-xl">
+      <h1>symptoms:</h1>
+      <ul className="w-full translate-x-7 list-disc">
       <li>Decreased hearing</li>
       <li>Ringing in the ears</li>
       <li>Sensation of fullness</li>
       <li>Pain</li>
+
+      </ul>
+      </section>
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
           Why is ear washing important?
@@ -179,7 +164,7 @@ const Home = () => {
         <li>Allergies to water or products used in washing</li>
       </section>
 
-      <h1 className="text-4xl font-semibold lg:text-6xl">FAQ:</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -217,14 +202,11 @@ const Home = () => {
           discomfort.
         </ul>
       </section>
+      
 
-      <section>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          Ear wash, San Miguel Clinic, Houston, Ear wax, Hearing loss, Tinnitus
-          in the ears, Pain, Infections, Wax plugs, Hearing loss
-        </p>
-      </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Clear Ears, Clear Sound - Enhance Your Hearing Comfortably and Safely.</h2>
+
+      
     </div>
   );
 };

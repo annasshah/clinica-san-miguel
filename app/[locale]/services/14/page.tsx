@@ -142,14 +142,8 @@ const Home = () => {
           nuestros exámenes médicos escolares, contáctanos.
         </p>
       </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Exámenes Médicos Escolares: Garantiza la Salud y Seguridad de tu Hijo/a.</h2>
 
-      <section>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Examen médico escolar, DOT, Clínica San Miguel, Pasadena, Channelview,
-          Fresno, Houston, Katy, Arlington, Fort Worth, Dallas, San Antonio.
-        </p>
-      </section>
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -178,7 +172,7 @@ const Home = () => {
 
       <section className="w-full space-y-3 text-xl">
         <h1 className="w-full text-2xl font-bold text-red-600">
-          What are school physicals? School?
+          What are school physicals?
         </h1>
         <p>
           School physicals are medical evaluations performed to ensure that
@@ -235,7 +229,8 @@ const Home = () => {
         </ul>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">FAQs</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
+
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -283,15 +278,8 @@ const Home = () => {
           physicals, please contact us.
         </p>
       </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">School Physicals: Ensure Your Child's Health and Safety.</h2>
 
-      <section>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          Physical exam for school, DOT, Clínica San Miguel, Pasadena,
-          Channelview, Fresno , Houston, Katy, Arlington, Fort Worth, Dallas,
-          San Antonio.
-        </p>
-      </section>
     </div>
   );
 };

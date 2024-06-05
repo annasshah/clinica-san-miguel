@@ -117,7 +117,8 @@ const Home = () => {
         <li>Mejora de la calidad de vida</li>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">Preguntas frecuentes</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Preguntas Frecuentes</h1>
+
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -151,14 +152,7 @@ const Home = () => {
           En la mayoría de los casos, puedes regresar al trabajo el mismo día.
         </p>
       </section>
-
-      <section>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Uñas encarnadas, Extracción de uñas encarnadas, Clínica San Miguel,
-          Pasadena, Texas, Dolor, Infección, Tratamiento, Cuidado, Beneficios
-        </p>
-      </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Comodidad y Alivio: Extracción de Uña Encarnada Hecha de Forma Correcta.</h2>
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -269,7 +263,7 @@ const Home = () => {
         <li>Improvement of quality of life</li>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">FAQs</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -300,15 +294,9 @@ const Home = () => {
         </h2>
         <p>In most cases, you can return to work the same day. </p>
       </section>
-
-      <section>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          Ingrown toenails, Ingrown toenail removal, San Miguel Clinic ,
-          Pasadena, Tx, Pain, Infection, Treatment, Care, Benefits
-        </p>
-      </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Comfort and Relief: Ingrown Toenail Removal Done Right.</h2>
     </div>
+    
   );
 };
 

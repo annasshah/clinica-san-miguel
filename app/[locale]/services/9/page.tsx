@@ -12,7 +12,7 @@ const Home = () => {
       </h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/thyroide.png?t=2024-02-11T07%3A00%3A12.237Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/High%20cholesterol%20and%20trig.png"
           width={1000}
           height={1000}
           alt="cover"
@@ -20,240 +20,150 @@ const Home = () => {
         />
         <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
           <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
+          <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
           <p className="text-2xl font-light lg:text-3xl">
-            Manejo holístico de los niveles altos de colesterol y triglicéridos
-            a través de modificaciones en el estilo de vida, medicamentos y
-            monitoreo continuo para la salud cardiovascular.
+            Manejo integral de los niveles altos de colesterol y triglicéridos a través de modificaciones en el estilo de vida, medicamentos y monitoreo continuo para la salud cardiovascular.
           </p>
-        </div>
-      </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Expertos en el tratamiento del colesterol alto y
-        triglicéridos
-      </p>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué ofrecemos?
-        </h2>
-        <li>
-          Consulta médica personalizada: Evaluamos su historial médico,
-          realizamos exámenes físicos y de laboratorio, y le ofrecemos un plan
-          de tratamiento individualizado.
-        </li>
-        <li>
-          Tratamientos: Ofrecemos una variedad de opciones de tratamiento,
-          incluidos cambios en la dieta, ejercicio, medicamentos y, en algunos
-          casos, cirugía.
-        </li>
-        <li>
-          Seguimiento: Supervisamos de cerca su progreso y le brindamos el apoyo
-          que necesita para alcanzar sus objetivos de salud.
-        </li>
-      </section>
+          </div>
+          </div>
+          <p className="w-full text-2xl">
+            Clínica San Miguel: Expertos en el tratamiento de colesterol alto y triglicéridos
+          </p>
+          <section className="w-full space-y-3 text-xl">
+            <h2 className="w-full text-2xl font-bold text-red-600">¿Qué ofrecemos?</h2>
+            <li>
+              Consulta médica personalizada: Evaluamos tu historial médico, realizamos exámenes físicos y de laboratorio, y te ofrecemos un plan de tratamiento individualizado.
+            </li>
+            <li>
+              Tratamientos: Ofrecemos una variedad de opciones de tratamiento, incluyendo cambios en la dieta, ejercicio, medicamentos y, en algunos casos, cirugía.
+            </li>
+            <li>
+              Seguimiento: Monitoreamos de cerca tu progreso y te brindamos el apoyo necesario para alcanzar tus metas de salud.
+            </li>
+          </section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">Diagnóstico</h2>
-        <p>
-          Normalmente, en una prueba de sangre para monitorear los niveles de
-          colesterol, llamada &quot;perfil lipídico&quot;, se informa lo
-          siguiente:
-        </p>
-        <li>Colesterol total</li>
-        <li>Colesterol LDL</li>
-        <li>Colesterol HDL</li>
-        <li>Triglicéridos: un tipo de grasa en la sangre</li>
-        <p>
-          Su proveedor de salud en la Clínica San Miguel lo llamará una vez que
-          los resultados estén listos y le explicará y responderá sus preguntas.
-        </p>
-      </section>
+          <section className="w-full space-y-3 text-xl">
+            <h2 className="w-full text-2xl font-bold text-red-600">Diagnóstico</h2>
+            <p>
+              Por lo general, se realiza una prueba de sangre para monitorear los niveles de colesterol, llamada "lípidograma" o "perfil lipídico", que informa lo siguiente:
+            </p>
+            <li>Colesterol total</li>
+            <li>Colesterol LDL</li>
+            <li>Colesterol HDL</li>
+            <li>Triglicéridos: un tipo de grasa en la sangre</li>
+            <p>
+              Tu proveedor de salud en Clínica San Miguel te llamará una vez que los resultados estén listos y te explicará y responderá tus preguntas.
+            </p>
+          </section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Pruebas de colesterol en niños
-        </h2>
-        <p>
-          Para la mayoría de los niños, el Instituto Nacional del Corazón, los
-          Pulmones y la Sangre recomienda realizar pruebas de colesterol entre
-          los 9 y 11 años, seguidas de pruebas repetidas cada cinco años.
-        </p>
+          <section className="w-full space-y-3 text-xl">
+            <h2 className="w-full text-2xl font-bold text-red-600">Niños y pruebas de colesterol</h2>
+            <p>
+              Para la mayoría de los niños, el Instituto Nacional del Corazón, Pulmón y Sangre recomienda pruebas de colesterol entre los 9 y 11 años, seguidas de pruebas de seguimiento cada cinco años.
+            </p>
 
-        <p>
-          Sí su hijo tiene antecedentes familiares de enfermedad cardíaca de
-          inicio temprano o antecedentes personales de obesidad o diabetes, el
-          médico puede recomendar pruebas de colesterol a una edad más temprana
-          o con más frecuencia.
-        </p>
-      </section>
+            <p>
+              Sin embargo, si tu hijo tiene antecedentes familiares de enfermedad cardíaca temprana o antecedentes personales de obesidad o diabetes, el médico puede recomendar pruebas de colesterol a una edad más temprana o con mayor frecuencia.
+            </p>
+          </section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">Tratamiento</h2>
-        <p>
-          La medida principal para reducir el colesterol alto es cambiar su
-          estilo de vida; por ejemplo, comenzar a hacer más ejercicio o comer
-          más saludablemente. Sin embargo, si ya ha realizado estos cambios
-          importantes en el estilo de vida y sus niveles de colesterol aún son
-          altos, su médico puede recomendarle que tome medicamentos.
-        </p>
-        <p>
-          El hecho de si se le recomienda un medicamento o una combinación de
-          medicamentos depende de varios factores, incluidos los factores de
-          riesgo personales, la edad, la salud y los posibles efectos
-          secundarios. Algunas opciones comunes son:
-        </p>
-        <li>
-          <b>Estatinas.</b> Las estatinas bloquean una sustancia que necesita el
-          hígado para producir colesterol. Esto hace que el hígado elimine el
-          colesterol de la sangre. Algunas opciones posibles incluyen
-          atorvastatina (Lipitor), fluvastatina (Lescol), lovastatina
-          (Altoprev), pitavastatina (Livalo), pravastatina (Pravachol),
-          rosuvastatina (Crestor) y simvastatina (Zocor).
-        </li>
-        <li>
-          <b>Inhibidores de la absorción de colesterol.</b> El intestino delgado
-          absorbe el colesterol que ingiere con los alimentos y lo libera en el
-          torrente sanguíneo. El medicamento ezetimiba (Zetia) ayuda a reducir
-          el colesterol en sangre limitando la absorción de colesterol de la
-          dieta. Ezetimiba se puede usar con un medicamento estatina.
-        </li>
-        <li>
-          <b>Ácido bemptedoico.</b> Este nuevo medicamento funciona como las
-          estatinas, pero es menos probable que cause dolor muscular. Agregar
-          ácido bemptedoico (Nexletol) a una dosis máxima de estatinas puede
-          ayudar a reducir significativamente las lipoproteínas de baja
-          densidad. También hay una tableta combinada que contiene ácido
-          bemptedoico y ezetimiba (Nexlizet).
-        </li>
-        <li>
-          <b>Resinas fijadoras de ácidos biliares.</b> El hígado usa el
-          colesterol para fabricar ácidos biliares, una sustancia necesaria para
-          digerir los alimentos. La colestiramina (Prevalite), el colesevelam
-          (Welchol) y el colestipol (Colestid) ayudan a reducir el colesterol
-          indirectamente al unirse a los ácidos biliares. Esto hace que el
-          hígado use el colesterol en exceso para fabricar más ácidos biliares,
-          lo que reduce el nivel de colesterol en la sangre.
-        </li>
-        <li>
-          <b>Inhibidores de PCSK9.</b> Estos medicamentos ayudan al hígado a
-          absorber más colesterol LDL, lo que reduce la cantidad de colesterol
-          circulante en la sangre. Alirocumab (Praluent) y evolocumab (Repatha)
-          pueden ser utilizados por personas con una condición genética que
-          causa niveles muy altos de LDL o por personas con antecedentes de
-          enfermedad coronaria y intolerancia a estatinas u otros medicamentos
-          para el colesterol. Se inyectan debajo de la piel cada pocas semanas y
-          son costosos.
-        </li>
-      </section>
+          <section className="w-full space-y-3 text-xl">
+            <h2 className="w-full text-2xl font-bold text-red-600">Tratamiento</h2>
+            <p>
+              La principal medida para reducir el colesterol alto es cambiar tu estilo de vida; por ejemplo, comenzar a hacer más ejercicio o comer más saludablemente. Sin embargo, si ya has hecho estos cambios importantes en el estilo de vida y tus niveles de colesterol siguen siendo altos, tu médico puede recomendarte que tomes medicamentos.
+            </p>
+            <p>
+              El hecho de si se recomienda un medicamento o una combinación de medicamentos depende de varios factores, incluyendo factores de riesgo personales, edad, salud y posibles efectos secundarios. Algunas opciones comunes son:
+            </p>
+            <li>
+              <b>Estatinas.</b> Las estatinas bloquean una sustancia que necesita el hígado para producir colesterol. Esto hace que el hígado elimine el colesterol de la sangre. Algunas opciones posibles incluyen atorvastatina (Lipitor), fluvastatina (Lescol), lovastatina (Altoprev), pitavastatina (Livalo), pravastatina (Pravachol), rosuvastatina (Crestor) y simvastatina (Zocor).
+            </li>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Medicamentos para triglicéridos altos
-        </h2>
-        <p>Si también tiene triglicéridos altos, su médico puede recetarle:</p>
+              <b>Inhibidores de la absorción de colesterol.</b> El intestino delgado absorbe el colesterol que ingieres con los alimentos y lo libera en el torrente sanguíneo. El medicamento ezetimiba (Zetia) ayuda a reducir el colesterol sanguíneo limitando la absorción de colesterol de la dieta. Ezetimiba se puede usar con un medicamento estatina.
 
-        <li>
-          <b>Fibratos.</b> Los medicamentos fenofibrato (TriCor, Fenoglide y
-          otros) y gemfibrozilo (Lopid) disminuyen la producción hepática de
-          colesterol de lipoproteínas de muy baja densidad y aceleran la
-          eliminación de triglicéridos de la sangre. Las lipoproteínas de muy
-          baja densidad contienen principalmente triglicéridos. El uso de
-          fibratos junto con estatinas puede aumentar el riesgo de efectos
-          secundarios de las estatinas.
-        </li>
-        <li>
-          <b>Niacina.</b> La niacina limita la capacidad del hígado para
-          producir colesterol LDL y VLDL. Pero la niacina no ofrece más
-          beneficios que las estatinas. La niacina también se ha relacionado con
-          daño hepático y accidente cerebrovascular, por lo que la mayoría de
-          los médicos ahora solo la recomiendan para personas que no pueden
-          tomar estatinas.
-        </li>
-        <li>
-          <b>Suplementos con ácidos grasos omega 3.</b> Los suplementos con
-          ácidos grasos omega 3 pueden ayudarlo a reducir los triglicéridos.
-          Puede comprarlos con o sin receta. Si decide tomar suplementos de
-          venta libre, obtenga la aprobación de un médico primero. Los
-          suplementos con ácidos grasos omega 3 pueden afectar otros
-          medicamentos que esté tomando.
-        </li>
-      </section>
+          <li>
+            <b>Ácido bempedoico.</b> Este nuevo medicamento funciona como las estatinas, pero es menos probable que cause dolor muscular. Agregar ácido bempedoico (Nexletol) a una dosis máxima de estatinas puede ayudar a reducir significativamente las lipoproteínas de baja densidad. También existe una tableta combinada que contiene ácido bempedoico y ezetimiba (Nexlizet).
+          </li>
+          <li>
+            <b>Resinas fijadoras de ácidos biliares.</b> El hígado usa el colesterol para producir ácidos biliares, una sustancia necesaria para digerir los alimentos. Colestiramina (Prevalite), colesevelam (Welchol) y colestipol (Colestid) ayudan a reducir el colesterol indirectamente al unirse a los ácidos biliares. Esto hace que el hígado use el exceso de colesterol para producir más ácidos biliares, lo que reduce el nivel de colesterol en la sangre.
+          </li>
+          <li>
+            <b>Inhibidores de PCSK9.</b> Estos medicamentos ayudan al hígado a absorber más colesterol LDL, lo que reduce la cantidad de colesterol circulante en la sangre. Alirocumab (Praluent) y evolocumab (Repatha) se pueden usar en personas con una afección genética que causa niveles muy altos de LDL o en personas con antecedentes de enfermedad coronaria y intolerancia a estatinas u otros medicamentos para el colesterol. Se inyectan bajo la piel cada pocas semanas y son costosos.
+          </li>
+          </section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          La tolerancia varía
-        </h2>
-        <p>
-          La tolerancia a los medicamentos varía de una persona a otra. Los
-          efectos secundarios comunes de las estatinas son dolor muscular y daño
-          muscular, pérdida de memoria reversible y confusión, y un aumento en
-          el azúcar en la sangre. Si decide tomar medicamentos para el
-          colesterol, su médico puede recomendarle pruebas de función hepática
-          para monitorear el efecto de los medicamentos en el hígado.
-        </p>
-      </section>
+          <section className="w-full space-y-3 text-xl">
+          <h2 className="w-full text-2xl font-bold text-red-600">
+            Medicamentos para los triglicéridos altos
+          </h2>
+          <p>
+            Si también tienes triglicéridos altos, tu médico puede recetarte:
+          </p>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Tratamiento del colesterol en niños
-        </h2>
-        <p>
-          La tolerancia a los medicamentos varía de una persona a otra. Los
-          efectos secundarios comunes de las estatinas son dolor muscular y daño
-          muscular, pérdida de memoria reversible y confusión, y un aumento en
-          el azúcar en la sangre. Si decide tomar medicamentos para el
-          colesterol, su médico puede recomendarle pruebas de función hepática
-          para monitorear el efecto de los medicamentos en el hígado.
-        </p>
-      </section>
+          <li>
+            <b>Fibratos.</b> Los medicamentos fenofibrato (TriCor, Fenoglide, y otros) y gemfibrozil (Lopid) disminuyen la producción hepática de colesterol de lipoproteínas de muy baja densidad y aceleran la eliminación de triglicéridos de la sangre. Las lipoproteínas de muy baja densidad contienen principalmente triglicéridos. El uso de Fibratos junto con estatinas puede aumentar el riesgo de efectos secundarios de las estatinas.
+          </li>
+          <li>
+            <b>Niacina.</b> La niacina limita la capacidad del hígado para producir colesterol LDL y VLDL. Pero la niacina no ofrece más beneficios que las estatinas. Además, la niacina se ha relacionado con daño hepático y accidente cerebrovascular, por lo que la mayoría de los médicos ahora solo la recomiendan para personas que no pueden tomar estatinas.
+          </li>
+          <li>
+            <b>Suplementos con ácidos grasos omega 3.</b> Los suplementos con ácidos grasos omega 3 pueden ayudarte a reducir los triglicéridos. Puedes comprarlos con o sin receta médica. Si decides tomar suplementos de venta libre, obtén la aprobación de un médico primero. Los suplementos con ácidos grasos omega 3 pueden afectar otros medicamentos que estés tomando.
+          </li>
+          </section>
 
-      <h1 className="w-full text-4xl font-bold ">Preguntas frecuentes</h1>
+          <section className="w-full space-y-3 text-xl">
+          <h2 className="w-full text-2xl font-bold text-red-600">
+            La tolerancia varía
+          </h2>
+          <p>
+            La tolerancia a los medicamentos varía de una persona a otra. Los efectos secundarios comunes de las estatinas son dolor muscular y daño muscular, pérdida de memoria y confusión reversible, y un aumento en el azúcar en sangre. Si decides tomar medicamentos para el colesterol, tu médico puede recomendar pruebas de función hepática para monitorear el efecto de los medicamentos en el hígado.
+          </p>
+          </section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué son el colesterol y los triglicéridos?
-        </h2>
-        <li>
-          El colesterol es una sustancia grasa que se encuentra en la sangre. El
-          cuerpo necesita colesterol para funcionar correctamente, pero niveles
-          altos pueden aumentar el riesgo de enfermedad cardíaca.
-        </li>
-        <li>
-          Los triglicéridos son otro tipo de grasa que se encuentra en la
-          sangre. Los niveles altos de triglicéridos también pueden aumentar el
-          riesgo de enfermedad cardíaca.
-        </li>
-      </section>
+          <section className="w-full space-y-3 text-xl">
+          <h2 className="w-full text-2xl font-bold text-red-600">
+            Tratamiento del colesterol en niños
+          </h2>
+          <p>
+            La tolerancia a los medicamentos varía de una persona a otra. Los efectos secundarios comunes de las estatinas son dolor muscular y daño muscular, pérdida de memoria y confusión reversible, y un aumento en el azúcar en sangre. Si decides tomar medicamentos para el colesterol, tu médico puede recomendar pruebas de función hepática para monitorear el efecto de los medicamentos en el hígado.
+          </p>
+          </section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuáles son los síntomas del colesterol y los triglicéridos altos?
-        </h2>
-        <li>
-          Normalmente no hay síntomas. La única forma de saber si tiene
-          colesterol y triglicéridos altos es mediante una prueba de sangre.
-        </li>
-      </section>
+          <h1 className="bold w-full text-3xl font-bold font text-red-600">Preguntas Frecuentes</h1>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué causa el colesterol y los triglicéridos altos?
-        </h2>
-        <li>
-          La dieta, la falta de ejercicio, la genética y ciertas condiciones
-          médicas pueden contribuir a niveles altos de colesterol y
-          triglicéridos.
-        </li>
-      </section>
 
-      <section>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Colesterol alto, Triglicéridos altos, Tratamiento del colesterol,
-          Prevención del colesterol, Clínica San Miguel, Fresno, TX, Clínica
-          Hispana, Clínica hispana cerca de mí, Clínica para hispanos, Clínica
-          de atención sin cita previa
-        </p>
-      </section>
+          <section className="w-full space-y-3 text-xl">
+          <h2 className="w-full text-2xl font-bold text-red-600">
+            ¿Qué son el colesterol y los triglicéridos?
+          </h2>
+          <li>
+            El colesterol es una sustancia grasa que se encuentra en la sangre. El cuerpo necesita colesterol para funcionar correctamente, pero niveles altos pueden aumentar el riesgo de enfermedad cardíaca.
+          </li>
+          <li>
+            Los triglicéridos son otro tipo de grasa que se encuentra en la sangre. Niveles altos de triglicéridos también pueden aumentar el riesgo de enfermedad cardíaca.
+          </li>
+          </section>
+
+          <section className="w-full space-y-3 text-xl">
+          <h2 className="w-full text-2xl font-bold text-red-600">
+            ¿Cuáles son los síntomas del colesterol y los triglicéridos altos?
+          </h2>
+          <p>
+            Por lo general, no hay síntomas. La única forma de saber si tienes colesterol y triglicéridos altos es a través de un análisis de sangre.
+          </p>
+          </section>
+
+          <section className="w-full space-y-3 text-xl">
+          <h2 className="w-full text-2xl font-bold text-red-600">
+            ¿Qué causa el colesterol y los triglicéridos altos?
+          </h2>
+          <p>
+          La dieta, la falta de ejercicio, la genética y ciertas condiciones médicas pueden contribuir a niveles altos de colesterol y triglicéridos.
+          </p>
+          </section>
+          <h2 className="w-full text-2xl font-bold text-red-600">Regula tu Salud: Cuidado Experto para el Colesterol Alto.</h2>
+
+
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -262,7 +172,7 @@ const Home = () => {
       </h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/thyroide.png?t=2024-02-11T07%3A00%3A12.237Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/High%20cholesterol%20and%20trig.png"
           width={1000}
           height={1000}
           alt="cover"
@@ -446,7 +356,8 @@ const Home = () => {
         </p>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">FAQs</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
+
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -467,31 +378,22 @@ const Home = () => {
         <h2 className="w-full text-2xl font-bold text-red-600">
           What are the symptoms of high cholesterol and triglycerides?
         </h2>
-        <li>
+        <p>
           There are usually no symptoms. The only way to know if you have high
           cholesterol and triglycerides is through a blood test.
-        </li>
+        </p>
       </section>
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
           What causes high cholesterol and triglycerides?
         </h2>
-        <li>
-          Diet, lack of exercise, Genetics and certain medical conditions can
-          contribute to high cholesterol and triglyceride levels.
-        </li>
+        
+         <p>Diet, lack of exercise, Genetics and certain medical conditions can
+          contribute to high cholesterol and triglyceride levels.</p>
+        
       </section>
-
-      <section>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          High cholesterol, High triglycerides, Cholesterol treatment,
-          Cholesterol prevention, Clínica San Miguel, Fresno, TX, Clinica
-          Hispana , Hispanic Clinic near me, Clinic for Hispanics, Walk-in
-          Clinic
-        </p>
-      </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Regulate Your Health: Expert Care for High Cholesterol.</h2>
     </div>
   );
 };

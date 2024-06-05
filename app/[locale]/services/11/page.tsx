@@ -12,7 +12,7 @@ const Home = () => {
       </h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/thyroide.png?t=2024-02-11T07%3A00%3A12.237Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/PSA%20test.png?t=2024-06-05T11%3A13%3A48.291Z"
           width={1000}
           height={1000}
           alt="cover"
@@ -107,7 +107,8 @@ const Home = () => {
         </li>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">Preguntas frecuentes</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Preguntas Frecuentes</h1>
+
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -137,22 +138,16 @@ const Home = () => {
           Miguel, abierta los 7 días de la semana, sin necesidad de cita previa.
         </p>
       </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">La Salud de la Próstata es Importante: Pruebas de PSA para Detección Temprana.</h2>
 
-      <section>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Prueba de sangre de la próstata, PSA, Cáncer de próstata, Hombres,
-          Detección temprana, Prevención, Clínica San Miguel, Pasadena, Texas,
-          Prueba de Antígeno Prostático Específico (PSA)
-        </p>
-      </section>
+
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
       <h1 className="text-center text-6xl text-red-600">PSA Test</h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/thyroide.png?t=2024-02-11T07%3A00%3A12.237Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/PSA%20test.png?t=2024-06-05T11%3A13%3A48.291Z"
           width={1000}
           height={1000}
           alt="cover"
@@ -242,7 +237,7 @@ const Home = () => {
         </li>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">FAQs</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -270,15 +265,8 @@ const Home = () => {
           a week, no appointment necessary. Are. Walk-In Clinic.
         </p>
       </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Prostate Health Matters: PSA Testing for Early Detection.</h2>
 
-      <section>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          Prostate blood test, PSA, Prostate cancer, Men, Early detection,
-          Prevention , San Miguel Clinic, Pasadena, Texas, Prostate Specific
-          Antigen (PSA) Blood Test
-        </p>
-      </section>
     </div>
   );
 };
