@@ -1,94 +1,30 @@
 "use client";
 
 import { CompactService } from "@/components";
-// import { services } from "@/constants";
 
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import Slider from "react-slick";
-// import { useRef } from "react";
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import Image from "next/image";
 import { viewAllArrow } from "@/assets/images";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useSupabase } from "@/context/supabaseContext";
+import { useLocale, useTranslations } from "next-intl";
 
 export const Services = () => {
-  // const slider = useRef(null);
+  const t = useTranslations("common");
+  const locale = useLocale();
 
-  // const settings = {
-  //   dots: true,
-  //   arrows: true,
-  //   dotsClass: "slick-dots",
-  //   infinite: true,
-  //   speed: 400,
-  //   autoplay: true,
-  //   autoplaySpeed: 2000,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   centerPadding: "60px",
-  //   rows: 1,
-  //   slidesPerRow: 2,
-  //   // initialSlide: 0,
-  //   appendDots: (dots: any) => <ul>{dots}</ul>,
-  //   customPaging: (i: any) => <div className="ft-slick__dots--custom"></div>,
-  //   // nextArrow: (
-  //   //   <SampleNextArrow
-  //   //     className={undefined}
-  //   //     style={undefined}
-  //   //     onClick={() => slider?.current?.slickNext()}
-  //   //   />
-  //   // ),
-  //   // prevArrow: (
-  //   //   <SamplePrevArrow
-  //   //     className={undefined}
-  //   //     style={undefined}
-  //   //     onClick={() => slider?.current?.slickPrev()}
-  //   //   />
-  //   // ),
-  //   responsive: [
-  //     {
-  //       breakpoint: 1350,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1,
-  //         rows: 2,
-  //         slidesPerRow: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 840,
-  //       settings: {
-  //         // arrows: false,
-  //         slidesToShow: 2,
-  //         slidesToScroll: 1,
-  //         rows: 2,
-  //         slidesPerRow: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 425,
-  //       settings: {
-  //         // arrows: false,
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         rows: 2,
-  //         slidesPerRow: 2,
-  //       },
-  //     },
-  //   ],
-  // };
+  const { services, services_es } = useSupabase();
 
-  const { services } = useSupabase();
+  const data = locale === "es" ? services_es : services;
 
   return (
     <section className="flex flex-col relative gap-6 my-10 p-3 w-[100vw] md:w-[90vw] lg:w-[85vw] xl:w-[75vw]">
       <div className="flex flex-col justify-center items-center">
         <p className={`${styles.sectionSubText} text-[#19192C]`}>
-          what we offer
+          {t("services_sub_title")}
         </p>
         <h1 className={`${styles.sectionHeadText} text-[#C1001F] `}>
-          services
+          {t("services_title")}
         </h1>
       </div>
       <Link href={"/services"}>
@@ -102,7 +38,7 @@ export const Services = () => {
         </div>
       </Link>
       <article className="flex flex-wrap justify-center h-auto mx-auto ">
-        {services.slice(0, 6).map((service) => (
+        {data.slice(0, 6).map((service) => (
           <CompactService
             id={service.id}
             heading={service.title}

@@ -3,7 +3,7 @@
 import { useRef } from "react";
 
 import { Testimonial } from "@/components";
-import { styles } from "@/app/styles";
+import { styles } from "../../app/[locale]/styles";
 // import testimonials from "./testimonials.json";
 // import { SampleNextArrow, SamplePrevArrow } from "@/utils";
 
@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { useSupabase } from "@/context/supabaseContext";
+import { useTranslation } from "react-i18next";
+import { useTranslations } from "next-intl";
 
 export const Testimonials = ({
   headingFlag,
@@ -79,6 +81,7 @@ export const Testimonials = ({
       },
     ],
   };
+  const t = useTranslations("common");
 
   const { testinomial } = useSupabase();
 
@@ -87,13 +90,13 @@ export const Testimonials = ({
       <section className="flex flex-col justify-center w-full items-center my-5 px-4">
         {headingFlag && (
           <h1 className={`${styles.sectionHeadText} text-[#C1001F]`}>
-            Testinomials
+            {t("testimonial_heading")}
           </h1>
         )}
         <p
           className={`${styles.sectionSubText} text-[#19192C] text-center px-5`}
         >
-          Real Stories, Real Impact: The Voice of Satisfied Clients
+          {t("testimonial_sub_heading")}
         </p>
         <div className="w-[100vw] sm:w-[95vw] md:w-[80vw] lg:w-[75vw] xl:w-[70vw] block justify-center h-auto px-8  my-10">
           {testinomial && (

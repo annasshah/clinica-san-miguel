@@ -18,6 +18,7 @@ import {
   AdditionalService,
   ExpandedTestimonial,
   Location,
+  LocationDetailedCard,
 } from "./Cards";
 
 // carousel
@@ -38,6 +39,7 @@ export {
   Footer,
   ExpandedTestimonial,
   Location,
+  LocationDetailedCard,
   Patient,
   EmergencyContact,
   Pharmacy,

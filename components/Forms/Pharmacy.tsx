@@ -1,6 +1,6 @@
 "use client";
 
-import { styles } from "@/app/styles";
+import { styles } from "@/app/[locale]/styles";
 import React, { useState } from "react";
 
 type PharmacyInfo = {

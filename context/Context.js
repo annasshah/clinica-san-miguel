@@ -1,4 +1,5 @@
 "use client";
+
 import "regenerator-runtime/runtime";
 import { createContext, useEffect, useState } from "react";
 import SpeechRecognition, {
@@ -7,14 +8,11 @@ import SpeechRecognition, {
 export const BotContext = createContext();
 
 export default function BotProvider({ children }) {
-  const [initalModal, setInitalModal] = useState(true);
   const [modal, setModal] = useState("");
-  const [prompt, setPrompt] = useState("");
   const [username, setUsername] = useState("");
   const [_message, setMessage] = useState("");
   const [language, setLanguage] = useState("");
-  const [messages, setMessages] = useState([]);
-  const [open, setOpen] = useState(false);
+
   const {
     transcript,
     listening,
@@ -22,26 +20,24 @@ export default function BotProvider({ children }) {
     browserSupportsSpeechRecognition,
   } = useSpeechRecognition();
 
-  const startListening = () =>
+  const startListening = () => {
     SpeechRecognition.startListening({ continuous: true });
-
+  };
   const stopListening = async () => {
     await SpeechRecognition.stopListening();
     resetTranscript();
     await handleVoice();
   };
   const handleVoice = async () => {
-    console.log("in handle submit");
-
     if (!transcript) {
       return;
     }
-    console.log(transcript);
+
     const userMessage = { text: transcript, sender: "user" };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     try {
-      const response = await fetch("https://bot.myclinicmd.com/predict", {
+      const response = await fetch("http://64.23.151.134:5000/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +46,7 @@ export default function BotProvider({ children }) {
       });
 
       const { answer } = await response.json();
-      console.log(answer.answer);
+
       const botMessage = { text: answer.answer, sender: "bot" };
 
       let speech = new SpeechSynthesisUtterance();
@@ -64,57 +60,19 @@ export default function BotProvider({ children }) {
     setPrompt("");
   };
 
-  const handlePrompt = async () => {
-    console.log("in handle submit");
-
-    if (!prompt) {
-      return;
-    }
-    console.log(_message);
-    const userMessage = { text: prompt, sender: "user" };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
-
-    try {
-      const response = await fetch("https://bot.myclinicmd.com/predict", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: prompt }),
-      });
-
-      const { answer } = await response.json();
-      console.log(answer.answer);
-      const botMessage = { text: answer.answer, sender: "bot" };
-
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-    setPrompt("");
-  };
   return (
     <BotContext.Provider
       value={{
-        initalModal,
-        setInitalModal,
         startListening,
         transcript,
-        messages,
-        setMessages,
-        setPrompt,
-        prompt,
         stopListening,
         listening,
         username,
         setUsername,
         modal,
         setModal,
-        open,
-        setOpen,
         language,
         setLanguage,
-        handlePrompt,
       }}
     >
       {children}
