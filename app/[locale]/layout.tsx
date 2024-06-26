@@ -13,6 +13,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { locales } from "@/navigation";
 import ToastProvider from "@/utils/ToastProvider";
+import RenderTicker from "@/components/Navbar/RenderTicker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${poppins.variable}`}>
+      <head> <link rel="icon" href="/favicon.png"  /></head>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className="font-inter bg-[#F8F5F0] relative overflow-x-hidden w-[100vw]">
           <Providers>
@@ -54,6 +56,7 @@ export default function RootLayout({
               {" "}
               <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
                 {/* {t("common:language_selection_description")} */}
+                <RenderTicker />
               </article>
               <Navbar />
               {children}
