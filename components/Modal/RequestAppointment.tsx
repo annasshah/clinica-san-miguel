@@ -276,7 +276,7 @@ export const RequestAppointment = ({
   };
 
 
-  const dateTimeChangeHandle = (e) => {
+  const dateTimeChangeHandle = (e:any) => {
     const time = moment(e).format('DD-MM-YYYY : hh:mm A')
     console.log(time)
     setDate_and_time(e)
