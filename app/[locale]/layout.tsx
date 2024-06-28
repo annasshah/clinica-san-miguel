@@ -14,6 +14,9 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import { locales } from "@/navigation";
 import ToastProvider from "@/utils/ToastProvider";
 import RenderTicker from "@/components/Navbar/RenderTicker";
+import 'react-datetime-picker/dist/DateTimePicker.css';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
 
 const inter = Inter({
   subsets: ["latin"],

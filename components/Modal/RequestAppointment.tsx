@@ -5,10 +5,13 @@ import { supabase } from "@/supabaseClient";
 import { Button } from "@/utils";
 import { Modal } from "flowbite-react";
 import { useLocale, useTranslations } from "next-intl";
+import { TuiDatePicker } from "nextjs-tui-date-picker";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import DateTimePicker from "react-datetime-picker";
 import { toast } from "react-toastify";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
@@ -71,9 +74,8 @@ const Input = ({
   onChange: (value: string) => void;
 }) => (
   <div
-    className={`flex flex-col items-start w-full ${
-      breakpoint ? "md:w-1/2" : ""
-    } justify-center`}
+    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+      } justify-center`}
   >
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
@@ -99,11 +101,12 @@ const DatePicker = ({
   breakpoint: boolean;
   value: Date | null;
   onChange: (value: Date | null) => void;
+
+
 }) => (
   <div
-    className={`flex flex-col items-start w-full ${
-      breakpoint ? "md:w-1/2" : ""
-    } justify-center`}
+    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+      } justify-center`}
   >
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
@@ -118,7 +121,7 @@ const DatePicker = ({
       selected={value}
       onChange={(date) => onChange(date)}
       placeholderText={placeholder}
-      dateFormat="yyyy-MM-dd"
+      dateFormat="yyyy-MM-dd HH:MM"
       className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
     />
   </div>
@@ -138,9 +141,8 @@ const Dropdown = ({
   onChange: (value: string) => void;
 }) => (
   <div
-    className={`flex flex-col items-start w-full ${
-      breakpoint ? "md:w-1/2" : ""
-    } justify-center`}
+    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+      } justify-center`}
   >
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
@@ -186,6 +188,7 @@ export const RequestAppointment = ({
   const [phone, setPhone] = useState("");
   const [inOfficePatient, setInOfficePatient] = useState("");
   const [newPatient, setNewPatient] = useState("");
+  const [date_and_time, setDate_and_time] = useState("");
 
   const visitType = [t("form_f1a"), t("form_f1b")];
   const patientType = [t("form_f2a"), t("form_f2b")];
@@ -216,6 +219,7 @@ export const RequestAppointment = ({
       dob: dob,
       sex: sex,
       service: service,
+      date_and_time
     };
 
     const requiredFields = [
@@ -227,6 +231,7 @@ export const RequestAppointment = ({
       "dob",
       "sex",
       "service",
+      "date_and_time"
     ];
 
     for (const field of requiredFields) {
@@ -236,13 +241,21 @@ export const RequestAppointment = ({
       }
     }
 
+    const postData = {
+      ...appointmentDetails,
+      date_and_time:moment(date_and_time).format('DD-MM-YYYY : hh:mm A')
+    }
     const { data, error } = await supabase
       .from("Appoinments")
-      .insert([appointmentDetails])
+      .insert([postData])
       .select();
 
     if (error) {
-      toast.error(`Error submitting appointment: ${error.message}`);
+      if(error?.message === 'duplicate key value violates unique constraint "Appoinments_date_and_time_key"'){
+        toast.error(`Sorry, Appointment time slot is note available, Please select any other time slot`);
+        
+      }
+      else {toast.error(`Error submitting appointment: ${error?.message}`);}
     } else {
       toast.success("Appointment Submitted");
       setFirstName("");
@@ -256,11 +269,18 @@ export const RequestAppointment = ({
       setPhone("");
       setInOfficePatient("");
       setNewPatient("");
+      setDate_and_time("");
       handleClose();
       console.log(data, "Appointment Submitted");
     }
   };
 
+
+  const dateTimeChangeHandle = (e) => {
+    const time = moment(e).format('DD-MM-YYYY : hh:mm A')
+    console.log(time)
+    setDate_and_time(e)
+  }
   return (
     <>
       {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
@@ -359,13 +379,36 @@ export const RequestAppointment = ({
                 onChange={setAddress}
                 value={address}
               />
-              <Dropdown
-                label={t("form_f10")}
-                options={services}
-                breakpoint={true}
-                onChange={setService}
-                value={service}
-              />
+
+              <div className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
+                <Dropdown
+                  label={t("form_f10")}
+                  options={services}
+                  breakpoint={true}
+                  onChange={setService}
+                  value={service}
+                />
+
+                <div
+                  className={` flex flex-col items-start ${false ? "md:w-1/2" : ""
+                    } justify-center`}
+                >
+                  <label className="text-[16px] text-customGray font-poppins font-bold">
+                    Date and Time:
+                  </label>
+                 
+
+
+                  <DateTimePicker value={date_and_time}
+
+                    onChange={dateTimeChangeHandle} format="MM-dd-yyyy h:mm A" secondPlaceholder="SS" dayPlaceholder="DD" minutePlaceholder="MM" hourPlaceholder="HH" yearPlaceholder="YY"
+                    className=' py-2 h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]'
+                    monthPlaceholder="MM" />
+                </div>
+              </div>
+
+
+
             </section>
           </Modal.Body>
           <Modal.Footer>
