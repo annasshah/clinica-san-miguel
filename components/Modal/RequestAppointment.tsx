@@ -252,7 +252,7 @@ export const RequestAppointment = ({
 
     if (error) {
       if(error?.message === 'duplicate key value violates unique constraint "Appoinments_date_and_time_key"'){
-        toast.error(`Sorry, Appointment time slot is note available, Please select any other time slot`);
+        toast.error(`Sorry, Appointment time slot is not available, Please select any other time slot`);
         
       }
       else {toast.error(`Error submitting appointment: ${error?.message}`);}
