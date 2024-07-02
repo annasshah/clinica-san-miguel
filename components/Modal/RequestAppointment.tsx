@@ -10,9 +10,8 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 
 import ReactDatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import DateTimePicker from "react-datetime-picker";
 import { toast } from "react-toastify";
+import ScheduleDateTime from "./ScheduleDateTime";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -162,10 +161,12 @@ const Dropdown = ({
 );
 
 export const RequestAppointment = ({
+  detailedData,
   locationID,
   openModal,
   handleClose,
 }: {
+  detailedData:any;
   locationID: number;
   openModal: boolean;
   handleClose: any;
@@ -243,7 +244,7 @@ export const RequestAppointment = ({
 
     const postData = {
       ...appointmentDetails,
-      date_and_time:moment(date_and_time).format('DD-MM-YYYY : hh:mm A')
+      date_and_time: moment(date_and_time).format('DD-MM-YYYY : hh:mm A')
     }
     const { data, error } = await supabase
       .from("Appoinments")
@@ -251,11 +252,11 @@ export const RequestAppointment = ({
       .select();
 
     if (error) {
-      if(error?.message === 'duplicate key value violates unique constraint "Appoinments_date_and_time_key"'){
+      if (error?.message === 'duplicate key value violates unique constraint "Appoinments_date_and_time_key"') {
         toast.error(`Sorry, Appointment time slot is not available, Please select any other time slot`);
-        
+
       }
-      else {toast.error(`Error submitting appointment: ${error?.message}`);}
+      else { toast.error(`Error submitting appointment: ${error?.message}`); }
     } else {
       toast.success("Appointment Submitted");
       setFirstName("");
@@ -276,7 +277,7 @@ export const RequestAppointment = ({
   };
 
 
-  const dateTimeChangeHandle = (e:any) => {
+  const dateTimeChangeHandle = (e: any) => {
     const time = moment(e).format('DD-MM-YYYY : hh:mm A')
     console.log(time)
     setDate_and_time(e)
@@ -380,6 +381,10 @@ export const RequestAppointment = ({
                 value={address}
               />
 
+              
+                <ScheduleDateTime 
+                data={detailedData}
+                 />
               <div className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
                 <Dropdown
                   label={t("form_f10")}
@@ -388,23 +393,6 @@ export const RequestAppointment = ({
                   onChange={setService}
                   value={service}
                 />
-
-                <div
-                  className={` flex flex-col items-start ${false ? "md:w-1/2" : ""
-                    } justify-center`}
-                >
-                  <label className="text-[16px] text-customGray font-poppins font-bold">
-                    Date and Time:
-                  </label>
-                 
-
-
-                  <DateTimePicker value={date_and_time}
-
-                    onChange={dateTimeChangeHandle} format="MM-dd-yyyy h:mm A" secondPlaceholder="SS" dayPlaceholder="DD" minutePlaceholder="MM" hourPlaceholder="HH" yearPlaceholder="YY"
-                    className=' py-2 h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]'
-                    monthPlaceholder="MM" />
-                </div>
               </div>
 
 

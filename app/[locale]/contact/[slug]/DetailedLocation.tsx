@@ -314,6 +314,7 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
         </section>
       </main>
       <RequestAppointment
+      detailedData={detailedData}
         locationID={parseInt(slug)}
         handleClose={handleCloseModal}
         openModal={openAppointmentModal}
