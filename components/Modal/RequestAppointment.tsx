@@ -166,7 +166,7 @@ export const RequestAppointment = ({
   openModal,
   handleClose,
 }: {
-  detailedData:any;
+  detailedData: any;
   locationID: number;
   openModal: boolean;
   handleClose: any;
@@ -231,8 +231,8 @@ export const RequestAppointment = ({
       "address",
       "dob",
       "sex",
+      "date_and_time",
       "service",
-      "date_and_time"
     ];
 
     for (const field of requiredFields) {
@@ -244,7 +244,7 @@ export const RequestAppointment = ({
 
     const postData = {
       ...appointmentDetails,
-      date_and_time: moment(date_and_time).format('DD-MM-YYYY : hh:mm A')
+      date_and_time,
     }
     const { data, error } = await supabase
       .from("Appoinments")
@@ -277,10 +277,17 @@ export const RequestAppointment = ({
   };
 
 
-  const dateTimeChangeHandle = (e: any) => {
-    const time = moment(e).format('DD-MM-YYYY : hh:mm A')
-    console.log(time)
-    setDate_and_time(e)
+  const selectDateTimeSlotHandle = (date: Date | '', time?: string | '') => {
+    if (date && time) {
+      const formated_date = moment(date).format('DD-MM-YYYY')
+      
+      const createSlotForDB = `${detailedData?.[0]?.id}|${formated_date} - ${time}`
+      console.log({createSlotForDB})
+      setDate_and_time(createSlotForDB)
+    } else {
+      setDate_and_time('')
+
+    }
   }
   return (
     <>
@@ -381,10 +388,11 @@ export const RequestAppointment = ({
                 value={address}
               />
 
-              
-                <ScheduleDateTime 
-                data={detailedData}
-                 />
+
+              <ScheduleDateTime
+                data={detailedData[0]}
+                selectDateTimeSlotHandle={selectDateTimeSlotHandle}
+              />
               <div className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
                 <Dropdown
                   label={t("form_f10")}
