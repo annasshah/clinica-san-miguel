@@ -7,10 +7,10 @@ const Home = () => {
 
   return locale === "es" ? (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
-      <h1 className="text-center text-6xl text-red-600">Análisis de Sangre</h1>
+      <h1 className="text-center text-6xl text-red-600">Atención Primaria</h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/bloodtest.png?t=2024-02-18T11%3A20%3A20.307Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/Primary%20Care.png"
           width={1000}
           height={1000}
           alt="portada"
@@ -25,189 +25,129 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Su aliado para el bienestar integral
-      </p>
       <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué son los análisis de sangre?
-        </h2>
-        <ol className="w-full">
-          Los análisis de sangre son pruebas realizadas en una muestra de su
-          sangre para evaluar su salud. Estas pruebas pueden ayudar a
-          diagnosticar enfermedades, monitorear su salud y manejar el
-          tratamiento para ciertas condiciones.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Por qué es importante hacerse análisis de sangre?
-        </h2>
-        <ol className="w-full">
-          Los análisis de sangre son una herramienta importante para la
-          detección temprana de enfermedades, incluso antes de que aparezcan los
-          síntomas. También pueden ayudar a determinar la causa de los síntomas
-          que ya está experimentando, como fatiga, dolor o pérdida de peso.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo prepararse para un análisis de sangre?
-        </h2>
-        <ol className="w-full">
-          En general, no se requiere preparación especial para la mayoría de los
-          análisis de sangre. Sin embargo, es importante que siga las
-          instrucciones de su médico con respecto al ayuno o la suspensión de
-          ciertos medicamentos antes del examen.
-        </ol>
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Recomendaciones:
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Consulte con su médico en Clínica San Miguel para determinar qué
-            análisis de sangre son adecuados para usted.
-          </li>
-          <li>
-            Infórmenos sobre cualquier medicamento que esté tomando, incluyendo
-            vitaminas y suplementos.
-          </li>
-          <li>
-            Si se siente nervioso o ansioso por el examen, respire profundamente
-            e intente relajarse.
-          </li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Beneficios para la salud
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Detección temprana de enfermedades.</li>
-          <li>Monitoreo del estado de salud.</li>
-          <li>Control del tratamiento de enfermedades.</li>
-          <li>Prevención de complicaciones.</li>
-          <li>Mejora de la calidad de vida.</li>
-        </ul>
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuánto tiempo tardarán en estar disponibles mis resultados de
-          análisis de sangre?
-        </h2>
-        <p className="w-full list-disc">
-          Los resultados de los análisis de sangre generalmente están
-          disponibles en 24-48 horas.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuánto cuestan los análisis de sangre?
-        </h2>
-        <p className="w-full list-disc">
-          El costo de los análisis de sangre varía dependiendo del tipo de
-          examen que realice. Consulte con su seguro de salud para ver si cubre
-          los costos del examen.
-        </p>
-      </section>
-      <h1 className="bold w-full text-2xl font-bold">
-        Preguntas frecuentes sobre la extracción de verrugas:
-      </h1>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué debo hacer si mis resultados de análisis son anormales?
-        </h2>
-        <p className="w-full list-disc">
-          Si sus resultados de análisis son anormales, su médico le informará y
-          le explicará qué significa para su salud.
-        </p>
-      </section>
+  <h1 className="w-full text-2xl font-bold text-red-600">
+    Clínica San Miguel: Su Centro de Atención Primaria de Confianza
+  </h1>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Qué es la atención primaria?
+  </h2>
+  <p>
+    La atención primaria es la puerta de entrada al sistema de salud. Es la atención médica proporcionada para prevenir, diagnosticar y tratar enfermedades comunes. También se enfoca en promover la salud y el bienestar a través de chequeos regulares y vacunaciones. La Clínica San Miguel cubre todas sus necesidades de salud a través de sus servicios de atención primaria.
+  </p>
+</section>
 
-      <h1 className="bold w-full text-2xl font-bold">
-        Tipos de análisis de sangre que ofrecemos:
-      </h1>
-      <p className="w-full list-disc">
-        Los análisis de sangre son una herramienta fundamental para el
-        diagnóstico y monitoreo de una amplia variedad de enfermedades y
-        condiciones. Se pueden realizar para:
-      </p>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Estos servicios incluyen:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>
+      <b>Exámenes físicos anuales:</b> La atención primaria se enfoca en la promoción de la salud y la prevención de enfermedades. Su examen físico anual es una de las visitas más importantes con su proveedor de atención primaria. Le da a su proveedor en la Clínica San Miguel la oportunidad de evaluar su salud actual y buscar problemas de salud futuros. Además de los exámenes físicos anuales, la Clínica San Miguel realiza exámenes físicos del Departamento de Transporte (DOT), exámenes físicos de inmigración y exámenes físicos escolares.
+    </li>
+    <li>
+      <b>Pruebas diagnósticas:</b> La Clínica San Miguel también ofrece muchos tipos de pruebas diagnósticas para evaluar la salud y diagnosticar problemas de salud. Las pruebas incluyen análisis de sangre, ecografías y electrocardiogramas (EKG). La Clínica San Miguel también ofrece pruebas de COVID-19.
+    </li>
+    <li>
+      <b>Atención de emergencia:</b> Para manejar sus problemas de salud inesperados, la Clínica San Miguel ofrece atención urgente. Algunas de las necesidades de salud urgentes que el equipo aborda incluyen drenaje de abscesos y tratamiento de resfriados y gripe.
+    </li>
+    <li>
+      <b>Exámenes de salud:</b> La Clínica San Miguel, también ofrece exámenes de salud, incluidos exámenes de Papanicolaou para detectar cáncer de cuello uterino en mujeres y pruebas de sangre para detectar cáncer de próstata en hombres.
+    </li>
+    <li>
+      <b>Manejo de enfermedades crónicas:</b> El manejo de enfermedades crónicas también forma parte de los servicios de atención primaria de la Clínica San Miguel. El equipo se especializa en diagnosticar y tratar muchas enfermedades crónicas como la diabetes, la hipertensión arterial y los problemas de tiroides.
+    </li>
+  </ul>
+</section>
 
-      <ol className="w-full">
-        Los análisis de sangre son pruebas realizadas en una muestra de tu
-        sangre para evaluar tu salud. Estas pruebas pueden ayudar a diagnosticar
-        enfermedades, monitorear tu salud y administrar el tratamiento para
-        ciertas condiciones.
-      </ol>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Cuándo necesito atención primaria?
+  </h2>
+  <p>
+    Debe ver a su médico de atención primaria si experimenta alguno de los siguientes síntomas:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>Fiebre</li>
+    <li>Dolor</li>
+    <li>Tos</li>
+    <li>Resfriado</li>
+    <li>Gripe</li>
+    <li>Alergias</li>
+    <li>Problemas digestivos</li>
+    <li>Lesiones</li>
+    <li>Enfermedades crónicas (como diabetes, hipertensión o asma)</li>
+  </ul>
+</section>
 
-      <ul className="w-full translate-x-7 list-disc">
-        <li>Glucosa: para detectar la diabetes.</li>
-        <li>
-          Colesterol y triglicéridos: para evaluar el riesgo de enfermedad
-          cardíaca.
-        </li>
-        <li>Hormonas: para evaluar la función tiroidea, fertilidad, etc.</li>
-        <li>
-          Electrolitos: para controlar el equilibrio de sodio, potasio, etc.
-        </li>
-        <li>Proteínas: para evaluar la función renal y hepática, etc.</li>
-      </ul>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Qué puedo esperar de la atención primaria?
+  </h2>
+  <p>
+    En su cita con su médico de atención primaria, puede esperar lo siguiente:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>Un historial médico completo</li>
+    <li>Un examen físico</li>
+    <li>Pruebas diagnósticas, si es necesario</li>
+    <li>Un plan de tratamiento</li>
+    <li>Recetas para medicamentos, si es necesario</li>
+    <li>Consejos de salud y prevención</li>
+  </ul>
+</section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Detectar infecciones:
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Cultivo de sangre: para detectar bacterias en la sangre.</li>
-          <li>
-            Pruebas serológicas: para detectar anticuerpos contra virus,
-            bacterias o parásitos.
-          </li>
-        </ul>
-        <p className="w-full list-disc">
-          Si tus resultados de la prueba son anormales, tu médico te informará y
-          te explicará qué significa para tu salud.
-        </p>
-      </section>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Beneficios de la atención primaria:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>
+      <b>Acceso a un médico de confianza:</b> Establecer una relación con un médico que lo conoce a usted y su historial médico es esencial para recibir la atención adecuada.
+    </li>
+    <li>
+      <b>Atención preventiva:</b> Los chequeos regulares y las vacunaciones pueden ayudar a prevenir enfermedades graves.
+    </li>
+    <li>
+      <b>Manejo de enfermedades crónicas:</b> Su médico de atención primaria puede ayudarlo a manejar sus enfermedades crónicas y prevenir complicaciones.
+    </li>
+    <li>
+      <b>Costo:</b> La atención primaria generalmente es más barata que la atención de emergencia o la hospitalización.
+    </li>
+  </ul>
+</section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Es doloroso el procedimiento?
-        </h2>
-        <p className="w-full list-disc">
-          La anestesia local adormece el área, por lo que el procedimiento no es
-          doloroso.
-        </p>
-      </section>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Preguntas Frecuentes:
+  </h2>
+  <h3 className="w-full text-xl font-bold text-red-600">
+    ¿Qué debo llevar a mi cita con el médico?
+  </h3>
+  <p>
+    Una lista de sus medicamentos actuales y cualquier pregunta que tenga para su médico.
+  </p>
+  <h3 className="w-full text-xl font-bold text-red-600">
+    ¿Cómo puedo hacer una cita?
+  </h3>
+  <p>
+    En la Clínica San Miguel, no es necesario hacer una cita. Estamos abiertos los 7 días de la semana. Clínica sin cita previa.
+  </p>
+  <h3 className="w-full text-xl font-bold text-red-600">
+    ¿Aceptan mi seguro?
+  </h3>
+  <p>
+    No aceptamos seguro de salud; la consulta cuesta $19.
+  </p>
+</section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuántas sesiones son necesarias?
-        </h2>
-        <p className="w-full list-disc">
-          En la mayoría de los casos, una sola sesión es suficiente para
-          eliminar la verruga.
-        </p>
-      </section>
+<p className="w-full text-xl font-bold text-red-600">
+  *Los resultados individuales no están garantizados y pueden variar de una persona a otra. Las imágenes pueden contener modelos.
+</p>
 
-      <section className="w-full space-y-3 text-xl">
-        <div>
-          <h2 className="w-full text-2xl font-bold text-red-600">
-            Consejos de nutrición para perder peso
-          </h2>
-          <br></br>
-          <ul className="w-full translate-x-7 list-disc">
-            <li>Consume alimentos enteros y no procesados.</li>
-            <li>Limita el consumo de azúcar y carbohidratos refinados.</li>
-            <li>Elige proteínas magras y grasas saludables.</li>
-          </ul>
-        </div>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          análisis de sangre, problemas de salud, detección temprana de
-          enfermedades, pruebas de sangre, prueba de tiroides, prueba de
-          colesterol, prueba de triglicéridos, prueba de diabetes, prueba de
-          enfermedades de transmisión sexual (ETS), prueba de embarazo, prueba
-          de próstata, sangre, prueba de azúcar, prueba de hierro
-        </p>
-      </section>
+<h2 className="w-full text-3xl font-bold text-red-600">
+  Clínica San Miguel: Su Salud, Nuestra Prioridad
+</h2>
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -229,174 +169,131 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Your ally for comprehensive well-being
-      </p>
       <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          What are blood tests?
-        </h2>
-        <ol className="w-full">
-          Blood tests are tests performed on a sample of your blood to evaluate
-          your health. These tests can help diagnose diseases, monitor your
-          health, and manage treatment for certain conditions.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Why is it important to have blood tests?
-        </h2>
-        <ol className="w-full">
-          Blood tests are an important tool for the early detection of diseases,
-          even before symptoms appear. They can also help determine the cause of
-          symptoms you are already experiencing, such as fatigue, pain, or
-          weight loss.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How to prepare for a blood test?
-        </h2>
-        <ol className="w-full">
-          In general, no special preparation is required for most blood tests.
-          However, it is important that you follow your doctor&apos;s
-          instructions regarding fasting or stopping certain medications before
-          the exam.
-        </ol>
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Recommendations:
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Consult with your doctor at Clínica San Miguel to determine which
-            blood tests are right for you.
-          </li>
-          <li>
-            Tell us about any medications you are taking, including vitamins and
-            supplements.
-          </li>
-          <li>
-            If you feel nervous or anxious about the exam , breathe deeply and
-            try to relax.
-          </li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Health benefits
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Early detection of diseases.</li>
-          <li>Health status monitoring.</li>
-          <li>Treatment control of diseases.</li>
-          <li>Prevention of complications.</li>
-          <li>Improvement of quality of life</li>{" "}
-        </ul>
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How quickly will my test results be available?
-        </h2>
-        <p className="w-full list-disc">
-          Blood test results are generally available in 24-48 hours
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How much do blood tests cost?
-        </h2>
-        <p className="w-full list-disc">
-          The cost of blood tests varies depending on the type of exam you take.
-          Check with your health insurance to see if it covers the costs of the
-          test.
-        </p>
-      </section>
-      <h1 className="bold w-full text-2xl font-bold">Wart Removal FAQs:</h1>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          What should I do if my test results are abnormal?
-        </h2>
-        <p className="w-full list-disc">
-          If your test results are abnormal, your doctor will tell you and
-          explain what it means for your health.
-        </p>
-      </section>
+  <h1 className="w-full text-2xl font-bold text-red-600">
+    San Miguel Clinic: Your Trusted Primary Care Center
+  </h1>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    What is primary care?
+  </h2>
+  <p>
+    Primary care is the gateway to the health system. It is medical care provided to prevent, diagnose, and treat common diseases. It also focuses on promoting health and wellness through regular checkups and vaccinations. Clínica San Miguel covers all your health needs through their primary care services.
+  </p>
+</section>
 
-      <h1 className="bold w-full text-2xl font-bold">
-        Types of blood tests we offer:
-      </h1>
-      <p className="w-full list-disc">
-        Blood tests are a fundamental tool for the diagnosis and monitoring of a
-        wide variety of diseases and conditions. They can be performed to:
-      </p>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    These services include:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>
+      <b>Annual physical exams:</b> Primary care focuses on health promotion and disease prevention. Your annual physical exam is one of the most important visits with your primary care provider. It gives your provider at Clínica San Miguel the opportunity to evaluate your current health and look for future health problems. In addition to annual physicals, Clínica San Miguel performs Department of Transportation (DOT) physicals, immigration physicals, and school physicals.
+    </li>
+    <li>
+      <b>Diagnostic Tests:</b> San Miguel Clinic also offers many types of diagnostic tests to evaluate health and diagnose health problems. Tests include blood tests, ultrasounds, and electrocardiograms (EKGs). Clínica San Miguel also offers COVID-19 testing.
+    </li>
+    <li>
+      <b>Emergency care:</b> To manage your unexpected health problems, Clínica San Miguel offers urgent care. Some of the urgent health needs the team addresses include drainage of abscesses and treatment of colds and flu.
+    </li>
+    <li>
+      <b>Health screenings:</b> The San Miguel Clinic at 787 E Park Row Dr, Arlington, TX 76010, also offers health screenings, including Pap tests to screen for cervical cancer in women and prostate blood tests to screen for prostate cancer in men.
+    </li>
+    <li>
+      <b>Management of chronic diseases:</b> The management of chronic diseases is also part of the primary care services of the San Miguel Clinic. The team specializes in diagnosing and treating many chronic diseases such as diabetes, high blood pressure, and thyroid problems.
+    </li>
+  </ul>
+</section>
 
-      <ol className="w-full">
-        Blood tests are tests performed on a sample of your blood to evaluate
-        your health. These tests can help diagnose diseases, monitor your
-        health, and manage treatment for certain conditions.
-      </ol>
-      <ul className="w-full translate-x-7 list-disc">
-        <li>Glucose: to detect diabetes.</li>
-        <li>
-          Cholesterol and triglycerides: to assess the risk of heart disease .
-        </li>
-        <li>Hormones: to evaluate thyroid function, fertility, etc.</li>
-        <li>Electrolytes: to control the balance of sodium, potassium, etc.</li>
-        <li>Proteins: to evaluate kidney and liver function, etc.</li>{" "}
-      </ul>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    When do I need primary care?
+  </h2>
+  <p>
+    You should see your primary care doctor if you experience any of the following symptoms:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>Fever</li>
+    <li>Pain</li>
+    <li>Cough</li>
+    <li>Cold</li>
+    <li>Flu</li>
+    <li>Allergies</li>
+    <li>Digestive problems</li>
+    <li>Injuries</li>
+    <li>Chronic diseases (such as diabetes, hypertension, or asthma)</li>
+  </ul>
+</section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Detect infections:
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Blood culture: to detect bacteria in the blood.</li>
-          <li>
-            Serological tests: to detect antibodies against viruses, bacteria or
-            parasites.
-          </li>
-        </ul>
-        <p className="w-full list-disc">
-          If your test results are abnormal, your doctor will tell you and
-          explain what it means for your health.
-        </p>
-      </section>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    What can I expect from primary care?
+  </h2>
+  <p>
+    At your appointment with your primary care doctor, you can expect the following:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>A complete medical history</li>
+    <li>A physical examination</li>
+    <li>Diagnostic tests, if necessary</li>
+    <li>A treatment plan</li>
+    <li>Prescriptions for medications, if necessary</li>
+    <li>Health and prevention tips</li>
+  </ul>
+</section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Is it Is the procedure painful?
-        </h2>
-        <p className="w-full list-disc">
-          Local anesthesia numbs the area, so the procedure is not painful.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How many sessions are needed?
-        </h2>
-        <p className="w-full list-disc">
-          In most cases, a single session is enough to delete la verruga.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <div>
-          <h2 className="w-full text-2xl font-bold text-red-600">
-            Nutrition tips for weight loss
-          </h2>
-          <br></br>
-          <ul className="w-full translate-x-7 list-disc">
-            <li>Eat whole, unprocessed foods.</li>
-            <li>Limit sugar and refined carbohydrates.</li>
-            <li>Choose lean proteins and healthy fats.</li>
-          </ul>
-        </div>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          blood test, health problems, early detection of diseases, blood tests,
-          thyroid test, cholesterol test, exam triglyceride test, diabetes test,
-          sexually transmitted disease (STD) test, pregnancy test, prostate
-          test. blood, sugar test, iron test
-        </p>
-      </section>
-    </div>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Benefits of primary care:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>
+      <b>Access to a trusted doctor:</b> Establishing a relationship with a doctor who knows you and your medical history is essential to receiving the right care.
+    </li>
+    <li>
+      <b>Preventive care:</b> Regular checkups and vaccinations can help prevent serious illness.
+    </li>
+    <li>
+      <b>Chronic disease management:</b> Your primary care doctor can help you manage your chronic diseases and prevent complications.
+    </li>
+    <li>
+      <b>Cost:</b> Primary care is generally cheaper than emergency care or hospitalization.
+    </li>
+  </ul>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Frequently Asked Questions:
+  </h2>
+  <h3 className="w-full text-xl font-bold text-red-600">
+    What should I bring to my doctor's appointment?
+  </h3>
+  <p>
+    A list of your current medications and any questions you have for your doctor.
+  </p>
+  <h3 className="w-full text-xl font-bold text-red-600">
+    How can I make an appointment?
+  </h3>
+  <p>
+    At Clínica San Miguel, no appointment is necessary. We are open 7 days a week. Walk-in Clinic.
+  </p>
+  <h3 className="w-full text-xl font-bold text-red-600">
+    Do you accept my insurance?
+  </h3>
+  <p>
+    We do not take health insurance; the consultation is $19.
+  </p>
+</section>
+
+<p className="w-full text-xl font-bold text-red-600">
+  *Individual results are not guaranteed and may vary from person to person. Images may contain models.
+</p>
+
+<h2 className="w-full text-3xl font-bold text-red-600">
+  San Miguel Clinic: Your Health, Our Priority
+</h2>
+
+</div>
   );
 };
 

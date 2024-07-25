@@ -105,7 +105,7 @@ const Home = () => {
         </ul>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">Preguntas Frecuentes</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Preguntas Frecuentes</h1>
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -140,15 +140,8 @@ const Home = () => {
           <li>Cualquier pregunta que tengas.</li>
         </ul>
       </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Guía experta: Cuidado parental personalizado para ti.</h2>
 
-      <section>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Cuidado prenatal, Clínica San Miguel, Embarazo, Pruebas de laboratorio
-          prenatal, Ecografías prenatales, Salud de la madre, Salud del bebé,
-          Parto saludable
-        </p>
-      </section>
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -250,7 +243,7 @@ const Home = () => {
         </ul>
       </section>
 
-      <h1 className="w-full text-4xl font-bold ">FAQs</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
 
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
@@ -285,15 +278,7 @@ const Home = () => {
           <li>Any questions you have.</li>
         </ul>
       </section>
-
-      <section>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          Prenatal care, San Miguel Clinic, Pregnancy, Examinations prenatal
-          laboratory, Prenatal ultrasounds, Mother&apos;s health, Baby&apos;s
-          health, Healthy birth
-        </p>
-      </section>
+      <h2 className="w-full text-2xl font-bold text-red-600">Expert Guidance: Parental Care Tailored for You.</h2>
     </div>
   );
 };

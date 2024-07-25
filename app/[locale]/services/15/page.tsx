@@ -7,7 +7,7 @@ const Home = () => {
 
   return locale === "es" ? (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
-      <h1 className="text-center text-6xl text-red-600">ECG</h1>
+      <h1 className="text-center text-6xl text-red-600">ECG/EKG</h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
           src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/EKG.png"
@@ -19,34 +19,34 @@ const Home = () => {
         <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
           <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
           <p className="text-2xl font-light lg:text-3xl">
-            Servicios de electrocardiograma (ECG) de última generación para
+            Servicios de electrocardiograma (ECG / EKG) de última generación para
             evaluaciones precisas de la salud cardíaca, ayudando en el
             diagnóstico y manejo de condiciones cardíacas.
           </p>
         </div>
       </div>
       <p className="w-full text-2xl">
-        Clínica San Miguel: Examen de Electrocardiograma (ECG)
+        Clínica San Miguel: Examen de Electrocardiograma (ECG / EKG)
       </p>
 
       <section className="w-full space-y-3 text-xl">
         <h1 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué es un ECG?
+          ¿Qué es un ECG / EKG?
         </h1>
         <p>
-          Un ECG es una prueba que registra la actividad eléctrica del corazón.
+          Un ECG / EKG es una prueba que registra la actividad eléctrica del corazón.
           Se realiza colocando electrodos en el pecho, los brazos y las piernas.
         </p>
       </section>
 
       <section className="w-full space-y-3 text-xl">
         <h1 className="w-full text-2xl font-bold text-red-600">
-          ¿Por qué debería hacerme un ECG?
+          ¿Por qué debería hacerme un ECG / EKG?
         </h1>
         <p>
-          Su médico puede ordenar un ECG si tiene síntomas de problemas
+          Su médico puede ordenar un ECG / EKG si tiene síntomas de problemas
           cardíacos, como dolor en el pecho, dificultad para respirar o mareos.
-          También se puede realizar un ECG como parte de un examen físico de
+          También se puede realizar un ECG / EKG como parte de un examen físico de
           rutina.
         </p>
         <p>
@@ -67,7 +67,7 @@ const Home = () => {
         <p>
           Las enfermedades cardíacas suelen ser hereditarias. Si tiene
           antecedentes familiares de enfermedades cardíacas, ataques cardíacos u
-          otros trastornos cardiovasculares, un ECG proporciona a su médico la
+          otros trastornos cardiovasculares, un ECG / EKG proporciona a su médico la
           información que necesita para crear un plan de salud cardíaca
           individualizado para usted.
         </p>
@@ -75,17 +75,17 @@ const Home = () => {
 
       <section className="w-full space-y-3 text-xl">
         <h1 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo se realiza un ECG?
+          ¿Cómo se realiza un ECG / EKG?
         </h1>
-        <p>Un ECG solo tarda unos minutos en completarse.</p>
+        <p>Un ECG / EKG solo tarda unos minutos en completarse.</p>
       </section>
 
       <section className="w-full space-y-3 text-xl">
         <h1 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué debo hacer para prepararme para un ECG?
+          ¿Qué debo hacer para prepararme para un ECG / EKG?
         </h1>
         <p>
-          No necesita hacer nada especial para prepararse para un ECG. Sin
+          No necesita hacer nada especial para prepararse para un ECG / EKG. Sin
           embargo, es importante informar a su médico sobre cualquier
           medicamento que esté tomando.
         </p>
@@ -93,10 +93,10 @@ const Home = () => {
 
       <section className="w-full space-y-3 text-xl">
         <h1 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué significan los resultados del ECG?
+          ¿Qué significan los resultados del ECG / EKG?
         </h1>
         <p>
-          Un ECG es una prueba que registra la actividad eléctrica del corazón.
+          Un ECG / EKG es una prueba que registra la actividad eléctrica del corazón.
           Se realiza colocando electrodos en el pecho, los brazos y las piernas.
         </p>
         <ul>
@@ -119,7 +119,7 @@ const Home = () => {
           <li>
             <b>Flujo sanguíneo deficiente</b>Los síntomas como dolor en el pecho
             pueden ser signos reveladores de un flujo sanguíneo deficiente hacia
-            el corazón. Un ECG puede ayudar a determinar si su corazón está
+            el corazón. Un ECG / EKG puede ayudar a determinar si su corazón está
             recibiendo el oxígeno que necesita para funcionar correctamente.
           </li>
         </ul>
@@ -131,7 +131,7 @@ const Home = () => {
         </h1>
         <p>
           En la Clínica San Miguel en 14510 S Josey Ln, Farmers Branch, TX
-          75234, ofrecemos ECG de alta calidad a un precio asequible. Contamos
+          75234, ofrecemos ECG / EKG de alta calidad a un precio asequible. Contamos
           con un equipo de médicos y técnicos experimentados que están dedicados
           a brindarle la mejor atención posible.
         </p>
@@ -149,21 +149,12 @@ const Home = () => {
 
         <p>
           Si tiene síntomas de problemas cardíacos o si su médico le ha
-          recomendado un ECG, comuníquese con Clínica San Miguel hoy mismo.
-          Ofrecemos ECG de alta calidad a un precio asequible.
+          recomendado un ECG / EKG, comuníquese con Clínica San Miguel hoy mismo.
+          Ofrecemos ECG / EKG de alta calidad a un precio asequible.
         </p>
       </section>
 
-      <section>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Clínica San Miguel, Clínica en 14510 S Josey Ln, Farmers Branch, TX
-          75234, Clínica en Farmers Branch, Clínica Hispana, Clínica Hispana
-          cerca de mí, Clínica sin cita previa, ECG, Electrocardiograma, ¿Qué es
-          un electrocardiograma?, Problemas cardíacos, Dolor en el corazón,
-          Farmers Branch, TX
-        </p>
-      </section>
+     
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">

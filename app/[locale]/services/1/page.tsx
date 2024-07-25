@@ -7,7 +7,7 @@ const Home = () => {
 
   return locale === "es" ? (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
-      <h1 className="text-center text-6xl text-red-600">Perder peso</h1>
+      <h1 className="text-center text-6xl text-red-600">Programa de Pérdida de Peso</h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
           src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/Weightloss.png?t=2024-02-18T10%3A33%3A57.417Z"
@@ -19,154 +19,145 @@ const Home = () => {
         <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
           <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
           <p className="text-2xl font-light lg:text-3xl">
-            Logre sus objetivos de salud con planes personalizados de control de
-            peso, que combinan nutrición, ejercicio y cambios en el estilo de
-            vida para obtener resultados sostenibles.
-          </p>
-        </div>
-      </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Tu aliado para adelgazar con Semaglutida
-      </p>
-      <section className="w-full space-y-3 text-xl">
+    Alcance sus objetivos de salud con planes personalizados de manejo de peso, 
+    combinando nutrición, ejercicio y cambios en el estilo de vida para resultados sostenibles.
+</p>
+</div>
+</div>
+<p className="w-full text-2xl">
+    Clínica San Miguel: Su aliado para perder peso con Semaglutida
+</p>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        ¿Qué es la Semaglutida?
+    </h2>
+    <ol className="w-full">
+        La semaglutida es un medicamento inyectable que se administra una vez por semana. 
+        Actúa sobre el sistema nervioso central para reducir el apetito y aumentar la sensación 
+        de saciedad, lo que te ayuda a comer menos y perder peso.
+    </ol>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        ¿Cómo funciona la Semaglutida?
+    </h2>
+    <p className="w-full">La semaglutida funciona de varias maneras:</p>
+    <ul className="w-full translate-x-7 list-disc">
+        <li>
+            Reduce el apetito: Disminuye la producción de grelina, la hormona del hambre, 
+            lo que te hace sentir menos hambre y te ayuda a comer menos.
+        </li>
+        <li>
+            Aumenta la sensación de saciedad: Estimula la producción de GLP-1, 
+            una hormona que te hace sentir lleno después de comer.
+        </li>
+        <li>
+            Retrasa el vaciado gástrico: Hace que la comida permanezca más tiempo en el estómago, 
+            lo que te ayuda a sentirte lleno por más tiempo.
+        </li>
+    </ul>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        ¿Qué esperar con el tratamiento de Semaglutida?
+    </h2>
+    <p className="w-full">
+        La mayoría de las personas que toman semaglutida pierden entre el 5% y el 10% 
+        de su peso corporal en 12 semanas. Además de la pérdida de peso, la semaglutida 
+        puede mejorar otros aspectos de tu salud, como:
+    </p>
+    <ul className="w-full translate-x-7 list-disc">
+        <li>Control de azúcar en la sangre</li>
+        <li>Presión arterial</li>
+        <li>Colesterol</li>
+    </ul>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        Recomendaciones para el tratamiento con Semaglutida
+    </h2>
+    <p className="w-full list-disc">
+        Para obtener los mejores resultados con la semaglutida, es importante seguir 
+        estas recomendaciones:
+    </p>
+    <ul className="w-full translate-x-7 list-disc">
+        <li>Combinar el tratamiento con una dieta saludable y ejercicio regular.</li>
+        <li>Beber mucha agua.</li>
+        <li>Informar a su médico sobre cualquier otro medicamento que esté tomando.</li>
+    </ul>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        Beneficios para la salud de perder peso con Semaglutida
+    </h2>
+    <p className="w-full list-disc">
+        Perder peso con Semaglutida puede mejorar su salud de muchas maneras, incluyendo:
+    </p>
+    <ul className="w-full translate-x-7 list-disc">
+        <li>
+            Reducir el riesgo de enfermedades crónicas: diabetes tipo 2, enfermedades del corazón, 
+            derrame cerebral y algunos tipos de cáncer.
+        </li>
+        <li>Mejorar la calidad del sueño.</li>
+        <li>Aumentar la energía y vitalidad.</li>
+        <li>Mejorar la autoestima y la confianza en uno mismo.</li>
+    </ul>
+</section>
+<h1 className="bold w-full text-2xl font-bold">FAQ sobre Semaglutida:</h1>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        ¿Es segura la Semaglutida?
+    </h2>
+    <p className="w-full list-disc">
+        La semaglutida ha sido estudiada en miles de personas. Los efectos secundarios más comunes 
+        son náuseas, diarrea y vómitos. Estos efectos secundarios suelen ser leves y desaparecen con el tiempo.
+    </p>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        ¿Cuánto cuesta el tratamiento con Semaglutida?
+    </h2>
+    <p className="w-full list-disc">
+        En la Clínica San Miguel, ofrecemos planes de pago flexibles para hacer 
+        el tratamiento accesible a todos.
+    </p>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <h2 className="w-full text-2xl font-bold text-red-600">
+        ¿Cómo puedo empezar el tratamiento con Semaglutida?
+    </h2>
+    <p className="w-full list-disc">
+        Para comenzar el tratamiento con Semaglutida, solo tiene que acudir a cualquier 
+        ubicación de la Clínica San Miguel, realizaremos estudios para ver el estado 
+        general de su salud y poder hacerle un plan personalizado de pérdida de peso 
+        que se ajuste a sus necesidades. Durante su cita, su médico evaluará su salud 
+        y le ayudará a determinar si la semaglutida es adecuada para usted.
+    </p>
+</section>
+<section className="w-full space-y-3 text-xl">
+    <div>
         <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué es la semaglutidaa?
+            Consejos de nutrición para la pérdida de peso
         </h2>
-        <ol className="w-full">
-          La semaglutida es un medicamento inyectable que se administra una vez
-          por semana. Actúa sobre el sistema nervioso central para reducir el
-          apetito y aumentar la sensación de saciedad, lo que ayuda a comer
-          menos y perder peso.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo actúa Semaglutida?
-        </h2>
-        <p className="w-full">La semaglutida actúa de varias maneras:</p>
+        <br></br>
         <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Reduce el apetito: Disminuye la producción de grelina, la hormona
-            del hambre, lo que hace que sientas menos hambre y te ayuda a comer
-            menos.
-          </li>
-          <li>
-            Aumenta la sensación de saciedad: Estimula la producción de GLP-1,
-            hormona que hace sentir saciedad después de comer.
-          </li>
-          <li>
-            Retrasa el vaciado gástrico: Hace que los alimentos permanezcan más
-            tiempo en el estómago, lo que ayuda a sentir saciedad por más
-            tiempo.
-          </li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué esperar del tratamiento con semaglutida?
-        </h2>
-        <p className="w-full">
-          La mayoría de las personas que toman semaglutida pierden entre el 5 %
-          y el 10 % de su peso corporal en 12 semanas. Además de perder peso,
-          Semaglutida puede mejorar otros aspectos de su salud, como :
-        </p>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Control de azúcar en sangre</li>
-          <li>Presión arterial</li>
-          <li>Colesterol</li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Recomendaciones para el tratamiento con Semaglutida
-        </h2>
-        <p className="w-full list-disc">
-          Para obtener los mejores resultados con Semaglutida, es importante
-          seguir estas recomendaciones:
-        </p>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Combina el tratamiento con una dieta saludable y ejercicio regular.
-          </li>
-          <li>Beber abundante agua.</li>
-          <li>
-            Informe a su médico sobre cualquier otro medicamento que esté
-            tomando.
-          </li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Beneficios para la salud de perder peso con semaglutidas
-        </h2>
-        <p className="w-full list-disc">
-          Perder peso con semaglutida puede mejorar su salud de muchas maneras,
-          entre ellas:
-        </p>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Reducir el riesgo de enfermedades crónicas: diabetes tipo 2,
-            enfermedades cardíacas, accidentes cerebrovasculares y algunos tipos
-            de cáncer.
-          </li>
-          <li>Mejorar la calidad del sueño.</li>
-          <li>Aumentar la energía y la vitalidad.</li>
-          <li>Mejorar la autoestima y la confianza en uno mismo.</li>
-        </ul>
-      </section>
-      <h1 className="bold w-full text-2xl font-bold">
-        Preguntas frecuentes sobre semaglutida:
-      </h1>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Es segura la semaglutida?(feminine)
-        </h2>
-        <p className="w-full list-disc">
-          La semaglutida se ha estudiado en miles de personas. Los efectos
-          secundarios más comunes son náuseas, diarrea y vómitos. Estos efectos
-          secundarios suelen ser leves y desaparecen con el tiempo.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuánto cuesta el tratamiento con Semaglutida?
-        </h2>
-        <p className="w-full list-disc">
-          En Clínica San Miguel ofrecemos planes de pago flexibles para que el
-          tratamiento sea accesible para todos.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo puedo iniciar el tratamiento con Semaglutida?
-        </h2>
-        <p className="w-full list-disc">
-          Para iniciar el tratamiento con Semaglutida sólo tienes que acudir a
-          cualquier localidad de Clínica San Miguel, te realizaremos estudios
-          para ver el estado general de tu salud y poder hacerte un plan de
-          adelgazamiento personalizado y que se ajuste a tus necesidades.
-          Durante su cita, su médico evaluará su salud y lo ayudará a determinar
-          si Se Deglutida es adecuado para usted.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <div>
-          <h2 className="w-full text-2xl font-bold text-red-600">
-            Consejos de nutrición para bajar de peso.
-          </h2>
-          <br></br>
-          <ul className="w-full translate-x-7 list-disc">
-            <li>Coma alimentos integrales y sin procesar.</li>
-            <li>Limita el azúcar y los carbohidratos refinados.</li>
+            <li>Coma alimentos integrales y no procesados.</li>
+            <li>Limite el azúcar y los carbohidratos refinados.</li>
             <li>Elija proteínas magras y grasas saludables.</li>
-          </ul>
-        </div>
-        <p>
-          <span className="font-bold"> Palabras clave : </span>
-          Clínica San Miguel 5712 Fondren RD, Houston, TX 77036 Semaglutida,
-          pérdida de peso, salud, bienestar, tratamiento, dieta, ejercicios
+        </ul>
+    </div>
+    <section>
+        <h2 className="w-full text-2xl font-bold text-red-600">
+            ¡No espere más, dé el primer paso hacia una vida más saludable!
+        </h2>
+        <p className="w-full text-xs font-regular text-grey-100">
+            *Los resultados individuales no están garantizados y pueden variar de persona a persona. 
+            Las imágenes pueden contener modelos.
         </p>
-      </section>
+    </section>
+</section>
+
+      
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
@@ -269,7 +260,7 @@ const Home = () => {
           <li>Improve self-esteem and self-confidence.</li>
         </ul>
       </section>
-      <h1 className="bold w-full text-2xl font-bold">Semaglutide FAQ:</h1>
+      <h1 className="bold w-full text-3xl font-bold font text-red-600">Frequently Asked Questions</h1>
       <section className="w-full space-y-3 text-xl">
         <h2 className="w-full text-2xl font-bold text-red-600">
           Is Semaglutide safe?
@@ -315,11 +306,8 @@ const Home = () => {
           </ul>
         </div>
         <section>
-          <p>
-            <span className="font-bold"> Keywords: </span>
-            Clínica San Miguel 5712 Fondren RD, Houston, TX 77036 Semaglutide,
-            weight loss, health, wellness, treatment, diet, exercises
-          </p>
+        <h2 className="w-full text-2xl font-bold text-red-600">Don't wait any longer, take the first step towards a healthier life!</h2>
+        <p className="w-full text-xs font-regular text-grey-100">*Individual results are not guaranteed and may vary from person to person to person. Images may contain models.</p>
         </section>
       </section>
     </div>

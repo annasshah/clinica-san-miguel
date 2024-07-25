@@ -7,10 +7,10 @@ const Home = () => {
 
   return locale === "es" ? (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
-      <h1 className="text-center text-6xl text-red-600">Perder peso</h1>
+      <h1 className="text-center text-6xl text-red-600">Hipertensión</h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/WartRemoval.png?t=2024-02-18T11%3A06%3A51.049Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/Hypertesion.png"
           width={1000}
           height={1000}
           alt="cover"
@@ -25,129 +25,142 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Eliminación de Verrugas con Cauterización Fácil,
-        Rápida y Sin Necesidad de Cita.
-      </p>
       <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué es la cauterización de verrugas?
-        </h2>
-        <ol className="w-full">
-          <li>
-            Es un procedimiento que utiliza un dispositivo eléctrico para quemar
-            la verruga y eliminarla de la piel. Es un método rápido, seguro y
-            efectivo para eliminar verrugas de diferentes tamaños y ubicaciones.
-          </li>
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo prepararse para el procedimiento?
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Informa a tu médico si tienes alguna condición médica o alergias.
-          </li>
-          <li>
-            Deja de tomar medicamentos anticoagulantes unos días antes del
-            procedimiento.
-          </li>
-          <li>
-            Evita la cafeína y el alcohol 24 horas antes del procedimiento.
-          </li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Qué cuidados se deben tener después del procedimiento?
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Mantén el área limpia y seca.</li>
-          <li>Aplica la pomada antibiótica según las indicaciones.</li>
-          <li>Evita rascarte el área.</li>
-          <li>Protege el área del sol.</li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo saber si es una verruga o un lunar?
-        </h2>
-        <p className="w-full list-disc">
-          Las verrugas son pequeñas protuberancias en la piel que pueden ser
-          marrones, blancas o rosadas. Los lunares son manchas en la piel que
-          pueden tener diferentes colores y tamaños.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cómo reconocer un lunar canceroso?
-        </h2>
-        <p className="w-full list-disc">
-          Los lunares cancerosos generalmente tienen las siguientes
-          características:
-        </p>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Asimetría.</li>
-          <li>Bordes irregulares.</li>
-          <li>Diámetro mayor a 6 milímetros.</li>
-          <li>Cambios en tamaño, forma o color.</li>
-        </ul>
-      </section>
-      <h1 className="bold w-full text-2xl font-bold">
-        Preguntas frecuentes sobre la eliminación de verrugas:
-      </h1>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuánto tiempo dura el procedimiento?
-        </h2>
-        <p className="w-full list-disc">
-          El procedimiento generalmente dura unos minutos.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Es doloroso el procedimiento?
-        </h2>
-        <p className="w-full list-disc">
-          La anestesia local adormece el área, por lo que el procedimiento no es
-          doloroso.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          ¿Cuántas sesiones se necesitan?
-        </h2>
-        <p className="w-full list-disc">
-          En la mayoría de los casos, una sola sesión es suficiente para
-          eliminar la verruga.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <div>
-          <h2 className="w-full text-2xl font-bold text-red-600">
-            Consejos de nutrición para perder peso
-          </h2>
-          <br></br>
-          <ul className="w-full translate-x-7 list-disc">
-            <li>Consume alimentos enteros y no procesados.</li>
-            <li>Limita el consumo de azúcar y carbohidratos refinados.</li>
-            <li>Elige proteínas magras y grasas saludables.</li>
-          </ul>
-        </div>
-        <p>
-          <span className="font-bold"> Palabras clave: </span>
-          Eliminación de verrugas, Cauterización de verrugas, Clínica San
-          Miguel, Verrugas, Lunares, Cáncer de piel
-        </p>
-      </section>
+  <h1 className="w-full text-2xl font-bold text-red-600">
+    Clínica San Miguel: Tu Centro de Excelencia para el Tratamiento de la Hipertensión
+  </h1>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Qué es la Hipertensión o Alta Presión?
+  </h2>
+  <p>
+    La hipertensión, también conocida como presión arterial alta, es una condición en la que la fuerza ejercida por la sangre contra las paredes de las arterias es demasiado alta. Esta presión puede dañar las arterias y aumentar el riesgo de enfermedades cardíacas, accidentes cerebrovasculares, insuficiencia renal y otras complicaciones graves.
+  </p>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Por qué es Importante Tratar la Hipertensión?
+  </h2>
+  <p>
+    Si no se trata, la hipertensión puede causar problemas de salud graves. Es importante controlar la presión arterial para reducir el riesgo de complicaciones.
+  </p>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Complicaciones de la Hipertensión:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>Infarto</li>
+    <li>Accidente cerebrovascular</li>
+    <li>Insuficiencia renal</li>
+    <li>Daño ocular</li>
+    <li>Daño nervioso</li>
+    <li>Demencia</li>
+  </ul>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Seguimiento de la Hipertensión o Alta Presión:
+  </h2>
+  <p>
+    Es importante que las personas con hipertensión controlen su presión arterial regularmente. Esto se puede hacer en casa con un monitor de presión arterial o en el consultorio de un médico.
+  </p>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Recomendaciones para Controlar la Hipertensión:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>Mantener una dieta saludable</li>
+    <li>Hacer ejercicio regularmente</li>
+    <li>Mantener un peso saludable</li>
+    <li>No fumar</li>
+    <li>Limitar el consumo de alcohol</li>
+    <li>Controlar el estrés</li>
+  </ul>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Beneficios para la Salud de Controlar la Hipertensión:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>Reduce el riesgo de enfermedades cardíacas, accidentes cerebrovasculares y otras complicaciones graves</li>
+    <li>Mejora la calidad de vida</li>
+    <li>Puede prolongar la vida</li>
+  </ul>
+</section>
+
+<h1 className="bold w-full text-3xl font-bold text-red-600">Preguntas Frecuentes</h1>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Cuáles son los síntomas de la hipertensión?
+  </h2>
+  <p>
+    La mayoría de las personas con hipertensión no tienen ningún síntoma. Por eso es importante controlar la presión arterial regularmente.
+  </p>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Qué causa la hipertensión?
+  </h2>
+  <p>
+    En muchos casos, la causa de la hipertensión es desconocida. Sin embargo, hay algunos factores que pueden aumentar el riesgo de desarrollar hipertensión, como:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>Edad</li>
+    <li>Antecedentes familiares de hipertensión</li>
+    <li>Obesidad</li>
+    <li>Falta de ejercicio</li>
+    <li>Dieta poco saludable</li>
+    <li>Consumo excesivo de alcohol</li>
+    <li>Fumar</li>
+    <li>Estrés</li>
+  </ul>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Cómo se diagnostica la hipertensión?
+  </h2>
+  <p>
+    La hipertensión se diagnostica midiendo la presión arterial. La presión arterial se mide en dos números:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>
+      <b>Presión arterial sistólica</b> es el número superior. Mide la presión arterial cuando el corazón late.
+    </li>
+    <li>
+      <b>Presión arterial diastólica</b> es el número inferior. Mide la presión arterial cuando el corazón está en reposo.
+    </li>
+  </ul>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    ¿Cómo se trata la hipertensión?
+  </h2>
+  <p>
+    El tratamiento para la hipertensión depende de la gravedad de la condición. En algunos casos, los cambios en el estilo de vida pueden ser suficientes para controlar la presión arterial. En otros casos, se necesitan medicamentos.
+  </p>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Disponibilidad de la Clínica sin Cita Previa:
+  </h2>
+  <p>
+    No necesitas hacer una cita. Puedes acudir a cualquiera de nuestras ubicaciones. Estamos abiertos los 7 días de la semana.
+  </p>
+</section>
+
+<h2 className="w-full text-2xl font-bold text-red-600">
+  Atención Integral, Conveniente y Compasiva en la Clínica San Miguel.
+</h2>
+
     </div>
   ) : (
     <div className="mx-auto flex flex-col items-center gap-10 px-5 py-5 font-semibold text-black lg:w-4/5 xl:px-20">
       <h1 className="text-center text-6xl text-red-600">Hypertension</h1>
       <div className="flex w-full flex-col lg:flex-row">
         <Image
-          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/bloodtest.png?t=2024-02-18T11%3A20%3A20.307Z"
+          src="https://vsvueqtgulraaczqnnvh.supabase.co/storage/v1/object/public/services_images/Hypertesion.png"
           width={1000}
           height={1000}
           alt="cover"
@@ -161,173 +174,135 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <p className="w-full text-2xl">
-        Clínica San Miguel: Your ally for comprehensive well-being
-      </p>
       <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          What are blood tests?
-        </h2>
-        <ol className="w-full">
-          Blood tests are tests performed on a sample of your blood to evaluate
-          your health. These tests can help diagnose diseases, monitor your
-          health, and manage treatment for certain conditions.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Why is it important to have blood tests?
-        </h2>
-        <ol className="w-full">
-          Blood tests are an important tool for the early detection of diseases,
-          even before symptoms appear. They can also help determine the cause of
-          symptoms you are already experiencing, such as fatigue, pain, or
-          weight loss.
-        </ol>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How to prepare for a blood test?
-        </h2>
-        <ol className="w-full">
-          In general, no special preparation is required for most blood tests.
-          However, it is important that you follow your doctor&apos;s
-          instructions regarding fasting or stopping certain medications before
-          the exam.
-        </ol>
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Recommendations:
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>
-            Consult with your doctor at Clínica San Miguel to determine which
-            blood tests are right for you.
-          </li>
-          <li>
-            Tell us about any medications you are taking, including vitamins and
-            supplements.
-          </li>
-          <li>
-            If you feel nervous or anxious about the exam , breathe deeply and
-            try to relax.
-          </li>
-        </ul>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Health benefits
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Early detection of diseases.</li>
-          <li>Health status monitoring.</li>
-          <li>Treatment control of diseases.</li>
-          <li>Prevention of complications.</li>
-          <li>Improvement of quality of life</li>{" "}
-        </ul>
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How quickly will my test results be available?
-        </h2>
-        <p className="w-full list-disc">
-          Blood test results are generally available in 24-48 hours
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How much do blood tests cost?
-        </h2>
-        <p className="w-full list-disc">
-          The cost of blood tests varies depending on the type of exam you take.
-          Check with your health insurance to see if it covers the costs of the
-          test.
-        </p>
-      </section>
-      <h1 className="bold w-full text-2xl font-bold">Wart Removal FAQs:</h1>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          What should I do if my test results are abnormal?
-        </h2>
-        <p className="w-full list-disc">
-          If your test results are abnormal, your doctor will tell you and
-          explain what it means for your health.
-        </p>
-      </section>
+  <h1 className="w-full text-2xl font-bold text-red-600">
+    San Miguel Clinic: Your Center of Excellence for Hypertension Treatment
+  </h1>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    What is Hypertension or High Pressure?
+  </h2>
+  <p>
+    Hypertension, also known as high blood pressure, is a condition in which the force exerted by blood against the walls of the arteries is too high. This pressure can damage the arteries and increase the risk of heart disease, stroke, kidney failure, and other serious complications.
+  </p>
+</section>
 
-      <h1 className="bold w-full text-2xl font-bold">
-        Types of blood tests we offer:
-      </h1>
-      <p className="w-full list-disc">
-        Blood tests are a fundamental tool for the diagnosis and monitoring of a
-        wide variety of diseases and conditions. They can be performed to:
-      </p>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Why is it Important to Treat Hypertension?
+  </h2>
+  <p>
+    If left untreated, hypertension can cause serious health problems. It is important to control blood pressure to reduce the risk of complications.
+  </p>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Complications of Hypertension:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>Heart attack</li>
+    <li>Stroke</li>
+    <li>Kidney failure</li>
+    <li>Eye damage</li>
+    <li>Nerve damage</li>
+    <li>Dementia</li>
+  </ul>
+</section>
 
-      <ol className="w-full">
-        Blood tests are tests performed on a sample of your blood to evaluate
-        your health. These tests can help diagnose diseases, monitor your
-        health, and manage treatment for certain conditions.
-      </ol>
-      <ul className="w-full translate-x-7 list-disc">
-        <li>Glucose: to detect diabetes.</li>
-        <li>
-          Cholesterol and triglycerides: to assess the risk of heart disease .
-        </li>
-        <li>Hormones: to evaluate thyroid function, fertility, etc.</li>
-        <li>Electrolytes: to control the balance of sodium, potassium, etc.</li>
-        <li>Proteins: to evaluate kidney and liver function, etc.</li>{" "}
-      </ul>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Follow-up of Hypertension or High Pressure:
+  </h2>
+  <p>
+    It is important for people with hypertension to check their blood pressure regularly. This can be done at home with a blood pressure monitor or in a doctor's office.
+  </p>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Recommendations for Controlling Hypertension:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>Maintain a healthy diet</li>
+    <li>Exercise regularly</li>
+    <li>Maintain a healthy weight</li>
+    <li>Don't smoke</li>
+    <li>Limit alcohol consumption</li>
+    <li>Control stress</li>
+  </ul>
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Health Benefits of Controlling Hypertension:
+  </h2>
+  <ul className="list-disc pl-5">
+    <li>Reduces the risk of heart disease, stroke, and other serious complications</li>
+    <li>Improves quality of life</li>
+    <li>Can prolong life</li>
+  </ul>
+</section>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Detect infections:
-        </h2>
-        <ul className="w-full translate-x-7 list-disc">
-          <li>Blood culture: to detect bacteria in the blood.</li>
-          <li>
-            Serological tests: to detect antibodies against viruses, bacteria or
-            parasites.
-          </li>
-        </ul>
-        <p className="w-full list-disc">
-          If your test results are abnormal, your doctor will tell you and
-          explain what it means for your health.
-        </p>
-      </section>
+<h1 className="bold w-full text-3xl font-bold text-red-600">Frequently Asked Questions</h1>
 
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          Is it Is the procedure painful?
-        </h2>
-        <p className="w-full list-disc">
-          Local anesthesia numbs the area, so the procedure is not painful.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <h2 className="w-full text-2xl font-bold text-red-600">
-          How many sessions are needed?
-        </h2>
-        <p className="w-full list-disc">
-          In most cases, a single session is enough to delete la verruga.
-        </p>
-      </section>
-      <section className="w-full space-y-3 text-xl">
-        <div>
-          <h2 className="w-full text-2xl font-bold text-red-600">
-            Nutrition tips for weight loss
-          </h2>
-          <br></br>
-          <ul className="w-full translate-x-7 list-disc">
-            <li>Eat whole, unprocessed foods.</li>
-            <li>Limit sugar and refined carbohydrates.</li>
-            <li>Choose lean proteins and healthy fats.</li>
-          </ul>
-        </div>
-        <p>
-          <span className="font-bold"> Keywords: </span>
-          blood test, health problems, early detection of diseases, blood tests,
-          thyroid test, cholesterol test, exam triglyceride test, diabetes test,
-          sexually transmitted disease (STD) test, pregnancy test, prostate
-          test. blood, sugar test, iron test
-        </p>
-      </section>
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    What are the symptoms of hypertension?
+  </h2>
+  <p>
+    Most people with hypertension do not have any symptoms. That's why it's important to check your blood pressure regularly.
+  </p>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    What causes hypertension?
+  </h2>
+  <p>
+    In many cases, the cause of hypertension is unknown. However, there are some factors that can increase the risk of developing hypertension, such as:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>Age</li>
+    <li>Family history of hypertension</li>
+    <li>Obesity</li>
+    <li>Lack of exercise</li>
+    <li>Unhealthy diet</li>
+    <li>Excessive alcohol consumption</li>
+    <li>Smoking</li>
+    <li>Stress</li>
+  </ul>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    How is hypertension diagnosed?
+  </h2>
+  <p>
+    Hypertension is diagnosed by measuring blood pressure. Blood pressure is measured in two numbers:
+  </p>
+  <ul className="list-disc pl-5">
+    <li>
+      <b>Systolic blood pressure</b> is the upper number. It measures blood pressure when the heart beats.
+    </li>
+    <li>
+      <b>Diastolic blood pressure</b> is the bottom number. It measures blood pressure when the heart is at rest.
+    </li>
+  </ul>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    How is hypertension treated?
+  </h2>
+  <p>
+    Treatment for hypertension depends on the severity of the condition. In some cases, lifestyle changes may be enough to control blood pressure. In other cases, medications are needed.
+  </p>
+</section>
+
+<section className="w-full space-y-3 text-xl">
+  <h2 className="w-full text-2xl font-bold text-red-600">
+    Walk-In Clinic Availability:
+  </h2>
+  <p>
+    You do not need to make an appointment. You can go to any of our locations. We are open 7 days a week.
+  </p>
+</section>
+
+<h2 className="w-full text-2xl font-bold text-red-600">
+  Comprehensive, Convenient, and Compassionate Care at San Miguel Clinic.
+</h2>
+
     </div>
   );
 };
