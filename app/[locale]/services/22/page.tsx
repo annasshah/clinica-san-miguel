@@ -211,7 +211,7 @@ const Home = () => {
     Follow-up of Hypertension or High Pressure:
   </h2>
   <p>
-    It is important for people with hypertension to check their blood pressure regularly. This can be done at home with a blood pressure monitor or in a doctor's office.
+    It is important for people with hypertension to check their blood pressure regularly. This can be done at home with a blood pressure monitor or in a doctor&apos;s office.
   </p>
   <h2 className="w-full text-2xl font-bold text-red-600">
     Recommendations for Controlling Hypertension:
@@ -220,7 +220,7 @@ const Home = () => {
     <li>Maintain a healthy diet</li>
     <li>Exercise regularly</li>
     <li>Maintain a healthy weight</li>
-    <li>Don't smoke</li>
+    <li>Don&apos;t smoke</li>
     <li>Limit alcohol consumption</li>
     <li>Control stress</li>
   </ul>
@@ -241,7 +241,7 @@ const Home = () => {
     What are the symptoms of hypertension?
   </h2>
   <p>
-    Most people with hypertension do not have any symptoms. That's why it's important to check your blood pressure regularly.
+    Most people with hypertension do not have any symptoms. That&apos;s why it&apos;s important to check your blood pressure regularly.
   </p>
 </section>
 

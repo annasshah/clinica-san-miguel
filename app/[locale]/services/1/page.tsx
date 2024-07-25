@@ -306,7 +306,7 @@ const Home = () => {
           </ul>
         </div>
         <section>
-        <h2 className="w-full text-2xl font-bold text-red-600">Don't wait any longer, take the first step towards a healthier life!</h2>
+        <h2 className="w-full text-2xl font-bold text-red-600">Don&apos;t wait any longer, take the first step towards a healthier life!</h2>
         <p className="w-full text-xs font-regular text-grey-100">*Individual results are not guaranteed and may vary from person to person to person. Images may contain models.</p>
         </section>
       </section>

@@ -158,7 +158,7 @@ const Home = () => {
     Follow-up and Recommendations after Drainage:
   </h2>
   <p>
-    After drainage of the abscess, it is important to follow the doctor's recommendations to avoid complications. These recommendations may include:
+    After drainage of the abscess, it is important to follow the doctor&apos;s recommendations to avoid complications. These recommendations may include:
   </p>
   <ul className="list-disc pl-5">
     <li>Take antibiotics</li>

@@ -266,7 +266,7 @@ const Home = () => {
     Frequently Asked Questions:
   </h2>
   <h3 className="w-full text-xl font-bold text-red-600">
-    What should I bring to my doctor's appointment?
+    What should I bring to my doctor&apos;s appointment?
   </h3>
   <p>
     A list of your current medications and any questions you have for your doctor.

@@ -186,7 +186,7 @@ const Home = () => {
           How is an ultrasound performed?
         </h2>
         <p className="w-full list-disc">
-          An ultrasound can be performed in several ways, depending on the area of the body being examined. Generally, an ultrasound technician will apply a conductive gel to the patient's skin and then pass a transducer over the skin. The transducer emits sound waves and collects reflections.
+          An ultrasound can be performed in several ways, depending on the area of the body being examined. Generally, an ultrasound technician will apply a conductive gel to the patient&apos;s skin and then pass a transducer over the skin. The transducer emits sound waves and collects reflections.
         </p>
       </section>
       <section className="w-full space-y-3 text-xl">

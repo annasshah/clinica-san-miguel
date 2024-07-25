@@ -173,7 +173,7 @@ const Home = () => {
           What happens if I don&apos;t pass the DOT test?
         </h2>
         <ul>
-          If you don't pass the DOT test , you will be given a list of
+          If you don&apos;t pass the DOT test , you will be given a list of
           reasons why you did not pass. You will need to address these concerns
           before you can retake the exam.
         </ul>

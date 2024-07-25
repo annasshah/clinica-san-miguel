@@ -136,7 +136,7 @@ const Home = () => {
         <li>Manage stress.</li>
         <li>Undergo regular medical checkups.</li>
       </section>
-      <h2 className="w-full text-2xl font-bold text-red-600">Don't wait any longer, take the first step towards a healthier life!</h2>
+      <h2 className="w-full text-2xl font-bold text-red-600">Don&apos;t wait any longer, take the first step towards a healthier life!</h2>
 
     </div>
   );

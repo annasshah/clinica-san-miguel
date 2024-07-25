@@ -179,7 +179,7 @@ const Home = () => {
           Who should be tested for Pap test?
         </h2>
         <p className="w-full list-disc">
-        All women who have had sexual relations should have a Pap test. How often the test should be performed depends on the woman's age and health history.
+        All women who have had sexual relations should have a Pap test. How often the test should be performed depends on the woman&apos;s age and health history.
         </p>
       </section>
       <section className="w-full space-y-3 text-xl">
@@ -214,7 +214,7 @@ const Home = () => {
           What happens during a Pap test?
           </h2>
           <br></br>
-          <p>The Pap test is done in your doctor's office. The doctor or nurse will place a speculum inside your vagina to open it. Then, using a brush or spatula, he or she will take a sample of cells from your cervix.. The sample will be sent to the laboratory for analysis.</p>
+          <p>The Pap test is done in your doctor&apos;s office. The doctor or nurse will place a speculum inside your vagina to open it. Then, using a brush or spatula, he or she will take a sample of cells from your cervix.. The sample will be sent to the laboratory for analysis.</p>
         </div>
       </section>
       <section className="w-full space-y-3 text-xl">
@@ -241,10 +241,10 @@ const Home = () => {
           Where can I get the test Pap test?
           </h2>
           <br></br>
-          <p>The Pap test can be done in your doctor's office, at a health clinic, or at a primary care center.</p>
+          <p>The Pap test can be done in your doctor&apos;s office, at a health clinic, or at a primary care center.</p>
         </div>
       </section>
-      <h2 className="w-full text-2xl font-bold text-red-600">Early Detection: Essential Pap Smear Testing for Women's Health.</h2>
+      <h2 className="w-full text-2xl font-bold text-red-600">Early Detection: Essential Pap Smear Testing for Women&apos;s Health.</h2>
 
     </div>
   );

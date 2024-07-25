@@ -169,7 +169,7 @@ const Home = () => {
       What is diabetes?
     </h3>
     <p>
-      Diabetes is a chronic disease that affects how the body regulates sugar (glucose) in the blood. Glucose is the body's main source of energy and comes from the food we eat.
+      Diabetes is a chronic disease that affects how the body regulates sugar (glucose) in the blood. Glucose is the body&apos;s main source of energy and comes from the food we eat.
     </p>
    
   </div>

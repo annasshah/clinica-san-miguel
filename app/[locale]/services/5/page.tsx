@@ -221,7 +221,7 @@ const Home = () => {
       </section>
 
       
-      <h2 className="w-full text-2xl font-bold text-red-600">We hope to help you take care of your child's health.</h2>
+      <h2 className="w-full text-2xl font-bold text-red-600">We hope to help you take care of your child&apos;s health.</h2>
       
     </div>
   );

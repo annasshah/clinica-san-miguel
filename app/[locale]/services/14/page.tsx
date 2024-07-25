@@ -278,7 +278,7 @@ const Home = () => {
           physicals, please contact us.
         </p>
       </section>
-      <h2 className="w-full text-2xl font-bold text-red-600">School Physicals: Ensure Your Child's Health and Safety.</h2>
+      <h2 className="w-full text-2xl font-bold text-red-600">School Physicals: Ensure Your Child&apos;s Health and Safety.</h2>
 
     </div>
   );

@@ -44,7 +44,7 @@ const Home = () => {
           <section className="w-full space-y-3 text-xl">
             <h2 className="w-full text-2xl font-bold text-red-600">Diagnóstico</h2>
             <p>
-              Por lo general, se realiza una prueba de sangre para monitorear los niveles de colesterol, llamada "lípidograma" o "perfil lipídico", que informa lo siguiente:
+              Por lo general, se realiza una prueba de sangre para monitorear los niveles de colesterol, llamada &quot;lípidograma&quot; o &quot;perfil lipídico&quot;, que informa lo siguiente:
             </p>
             <li>Colesterol total</li>
             <li>Colesterol LDL</li>
