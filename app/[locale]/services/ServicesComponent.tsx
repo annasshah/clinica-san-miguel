@@ -3,6 +3,7 @@
 import { CompactService } from "@/components";
 import { useSupabase } from "@/context/supabaseContext";
 import { useLocale } from "next-intl";
+import { useMemo } from "react";
 
 export const ServicesComponent = () => {
   const locale = useLocale();
@@ -11,9 +12,15 @@ export const ServicesComponent = () => {
 
   const data = locale === "es" ? services_es : services;
 
+  const sortedData = useMemo(() => {
+    return [...data].sort((a, b) => a.id - b.id);
+  }, [data, locale]);
+
+
+  useMemo
   return (
     <article className="flex flex-wrap justify-center items-center gap-5">
-      {data.map((service) => (
+      {sortedData.map((service) => (
         <CompactService
           id={service.id}
           heading={service.title}

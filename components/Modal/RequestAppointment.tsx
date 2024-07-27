@@ -393,7 +393,7 @@ export const RequestAppointment = ({
                 data={detailedData[0]}
                 selectDateTimeSlotHandle={selectDateTimeSlotHandle}
               />
-              <div className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
+              <div className="flex flex-col md:flex-row justify-start w-full gap-5 items-center">
                 <Dropdown
                   label={t("form_f10")}
                   options={services}
