@@ -28,13 +28,13 @@ export const GroupedLocations = () => {
     },
     {
       id: 3,
-      name: "Houstan",
+      name: "Houston",
       value: "B",
       location: "1vrLm72whzL6KBgr7n_C2RfoeO1fH1u8&ehbc=2E312F",
     },
     {
       id: 4,
-      name: "San Antanio",
+      name: "San Antonio",
       value: "C",
       location: "1cwsxmz-1Sm0zYTFaNizGELErRpCQf_I&ehbc=2E312F",
     },

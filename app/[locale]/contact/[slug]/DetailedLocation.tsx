@@ -171,9 +171,13 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
     {}
   );
 
+  const transformLableCase = (label: string) => {
+    return label.toLowerCase().replace(/\b\w/g, (s) => s.toUpperCase());
+  };
+
   const displayTimings = Object.entries(groupedTimings).map(
     ([timing, days]: [string, string[]]) => {
-      const daysString = days.join(", ");
+      const daysString = days.map((lable) => transformLableCase(lable)).join(", ");
       return (
         <p
           key={timing}
@@ -314,7 +318,7 @@ export const DetailedLocation = ({ slug }: { slug: string }) => {
         </section>
       </main>
       <RequestAppointment
-      detailedData={detailedData}
+        detailedData={detailedData}
         locationID={parseInt(slug)}
         handleClose={handleCloseModal}
         openModal={openAppointmentModal}

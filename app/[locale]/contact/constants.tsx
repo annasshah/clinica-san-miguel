@@ -11,8 +11,8 @@ export const LocationsData = () => {
   const [selectedLocationGroup, setSelectedLocationGroup] = useState("");
   const tabs = [
     { id: 2, name: "Dallas", value: "A" },
-    { id: 3, name: "Houstan", value: "B" },
-    { id: 4, name: "San Antanio", value: "C" },
+    { id: 3, name: "Houston", value: "B" },
+    { id: 4, name: "San Antonio", value: "C" },
   ];
 
   useEffect(() => {

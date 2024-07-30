@@ -57,7 +57,7 @@ export const Footer = () => {
         <ul className="flex flex-wrap gap-10 justify-center items-center my-10">
           {pages.map((page) => (
             <Link href={page.route} key={page.id}>
-              <li className="text-[#F8F5F0] font-poppins lowercase text-[16px]">
+              <li className="text-[#F8F5F0] font-poppins  text-[16px]">
                 {page.name}
               </li>
             </Link>
