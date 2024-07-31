@@ -58,7 +58,7 @@ const Special = ({ params: { locale } }: { params: { locale: string } }) => {
                 <Image
                   src={poster.image}
                   alt={""}
-                  className="rounded-[20px] aspect-auto w-[340px] md:w-[500px] lg:w-[700px]"
+                  className="rounded-[20px] h-full aspect-auto w-[340px] md:w-[500px] lg:w-[700px]"
                 />
               </div>
             </article>
