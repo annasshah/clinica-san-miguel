@@ -219,6 +219,7 @@ export const RequestAppointment = ({
       new_patient: newPatient === "new" || false,
       dob: dob,
       sex: sex,
+      phone: phone,
       service: service,
       date_and_time
     };
@@ -231,6 +232,7 @@ export const RequestAppointment = ({
       "address",
       "dob",
       "sex",
+      "phone",
       "date_and_time",
       "service",
     ];
@@ -280,9 +282,9 @@ export const RequestAppointment = ({
   const selectDateTimeSlotHandle = (date: Date | '', time?: string | '') => {
     if (date && time) {
       const formated_date = moment(date).format('DD-MM-YYYY')
-      
+
       const createSlotForDB = `${detailedData?.[0]?.id}|${formated_date} - ${time}`
-      console.log({createSlotForDB})
+      console.log({ createSlotForDB })
       setDate_and_time(createSlotForDB)
     } else {
       setDate_and_time('')
