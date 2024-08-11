@@ -2,7 +2,7 @@ import { career_cover } from "@/assets/images";
 import { Locations, Services, Testimonials } from "@/sections";
 
 import Image from "next/image";
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 import { Opportunities } from "@/sections/Career/Opportunities";
 import { useTranslations } from "next-intl";
 

@@ -3,7 +3,7 @@
 import { AdditionalService } from "@/components";
 import { Locations, Services, Testimonials } from "@/sections";
 import { additionalServices } from "@/constants";
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 
 const AdditionalServices = () => {
   return (

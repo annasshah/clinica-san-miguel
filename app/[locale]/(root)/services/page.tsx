@@ -1,4 +1,4 @@
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 import { ServicesComponent } from "./ServicesComponent";
 import { useTranslations } from "next-intl";
 

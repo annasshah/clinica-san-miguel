@@ -1,5 +1,5 @@
 import { Testimonials } from "@/sections";
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 
 import { LocationsData } from "./constants";
 import { useTranslations } from "next-intl";

@@ -1,5 +1,5 @@
 import { Testimonials } from "@/sections";
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 
 import Image from "next/image";
 import {

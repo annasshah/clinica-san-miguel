@@ -5,7 +5,7 @@ import { ExpandedTestimonial } from "@/components";
 import { Button } from "@/utils";
 
 // import StarRatings from "react-star-ratings";
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 
 const Testimonials = () => {
   const review_description =

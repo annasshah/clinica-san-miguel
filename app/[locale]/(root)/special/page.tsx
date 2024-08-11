@@ -6,7 +6,7 @@ import {
 } from "@/assets/images";
 import { Locations, Services, Testimonials } from "@/sections";
 import Image from "next/image";
-import { styles } from "../styles";
+import { styles } from "@/app/[locale]/styles";
 import { useTranslations } from "next-intl";
 
 const Special = ({ params: { locale } }: { params: { locale: string } }) => {
