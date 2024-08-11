@@ -11,6 +11,7 @@ import moment from "moment";
 
 import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
+import LanguageChanger from "@/components/LanguageChanger";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -131,11 +132,13 @@ const Dropdown = ({
   breakpoint,
   value,
   onChange,
+  startingSelectedOption
 }: {
   label: string;
   options: string[] | null | undefined;
   breakpoint: boolean;
   value: string;
+  startingSelectedOption?:boolean;
   onChange: (value: string) => void;
 }) => (
   <div
@@ -150,6 +153,9 @@ const Dropdown = ({
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >
+      {startingSelectedOption && <option value='' selected disabled>
+        {label}
+      </option>}
       {options?.map((option, index) => (
         <option key={index} value={option}>
           {option}
@@ -170,20 +176,16 @@ const Self_Appointment = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [dob, setDob] = useState<Date | null>(null);
   const [sex, setSex] = useState("");
   const [services, setServices] = useState<string[] | null | undefined>([]);
   const [locations, setLocations] = useState<any>([]);
   const [locationID, setLocationID] = useState("")
   const [locationVal, setlocationVal] = useState("")
   const [service, setService] = useState("");
-  const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [inOfficePatient, setInOfficePatient] = useState("");
   const [newPatient, setNewPatient] = useState("");
   const [date_and_time, setDate_and_time] = useState("");
 
-  const visitType = [t("form_f1a"), t("form_f1b")];
   const patientType = [t("form_f2a"), t("form_f2b")];
   const genderOptions = [t("form_f8a"), t("form_f8b"), t("form_f8c")];
 
@@ -218,23 +220,22 @@ const Self_Appointment = () => {
       location_id: locationID,
       first_name: firstName,
       last_name: lastName,
-      email_Address: email,
-      address: address,
-      in_office_patient: inOfficePatient === "In-Office Visit" || false,
+      email_address: email,
+      in_office_patient: true,
+      dob: new Date(),
+      address: '-',
       new_patient: newPatient === "new" || false,
-      dob: dob,
       sex: sex,
       phone: phone,
       service: service,
+      date_and_time: null
     };
 
     const requiredFields = [
       "location_id",
       "first_name",
       "last_name",
-      "email_Address",
-      "address",
-      "dob",
+      "email_address",
       "sex",
       "phone",
       "service",
@@ -267,14 +268,11 @@ const Self_Appointment = () => {
       setFirstName("");
       setLastName("");
       setEmail("");
-      setDob(null);
       setSex("");
       setServices([]);
       setService("");
       setlocationVal("");
-      setAddress("");
       setPhone("");
-      setInOfficePatient("");
       setNewPatient("");
       setDate_and_time("");
       console.log(data, "Appointment Submitted");
@@ -294,13 +292,19 @@ const Self_Appointment = () => {
     setlocationVal(selected)
     console.log(locations)
   }
-  return (
-    <div className="w-full flex justify-center">
-      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
+  return (<>
 
-      <div className="w-full max-w-[800px] rounded-[20px] bg-[#F8F5F0]">
+   
+    <div className=" relative  w-screen h-screen flex justify-center items-center">
 
-        <div className="flex w-full justify-center">
+    <div className="absolute w-full flex justify-end top-6 right-6">
+      <LanguageChanger locale={locale} />
+    </div>
+
+
+      <div className="w-full max-w-[800px] rounded-[20px]  gap-y-5">
+
+        <div className="flex w-full justify-center pb-5">
           <h1
             className={`${styles.sectionHeadText} border-b-[1px] border-black px-4 pb-3`}
             style={{ textAlign: "left", color: "#C1001F" }}
@@ -309,13 +313,6 @@ const Self_Appointment = () => {
           </h1>
         </div>
         <section className="flex flex-col px-5 justify-start items-start gap-4 p-4">
-          <RadioButtons
-            name="visit type"
-            options={visitType}
-            label={t("form_f1")}
-            onChange={setInOfficePatient}
-            selectedValue={inOfficePatient}
-          />
           <RadioButtons
             name="patient type"
             options={patientType}
@@ -330,8 +327,9 @@ const Self_Appointment = () => {
               breakpoint={true}
               onChange={setService}
               value={service}
-            />
+              />
             <Dropdown
+              startingSelectedOption={true}
               label={t("location_label")}
               options={locations.map((item: any) => item.address)}
               breakpoint={true}
@@ -362,22 +360,6 @@ const Self_Appointment = () => {
             onChange={setEmail}
             value={email}
           />
-          <article className="flex flex-col md:flex-row justify-center w-full gap-5 items-center">
-            <Input
-              label={t("form_f6")}
-              placeholder="ex. (+92) 331 2566730"
-              breakpoint={true}
-              onChange={setPhone}
-              value={phone}
-            />
-            <DatePicker
-              label={t("form_f7")}
-              placeholder="your date of birth"
-              breakpoint={true}
-              onChange={setDob}
-              value={dob}
-            />
-          </article>
           <RadioButtons
             name="gender"
             options={genderOptions}
@@ -385,16 +367,15 @@ const Self_Appointment = () => {
             onChange={setSex}
             selectedValue={sex}
           />
-          <Input
-            label={t("form_f9")}
-            placeholder="enter your address with zip code."
-            breakpoint={false}
-            onChange={setAddress}
-            value={address}
-          />
-
-
-
+          <article className="flex flex-col md:flex-row justify-start w-full gap-5 items-center">
+            <Input
+              label={t("form_f6")}
+              placeholder="ex. (+92) 331 2566730"
+              breakpoint={true}
+              onChange={setPhone}
+              value={phone}
+            />
+          </article>
 
         </section>
 
@@ -412,7 +393,7 @@ const Self_Appointment = () => {
         </div>
 
       </div>
-    </div>
+    </div></>
   );
 };
 
