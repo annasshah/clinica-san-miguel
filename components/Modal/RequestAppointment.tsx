@@ -266,7 +266,6 @@ export const RequestAppointment = ({
       setEmail("");
       setDob(null);
       setSex("");
-      setServices([]);
       setService("");
       setAddress("");
       setPhone("");

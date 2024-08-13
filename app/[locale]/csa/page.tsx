@@ -138,32 +138,41 @@ const Dropdown = ({
   options: string[] | null | undefined;
   breakpoint: boolean;
   value: string;
-  startingSelectedOption?:boolean;
+  startingSelectedOption?: boolean;
   onChange: (value: string) => void;
-}) => (
-  <div
-    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
-      } justify-center`}
-  >
-    <label className="text-[16px] text-customGray font-poppins font-bold">
-      {label}:
-    </label>
-    <select
-      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
+
+
+}
+
+
+) => {
+
+  const t = useTranslations("appoinment_form");
+  return (
+    <div
+      className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+        } justify-center`}
     >
-      {startingSelectedOption && <option value='' selected disabled>
-        {label}
-      </option>}
-      {options?.map((option, index) => (
-        <option key={index} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
-  </div>
-);
+      <label className="text-[16px] text-customGray font-poppins font-bold">
+        {label}:
+      </label>
+      <select
+        className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      >
+        {startingSelectedOption && <option value='' selected disabled>
+          {t("select_label")} {label}
+        </option>}
+        {options?.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
+  )
+};
 
 const Self_Appointment = () => {
   const t = useTranslations("appoinment_form");
@@ -269,7 +278,6 @@ const Self_Appointment = () => {
       setLastName("");
       setEmail("");
       setSex("");
-      setServices([]);
       setService("");
       setlocationVal("");
       setPhone("");
@@ -294,12 +302,12 @@ const Self_Appointment = () => {
   }
   return (<>
 
-   
+
     <div className=" relative  w-screen h-screen flex justify-center items-center">
 
-    <div className="absolute w-full flex justify-end top-6 right-6">
-      <LanguageChanger locale={locale} />
-    </div>
+      <div className="absolute w-full flex justify-end top-6 right-6">
+        <LanguageChanger locale={locale} />
+      </div>
 
 
       <div className="w-full max-w-[800px] rounded-[20px]  gap-y-5">
@@ -327,7 +335,7 @@ const Self_Appointment = () => {
               breakpoint={true}
               onChange={setService}
               value={service}
-              />
+            />
             <Dropdown
               startingSelectedOption={true}
               label={t("location_label")}
