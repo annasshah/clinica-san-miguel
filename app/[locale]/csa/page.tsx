@@ -226,28 +226,23 @@ const Self_Appointment = () => {
 
   const submitAppointmentDetails = async () => {
     let appointmentDetails: any = {
-      location_id: locationID,
-      first_name: firstName,
-      last_name: lastName,
-      email_address: email,
-      in_office_patient: true,
-      dob: new Date(),
-      address: '-',
-      new_patient: newPatient === "new" || false,
-      sex: sex,
+      locationid: locationID,
+      firstname: firstName,
+      lastname: lastName,
+      email: email,
+      gender: sex,
       phone: phone,
-      service: service,
-      date_and_time: null
+      treatmenttype: service,
     };
 
     const requiredFields = [
-      "location_id",
-      "first_name",
-      "last_name",
-      "email_address",
-      "sex",
-      "phone",
-      "service",
+      'locationid',
+      'firstname',
+      'lastname',
+      'email',
+      'gender',
+      'phone',
+      'treatmenttype',
     ];
 
     for (const field of requiredFields) {
@@ -258,11 +253,9 @@ const Self_Appointment = () => {
     }
 
     const postData = {
-      ...appointmentDetails,
-      date_and_time,
-    }
+      ...appointmentDetails    }
     const { data, error } = await supabase
-      .from("Appoinments")
+      .from("pos")
       .insert([postData])
       .select();
 
@@ -321,13 +314,6 @@ const Self_Appointment = () => {
           </h1>
         </div>
         <section className="flex flex-col px-5 justify-start items-start gap-4 p-4">
-          <RadioButtons
-            name="patient type"
-            options={patientType}
-            label={t("form_f2")}
-            onChange={setNewPatient}
-            selectedValue={newPatient}
-          />
           <div className="flex flex-col md:flex-row justify-start w-full gap-5 items-center">
             <Dropdown
               label={t("form_f10")}
@@ -335,6 +321,7 @@ const Self_Appointment = () => {
               breakpoint={true}
               onChange={setService}
               value={service}
+              startingSelectedOption={true}
             />
             <Dropdown
               startingSelectedOption={true}
