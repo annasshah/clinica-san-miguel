@@ -3,10 +3,14 @@ import { toast } from "react-toastify";
 interface DataInterface {
     email: string;
     phone: string;
+    state?: string;
+    zipcode?: string;
+    street_address?: string;
 }
 
-export const validateFormData = (data: DataInterface) => {
-    const { email, phone } = data
+export const validateFormData = (data: DataInterface, address = false) => {
+    const { email, phone, state, zipcode, street_address } = data
+    console.log('------------------>', zipcode)
 
     if (email) {
         const isValidEmail = String(email)
@@ -27,6 +31,17 @@ export const validateFormData = (data: DataInterface) => {
         if (!isValidPhone) {
             toast.error(`Please enter a valid phone number`);
             return false
+        }
+    }
+    if (address) {
+        if (zipcode) {
+            console.log('456789', zipcode)
+            const isValidZipCode = String(zipcode)
+                .match(/^[0-9]{5}(?:-[0-9]{4})?$/);
+            if (!isValidZipCode) {
+                toast.error(`Please enter a valid Zipcode`);
+                return false
+            }
         }
     }
 
