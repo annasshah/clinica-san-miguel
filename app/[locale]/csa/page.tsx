@@ -12,6 +12,7 @@ import moment from "moment";
 import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
 import LanguageChanger from "@/components/LanguageChanger";
+import { validateFormData } from "@/utils/validationCheck";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -64,12 +65,14 @@ const Input = ({
   placeholder,
   breakpoint,
   value,
+  type = 'text',
   onChange,
 }: {
   label: string;
   placeholder: string;
   breakpoint: boolean;
   value: string;
+  type?: string;
   onChange: (value: string) => void;
 }) => (
   <div
@@ -80,6 +83,7 @@ const Input = ({
       {label}:
     </label>
     <input
+      type={type}
       placeholder={`${placeholder}`}
       className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
       value={value}
@@ -245,6 +249,13 @@ const Self_Appointment = () => {
       'treatmenttype',
     ];
 
+
+    const validateData = validateFormData(appointmentDetails)
+
+    if (!validateData) {
+      return
+    }
+
     for (const field of requiredFields) {
       if (!appointmentDetails[field]) {
         toast.warning(`Please fill in the ${field}`);
@@ -252,8 +263,12 @@ const Self_Appointment = () => {
       }
     }
 
+
+
+
     const postData = {
-      ...appointmentDetails    }
+      ...appointmentDetails
+    }
     const { data, error } = await supabase
       .from("pos")
       .insert([postData])
@@ -351,6 +366,7 @@ const Self_Appointment = () => {
           <Input
             label={t("form_f5")}
             placeholder="Your current email address"
+            type='email'
             breakpoint={false}
             onChange={setEmail}
             value={email}

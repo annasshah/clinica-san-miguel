@@ -12,6 +12,7 @@ import moment from "moment";
 import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
 import ScheduleDateTime from "./ScheduleDateTime";
+import { validateFormData } from "@/utils/validationCheck";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -215,7 +216,7 @@ export const RequestAppointment = ({
       last_name: lastName,
       email_address: email,
       address: address,
-      in_office_patient:  false,
+      in_office_patient: false,
       new_patient: newPatient === "new" || false,
       dob: dob,
       sex: sex,
@@ -229,13 +230,19 @@ export const RequestAppointment = ({
       "first_name",
       "last_name",
       "email_address",
+      "phone",
       "address",
       "dob",
       "sex",
-      "phone",
       "date_and_time",
       "service",
     ];
+
+    const validateData = validateFormData({ ...appointmentDetails, email: email })
+
+    if (!validateData) {
+      return
+    }
 
     for (const field of requiredFields) {
       if (!appointmentDetails[field]) {
@@ -243,6 +250,9 @@ export const RequestAppointment = ({
         return;
       }
     }
+
+
+
 
     const postData = {
       ...appointmentDetails,
