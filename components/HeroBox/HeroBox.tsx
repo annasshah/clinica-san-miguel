@@ -162,7 +162,7 @@ export const HeroBox = () => {
                 top: `calc(279px * ${scaleFactor})`,
               }}
             >
-              Clincal
+              Clinca
               <br />
               San
               <br />
