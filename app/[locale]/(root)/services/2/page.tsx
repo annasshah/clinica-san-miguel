@@ -21,7 +21,7 @@ const Home = () => {
 <div className="w-full space-y-8 bg-black/60 p-3 text-white lg:my-10 lg:w-2/3 lg:p-8">
     <h1 className="text-4xl font-semibold lg:text-6xl">Acerca de</h1>
     <p className="text-2xl font-light lg:text-3xl">
-        Nuestros profesionales capacitados brindan procedimientos seguros y efectivos para la eliminación de verrugas, asegurando una experiencia rápida y cómoda.
+    Nuestros profesionales capacitados brindan procedimientos seguros y efectivos de eliminación de verrugas, lo que garantiza.
     </p>
 </div>
 </div>
