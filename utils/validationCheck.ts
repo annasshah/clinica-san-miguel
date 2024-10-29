@@ -26,11 +26,10 @@ export const validateFormData = (data: DataInterface, address = false) => {
     }
     if (phone) {
         const isValidPhone = String(phone)
-            .toLowerCase()
-            .match(/^(\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/);
+            .match(/^(\+?1\s?)?(\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}$/);
         if (!isValidPhone) {
-            toast.error(`Please enter a valid phone number`);
-            return false
+            toast.error("Please enter a valid U.S. phone number, e.g. +1 (123) 456-7890");
+            return false;
         }
     }
     if (address) {

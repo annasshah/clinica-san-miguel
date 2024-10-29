@@ -13,6 +13,8 @@ import ReactDatePicker from "react-datepicker";
 import { toast } from "react-toastify";
 import LanguageChanger from "@/components/LanguageChanger";
 import { validateFormData } from "@/utils/validationCheck";
+import PhoneInput from "react-phone-input-2";
+import PhoneNumberInput from "./PhoneNumberInput";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
     <div className="flex items-center justify-start gap-3">
@@ -298,7 +300,7 @@ const Self_Appointment = ({ location }: any) => {
                     >
                         {t("self_form_title")}
                     </h1>
-                    <p className="text-[#767676]">Clinica San Miguel Channelview</p>
+                    <p className="text-[#767676]">{location.title}</p>
                 </div>
                 <section className="grid md:grid-cols-2 grid-cols-1 place-content-baseline gap-8">
                     <Dropdown
@@ -331,13 +333,13 @@ const Self_Appointment = ({ location }: any) => {
                         onChange={setLastName}
                         value={lastName}
                     />
-                        <Input
-                            label={t("form_f6")}
-                            placeholder="ex. (+92) 331 2566730"
-                            breakpoint={true}
-                            onChange={setPhone}
-                            value={phone}
-                        />
+                    <PhoneNumberInput
+                        label={t("form_f6")}
+                        placeholder="ex. +1 (123) 456-7890"
+                        breakpoint={false}
+                        onChange={setPhone}
+                        value={phone}
+                    />
                     <RadioButtons
                         name="gender"
                         options={genderOptions}
@@ -350,7 +352,7 @@ const Self_Appointment = ({ location }: any) => {
                     <div className="w-full flex md:justify-end justify-center items-center col-span-full">
                         <Button
                             text={t("button_label")}
-                            
+
                             size={{ width: "250px", height: "50px" }}
                             route={""}
                             bgColor={"#C1001F"}
