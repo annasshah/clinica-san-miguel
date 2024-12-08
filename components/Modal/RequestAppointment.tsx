@@ -122,12 +122,7 @@ const DatePicker = ({
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
     </label>
-    {/* <input
-      placeholder={`${placeholder}`}
-      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    /> */}
+    {/* @ts-ignore */}
     <ReactDatePicker
       selected={value}
       onChange={(date) => onChange(date)}
