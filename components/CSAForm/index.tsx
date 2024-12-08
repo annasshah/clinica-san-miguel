@@ -199,6 +199,8 @@ const Self_Appointment = ({ location }: any) => {
     const [phone, setPhone] = useState("");
     const [newPatient, setNewPatient] = useState("");
     const [date_and_time, setDate_and_time] = useState("");
+    const [email_opt, setEmail_opt] = useState(false)
+    const [text_opt, setText_opt] = useState(false)
 
     const patientType = [t("form_f2a"), t("form_f2b")];
     const genderOptions = [t("form_f8a"), t("form_f8b"), t("form_f8c")];
@@ -225,6 +227,8 @@ const Self_Appointment = ({ location }: any) => {
             gender: sex,
             phone: phone,
             treatmenttype: service,
+            email_opt,
+            text_opt
         };
 
         const requiredFields = [
@@ -277,6 +281,8 @@ const Self_Appointment = ({ location }: any) => {
             setPhone("");
             setNewPatient("");
             setDate_and_time("");
+            setEmail_opt(false)
+            setText_opt(false)
             console.log(data, "Appointment Submitted");
         }
     };
@@ -349,7 +355,20 @@ const Self_Appointment = ({ location }: any) => {
                     />
 
 
-                    <div className="w-full flex md:justify-end justify-center items-center col-span-full">
+                    <div className="w-full flex justify-between items-center col-span-full">
+                        <div className="space-y-2 w-2/3 ">
+                            <div className="flex space-x-2 items-center">
+                                <input checked={email_opt} onChange={(e)=>setEmail_opt(e.target.checked)} type="checkbox" /> <h1 className="text-xs">
+                                    I agree to receive <strong>email</strong> updates from Clinica San Miguel, including appointment confirmations, health tips, promotional offers, and other important information.
+                                </h1>
+                            </div>
+                            <div className="flex space-x-2 items-center">
+                                <input checked={text_opt} onChange={(e)=>setText_opt(e.target.checked)}  type="checkbox"  /> <h1 className="text-xs">
+                                    I agree to receive <strong>SMS</strong> notifications from Clinica San Miguel, including appointment reminders, health updates, and other related messages.
+                                </h1>
+                            </div>
+
+                        </div>
                         <Button
                             text={t("button_label")}
 
