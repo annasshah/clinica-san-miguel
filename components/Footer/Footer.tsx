@@ -9,22 +9,25 @@ import { Link } from "@/navigation";
 
 import StarRatings from "react-star-ratings";
 import { useTranslations } from "next-intl";
+import NewsletterSignup from "./NewsletterSignup";
 
 export const Footer = () => {
   const t = useTranslations("common");
 
-  const footerLink = [
-    { id: 1, name: t("link_privacy_policy"), route: "" },
-    { id: 2, name: t("link_terms_and_conditions"), route: "" },
-    { id: 3, name: t("link_accessibility_notice"), route: "" },
-    { id: 4, name: t("link_contact_us"), route: "/contact" },
-  ];
+  // const footerLink = [
+  //   { id: 1, name: t("link_privacy_policy"), route: "" },
+  //   { id: 2, name: t("link_terms_and_conditions"), route: "" },
+  //   { id: 3, name: t("link_accessibility_notice"), route: "" },
+  //   { id: 4, name: t("link_contact_us"), route: "/contact" },
+  // ];
 
   const pages = [
     { id: 1, name: t("link_home"), route: "/" },
     { id: 2, name: t("link_about"), route: "/about" },
     { id: 3, name: t("link_services"), route: "/services" },
     { id: 6, name: t("link_contact"), route: "/contact" },
+    { id: 6, name: t("link_career"), route: "/career" },
+    { id: 6, name: t("link_specials"), route: "/specials" },
   ];
 
   const socialLinks = [
@@ -54,7 +57,7 @@ export const Footer = () => {
         <ul className="flex flex-wrap gap-10 justify-center items-center my-10">
           {pages.map((page) => (
             <Link href={page.route} key={page.id}>
-              <li className="text-[#F8F5F0] font-poppins lowercase text-[16px]">
+              <li className="text-[#F8F5F0] font-poppins  text-[16px]">
                 {page.name}
               </li>
             </Link>
@@ -118,26 +121,17 @@ export const Footer = () => {
           </h5>
 
           <div className="flex gap-2">
-            <div className="bg-[#F8F5F0] h-[55px] w-[296px] rounded-[10px] md:rounded-[5px] flex justify-between items-center p-2">
-              <input
-                placeholder={t("footer_email_input_placeholder")}
-                className="placeholder:text-[14px] placeholder:text-[#A2A9B0] text-[16px] outline-none text-[#000000] bg-transparent w-full pr-2"
-              />
-
-              <div className="rounded-full aspect-square bg-[#19192C] text-[24px] text-white w-[40px] h-[40px] flex justify-center items-center">
-                <IoIosArrowForward />
-              </div>
-            </div>
+            <NewsletterSignup />
           </div>
         </div>
       </article>
 
       <article className="my-10 w-full">
-        <ul className="flex flex-wrap gap-10 justify-evenly items-center ">
+        <ul className="flex flex-wrap justify-evenly items-center ">
           <li className="text-[#F8F5F0] order-2 md:order-1 font-poppins text-[16px]">
             {t("footer_copyright_text")}
           </li>
-          <div className="flex flex-wrap gap-3 justify-evenly items-center ">
+          {/* <div className="flex flex-wrap gap-3 justify-evenly items-center ">
             {footerLink.map((item) => (
               <Link href={item.route} key={item.id}>
                 <li className="text-[#F8F5F0] order-1 md:order-2 font-poppins text-[16px]">
@@ -145,7 +139,7 @@ export const Footer = () => {
                 </li>
               </Link>
             ))}
-          </div>
+          </div> */}
         </ul>
       </article>
     </footer>

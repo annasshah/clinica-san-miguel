@@ -125,6 +125,7 @@ const DateTime: React.FC<DateTimeProps> = ({
       <h3 className="text-[20px] text-[#ffffff]">{label}</h3>
       <div className="w-[183px] h-[37px] px-1 rounded-[10px] bg-[#ffffff] flex justify-between items-center">
         <div className="relative flex justify-between w-[183px] h-[37px] items-center">
+          {/* @ts-ignore */}
           <DatePicker
             selected={value}
             onChange={(date) => onChange(date as Date)}

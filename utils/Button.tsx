@@ -10,13 +10,15 @@ export const Button = ({
   bgColor,
   textColor,
   onClick,
+  disabled = false
 }: {
   text: string;
   size: { width: string; height: string };
-  route: string;
+  route?: string;
   bgColor: string;
   textColor: string;
   onClick: any;
+  disabled?: boolean;
 }) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
@@ -50,7 +52,8 @@ export const Button = ({
 
   return (
     <button
-      className={`rounded-[10px] font-poppins flex justify-center items-center text-[14px] md:text-[17px] text-opacity-8`}
+      disabled={disabled}
+      className={`rounded-[10px] font-poppins flex justify-center items-center text-[14px] md:text-[17px] text-opacity-8 hover:opacity-75 active:opacity-90 disabled:opacity-30`}
       style={{
         width: calculatedWidth,
         height: calculatedHeight,

@@ -30,6 +30,10 @@
   transform: translateY(-400%) !important;
 }
 
+
+.react-datetime-picker__wrapper{
+  border-style: none !important;
+}
 /* Dots */
 
 /* Custom Slick Dots */

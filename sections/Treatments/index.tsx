@@ -90,7 +90,7 @@ export const Treatments = () => {
         <Slider {...settings}>
           {data
             .filter((elem) => elem.id !== 25)
-            .slice(0, 6)
+            .sort((a,b)=>a.id - b.id).slice(0, 6)
             .map((treatment) => (
               <Treatment
                 id={treatment.id}

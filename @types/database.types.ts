@@ -239,7 +239,7 @@ export interface Database {
           location_id: number | null;
           first_name: string | null;
           last_name: string | null;
-          email_Address: string | null;
+          email_address: string | null;
           in_office_patient: boolean | null;
           new_patient: boolean | null;
           dob: string | null;

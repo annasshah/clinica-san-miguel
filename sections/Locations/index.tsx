@@ -111,6 +111,7 @@ export const Locations = () => {
       </h3>
 
       <article className="w-[100vw] xsm:w-[65vw] sm:w-[70vw] md:w-[65vw] lg:w-[50vw] block justify-center h-[250px] mx-auto my-10">
+        {/* @ts-ignore */}
         <Slider {...settings}>
           {locations.map((location) => (
             <Location

@@ -3,16 +3,19 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Footer, Navbar } from "@/components";
 
 // Provider
 import { Providers } from "../providers";
 import AiBotMain from "@/components/AiChatBot/AiBotMain";
+import { Analytics } from '@vercel/analytics/react';
 
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 import { locales } from "@/navigation";
 import ToastProvider from "@/utils/ToastProvider";
+import 'react-datetime-picker/dist/DateTimePicker.css';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,22 +50,20 @@ export default function RootLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${poppins.variable}`}>
+      <head> <link rel="icon" href="/favicon.png"  /></head>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className="font-inter bg-[#F8F5F0] relative overflow-x-hidden w-[100vw]">
           <Providers>
             <ToastProvider>
               {" "}
-              <article className="h-[43px] w-full bg-[#19192C] flex justify-center items-center text-[12px] sm:text-[16px] text-center text-[#F8F5F0]">
-                {/* {t("common:language_selection_description")} */}
-              </article>
-              <Navbar />
+              
               {children}
-              <Footer />
               <div
                 className="sticky z-[999999] bottom-10 right-10"
                 style={{ zIndex: 999999 }}
               >
                 <AiBotMain />
+                <Analytics mode={'production'} />
               </div>
             </ToastProvider>
           </Providers>

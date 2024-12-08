@@ -3,13 +3,17 @@
 import { styles } from "@/app/[locale]/styles";
 import { supabase } from "@/supabaseClient";
 import { Button } from "@/utils";
-import { Modal } from "flowbite-react";
+import { Label, Modal, Select } from "flowbite-react";
 import { useLocale, useTranslations } from "next-intl";
+import { TuiDatePicker } from "nextjs-tui-date-picker";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 import ReactDatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-toastify";
+import ScheduleDateTime from "./ScheduleDateTime";
+import { validateFormData } from "@/utils/validationCheck";
+import { usStates } from "@/utils/us-states";
 
 const RadioButton = ({ value, name, label, checked, onChange }: any) => (
   <div className="flex items-center justify-start gap-3">
@@ -63,22 +67,28 @@ const Input = ({
   breakpoint,
   value,
   onChange,
+  max = undefined
+
+
+
 }: {
   label: string;
   placeholder: string;
   breakpoint: boolean;
   value: string;
   onChange: (value: string) => void;
+  max?: number | undefined;
 }) => (
   <div
-    className={`flex flex-col items-start w-full ${
-      breakpoint ? "md:w-1/2" : ""
-    } justify-center`}
+    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+      } justify-center`}
   >
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
     </label>
     <input
+      maxLength={max || undefined}
+
       placeholder={`${placeholder}`}
       className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
       value={value}
@@ -93,32 +103,31 @@ const DatePicker = ({
   breakpoint,
   value,
   onChange,
+
+
 }: {
   label: string;
   placeholder: string;
   breakpoint: boolean;
   value: Date | null;
   onChange: (value: Date | null) => void;
+
+
+
 }) => (
   <div
-    className={`flex flex-col items-start w-full ${
-      breakpoint ? "md:w-1/2" : ""
-    } justify-center`}
+    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+      } justify-center`}
   >
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
     </label>
-    {/* <input
-      placeholder={`${placeholder}`}
-      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    /> */}
+    {/* @ts-ignore */}
     <ReactDatePicker
       selected={value}
       onChange={(date) => onChange(date)}
       placeholderText={placeholder}
-      dateFormat="yyyy-MM-dd"
+      dateFormat="yyyy-MM-dd HH:MM"
       className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
     />
   </div>
@@ -138,9 +147,8 @@ const Dropdown = ({
   onChange: (value: string) => void;
 }) => (
   <div
-    className={`flex flex-col items-start w-full ${
-      breakpoint ? "md:w-1/2" : ""
-    } justify-center`}
+    className={`flex flex-col items-start w-full ${breakpoint ? "md:w-1/2" : ""
+      } justify-center`}
   >
     <label className="text-[16px] text-customGray font-poppins font-bold">
       {label}:
@@ -160,10 +168,12 @@ const Dropdown = ({
 );
 
 export const RequestAppointment = ({
+  detailedData,
   locationID,
   openModal,
   handleClose,
 }: {
+  detailedData: any;
   locationID: number;
   openModal: boolean;
   handleClose: any;
@@ -181,11 +191,16 @@ export const RequestAppointment = ({
   const [dob, setDob] = useState<Date | null>(null);
   const [sex, setSex] = useState("");
   const [services, setServices] = useState<string[] | null | undefined>([]);
+  const [state, setState] = useState('')
+  const [zipcode, setzipcode] = useState('')
+  const [street_address, setStreet_address] = useState('')
   const [service, setService] = useState("");
-  const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [inOfficePatient, setInOfficePatient] = useState("");
   const [newPatient, setNewPatient] = useState("");
+  const [date_and_time, setDate_and_time] = useState("");
+  const [email_opt, setEmail_opt] = useState(false)
+  const [text_opt, setText_opt] = useState(false)
 
   const visitType = [t("form_f1a"), t("form_f1b")];
   const patientType = [t("form_f2a"), t("form_f2b")];
@@ -209,40 +224,66 @@ export const RequestAppointment = ({
       location_id: locationID,
       first_name: firstName,
       last_name: lastName,
-      email_Address: email,
-      address: address,
-      in_office_patient: inOfficePatient === "In-Office Visit" || false,
+      email_address: email,
+      in_office_patient: false,
       new_patient: newPatient === "new" || false,
       dob: dob,
       sex: sex,
+      phone: phone,
       service: service,
+      date_and_time,
+      email_opt,
+      text_opt
     };
 
     const requiredFields = [
       "location_id",
       "first_name",
       "last_name",
-      "email_Address",
-      "address",
+      "email_address",
+      "phone",
       "dob",
+      'state',
+      'zipcode',
+      'street_address',
       "sex",
+      "date_and_time",
       "service",
     ];
 
+    const validateData = validateFormData({ ...appointmentDetails, email: email, state, zipcode, street_address }, true)
+
+    if (!validateData) {
+      return
+    }
+
+
     for (const field of requiredFields) {
-      if (!appointmentDetails[field]) {
+      if (!{ ...appointmentDetails, email: email, state, zipcode, street_address }[field]) {
         toast.warning(`Please fill in the ${field}`);
         return;
       }
     }
 
+
+
+
+    const postData = {
+      ...appointmentDetails,
+      address: `${street_address}, ${state}, ${zipcode}`,
+      date_and_time,
+    }
     const { data, error } = await supabase
       .from("Appoinments")
-      .insert([appointmentDetails])
+      .insert([postData])
       .select();
 
     if (error) {
-      toast.error(`Error submitting appointment: ${error.message}`);
+      if (error?.message === 'duplicate key value violates unique constraint "Appoinments_date_and_time_key"') {
+        toast.error(`Sorry, Appointment time slot is not available, Please select any other time slot`);
+
+      }
+      else { toast.error(`Error submitting appointment: ${error?.message}`); }
     } else {
       toast.success("Appointment Submitted");
       setFirstName("");
@@ -250,17 +291,31 @@ export const RequestAppointment = ({
       setEmail("");
       setDob(null);
       setSex("");
-      setServices([]);
       setService("");
-      setAddress("");
       setPhone("");
       setInOfficePatient("");
       setNewPatient("");
+      setDate_and_time("");
+      setEmail_opt(false)
+      setText_opt(false)
       handleClose();
       console.log(data, "Appointment Submitted");
     }
   };
 
+
+  const selectDateTimeSlotHandle = (date: Date | '', time?: string | '') => {
+    if (date && time) {
+      const formated_date = moment(date).format('DD-MM-YYYY')
+
+      const createSlotForDB = `${detailedData?.[0]?.id}|${formated_date} - ${time}`
+      console.log({ createSlotForDB })
+      setDate_and_time(createSlotForDB)
+    } else {
+      setDate_and_time('')
+
+    }
+  }
   return (
     <>
       {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
@@ -279,7 +334,7 @@ export const RequestAppointment = ({
           paddingBottom: "30px",
         }}
       >
-        <div className="w-full max-w-[1000px] rounded-[20px] bg-[#F8F5F0]">
+        <div className="w-full max-w-[650px] rounded-[20px] bg-[#F8F5F0]">
           <Modal.Header>
             <div className="flex w-full justify-start">
               <h1
@@ -290,7 +345,7 @@ export const RequestAppointment = ({
               </h1>
             </div>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className="max-h-[660px] overflow-scroll">
             <section className="flex flex-col px-5 justify-start items-start gap-4 p-4">
               <RadioButtons
                 name="visit type"
@@ -337,6 +392,7 @@ export const RequestAppointment = ({
                   onChange={setPhone}
                   value={phone}
                 />
+                {/* @ts-ignore */}
                 <DatePicker
                   label={t("form_f7")}
                   placeholder="your date of birth"
@@ -352,20 +408,64 @@ export const RequestAppointment = ({
                 onChange={setSex}
                 selectedValue={sex}
               />
-              <Input
+              <div className='w-full grid grid-cols-2 gap-4'>
+                <div className=''>
+                  <Label htmlFor='locations' className='font-bold'>
+                    State
+                  </Label>
+                  <Select style={{ backgroundColor: '#f8f5f0', paddingTop: '9px', paddingBottom: '9px' }} className='flex-1 ' sizing='md' onChange={(e) => setState(e.target.value)} id="state" required>
+                    <option selected disabled value=''>State</option>
+                    {usStates?.map(({ value, name }, index: any) => <option key={index} value={name}>{`${name} - ${value}`}</option>)}
+                  </Select>
+                </div>
+                <div className=''>
+                  <Input breakpoint={false} max={5} label='Zipcode' value={zipcode} onChange={(e: string) => setzipcode(e)} placeholder='Enter zipcode' />
+                </div>
+                <div className='col-span-2'>
+                  <Input breakpoint={false} label='Street Address' value={street_address} onChange={(e: string) => setStreet_address(e)} placeholder='Enter zipcode' />
+                </div>
+              </div>
+              {/* <Input
                 label={t("form_f9")}
                 placeholder="enter your address with zip code."
                 breakpoint={false}
                 onChange={setAddress}
                 value={address}
+              /> */}
+
+
+              <ScheduleDateTime
+                data={detailedData[0]}
+                selectDateTimeSlotHandle={selectDateTimeSlotHandle}
               />
-              <Dropdown
-                label={t("form_f10")}
-                options={services}
-                breakpoint={true}
-                onChange={setService}
-                value={service}
-              />
+              <div className="flex flex-col md:flex-row justify-start w-full gap-5 items-center">
+                <Dropdown
+                  label={t("form_f10")}
+                  options={services}
+                  breakpoint={true}
+                  onChange={setService}
+                  value={service}
+                />
+              </div>
+
+
+
+              <div className="space-y-2">
+                <div className="flex space-x-2 items-center">
+                  <input checked={email_opt} onChange={(e) => setEmail_opt(e.target.checked)} type="checkbox" /> <h1 className="text-xs">
+                    I agree to receive <strong>email</strong> updates from Clinica San Miguel, including appointment confirmations, health tips, promotional offers, and other important information.
+                  </h1>
+                </div>
+                <div className="flex space-x-2 items-center">
+                  <input checked={text_opt} onChange={(e) => setText_opt(e.target.checked)} type="checkbox" /> <h1 className="text-xs">
+                    I agree to receive <strong>SMS</strong> notifications from Clinica San Miguel, including appointment reminders, health updates, and other related messages.
+                  </h1>
+                </div>
+
+              </div>
+
+
+
             </section>
           </Modal.Body>
           <Modal.Footer>

@@ -84,8 +84,8 @@ export const HeroTopSection = () => {
           <div className="w-[100%]  flex flex-col items-center justify-center gap-5">
             <Image alt="" src={Logo} className="w-[300px] aspect-auto" />
             <div className="flex flex-col justify-center items-center">
-              <h2 className="text-[25px] sm:text-[35px] lg:text-[50px] text-[#19192C] font-semibold font-poppins">
-                {t("section1_title")}
+              <h2 className="text-[25px] sm:text-[35px] lg:text-[50px]  font-semibold font-poppins">
+                {t("section1_title")}<span className="text-headingColor text-[40px] sm:text-[45px] lg:text-[60px] font-bold"> $19!</span>
                 {/* <span className="text-[#C1001F]">$19!</span> */}
               </h2>
               <p className="text-[16px] text-[#6B6B6B]">
