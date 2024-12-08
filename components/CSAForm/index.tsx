@@ -5,7 +5,6 @@ import { supabase } from "@/supabaseClient";
 import { Button } from "@/utils";
 import { Modal } from "flowbite-react";
 import { useLocale, useTranslations } from "next-intl";
-import { TuiDatePicker } from "nextjs-tui-date-picker";
 import { useEffect, useState } from "react";
 import moment from "moment";
 
@@ -116,12 +115,8 @@ const DatePicker = ({
         <label className="text-[16px] text-customGray font-poppins font-bold">
             {label}:
         </label>
-        {/* <input
-      placeholder={`${placeholder}`}
-      className="w-full h-[46px] border-[1px] border-[#000000] text-[16px] text-[#000000] placeholder:text-customGray placeholder:text-opacity-50 px-5 bg-transparent outline-none rounded-[10px]"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    /> */}
+
+        {/* @ts-ignore */}
         <ReactDatePicker
             selected={value}
             onChange={(date) => onChange(date)}
@@ -358,12 +353,12 @@ const Self_Appointment = ({ location }: any) => {
                     <div className="w-full flex justify-between items-center col-span-full">
                         <div className="space-y-2 w-2/3 ">
                             <div className="flex space-x-2 items-center">
-                                <input checked={email_opt} onChange={(e)=>setEmail_opt(e.target.checked)} type="checkbox" /> <h1 className="text-xs">
+                                <input checked={email_opt} onChange={(e) => setEmail_opt(e.target.checked)} type="checkbox" /> <h1 className="text-xs">
                                     I agree to receive <strong>email</strong> updates from Clinica San Miguel, including appointment confirmations, health tips, promotional offers, and other important information.
                                 </h1>
                             </div>
                             <div className="flex space-x-2 items-center">
-                                <input checked={text_opt} onChange={(e)=>setText_opt(e.target.checked)}  type="checkbox"  /> <h1 className="text-xs">
+                                <input checked={text_opt} onChange={(e) => setText_opt(e.target.checked)} type="checkbox" /> <h1 className="text-xs">
                                     I agree to receive <strong>SMS</strong> notifications from Clinica San Miguel, including appointment reminders, health updates, and other related messages.
                                 </h1>
                             </div>
