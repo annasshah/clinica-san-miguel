@@ -392,6 +392,7 @@ export const RequestAppointment = ({
                   onChange={setPhone}
                   value={phone}
                 />
+                {/* @ts-ignore */}
                 <DatePicker
                   label={t("form_f7")}
                   placeholder="your date of birth"

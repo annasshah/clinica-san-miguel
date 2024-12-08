@@ -96,6 +96,7 @@ const ScheduleDateTime: FC<Props> = ({ data, selectDateTimeSlotHandle }) => {
                 <label className="text-[16px] text-customGray font-poppins font-bold">
                     Select Schedule Date:
                 </label>
+                {/* @ts-ignore */}
                 <ReactDatePicker
                     minDate={new Date()}
                     selected={date}
